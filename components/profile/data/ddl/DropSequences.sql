@@ -1,0 +1,9 @@
+DROP SEQUENCE EmployeeSEQ;
+DROP SEQUENCE ProjectSEQ;
+DROP SEQUENCE ProjectPersonLinkSEQ;
+DROP SEQUENCE TimeSheetProcessSEQ;
+DROP SEQUENCE TimeSheetSEQ;
+DROP SEQUENCE TimeSheetLineItemSEQ;
+DROP SEQUENCE TimeSheetApprovalLevelSEQ;
+DROP SEQUENCE ProjectTimeSheetProcessLinkSEQ;
+

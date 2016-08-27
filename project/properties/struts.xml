@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+
+<struts>
+
+    <package name="TimeSheet" namespace="/" extends="struts-default">
+
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
+
+        <!-- Person -->
+
+        <action name="index">
+            <result type="tiles">index</result>
+        </action>
+
+
+        <action name="SearchEmployee">
+            <result type="tiles">SearchEmployee</result>
+        </action>
+
+        <action name="CreateEmployee">
+            <result type="tiles">CreateEmployee</result>
+        </action>
+
+        <action name="CreateEmployeeSubmit" class="com.company.timesheet.profile.employee.action.CreateEmployeeAction">
+            <result name="success" type="tiles">EmployeeHome</result>
+            <result name="error">/index</result>
+        </action>
+
+
+        <action name="EmployeeLogin" class="com.company.timesheet.profile.employee.action.LoginEmployeeAction">
+            <result name="success" type="tiles">EmployeeHome</result>
+            <result name="error">/index</result>
+        </action>
+
+
+        <action name="ListEmployee" class="com.company.timesheet.profile.employee.action.ListEmployeeAction">
+            <result name="success" type="tiles">ListEmployee</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="ReadEmployee" class="com.company.timesheet.profile.employee.action.ReadEmployeeAction">
+            <result name="SENTTOUPDATE" type="tiles">UpdateEmployee</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="UpdateEmployeeSubmit" class="com.company.timesheet.profile.employee.action.UpdateEmployeeAction">
+            <result name="success" type="redirect">
+                <param name="location">/ListEmployee</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="DeleteEmployee" class="com.company.timesheet.profile.employee.action.DeleteEmployeeAction">
+            <result name="success" type="redirect">
+                <param name="location">/ListEmployee</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="SearchPersonSubmit" class="com.company.timesheet.profile.employee.action.SearchEmployeeAction">
+            <result name="success" type="tiles">SearchPerson</result>
+            <result name="error">/index</result>
+        </action>
+
+
+
+        <!-- Project -->
+
+        <action name="CreateProject">
+            <result type="tiles">CreateProject</result>
+        </action>
+
+        <action name="CreateProjectSubmit" class="com.company.timesheet.profile.project.action.CreateProjectAction">
+            <result name="success" type="redirect">
+                <param name="location">/ListProject</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="ListProject" class="com.company.timesheet.profile.project.action.ListProjectAction">
+            <result name="success" type="tiles">ListProject</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="DeleteProject" class="com.company.timesheet.profile.project.action.DeleteProjectAction">
+            <result name="success" type="redirect">
+                <param name="location">/ListProject</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="ReadProject" class="com.company.timesheet.profile.project.action.ReadProjectAction">
+            <result name="SENTTOUPDATE" type="tiles">UpdateProject</result>
+            <result name="success" type="tiles">ReadProject</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="UpdateProjectSubmit" class="com.company.timesheet.profile.project.action.UpdateProjectAction">
+            <result name="success" type="redirect">
+                <param name="location"> /ListProject </param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+
+        <!-- ProjectPersonLink -->
+
+        <action name="AddPersonToProject" class="com.company.timesheet.profile.projectpersonlink.action.SetProjectIDAction">
+            <result name="success" type="tiles">AddPersonToProject</result>
+            <result name="error">/index</result>
+        </action>
+
+        <!-- <action name="AddPersonToProject"> <result name="success" type="tiles">
+            <param name="location"> AddPersonToProject</param> <param name="projectPersonLinkDetail.projectDetail.projectID">${projectPersonLinkDetail.projectDetail.projectID}</param>
+            </result> </action> -->
+
+        <action name="CreateProjectPersonLinkSubmit" class="com.company.timesheet.profile.projectpersonlink.action.CreateProjectEmployeeLinkAction">
+            <result name="success" type="redirect">
+                <param name="location"> /ListOfPersonInTheProject</param>
+                <param name="projectPersonLinkDetail.projectDetail.projectID">${projectPersonLinkDetail.projectDetail.projectID}</param>
+
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <!-- <action name="ListOfPersonInTheProject" class="com.company.timesheet.profile.projectpersonlink.action.ListOfPersonInTheProjectAction">
+            <result name="success" type="tiles">ListOfPersonInTheProject</result> <result
+            name="error">/index</result> </action> -->
+
+
+
+
+
+
+
+
+        <action name="TimeSheetList" class="com.company.timesheet.profile.timesheet.action.TimeSheetListAction">
+            <result name="success" type="tiles">TimeSheetList</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="CreateTimeSheetLineItem">
+            <result type="tiles">CreateTimeSheetLineItem</result>
+        </action>
+
+        <!-- <action name="CreateTimeSheetLineItemSubmit" class="com.company.timesheet.profile.timesheetlineitem.action.CreateTimeSheetLineItemAction">
+            <result name="success" type="tiles">TimeSheetList</result> <result name="error">/index</result>
+            </action> -->
+
+
+
+    </package>
+
+</struts>
