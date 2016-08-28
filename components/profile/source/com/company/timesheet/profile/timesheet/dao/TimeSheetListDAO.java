@@ -42,8 +42,8 @@ public class TimeSheetListDAO  {
 				TimeSheetDetail timeSheetDetail = new TimeSheetDetail();
 				
 				timeSheetDetail.setMonth(resultSet.getString("month"));
-				timeSheetDetail.setMaximumTotalHours(resultSet.getInt("maximumTotalHours"));
-				timeSheetDetail.setActualTotalHours(resultSet.getInt("actualTotalHours"));
+				//timeSheetDetail.setMaximumTotalHours(resultSet.getInt("maximumTotalHours"));
+				//timeSheetDetail.setActualTotalHours(resultSet.getInt("actualTotalHours"));
 				timeSheetDetail.setSubmittedDate(resultSet.getDate("submittedDate"));
 				timeSheetDetail.setStartDate(resultSet.getDate("startDate"));
 				timeSheetDetail.setEndDate(resultSet.getDate("endDate"));

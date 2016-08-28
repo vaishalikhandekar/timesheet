@@ -136,21 +136,21 @@ public class CreateTimeSheetLineItemDAO {
 
         List<Date> ret = new ArrayList<Date>();
         
-         startDate = JavaUtildates
+         /*startDate = JavaUtildates
 				.convertUtilToSql(timeSheetLineItemDetail.getStartDate());
          endDate = JavaUtildates
-        		 .convertUtilToSql(timeSheetLineItemDetail.getEndDate());
+        		 .convertUtilToSql(timeSheetLineItemDetail.getEndDate());*/
         
         while(startDate.before(endDate) || startDate.equals(endDate)) {
             ret.add(startDate);
-            startDate = startDate+1;
+            //startDate = startDate+1;
         }
         return ret;
     }
 
     public static void main(String[] args) {
 
-        DateTime start = DateTime.parse("2012-1-1");
+        /*DateTime start = DateTime.parse("2012-1-1");
         System.out.println("Start: " + start);
 
         DateTime end = DateTime.parse("2012-12-31");
@@ -159,7 +159,7 @@ public class CreateTimeSheetLineItemDAO {
         List<DateTime> between = getDateRange(start, end);
         for (DateTime d : between) {
             System.out.println(" " + d);
-        }
+        }*/
     }
 
 }
