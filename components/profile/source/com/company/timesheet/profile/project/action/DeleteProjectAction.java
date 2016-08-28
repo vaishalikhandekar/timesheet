@@ -32,11 +32,15 @@ public class DeleteProjectAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		
+		System.out.println("projectId" +projectDetail.getProjectID());
+		
 		String pageForwardStr = "";
 		
 		DeleteProjectDAO deleteProjectDAO = new DeleteProjectDAO();
 		String returnMassegeStr = deleteProjectDAO.deleteProject(projectDetail);
 		
+		
+		// 
 		
 		
 		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
