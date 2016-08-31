@@ -251,8 +251,8 @@ prefix="sj" uri="/struts-jquery-tags"%>
                                             <table class="table table-striped">
                                                 <thead>
 
-                                                    <tr class="table-warning">
-                                                        <th class="table-warning">Project Name</th>
+                                                    <tr class="success">
+                                                        <th >Project Name</th>
                                                         <th>Description</th>
                                                         <th>Record Status</th>
                                                         <th>Start Date</th>
