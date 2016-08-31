@@ -33,7 +33,7 @@ public class ListOfPersonInTheProjectAction extends ActionSupport {
 			@Override
 			public String execute() throws Exception {
 					
-				String pageForwardStr = "";
+					String pageForwardStr = "";
 				
 				ListOfPersonInTheProjectDAO listOfPersonInTheProjectDAO = new ListOfPersonInTheProjectDAO();
 				List<ProjectPersonLinkDetail> projectPersonLinkDetailList = listOfPersonInTheProjectDAO.listOfPersonInTheProject();

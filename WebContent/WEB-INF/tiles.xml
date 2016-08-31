@@ -86,6 +86,11 @@
     <!-- Project -->
     	
     	
+    <definition name="ProjectNav" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Project Nav" />
+        <put-attribute name="body" value="/components/profile/jsp/project/ProjectNav.jsp" />
+    </definition>
+    
     <definition name="CreateProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Create Project" />
         <put-attribute name="body" value="/components/profile/jsp/project/CreateProject.jsp" />

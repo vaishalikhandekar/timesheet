@@ -27,11 +27,11 @@ $(function () {
 
 </head>
 <body>
-	<!-- <h1 class="well">Registration Form</h1>
-	<div class="container" style="border: thin solid black"> -->
+	<h3 class="well">Registration Form</h3>
+	<div class="container" style="border: thin solid black"> 
 		<br>
 
-		<div class="modal fade" id="modal-1" data-keyboard="false"
+		<!-- <div class="modal fade" id="modal-1" data-keyboard="false"
 				data-backdrop="static">
 				
 					<div class="modal-dialog modal-lg">
@@ -44,19 +44,21 @@ $(function () {
 										<h3 class="modal-title">Create New Project</h3>
 						</div>
 
-						<div class="modal-body">
+						<div class="modal-body"> -->
 
 		<s:form class="form-inline" name="Registration"
 			action="/CreateEmployeeSubmit" method="POST" role="form"
 			theme="bootstrap">
 
+            <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
 			<div class="form-group">
 
-				<label>Name:</label>
+				<label>Name<span class="glyphicon glyphicon-asterisk-ok icon-red"></span></label>
 				<s:select
 					list="#{'Mr.':'Mr.', 'Mrs.':'Mrs.','Miss.':'Miss.', 'Kumar':'Kumar'}"
 					name="employeeDetail.title" placeholder="Title"
-					class="form-control">
+					class="form-control" >
+                    <span class="glyphicon glyphicon-asterisk"></span>
 				</s:select>
 				<!-- <input type="email" class="form-control" id="email" placeholder="Enter email">-->
 			</div>
@@ -78,16 +80,18 @@ $(function () {
 			</div>
 			<br>
 			<br>
+            
+			<div class="form-group">
+				<label>DateOfBirth:</label> 
+                <s:textfield type="text" name="employeeDetail.dateOfBirth"
+                    class="form-control" placeholder="mm/dd/yy"/>
+           
+			</div>
 
 			<%--  <s:select label="Gender" list="genderMap" name="employeeDetail.gender" class="form-control" /> --%>
 			<s:radio list="{'Male','Female'}" name="employeeDetail.gender"></s:radio>
 
 
-
-			<div class="form-group">
-				<label>DateOfBirth:</label> <input type="text" id="datepicker"
-					class="datetimepicker1"  placeholder="mm/dd/yy" name="employeeDetail.dateOfBirth" />
-			</div>
 			<br>
 			<br>
 
@@ -95,6 +99,8 @@ $(function () {
 				<label>UserName:</label>
 				<s:textfield type="text" name="employeeDetail.usersDetail.userName"
 					class="form-control" />
+                    
+                    
 			</div>
 
 			<div class="form-group">
@@ -107,47 +113,38 @@ $(function () {
 			<div class="form-group">
 				<label>Start Date:</label>
 				<s:textfield type="text" name="employeeDetail.startDate"
-					class="form-control" />
+					class="form-control" placeholder="mm/dd/yy"/>
 			</div>
-
+            
 			<div class="form-group">
-				<label>End Date:</label> <input type="text" id="datepicker"
-					class="dateTxt" name="employeeDetail.endDate" />
+				<label>End Date:</label>
+				<s:textfield type="text" name="employeeDetail.endDate"
+					class="form-control" placeholder="mm/dd/yy"/>
 			</div>
+
+			
 			
 
 			<br>
 			<br>
 			<br>
 			<br>
-						<div class="modal-footer">
-							<s:submit type="submit" id="submit" value="Submit"
-								class="btn btn-primary" />
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Close</button>
-						</div>
-	</s:form>
+						
 
-	</div>
-
-	</div>
-
-	</div>
-	</div>
-	
 			
 			
-			
-			<%-- <s:submit type="submit" id="submit" value="Submit"
+			<s:submit type="submit" id="submit" value="Register"
 				class="btn btn-primary" />
 			<div class="checkbox">
 				<label><input type="checkbox"> Remember me</label>
 			</div>
-		</s:form> --%>
-
-		<s:form action="/TimeSheet/EmployeeLogOut" method="POST">
-			<br>
-			<%-- <s:submit type="submit" value="Cancel" class="btn btn-primary" /> --%>
 		</s:form>
+
+		<!-- <s:form action="/TimeSheet/EmployeeLogOut" method="POST" class="form-inline">
+			<br>
+			 <s:submit type="submit" value="Cancel" class="btn btn-primary" /> 
+		</s:form> -->
+        <br/>
+	</div>
 </body>
 </html>

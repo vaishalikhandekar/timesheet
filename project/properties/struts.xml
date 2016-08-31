@@ -73,6 +73,10 @@
 
         <!-- Project -->
 
+        <action name="ProjectNav">
+            <result type="tiles">ProjectNav</result>
+        </action>
+        
         <action name="CreateProject">
             <result type="tiles">CreateProject</result>
         </action>
@@ -130,9 +134,10 @@
             <result name="error">/index</result>
         </action>
 
-        <!-- <action name="ListOfPersonInTheProject" class="com.company.timesheet.profile.projectpersonlink.action.ListOfPersonInTheProjectAction">
-            <result name="success" type="tiles">ListOfPersonInTheProject</result> <result
-            name="error">/index</result> </action> -->
+         <action name="ListOfPersonInTheProject" class="com.company.timesheet.profile.projectpersonlink.action.ListOfPersonInTheProjectAction">
+            <result name="success" type="tiles">ListOfPersonInTheProject</result> 
+            <result name="error">/index</result> 
+            </action>
 
 
 
