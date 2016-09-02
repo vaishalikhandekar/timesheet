@@ -19,6 +19,20 @@ public class ListEmployeeAction extends ActionSupport {
 	
 	private List<EmployeeDetail> employeeDetailList;
 	
+	private EmployeeDetail employeeDetail;
+	
+	public EmployeeDetail getEmployeeDetail() {
+		return employeeDetail;
+	}
+
+
+
+	public void setEmployeeDetail(EmployeeDetail employeeDetail) {
+		this.employeeDetail = employeeDetail;
+	}
+
+
+
 	public List<EmployeeDetail> getEmployeeDetailList() {
 		return employeeDetailList;
 	}
@@ -30,7 +44,6 @@ public class ListEmployeeAction extends ActionSupport {
 	}
 
 
-
 	@Override
 	public String execute() throws Exception {
 		
@@ -40,6 +53,10 @@ public class ListEmployeeAction extends ActionSupport {
 		List<EmployeeDetail> employeeDetailList = listEmployeeDAO.listEmployee();
 		
 		setEmployeeDetailList(employeeDetailList);
+		
+		EmployeeDetail employeeDetail =  employeeDetailList.get(0);
+		setEmployeeDetail(employeeDetail);
+		
 		
 		if (employeeDetailList != null) {
 
