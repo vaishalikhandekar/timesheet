@@ -44,9 +44,16 @@
             <result name="success" type="tiles">ListEmployee</result>
             <result name="error">/index</result>
         </action>
+        
+        <action name="ListEmployeeForUpdate" class="com.company.timesheet.profile.employee.action.ListEmployeeAction">
+            <result name="success" type="tiles">ListEmployeeForUpdate</result>
+            <result name="error">/index</result>
+        </action>
 
         <action name="ReadEmployee" class="com.company.timesheet.profile.employee.action.ReadEmployeeAction">
-            <result name="SENTTOUPDATE" type="tiles">UpdateEmployee</result>
+            <result name="SENTTOUPDATE" type="redirect">
+            <param name="location">/ListEmployeeForUpdate</param>
+            </result>
             <result name="error">/index</result>
         </action>
 

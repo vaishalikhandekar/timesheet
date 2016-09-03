@@ -72,10 +72,15 @@
         <put-attribute name="body" value="/components/profile/jsp/employee/EmployeeList.jsp" />
     </definition>
     
-    <definition name="UpdateEmployee" extends="userWorkspaceLayout">
+    <definition name="ListEmployeeForUpdate" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="List Employee" />
+        <put-attribute name="body" value="/components/profile/jsp/employee/EmployeeList.jsp" />
+    </definition>
+    
+   <!--  <definition name="UpdateEmployee" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Update Employee" />
         <put-attribute name="body" value="/components/profile/jsp/employee/UpdateEmployee.jsp" />
-    </definition>
+    </definition> -->
     
      <definition name="SearchPerson" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Search Person" />
