@@ -1,6 +1,6 @@
 # Build folders
-build
-buildlogs
+/build
+/buildlogs
 
 # Ignore classes folder
 *.class
