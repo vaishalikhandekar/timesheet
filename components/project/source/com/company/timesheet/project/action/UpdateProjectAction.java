@@ -1,23 +1,20 @@
 /**
  * 
  */
-package com.company.timesheet.profile.project.action;
+package com.company.timesheet.project.action;
 
 import com.company.timesheet.core.util.CRUDConstants;
-import com.company.timesheet.profile.employee.dao.RegisterEmployeeDAO;
-import com.company.timesheet.profile.project.dao.CreateProjectDAO;
-import com.company.timesheet.profile.project.pojo.ProjectDetail;
+import com.company.timesheet.project.dao.UpdateProjectDAO;
+import com.company.timesheet.project.pojo.ProjectDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * @author vaish
  *
  */
-public class CreateProjectAction extends ActionSupport {
-	
-	private static final long serialVersionUID = 1L;
-	
-	private ProjectDetail projectDetail;
+public class UpdateProjectAction extends ActionSupport {
+		
+	ProjectDetail projectDetail;
 	
 	public ProjectDetail getProjectDetail() {
 		return projectDetail;
@@ -29,23 +26,22 @@ public class CreateProjectAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		
+	
 		String pageForwardStr = "";
 		
-		CreateProjectDAO createProjectDAO = new CreateProjectDAO();
-		String returnMassegeStr = createProjectDAO.createProject(projectDetail);
-		
+		UpdateProjectDAO updateProjectDAO = new UpdateProjectDAO();
+		String returnMassegeStr = updateProjectDAO.updateProject(projectDetail);
+
 		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
 
 			pageForwardStr = SUCCESS;
 
 		} else {
-
 			pageForwardStr = ERROR;
-
 		}
-		
 		return pageForwardStr;
+	
+		
 	}
 
 }

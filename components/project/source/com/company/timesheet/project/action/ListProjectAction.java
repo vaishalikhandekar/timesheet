@@ -1,12 +1,12 @@
 /**
  * 
  */
-package com.company.timesheet.profile.project.action;
+package com.company.timesheet.project.action;
 
 import java.util.List;
 
-import com.company.timesheet.profile.project.dao.ListProjectDAO;
-import com.company.timesheet.profile.project.pojo.ProjectDetail;
+import com.company.timesheet.project.dao.ListProjectDAO;
+import com.company.timesheet.project.pojo.ProjectDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

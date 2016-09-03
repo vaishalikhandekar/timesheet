@@ -93,27 +93,27 @@
     	
     <definition name="ProjectNav" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Project Nav" />
-        <put-attribute name="body" value="/components/profile/jsp/project/ProjectNav.jsp" />
+        <put-attribute name="body" value="/components/project/jsp/project/ProjectNav.jsp" />
     </definition>
     
     <definition name="CreateProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Create Project" />
-        <put-attribute name="body" value="/components/profile/jsp/project/CreateProject.jsp" />
+        <put-attribute name="body" value="/components/project/jsp/project/CreateProject.jsp" />
     </definition>
     
     <definition name="ListProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="List Project" />
-        <put-attribute name="body" value="/components/profile/jsp/project/ListProject.jsp" />
+        <put-attribute name="body" value="/components/project/jsp/project/ListProject.jsp" />
     </definition>
     
     <definition name="UpdateProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Update Project" />
-        <put-attribute name="body" value="/components/profile/jsp/project/UpdateProject.jsp" />
+        <put-attribute name="body" value="/components/project/jsp/project/UpdateProject.jsp" />
     </definition>
     
     <definition name="ReadProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Read Project" />
-        <put-attribute name="body" value="/components/profile/jsp/project/ReadProject.jsp" />
+        <put-attribute name="body" value="/components/project/jsp/project/ReadProject.jsp" />
     </definition>
     
     

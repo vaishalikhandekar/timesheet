@@ -1,4 +1,4 @@
-package com.company.timesheet.profile.project.pojo;
+package com.company.timesheet.project.pojo;
 
 public class ProjectSearchDetails {
 

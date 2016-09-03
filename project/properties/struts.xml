@@ -88,32 +88,32 @@
             <result type="tiles">CreateProject</result>
         </action>
 
-        <action name="CreateProjectSubmit" class="com.company.timesheet.profile.project.action.CreateProjectAction">
+        <action name="CreateProjectSubmit" class="com.company.timesheet.project.action.CreateProjectAction">
             <result name="success" type="redirect">
                 <param name="location">/ListProject</param>
             </result>
             <result name="error">/index</result>
         </action>
 
-        <action name="ListProject" class="com.company.timesheet.profile.project.action.ListProjectAction">
+        <action name="ListProject" class="com.company.timesheet.project.action.ListProjectAction">
             <result name="success" type="tiles">ListProject</result>
             <result name="error">/index</result>
         </action>
 
-        <action name="DeleteProject" class="com.company.timesheet.profile.project.action.DeleteProjectAction">
+        <action name="DeleteProject" class="com.company.timesheet.project.action.DeleteProjectAction">
             <result name="success" type="redirect">
                 <param name="location">/ListProject</param>
             </result>
             <result name="error">/index</result>
         </action>
 
-        <action name="ReadProject" class="com.company.timesheet.profile.project.action.ReadProjectAction">
+        <action name="ReadProject" class="com.company.timesheet.project.action.ReadProjectAction">
             <result name="SENTTOUPDATE" type="tiles">UpdateProject</result>
             <result name="success" type="tiles">ReadProject</result>
             <result name="error">/index</result>
         </action>
 
-        <action name="UpdateProjectSubmit" class="com.company.timesheet.profile.project.action.UpdateProjectAction">
+        <action name="UpdateProjectSubmit" class="com.company.timesheet.project.action.UpdateProjectAction">
             <result name="success" type="redirect">
                 <param name="location"> /ListProject </param>
             </result>

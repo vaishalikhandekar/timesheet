@@ -1,14 +1,14 @@
 /**
  * 
  */
-package com.company.timesheet.profile.project.action;
+package com.company.timesheet.project.action;
 
 import java.util.List;
 
-import com.company.timesheet.profile.project.dao.SearchProjectDAO;
-import com.company.timesheet.profile.project.pojo.ProjectDetail;
-import com.company.timesheet.profile.project.pojo.ProjectSearchDetails;
-import com.company.timesheet.profile.project.pojo.ProjectSearchResult;
+import com.company.timesheet.project.dao.SearchProjectDAO;
+import com.company.timesheet.project.pojo.ProjectDetail;
+import com.company.timesheet.project.pojo.ProjectSearchDetails;
+import com.company.timesheet.project.pojo.ProjectSearchResult;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

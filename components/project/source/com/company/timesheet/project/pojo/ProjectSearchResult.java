@@ -1,4 +1,4 @@
-package com.company.timesheet.profile.project.pojo;
+package com.company.timesheet.project.pojo;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -10,7 +10,7 @@ pageEncoding="ISO-8859-1"%>
     </head>
     <body>
 
-        <jsp:include page="/components/profile/jsp/project/ProjectNav.jsp"></jsp:include>
+        <jsp:include page="/components/project/jsp/project/ProjectNav.jsp"></jsp:include>
 
         <s:form action="/ListOfPersonInTheProject" method="post">
 

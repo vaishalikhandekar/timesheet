@@ -1,25 +1,22 @@
 /**
  * 
  */
-package com.company.timesheet.profile.project.action;
+package com.company.timesheet.project.action;
 
 import com.company.timesheet.core.util.CRUDConstants;
-import com.company.timesheet.profile.project.dao.DeleteProjectDAO;
-import com.company.timesheet.profile.project.pojo.ProjectDetail;
+import com.company.timesheet.project.dao.CreateProjectDAO;
+import com.company.timesheet.project.pojo.ProjectDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * @author vaish
  *
  */
-public class DeleteProjectAction extends ActionSupport {
-		
-	/**
-	 * 
-	 */
+public class CreateProjectAction extends ActionSupport {
+	
 	private static final long serialVersionUID = 1L;
 	
-	ProjectDetail projectDetail = null;
+	private ProjectDetail projectDetail;
 	
 	public ProjectDetail getProjectDetail() {
 		return projectDetail;
@@ -32,16 +29,10 @@ public class DeleteProjectAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		
-		System.out.println("projectId" +projectDetail.getProjectID());
-		
 		String pageForwardStr = "";
 		
-		DeleteProjectDAO deleteProjectDAO = new DeleteProjectDAO();
-		String returnMassegeStr = deleteProjectDAO.deleteProject(projectDetail);
-		
-		
-		// 
-		
+		CreateProjectDAO createProjectDAO = new CreateProjectDAO();
+		String returnMassegeStr = createProjectDAO.createProject(projectDetail);
 		
 		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
 
@@ -53,10 +44,7 @@ public class DeleteProjectAction extends ActionSupport {
 
 		}
 		
-
 		return pageForwardStr;
-	
-		
 	}
-	
+
 }

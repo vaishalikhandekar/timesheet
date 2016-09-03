@@ -5,8 +5,6 @@ package com.company.timesheet.profile.projectpersonlink.action;
 
 import java.util.List;
 
-import com.company.timesheet.profile.project.dao.ListProjectDAO;
-import com.company.timesheet.profile.project.pojo.ProjectDetail;
 import com.company.timesheet.profile.projectpersonlink.dao.ListOfPersonInTheProjectDAO;
 import com.company.timesheet.profile.projectpersonlink.pojo.ProjectPersonLinkDetail;
 import com.opensymphony.xwork2.ActionSupport;

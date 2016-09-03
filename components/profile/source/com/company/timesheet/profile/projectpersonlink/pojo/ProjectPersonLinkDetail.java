@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
-import com.company.timesheet.profile.project.pojo.ProjectDetail;
+import com.company.timesheet.project.pojo.ProjectDetail;
 
 /**
  * @author vaish

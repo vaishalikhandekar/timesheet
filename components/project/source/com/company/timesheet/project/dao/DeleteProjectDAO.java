@@ -1,20 +1,18 @@
 /**
  * 
  */
-package com.company.timesheet.profile.project.dao;
+package com.company.timesheet.project.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.swing.JOptionPane;
-
 import com.company.timesheet.core.audittrail.dao.CreateAuditTrailDAO;
 import com.company.timesheet.core.audittrail.pojo.AuditTrailDetails;
 import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
-import com.company.timesheet.profile.project.pojo.ProjectDetail;
+import com.company.timesheet.project.pojo.ProjectDetail;
 
 /**
  * @author vaish

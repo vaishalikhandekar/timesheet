@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.company.timesheet.core.util.dataaccess.DBConnection;
-import com.company.timesheet.profile.project.pojo.ProjectDetail;
 import com.company.timesheet.profile.projectpersonlink.pojo.ProjectPersonLinkDetail;
 
 /**

@@ -13,8 +13,8 @@ import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.JavaUtildates;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
 import com.company.timesheet.core.util.type.UniqueID;
-import com.company.timesheet.profile.project.pojo.ProjectDetail;
 import com.company.timesheet.profile.projectpersonlink.pojo.ProjectPersonLinkDetail;
+import com.company.timesheet.project.pojo.ProjectDetail;
 
 /**
  * @author vaish
