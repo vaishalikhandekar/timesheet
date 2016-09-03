@@ -192,7 +192,9 @@
                                 <td><s:url var="updateEmployeeURL" action="ReadEmployee" escapeAmp="false">
                                         <s:param name="employeeDetail.employeeID" value="%{employeeID}" />
                                         <s:param name="act" value="%{updateAction}" />
-                                    </s:url> <s:a href="%{updateEmployeeURL}">Update</s:a> <a href="#DeleteEmployee" data-toggle="modal">Delete</a></td>
+                                    </s:url> <s:a href="%{updateEmployeeURL}">Update</s:a> 
+                                    
+                                    <a href="#DeleteEmployee" data-toggle="modal">Delete</a></td>
                             </tr>
                         </s:iterator>
 
