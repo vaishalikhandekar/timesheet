@@ -1,0 +1,8 @@
+# Build folders
+build
+buildlogs
+
+# Ignore classes folder
+*.class
+
+NewFolder
