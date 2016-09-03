@@ -1,4 +1,4 @@
-package com.company.timesheet.profile.employee.dao;
+package com.company.timesheet.profile.person.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,17 +7,18 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 import com.company.timesheet.core.util.dataaccess.DBConnection;
 import com.company.timesheet.core.util.CRUDConstants;
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
-import com.company.timesheet.profile.employee.pojo.UsersDetail;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
+import com.company.timesheet.profile.person.pojo.UsersDetail;
 
 /**
  * PersonLoginDAO class creating logic for person login
  * 
  * @author vaish
  */
-public class LoginEmployeeDAO {
+public class PersonLoginDAO {
 
 	PreparedStatement preparedStatement;
 

@@ -1,4 +1,4 @@
-package com.company.timesheet.profile.employee.pojo;
+package com.company.timesheet.profile.person.pojo;
 
 import java.sql.Date;
 
@@ -6,7 +6,7 @@ import java.sql.Date;
  * @author vaish
  *
  */
-public class EmployeeSearchCriteria {
+public class PersonSearchCriteria {
 
 	private String	firstName;
 

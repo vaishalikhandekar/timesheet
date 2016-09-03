@@ -1,4 +1,4 @@
-package com.company.timesheet.profile.employee.action;
+package com.company.timesheet.profile.person.action;
 
 import java.util.Map;
 
@@ -6,10 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.company.timesheet.profile.employee.pojo.UsersDetail;
+import com.company.timesheet.profile.person.pojo.UsersDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class LogOutEmployeeAction extends ActionSupport implements SessionAware {
+public class PersonLogOutAction extends ActionSupport implements SessionAware {
 
 	private static final long serialVersionUID = 1L;
 

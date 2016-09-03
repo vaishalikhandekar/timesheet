@@ -1,4 +1,4 @@
-package com.company.timesheet.profile.employee.dao;
+package com.company.timesheet.profile.person.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,14 +10,14 @@ import com.company.timesheet.core.audittrail.pojo.AuditTrailDetails;
 import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.JavaUtildates;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
 
-public class UpdateEmployeeDAO {
+public class PersonUpdateDAO {
 	PreparedStatement preparedStatement = null;
 	Connection connection = null;
 	ResultSet resultSet = null;
 	
-	public String updateEmployee(EmployeeDetail employeeDetail){
+	public String updateEmployee(PersonDetail employeeDetail){
 		
 		
 		String returnMassegeStr = "";
@@ -70,7 +70,7 @@ public class UpdateEmployeeDAO {
 
 	}
 
-	public int returnVersionNumber(EmployeeDetail employeeDetail) {
+	public int returnVersionNumber(PersonDetail employeeDetail) {
 
 		int versionNumber = 0;
 		try {
@@ -90,7 +90,7 @@ public class UpdateEmployeeDAO {
 		return versionNumber;
 	}
 
-	public void versionNumberIncreament(EmployeeDetail employeeDetail) {
+	public void versionNumberIncreament(PersonDetail employeeDetail) {
 
 		try {
 

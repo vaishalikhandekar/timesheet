@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.company.timesheet.core.util.dataaccess.DBConnection;
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.company.timesheet.project.pojo.ProjectDetail;
 import com.company.timesheet.project.pojo.ProjectSearchCriteria;
 import com.company.timesheet.project.pojo.ProjectSearchDetails;
@@ -27,7 +27,7 @@ public class SearchProjectDAO {
 
 		List<ProjectDetail> projectDetailList = new ArrayList<ProjectDetail>();
 		ProjectSearchCriteria projectSearchCriteria = projectSearchDetails.getProjectSearchCriteria();
-		EmployeeDetail employeeDetail = null;
+		PersonDetail employeeDetail = null;
 
 		String whereStr = "";
 

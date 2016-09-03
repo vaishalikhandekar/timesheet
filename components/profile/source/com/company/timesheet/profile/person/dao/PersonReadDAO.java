@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.company.timesheet.profile.employee.dao;
+package com.company.timesheet.profile.person.dao;
 
 import java.beans.Statement;
 import java.sql.Connection;
@@ -11,20 +11,20 @@ import java.sql.SQLException;
 
 import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
 
 /**
  * @author vaish
  *
  */
-public class ReadEmployeeDAO {
+public class PersonReadDAO {
 	
 	PreparedStatement preparedStatement = null;
 	ResultSet resultSet = null;
 	Statement statement = null;
 	String returnMassegeStr = "";
 	
-	public String readEmployee(EmployeeDetail employeeDetail){
+	public String readEmployee(PersonDetail employeeDetail){
 		
 		String employeeSQLStr = "SELECT * FROM EMPLOYEE WHERE  employeeID=\'" + employeeDetail.getEmployeeID() + "\' ";
 

@@ -1,22 +1,22 @@
-package com.company.timesheet.profile.employee.action;
+package com.company.timesheet.profile.person.action;
 
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.company.timesheet.core.util.CRUDConstants;
-import com.company.timesheet.profile.employee.dao.RegisterEmployeeDAO;
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
+import com.company.timesheet.profile.person.dao.PersonCreateDAO;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class CreateEmployeeAction extends ActionSupport implements
+public class PersonCreateAction extends ActionSupport implements
 		SessionAware {
 
 	private static final long serialVersionUID = 1L;
 
 	private Map<String, Object> session;
 	
-	public EmployeeDetail employeeDetail;
+	public PersonDetail employeeDetail;
 
 	public void setSession(Map<String, Object> sessionInput) {
 		this.session = sessionInput;
@@ -26,7 +26,7 @@ public class CreateEmployeeAction extends ActionSupport implements
 	/**
 	 * @return the personDetail
 	 */
-	public EmployeeDetail getEmployeeDetail() {
+	public PersonDetail getEmployeeDetail() {
 		return this.employeeDetail;
 	}
 
@@ -34,7 +34,7 @@ public class CreateEmployeeAction extends ActionSupport implements
 	 * @param personDetail
 	 *            the personDetail to set
 	 */
-	public void setEmployeeDetail(EmployeeDetail employeeDetail) {
+	public void setEmployeeDetail(PersonDetail employeeDetail) {
 		this.employeeDetail = employeeDetail;
 	}
 
@@ -42,7 +42,7 @@ public class CreateEmployeeAction extends ActionSupport implements
 
 		String pageForwardStr = "";
 
-		RegisterEmployeeDAO registerEmployeeDAO = new RegisterEmployeeDAO();
+		PersonCreateDAO registerEmployeeDAO = new PersonCreateDAO();
 		String returnMassegeStr = registerEmployeeDAO
 				.registerEmployee(employeeDetail);
 

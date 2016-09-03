@@ -1,4 +1,4 @@
-package com.company.timesheet.profile.employee.dao;
+package com.company.timesheet.profile.person.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,20 +6,21 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import com.company.timesheet.core.util.dataaccess.DBConnection;
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
-import com.company.timesheet.profile.employee.pojo.EmployeeSearchCriteria;
-import com.company.timesheet.profile.employee.pojo.EmployeeSearchDetails;
 
-public class SearchEmployeeDAO {
+import com.company.timesheet.core.util.dataaccess.DBConnection;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
+import com.company.timesheet.profile.person.pojo.PersonSearchCriteria;
+import com.company.timesheet.profile.person.pojo.PersonSearchDetails;
+
+public class PersonSearchDAO {
 
 	Connection connection = null;
 
-	public List<EmployeeDetail> searchEmployeeInfo(EmployeeSearchDetails employeeSearchDetails) {
+	public List<PersonDetail> searchEmployeeInfo(PersonSearchDetails employeeSearchDetails) {
 
-		List<EmployeeDetail> employeeDetailList = new ArrayList<EmployeeDetail>();
-		EmployeeSearchCriteria employeeSearchCriteria = employeeSearchDetails.getEmployeeSearchCriteria();
-		EmployeeDetail employeeDetail = null;
+		List<PersonDetail> employeeDetailList = new ArrayList<PersonDetail>();
+		PersonSearchCriteria employeeSearchCriteria = employeeSearchDetails.getEmployeeSearchCriteria();
+		PersonDetail employeeDetail = null;
 
 		String whereStr = "";
 
@@ -50,7 +51,7 @@ public class SearchEmployeeDAO {
 
 				while (resultSet.next()) {
 
-					employeeDetail = new EmployeeDetail();
+					employeeDetail = new PersonDetail();
 					employeeDetail.setEmployeeID(resultSet.getLong("employeeID"));
 					employeeDetail.setTitle(resultSet.getString("title"));
 					employeeDetail.setFirstName(resultSet.getString("firstName"));

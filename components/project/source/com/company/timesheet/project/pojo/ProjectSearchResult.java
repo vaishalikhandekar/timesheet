@@ -3,7 +3,7 @@ package com.company.timesheet.project.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
 
 public class ProjectSearchResult {
 

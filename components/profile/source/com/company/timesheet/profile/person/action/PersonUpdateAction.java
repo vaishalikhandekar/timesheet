@@ -1,29 +1,29 @@
 /**
  * 
  */
-package com.company.timesheet.profile.employee.action;
+package com.company.timesheet.profile.person.action;
 
 import com.company.timesheet.core.util.CRUDConstants;
-import com.company.timesheet.profile.employee.dao.ReadEmployeeDAO;
-import com.company.timesheet.profile.employee.dao.UpdateEmployeeDAO;
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
+import com.company.timesheet.profile.person.dao.PersonReadDAO;
+import com.company.timesheet.profile.person.dao.PersonUpdateDAO;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * @author vaish
  *
  */
-public class UpdateEmployeeAction extends ActionSupport {
+public class PersonUpdateAction extends ActionSupport {
 	
 private static final long serialVersionUID = 1L;
 	
-	private EmployeeDetail employeeDetail;
+	private PersonDetail employeeDetail;
 
-	public EmployeeDetail getEmployeeDetail() {
+	public PersonDetail getEmployeeDetail() {
 		return employeeDetail;
 	}
 
-	public void setEmployeeDetail(EmployeeDetail employeeDetail) {
+	public void setEmployeeDetail(PersonDetail employeeDetail) {
 		this.employeeDetail = employeeDetail;
 	}
 
@@ -33,7 +33,7 @@ private static final long serialVersionUID = 1L;
 	
 		String pageForwardStr = "";
 
-		UpdateEmployeeDAO updateEmployeeDAO = new UpdateEmployeeDAO();
+		PersonUpdateDAO updateEmployeeDAO = new PersonUpdateDAO();
 		String returnMassegeStr = updateEmployeeDAO.updateEmployee(employeeDetail);
 		setEmployeeDetail(employeeDetail);
 

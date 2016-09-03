@@ -1,4 +1,4 @@
-package com.company.timesheet.profile.employee.dao;
+package com.company.timesheet.profile.person.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.company.timesheet.core.util.dataaccess.DBConnection;
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.company.timesheet.profile.timesheet.pojo.TimeSheetDetail;
 
-public class ListEmployeeDAO {
+public class PersonListDAO {
 	
-	public  List<EmployeeDetail> listEmployee(){
+	public  List<PersonDetail> listEmployee(){
 		
-		 List<EmployeeDetail> employeeDetailList = new ArrayList<EmployeeDetail>();
+		 List<PersonDetail> employeeDetailList = new ArrayList<PersonDetail>();
 		 
 		 Connection connection = null;
 			ResultSet resultSet;
@@ -32,7 +32,7 @@ public class ListEmployeeDAO {
 
 				while (resultSet.next()) {
 					
-					EmployeeDetail employeeDetail = new EmployeeDetail();
+					PersonDetail employeeDetail = new PersonDetail();
 					
 					employeeDetail.setTitle(resultSet.getString("title"));
 					employeeDetail.setEmployeeID(resultSet.getLong("employeeID"));

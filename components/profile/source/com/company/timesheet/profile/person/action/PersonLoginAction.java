@@ -1,4 +1,4 @@
-package com.company.timesheet.profile.employee.action;
+package com.company.timesheet.profile.person.action;
 
 import java.util.Map;
 
@@ -8,11 +8,11 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.company.timesheet.core.util.CRUDConstants;
-import com.company.timesheet.profile.employee.dao.LoginEmployeeDAO;
-import com.company.timesheet.profile.employee.pojo.UsersDetail;
+import com.company.timesheet.profile.person.dao.PersonLoginDAO;
+import com.company.timesheet.profile.person.pojo.UsersDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class LoginEmployeeAction extends ActionSupport implements SessionAware, ServletRequestAware {
+public class PersonLoginAction extends ActionSupport implements SessionAware, ServletRequestAware {
 
 	private static final long serialVersionUID = 1L;
 
@@ -75,7 +75,7 @@ public class LoginEmployeeAction extends ActionSupport implements SessionAware, 
 		 * } else {
 		 */
 
-		LoginEmployeeDAO loginEmployeeDAO = new LoginEmployeeDAO();
+		PersonLoginDAO loginEmployeeDAO = new PersonLoginDAO();
 		String returnMassegeStr = loginEmployeeDAO.login(usersDetail);
 		session.put("employeeID", usersDetail.getemployeeID());
 

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.company.timesheet.profile.employee.dao;
+package com.company.timesheet.profile.person.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,18 +12,18 @@ import com.company.timesheet.core.audittrail.dao.CreateAuditTrailDAO;
 import com.company.timesheet.core.audittrail.pojo.AuditTrailDetails;
 import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
 
 /**
  * @author vaish
  *
  */
-public class DeleteEmployeeDAO {
+public class PersonDeleteDAO {
 	
 	Connection connection = null;
 	ResultSet resultSet = null;
 	
-	public String deleteEmployee(EmployeeDetail employeeDetail){
+	public String deleteEmployee(PersonDetail employeeDetail){
 		
 		String returnMassegeStr = "";
 		

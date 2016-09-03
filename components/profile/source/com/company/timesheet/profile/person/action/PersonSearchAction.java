@@ -1,4 +1,4 @@
-package com.company.timesheet.profile.employee.action;
+package com.company.timesheet.profile.person.action;
 
 import java.util.List;
 import java.util.Map;
@@ -8,16 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.company.timesheet.core.util.CRUDConstants;
-import com.company.timesheet.profile.employee.dao.SearchEmployeeDAO;
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
-import com.company.timesheet.profile.employee.pojo.EmployeeSearchDetails;
-import com.company.timesheet.profile.employee.pojo.EmployeeSearchResult;
-import com.company.timesheet.profile.employee.pojo.EmployeeSearchDetails;
-import com.company.timesheet.profile.employee.pojo.EmployeeSearchResult;
+import com.company.timesheet.profile.person.dao.PersonSearchDAO;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
+import com.company.timesheet.profile.person.pojo.PersonSearchDetails;
+import com.company.timesheet.profile.person.pojo.PersonSearchResult;
 import com.company.timesheet.profile.projectpersonlink.pojo.ProjectPersonLinkDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class SearchEmployeeAction extends ActionSupport implements SessionAware {
+public class PersonSearchAction extends ActionSupport implements SessionAware {
 
 	private static final long serialVersionUID = 1L;
 
@@ -27,8 +25,8 @@ public class SearchEmployeeAction extends ActionSupport implements SessionAware 
 
 	
 
-	public  EmployeeSearchDetails employeeSearchDetails;
-	public EmployeeSearchResult employeeSearchResult;
+	public  PersonSearchDetails employeeSearchDetails;
+	public PersonSearchResult employeeSearchResult;
 
 	public void setSession(Map<String, Object> sessionInput) {
 		this.session = sessionInput;
@@ -52,7 +50,7 @@ public class SearchEmployeeAction extends ActionSupport implements SessionAware 
 	/**
 	 * @return the personSearchDetails
 	 */
-	public EmployeeSearchDetails getEmployeeSearchDetails() {
+	public PersonSearchDetails getEmployeeSearchDetails() {
 		return employeeSearchDetails;
 	}
 
@@ -60,7 +58,7 @@ public class SearchEmployeeAction extends ActionSupport implements SessionAware 
 	 * @param personSearchDetails
 	 *            the personSearchDetails to set
 	 */
-	public void setPersonSearchDetails(EmployeeSearchDetails employeeSearchDetails) {
+	public void setPersonSearchDetails(PersonSearchDetails employeeSearchDetails) {
 		this.employeeSearchDetails = employeeSearchDetails;
 	}
 
@@ -68,14 +66,14 @@ public class SearchEmployeeAction extends ActionSupport implements SessionAware 
 	/**
 	 * @return the employeeSearchResult
 	 */
-	public EmployeeSearchResult getEmployeeSearchResult() {
+	public PersonSearchResult getEmployeeSearchResult() {
 		return employeeSearchResult;
 	}
 
 	/**
 	 * @param personSearchResult the personSearchResult to set
 	 */
-	public void setEmployeeSearchResult(EmployeeSearchResult employeeSearchResult) {
+	public void setEmployeeSearchResult(PersonSearchResult employeeSearchResult) {
 		this.employeeSearchResult = employeeSearchResult;
 	}
 	
@@ -84,13 +82,13 @@ public class SearchEmployeeAction extends ActionSupport implements SessionAware 
 
 		String pageForwardStr = "";
 
-		SearchEmployeeDAO searchPersonDAO = new SearchEmployeeDAO();
-		List<EmployeeDetail> employeeDetailList = searchPersonDAO.searchEmployeeInfo(employeeSearchDetails);
+		PersonSearchDAO searchPersonDAO = new PersonSearchDAO();
+		List<PersonDetail> employeeDetailList = searchPersonDAO.searchEmployeeInfo(employeeSearchDetails);
 
 		long numberOfEmployee = employeeDetailList.size();
 	
 
-		this.employeeSearchResult = new EmployeeSearchResult();
+		this.employeeSearchResult = new PersonSearchResult();
 
 		employeeSearchResult.setNumberOfEmployee(numberOfEmployee);
 		employeeSearchResult.setEmployeeDetailList(employeeDetailList);
@@ -102,7 +100,7 @@ public class SearchEmployeeAction extends ActionSupport implements SessionAware 
 				
 				ProjectPersonLinkDetail projectPersonLinkDetail = new ProjectPersonLinkDetail();
 					
-				EmployeeDetail employeeDetail = employeeDetailList.get(0);
+				PersonDetail employeeDetail = employeeDetailList.get(0);
 				projectPersonLinkDetail.setEmployeeDetail(employeeDetail);
 			
 		if (employeeDetailList != null) {

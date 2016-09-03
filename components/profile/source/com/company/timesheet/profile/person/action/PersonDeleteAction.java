@@ -1,28 +1,28 @@
 /**
  * 
  */
-package com.company.timesheet.profile.employee.action;
+package com.company.timesheet.profile.person.action;
 
 import com.company.timesheet.core.util.CRUDConstants;
-import com.company.timesheet.profile.employee.dao.DeleteEmployeeDAO;
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
+import com.company.timesheet.profile.person.dao.PersonDeleteDAO;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * @author vaish
  *
  */
-public class DeleteEmployeeAction extends ActionSupport {
+public class PersonDeleteAction extends ActionSupport {
 	
-	private EmployeeDetail employeeDetail;
+	private PersonDetail employeeDetail;
 	
-	public EmployeeDetail getEmployeeDetail() {
+	public PersonDetail getEmployeeDetail() {
 		return employeeDetail;
 	}
 
 
 
-	public void setEmployeeDetail(EmployeeDetail employeeDetail) {
+	public void setEmployeeDetail(PersonDetail employeeDetail) {
 		this.employeeDetail = employeeDetail;
 	}
 
@@ -33,7 +33,7 @@ public class DeleteEmployeeAction extends ActionSupport {
 		
 		String pageForwardStr = "";
 		
-		DeleteEmployeeDAO deleteEmployeeDAO = new DeleteEmployeeDAO();
+		PersonDeleteDAO deleteEmployeeDAO = new PersonDeleteDAO();
 		String returnMassegeStr = deleteEmployeeDAO.deleteEmployee(employeeDetail);
 
 		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.company.timesheet.project.pojo.ProjectDetail;
 
 /**
@@ -36,7 +36,7 @@ public class ProjectPersonLinkDetail {
 	
 	private ProjectDetail projectDetail;
 	
-	private EmployeeDetail employeeDetail;
+	private PersonDetail employeeDetail;
 	
 	List<String> errorMessageList = new ArrayList<String>();
 
@@ -121,11 +121,11 @@ public class ProjectPersonLinkDetail {
 		this.projectDetail = projectDetail;
 	}
 
-	public EmployeeDetail getEmployeeDetail() {
+	public PersonDetail getEmployeeDetail() {
 		return employeeDetail;
 	}
 
-	public void setEmployeeDetail(EmployeeDetail employeeDetail) {
+	public void setEmployeeDetail(PersonDetail employeeDetail) {
 		this.employeeDetail = employeeDetail;
 	}
 

@@ -5,7 +5,7 @@ package com.company.timesheet.profile.timesheet.action;
 
 import java.util.List;
 
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.company.timesheet.profile.timesheet.dao.TimeSheetListDAO;
 import com.company.timesheet.profile.timesheet.pojo.TimeSheetDetail;
 import com.opensymphony.xwork2.ActionSupport;

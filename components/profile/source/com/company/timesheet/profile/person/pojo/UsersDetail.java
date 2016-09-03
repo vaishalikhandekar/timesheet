@@ -1,4 +1,4 @@
-package com.company.timesheet.profile.employee.pojo;
+package com.company.timesheet.profile.person.pojo;
 
 import java.sql.Date;
 import java.util.ArrayList;

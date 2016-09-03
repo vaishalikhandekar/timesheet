@@ -54,37 +54,37 @@
     
     <definition name="CreateEmployee" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Create Employee" />
-        <put-attribute name="body" value="/components/profile/jsp/employee/EmployeeRegistration.jsp" />
+        <put-attribute name="body" value="/components/profile/jsp/person/PersonRegistration.jsp" />
     </definition>
     
     <definition name="EmployeeHome" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Employee Home" />
-        <put-attribute name="body" value="/components/profile/jsp/employee/EmployeeHome.jsp" />
+        <put-attribute name="body" value="/components/profile/jsp/person/PersonHome.jsp" />
     </definition>
     
     <definition name="SearchEmployee" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Search Employee" />
-        <put-attribute name="body" value="/components/profile/jsp/employee/SearchEmployee.jsp" />
+        <put-attribute name="body" value="/components/profile/jsp/person/PersonSearch.jsp" />
     </definition>
     
     <definition name="ListEmployee" extends="userWorkspaceLayout">
         <put-attribute name="title" value="List Employee" />
-        <put-attribute name="body" value="/components/profile/jsp/employee/EmployeeList.jsp" />
+        <put-attribute name="body" value="/components/profile/jsp/person/PersonList.jsp" />
     </definition>
     
     <definition name="ListEmployeeForUpdate" extends="userWorkspaceLayout">
         <put-attribute name="title" value="List Employee" />
-        <put-attribute name="body" value="/components/profile/jsp/employee/EmployeeList.jsp" />
+        <put-attribute name="body" value="/components/profile/jsp/person/PersonList.jsp" />
     </definition>
     
    <!--  <definition name="UpdateEmployee" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Update Employee" />
-        <put-attribute name="body" value="/components/profile/jsp/employee/UpdateEmployee.jsp" />
+        <put-attribute name="body" value="/components/profile/jsp/person/PersonUpdate.jsp" />
     </definition> -->
     
      <definition name="SearchPerson" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Search Person" />
-        <put-attribute name="body" value="/components/profile/jsp/employee/SearchEmployee.jsp" />
+        <put-attribute name="body" value="/components/profile/jsp/person/PersonSearch.jsp" />
     </definition>
     
     

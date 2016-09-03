@@ -1,11 +1,11 @@
-package com.company.timesheet.profile.employee.pojo;
+package com.company.timesheet.profile.person.pojo;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class EmployeeDetail {
+public class PersonDetail {
 
 	private long employeeID;
 

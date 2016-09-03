@@ -1,4 +1,4 @@
-package com.company.timesheet.profile.employee.dao;
+package com.company.timesheet.profile.person.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,23 +13,22 @@ import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.JavaUtildates;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
 import com.company.timesheet.core.util.type.UniqueID;
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
-import com.company.timesheet.profile.employee.pojo.EmployeeSearchCriteria;
-import com.company.timesheet.profile.employee.pojo.EmployeeSearchDetails;
-import com.company.timesheet.profile.employee.pojo.UsersDetail;
-import com.company.timesheet.profile.employee.pojo.EmployeeDetail;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
+import com.company.timesheet.profile.person.pojo.PersonSearchCriteria;
+import com.company.timesheet.profile.person.pojo.PersonSearchDetails;
+import com.company.timesheet.profile.person.pojo.UsersDetail;
 
 /**
  * PersonRegistrationDAO class create logic for person registration
  */
-public class RegisterEmployeeDAO {
+public class PersonCreateDAO {
 
 	/**
 	 * 
 	 * @param employeeDetail
 	 * @return
 	 */
-	public String registerEmployee(EmployeeDetail employeeDetail) {
+	public String registerEmployee(PersonDetail employeeDetail) {
 
 		PreparedStatement preparedStatement = null;
 		String returnMassegeStr = "";
@@ -120,26 +119,26 @@ public class RegisterEmployeeDAO {
 	 * 
 	 * @param employeeDetail
 	 */
-	public boolean employeeExist(EmployeeDetail employeeDetail) {
+	public boolean employeeExist(PersonDetail employeeDetail) {
 
 		boolean employeeExistInd = false;
 
 		try {
 
-			EmployeeSearchCriteria employeeSearchCriteria = new EmployeeSearchCriteria();
+			PersonSearchCriteria employeeSearchCriteria = new PersonSearchCriteria();
 
 			employeeSearchCriteria.setFirstName(employeeDetail.getFirstName() == null ? "" : employeeDetail.getFirstName());
 			employeeSearchCriteria.setMiddleName(employeeDetail.getMiddleName() == null ? "" : employeeDetail.getMiddleName());
 			employeeSearchCriteria.setLastName(employeeDetail.getLastName() == null ? "" : employeeDetail.getLastName());
 
-			EmployeeSearchDetails employeeSearchDetails = new EmployeeSearchDetails();
+			PersonSearchDetails employeeSearchDetails = new PersonSearchDetails();
 			employeeSearchDetails.setEmployeeSearchCriteria(employeeSearchCriteria);
 
 			//
-			SearchEmployeeDAO searchPersonDAO = new SearchEmployeeDAO();
+			PersonSearchDAO searchPersonDAO = new PersonSearchDAO();
 
 			//
-			List<EmployeeDetail> employeeDetailList = searchPersonDAO.searchEmployeeInfo(employeeSearchDetails);
+			List<PersonDetail> employeeDetailList = searchPersonDAO.searchEmployeeInfo(employeeSearchDetails);
 
 			if (employeeDetailList.size() > 0) {
 
@@ -157,7 +156,7 @@ public class RegisterEmployeeDAO {
 
 	}
 
-	public boolean checkUserNameExist(EmployeeDetail employeeDetail) {
+	public boolean checkUserNameExist(PersonDetail employeeDetail) {
 
 		Connection connection = null;
 		try {
