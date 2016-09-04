@@ -25,8 +25,8 @@ public class PersonSearchAction extends ActionSupport implements SessionAware {
 
 	
 
-	public  PersonSearchDetails employeeSearchDetails;
-	public PersonSearchResult employeeSearchResult;
+	public  PersonSearchDetails personSearchDetails;
+	public PersonSearchResult personSearchResult;
 
 	public void setSession(Map<String, Object> sessionInput) {
 		this.session = sessionInput;
@@ -50,31 +50,31 @@ public class PersonSearchAction extends ActionSupport implements SessionAware {
 	/**
 	 * @return the personSearchDetails
 	 */
-	public PersonSearchDetails getEmployeeSearchDetails() {
-		return employeeSearchDetails;
+	public PersonSearchDetails getpersonSearchDetails() {
+		return personSearchDetails;
 	}
 
 	/**
 	 * @param personSearchDetails
 	 *            the personSearchDetails to set
 	 */
-	public void setPersonSearchDetails(PersonSearchDetails employeeSearchDetails) {
-		this.employeeSearchDetails = employeeSearchDetails;
+	public void setPersonSearchDetails(PersonSearchDetails personSearchDetails) {
+		this.personSearchDetails = personSearchDetails;
 	}
 
 
 	/**
-	 * @return the employeeSearchResult
+	 * @return the personSearchResult
 	 */
-	public PersonSearchResult getEmployeeSearchResult() {
-		return employeeSearchResult;
+	public PersonSearchResult getpersonSearchResult() {
+		return personSearchResult;
 	}
 
 	/**
 	 * @param personSearchResult the personSearchResult to set
 	 */
-	public void setEmployeeSearchResult(PersonSearchResult employeeSearchResult) {
-		this.employeeSearchResult = employeeSearchResult;
+	public void setpersonSearchResult(PersonSearchResult personSearchResult) {
+		this.personSearchResult = personSearchResult;
 	}
 	
 	
@@ -83,27 +83,27 @@ public class PersonSearchAction extends ActionSupport implements SessionAware {
 		String pageForwardStr = "";
 
 		PersonSearchDAO searchPersonDAO = new PersonSearchDAO();
-		List<PersonDetail> employeeDetailList = searchPersonDAO.searchEmployeeInfo(employeeSearchDetails);
+		List<PersonDetail> personDetailList = searchPersonDAO.searchpersonInfo(personSearchDetails);
 
-		long numberOfEmployee = employeeDetailList.size();
+		long numberOfperson = personDetailList.size();
 	
 
-		this.employeeSearchResult = new PersonSearchResult();
+		this.personSearchResult = new PersonSearchResult();
 
-		employeeSearchResult.setNumberOfEmployee(numberOfEmployee);
-		employeeSearchResult.setEmployeeDetailList(employeeDetailList);
+		personSearchResult.setNumberOfPerson(numberOfperson);
+		personSearchResult.setPersonDetailList(personDetailList);
 
 		//personSearchDetails.setPersonSearchResult(personSearchResult);
 		
 		
-				//Set EmployeeID into ProjectPersonLinkDetail
+				//Set personID into ProjectPersonLinkDetail
 				
 				ProjectPersonLinkDetail projectPersonLinkDetail = new ProjectPersonLinkDetail();
 					
-				PersonDetail employeeDetail = employeeDetailList.get(0);
-				projectPersonLinkDetail.setEmployeeDetail(employeeDetail);
+				PersonDetail personDetail = personDetailList.get(0);
+				//projectPersonLinkDetail.setProjectDetail(personDetail);
 			
-		if (employeeDetailList != null) {
+		if (personDetailList != null) {
 
 			pageForwardStr = SUCCESS;
 

@@ -27,8 +27,7 @@ public class SearchProjectDAO {
 
 		List<ProjectDetail> projectDetailList = new ArrayList<ProjectDetail>();
 		ProjectSearchCriteria projectSearchCriteria = projectSearchDetails.getProjectSearchCriteria();
-		PersonDetail employeeDetail = null;
-
+		
 		String whereStr = "";
 
 		String emptyStr = "";

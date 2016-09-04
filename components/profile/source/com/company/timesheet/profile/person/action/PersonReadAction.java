@@ -16,15 +16,15 @@ public class PersonReadAction extends ActionSupport {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private PersonDetail employeeDetail;
+	private PersonDetail personDetail;
 	String act = "";
 
-	public PersonDetail getEmployeeDetail() {
-		return employeeDetail;
+	public PersonDetail getpersonDetail() {
+		return personDetail;
 	}
 
-	public void setEmployeeDetail(PersonDetail employeeDetail) {
-		this.employeeDetail = employeeDetail;
+	public void setpersonDetail(PersonDetail personDetail) {
+		this.personDetail = personDetail;
 	}
 
 	public String getAct() {
@@ -40,8 +40,8 @@ public class PersonReadAction extends ActionSupport {
 		
 		String pageForwardStr = "";
 
-		PersonReadDAO readEmployeeDAO = new PersonReadDAO();
-		String returnMassegeStr = readEmployeeDAO.readEmployee(employeeDetail);
+		PersonReadDAO readPersonDAO = new PersonReadDAO();
+		String returnMassegeStr = readPersonDAO.readperson(personDetail);
 		
 		// session.put("addressLinkDetail", addressLinkDetail);
 

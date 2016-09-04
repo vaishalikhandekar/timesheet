@@ -13,39 +13,39 @@ import com.company.timesheet.profile.timesheet.pojo.TimeSheetDetail;
 
 public class PersonListDAO {
 	
-	public  List<PersonDetail> listEmployee(){
+	public  List<PersonDetail> listPerson(){
 		
-		 List<PersonDetail> employeeDetailList = new ArrayList<PersonDetail>();
+		 List<PersonDetail> personDetailList = new ArrayList<PersonDetail>();
 		 
 		 Connection connection = null;
 			ResultSet resultSet;
 			try {
 				connection = DBConnection.getDBConnection();
 
-				String employeeSQLStr = "SELECT * FROM EMPLOYEE WHERE	RECORDSTATUS='Active'";
+				String personSQLStr = "SELECT * FROM Person WHERE	RECORDSTATUS='Active'";
 
 				// statement = connection.createStatement();
 
-				PreparedStatement preparedStatement = connection.prepareStatement(employeeSQLStr);
+				PreparedStatement preparedStatement = connection.prepareStatement(personSQLStr);
 
 				resultSet = preparedStatement.executeQuery();
 
 				while (resultSet.next()) {
 					
-					PersonDetail employeeDetail = new PersonDetail();
+					PersonDetail personDetail = new PersonDetail();
 					
-					employeeDetail.setTitle(resultSet.getString("title"));
-					employeeDetail.setEmployeeID(resultSet.getLong("employeeID"));
-					employeeDetail.setFirstName(resultSet.getString("firstName"));
-					employeeDetail.setMiddleName(resultSet.getString("middleName"));
-					employeeDetail.setLastName(resultSet.getString("lastName"));
-					employeeDetail.setGender(resultSet.getString("gender"));
-					employeeDetail.setDateOfBirth(resultSet.getDate("dateOfBirth"));
-					employeeDetail.setRegistrationDate(resultSet.getTimestamp("registrationDate"));
-					employeeDetail.setStartDate(resultSet.getDate("startDate"));
-					employeeDetail.setEndDate(resultSet.getDate("endDate"));
+					personDetail.setTitle(resultSet.getString("title"));
+					personDetail.setPersonID(resultSet.getLong("personID"));
+					personDetail.setFirstName(resultSet.getString("firstName"));
+					personDetail.setMiddleName(resultSet.getString("middleName"));
+					personDetail.setLastName(resultSet.getString("lastName"));
+					personDetail.setGender(resultSet.getString("gender"));
+					personDetail.setDateOfBirth(resultSet.getDate("dateOfBirth"));
+					personDetail.setRegistrationDate(resultSet.getTimestamp("registrationDate"));
+					personDetail.setStartDate(resultSet.getDate("startDate"));
+					personDetail.setEndDate(resultSet.getDate("endDate"));
 					
-					employeeDetailList.add(employeeDetail);
+					personDetailList.add(personDetail);
 				}
 			
 			}catch (SQLException e) {
@@ -55,7 +55,7 @@ public class PersonListDAO {
 		
 		 
 		 
-		 return employeeDetailList;
+		 return personDetailList;
 	}
 
 }

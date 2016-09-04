@@ -23,7 +23,7 @@ public class PersonDeleteDAO {
 	Connection connection = null;
 	ResultSet resultSet = null;
 	
-	public String deleteEmployee(PersonDetail employeeDetail){
+	public String deletePerson(PersonDetail personDetail){
 		
 		String returnMassegeStr = "";
 		
@@ -33,7 +33,7 @@ public class PersonDeleteDAO {
 			 * of DBConnection class
 			 */
 			connection = DBConnection.getDBConnection();
-			String personSQLStr = "UPDATE	Employee SET	RECORDSTATUS='cancel'	WHERE	employeeID=" + employeeDetail.getEmployeeID();
+			String personSQLStr = "UPDATE	Person SET	RECORDSTATUS='cancel'	WHERE	personID=" + personDetail.getPersonID();
 			/**
 			 * sending sql statement to the database
 			 */
@@ -43,9 +43,9 @@ public class PersonDeleteDAO {
 			//inserting data into AuditTrail Table for Person Table
 			AuditTrailDetails auditTrailDetails = new AuditTrailDetails();
 			
-			auditTrailDetails.setTableName("Employee");
+			auditTrailDetails.setTableName("Person");
 			auditTrailDetails.setOperationType("Delete");
-			auditTrailDetails.setRelatedID(employeeDetail.getEmployeeID());
+			auditTrailDetails.setRelatedID(personDetail.getPersonID());
 			auditTrailDetails.setTransactionType("Online");
 			
 			CreateAuditTrailDAO createAuditTrailDAO = new CreateAuditTrailDAO();
@@ -56,9 +56,11 @@ public class PersonDeleteDAO {
 		} catch (SQLException e) {
 
 			e.printStackTrace();
+			returnMassegeStr = CRUDConstants.RETURN_MESSAGE_FAILURE;
+			
 		}
 		
-		return returnMassegeStr = CRUDConstants.RETURN_MESSAGE_SUCCESS;
+		return returnMassegeStr;
 	}
 
 }

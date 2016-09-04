@@ -43,7 +43,7 @@ public class ListOfPersonInTheProjectDAO {
 				
 				projectPersonLinkDetail.setProjectID(resultSet.getLong("projectID"));
 				//projectPersonLinkDetail.setProjectPersonLinkID(resultSet.getLong("projectEmployeeLinkID"));
-				projectPersonLinkDetail.setEmployeeID(resultSet.getLong("employeeID"));
+				//projectPersonLinkDetail.setEmployeeID(resultSet.getLong("employeeID"));
 				projectPersonLinkDetail.setRole(resultSet.getString("role"));
 				projectPersonLinkDetail.setComments(resultSet.getString("comments"));
 				projectPersonLinkDetail.setStartDate(resultSet.getDate("startDate"));

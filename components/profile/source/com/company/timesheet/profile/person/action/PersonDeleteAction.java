@@ -14,16 +14,16 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class PersonDeleteAction extends ActionSupport {
 	
-	private PersonDetail employeeDetail;
+	private PersonDetail personDetail;
 	
-	public PersonDetail getEmployeeDetail() {
-		return employeeDetail;
+	public PersonDetail getPersonDetail() {
+		return personDetail;
 	}
 
 
 
-	public void setEmployeeDetail(PersonDetail employeeDetail) {
-		this.employeeDetail = employeeDetail;
+	public void setPersonDetail(PersonDetail personDetail) {
+		this.personDetail = personDetail;
 	}
 
 
@@ -33,8 +33,8 @@ public class PersonDeleteAction extends ActionSupport {
 		
 		String pageForwardStr = "";
 		
-		PersonDeleteDAO deleteEmployeeDAO = new PersonDeleteDAO();
-		String returnMassegeStr = deleteEmployeeDAO.deleteEmployee(employeeDetail);
+		PersonDeleteDAO deletePersonDAO = new PersonDeleteDAO();
+		String returnMassegeStr = deletePersonDAO.deletePerson(personDetail);
 
 		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
 

@@ -59,7 +59,7 @@ public class CreateProjectDAO {
 
 				preparedStatement1.execute();
 				
-				//inserting data into AuditTrail Table for Employee Table
+				//inserting data into AuditTrail Table for Project Table
 				AuditTrailDetails auditTrailDetails = new AuditTrailDetails();
 				
 				auditTrailDetails.setTableName("Project");

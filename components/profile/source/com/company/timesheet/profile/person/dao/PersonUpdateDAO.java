@@ -17,14 +17,14 @@ public class PersonUpdateDAO {
 	Connection connection = null;
 	ResultSet resultSet = null;
 	
-	public String updateEmployee(PersonDetail employeeDetail){
+	public String updatePerson(PersonDetail personDetail){
 		
 		
 		String returnMassegeStr = "";
 
-		int versionNoFromUpdate = employeeDetail.getVersionNo();
+		int versionNoFromUpdate = personDetail.getVersionNo();
 
-		int versionNoFromDatabase = returnVersionNumber(employeeDetail);
+		int versionNoFromDatabase = returnVersionNumber(personDetail);
 		
 		if (versionNoFromUpdate == versionNoFromDatabase) {
 
@@ -32,14 +32,14 @@ public class PersonUpdateDAO {
 
 			try {
 				connection = DBConnection.getDBConnection();
-				String employeeSQLStr = "UPDATE	EMPLOYEE	SET title='" + employeeDetail.getTitle() + "',	firstName='"
-						+ employeeDetail.getFirstName() + "', middleName='" + employeeDetail.getMiddleName() + "', lastName='"
-						+ employeeDetail.getLastName() + "', gender='" + employeeDetail.getGender() + "', dateOfBirth = ? , versionNo ='"
-						+ versionNoFromDatabase + "' " + "	where	employeeID='" + employeeDetail.getEmployeeID() + "'";
+				String personSQLStr = "UPDATE	person	SET title='" + personDetail.getTitle() + "',	firstName='"
+						+ personDetail.getFirstName() + "', middleName='" + personDetail.getMiddleName() + "', lastName='"
+						+ personDetail.getLastName() + "', gender='" + personDetail.getGender() + "', dateOfBirth = ? , versionNo ='"
+						+ versionNoFromDatabase + "' " + "	where	personID='" + personDetail.getPersonID() + "'";
 
-				preparedStatement = connection.prepareStatement(employeeSQLStr);
+				preparedStatement = connection.prepareStatement(personSQLStr);
 
-				preparedStatement.setDate(1, JavaUtildates.convertUtilToSql(employeeDetail.getDateOfBirth()));
+				preparedStatement.setDate(1, JavaUtildates.convertUtilToSql(personDetail.getDateOfBirth()));
 				preparedStatement.executeUpdate();
 				
 				//inserting data into AuditTrail Table for Person Table
@@ -48,7 +48,7 @@ public class PersonUpdateDAO {
 				auditTrailDetails.setTableName("Person");
 				auditTrailDetails.setOperationType("Update");
 				auditTrailDetails.setUserName("Rahul");
-				auditTrailDetails.setRelatedID(employeeDetail.getEmployeeID());
+				auditTrailDetails.setRelatedID(personDetail.getPersonID());
 				auditTrailDetails.setTransactionType("Online");
 				
 				CreateAuditTrailDAO createAuditTrailDAO = new CreateAuditTrailDAO();
@@ -62,7 +62,7 @@ public class PersonUpdateDAO {
 			}
 
 		} else {
-			employeeDetail.getErrorMessageList().add("This Record has been already modified by another user, Please check");
+			personDetail.getErrorMessageList().add("This Record has been already modified by another user, Please check");
 			returnMassegeStr = CRUDConstants.RETURN_MESSAGE_FAILURE;
 		}
 
@@ -70,14 +70,14 @@ public class PersonUpdateDAO {
 
 	}
 
-	public int returnVersionNumber(PersonDetail employeeDetail) {
+	public int returnVersionNumber(PersonDetail personDetail) {
 
 		int versionNumber = 0;
 		try {
 			Connection connection = DBConnection.getDBConnection();
 
-			String employeeSQLStr = "SELECT	versionNo	FROM	EMPLOYEE	WHERE	 employeeID='" + employeeDetail.getEmployeeID() + "'";
-			PreparedStatement preparedStatement = connection.prepareStatement(employeeSQLStr);
+			String personSQLStr = "SELECT	versionNo	FROM	person	WHERE	 personID='" + personDetail.getPersonID() + "'";
+			PreparedStatement preparedStatement = connection.prepareStatement(personSQLStr);
 
 			resultSet = preparedStatement.executeQuery();
 			if (resultSet.next()) {
@@ -90,13 +90,13 @@ public class PersonUpdateDAO {
 		return versionNumber;
 	}
 
-	public void versionNumberIncreament(PersonDetail employeeDetail) {
+	public void versionNumberIncreament(PersonDetail personDetail) {
 
 		try {
 
 			Connection connection = DBConnection.getDBConnection();
 			// PersonDetail personDetail = new PersonDetail();
-			String PersonSQLStr = "UPDATE	EMPLOYEE	SET	versionNo	=	versionNo+1	WHERE	employeeID='" + employeeDetail.getEmployeeID() + "'";
+			String PersonSQLStr = "UPDATE	person	SET	versionNo	=	versionNo+1	WHERE	personID='" + personDetail.getPersonID() + "'";
 			PreparedStatement preparedStatement = connection.prepareStatement(PersonSQLStr);
 			preparedStatement.executeQuery();
 		} catch (SQLException e) {

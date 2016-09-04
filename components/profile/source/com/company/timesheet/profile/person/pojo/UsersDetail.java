@@ -14,7 +14,7 @@ public class UsersDetail {
 
 	private int versionNo;
 	
-	private long employeeID;
+	private long personID;
 	
 	private int accountEnabled;
 	
@@ -98,17 +98,17 @@ public class UsersDetail {
 	}
 
 	/**
-	 * @return the employeeID
+	 * @return the personID
 	 */
-	public long getemployeeID() {
-		return employeeID;
+	public long getPersonID() {
+		return personID;
 	}
 
 	/**
-	 * @param employeeID the employeeID to set
+	 * @param personID the personID to set
 	 */
-	public void setemployeeID(long employeeID) {
-		this.employeeID = employeeID;
+	public void setPersonID(long personID) {
+		this.personID = personID;
 	}
 
 

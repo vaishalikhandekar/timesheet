@@ -20,7 +20,7 @@ public class ProjectPersonLinkDetail {
 	
 	private Long projectID;
 	
-	private Long employeeID;
+	private Long personID;
 	
 	private String role;
 	
@@ -36,7 +36,7 @@ public class ProjectPersonLinkDetail {
 	
 	private ProjectDetail projectDetail;
 	
-	private PersonDetail employeeDetail;
+	private PersonDetail personDetail;
 	
 	List<String> errorMessageList = new ArrayList<String>();
 
@@ -57,12 +57,12 @@ public class ProjectPersonLinkDetail {
 		this.projectID = projectID;
 	}
 
-	public Long getEmployeeID() {
-		return employeeID;
+	public Long getpersonID() {
+		return personID;
 	}
 
-	public void setEmployeeID(Long employeeID) {
-		this.employeeID = employeeID;
+	public void setpersonID(Long personID) {
+		this.personID = personID;
 	}
 
 	public String getRole() {
@@ -121,12 +121,12 @@ public class ProjectPersonLinkDetail {
 		this.projectDetail = projectDetail;
 	}
 
-	public PersonDetail getEmployeeDetail() {
-		return employeeDetail;
+	public PersonDetail getPersonDetail() {
+		return personDetail;
 	}
 
-	public void setEmployeeDetail(PersonDetail employeeDetail) {
-		this.employeeDetail = employeeDetail;
+	public void setPersonDetail(PersonDetail personDetail) {
+		this.personDetail = personDetail;
 	}
 
 	public List<String> getErrorMessageList() {

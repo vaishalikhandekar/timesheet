@@ -17,14 +17,14 @@ public class PersonUpdateAction extends ActionSupport {
 	
 private static final long serialVersionUID = 1L;
 	
-	private PersonDetail employeeDetail;
+	private PersonDetail personDetail;
 
-	public PersonDetail getEmployeeDetail() {
-		return employeeDetail;
+	public PersonDetail getPersonDetail() {
+		return personDetail;
 	}
 
-	public void setEmployeeDetail(PersonDetail employeeDetail) {
-		this.employeeDetail = employeeDetail;
+	public void setPersonDetail(PersonDetail personDetail) {
+		this.personDetail = personDetail;
 	}
 
 	
@@ -33,9 +33,9 @@ private static final long serialVersionUID = 1L;
 	
 		String pageForwardStr = "";
 
-		PersonUpdateDAO updateEmployeeDAO = new PersonUpdateDAO();
-		String returnMassegeStr = updateEmployeeDAO.updateEmployee(employeeDetail);
-		setEmployeeDetail(employeeDetail);
+		PersonUpdateDAO updatepersonDAO = new PersonUpdateDAO();
+		String returnMassegeStr = updatepersonDAO.updatePerson(personDetail);
+		setPersonDetail(personDetail);
 
 		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
 

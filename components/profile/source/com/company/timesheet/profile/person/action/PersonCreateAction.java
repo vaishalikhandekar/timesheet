@@ -16,7 +16,7 @@ public class PersonCreateAction extends ActionSupport implements
 
 	private Map<String, Object> session;
 	
-	public PersonDetail employeeDetail;
+	public PersonDetail personDetail;
 
 	public void setSession(Map<String, Object> sessionInput) {
 		this.session = sessionInput;
@@ -26,25 +26,24 @@ public class PersonCreateAction extends ActionSupport implements
 	/**
 	 * @return the personDetail
 	 */
-	public PersonDetail getEmployeeDetail() {
-		return this.employeeDetail;
+	public PersonDetail getPersonDetail() {
+		return this.personDetail;
 	}
 
 	/**
 	 * @param personDetail
 	 *            the personDetail to set
 	 */
-	public void setEmployeeDetail(PersonDetail employeeDetail) {
-		this.employeeDetail = employeeDetail;
+	public void setPersonDetail(PersonDetail personDetail) {
+		this.personDetail = personDetail;
 	}
 
 	public String execute() throws Exception {
 
 		String pageForwardStr = "";
 
-		PersonCreateDAO registerEmployeeDAO = new PersonCreateDAO();
-		String returnMassegeStr = registerEmployeeDAO
-				.registerEmployee(employeeDetail);
+		PersonCreateDAO registerPersonDAO = new PersonCreateDAO();
+		String returnMassegeStr = registerPersonDAO.registerPerson(personDetail);
 
 		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
 

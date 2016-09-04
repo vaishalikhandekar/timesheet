@@ -2,30 +2,30 @@ package com.company.timesheet.profile.person.pojo;
 
 public class PersonSearchDetails {
 
-	private PersonSearchCriteria	employeeSearchCriteria;
+	private PersonSearchCriteria	personSearchCriteria;
 
-	private PersonSearchResult		employeeSearchResult;
+	private PersonSearchResult		personSearchResult;
 	
 	private String errorMessage;
 
-	public PersonSearchCriteria getEmployeeSearchCriteria() {
+	public PersonSearchCriteria getpersonSearchCriteria() {
 
-		return employeeSearchCriteria;
+		return personSearchCriteria;
 	}
 
-	public void setEmployeeSearchCriteria(PersonSearchCriteria employeeSearchCriteria) {
+	public void setpersonSearchCriteria(PersonSearchCriteria personSearchCriteria) {
 
-		this.employeeSearchCriteria = employeeSearchCriteria;
+		this.personSearchCriteria = personSearchCriteria;
 	}
 
-	public PersonSearchResult getEmployeeSearchResult() {
+	public PersonSearchResult getpersonSearchResult() {
 
-		return employeeSearchResult;
+		return personSearchResult;
 	}
 
-	public void setEmployeeSearchResult(PersonSearchResult employeeSearchResult) {
+	public void setpersonSearchResult(PersonSearchResult personSearchResult) {
 
-		this.employeeSearchResult = employeeSearchResult;
+		this.personSearchResult = personSearchResult;
 	}
 
 	

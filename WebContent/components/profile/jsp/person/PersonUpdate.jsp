@@ -9,7 +9,7 @@
 
 <script>
   $( function() {
-    $( "#updateEmployeeModal" ).dialog({
+    $( "#updatePersonModal" ).dialog({
       resizable: false,
       height: "auto",
       width: 200,
@@ -23,7 +23,7 @@
 	
      <div class="pull-right" class="container">
 
-        <div class="modal fade" id="updateEmployeeModal" data-keyboard="false" data-backdrop="static">
+        <div class="modal fade" id="updatePersonModal" data-keyboard="false" data-backdrop="static">
 
             <div class="modal-dialog modal-lg">
 
@@ -36,53 +36,53 @@
 
                     <div class="modal-body">
 	<s:form
-		action="/UpdateEmployeeSubmit"
+		action="/UpdatePersonSubmit"
 		method="POST">
 
 		
 		<table>
 			<tr>
 				<td>Title </td>
-				<td><s:textfield name="employeeDetail.title"
+				<td><s:textfield name="personDetail.title"
 					/></td>
 			</tr>
 
 			<tr>
 				<td>First Name </td>
-				<td><s:textfield name="employeeDetail.firstName"
+				<td><s:textfield name="personDetail.firstName"
 					/></td>
 			</tr>
 			<tr>
 				<td>Middle Name</td>
-				<td><s:textfield name="employeeDetail.middleName"
+				<td><s:textfield name="personDetail.middleName"
 					/></td>
 			</tr>
 			<tr>
 				<td>Last Name</td>
-				<td><s:textfield name="employeeDetail.lastName"
+				<td><s:textfield name="personDetail.lastName"
 					/></td>
 			</tr>
 			<tr>
 				<td>Gender</td>
-				<td><s:textfield name="employeeDetail.gender"
+				<td><s:textfield name="personDetail.gender"
 					/></td>
 			</tr>
 			<tr>
 				<td>Date Of Birth</td>
-				<td><s:textfield name="employeeDetail.dateOfBirth"
+				<td><s:textfield name="personDetail.dateOfBirth"
 					/></td>
 			</tr>
 			<tr>
 				<td>Registration Date</td>
-				<td><s:textfield name="employeeDetail.registrationDate"
+				<td><s:textfield name="personDetail.registrationDate"
 					/></td>
 			</tr>
 		</table>
 
                   <div class="modal-footer">
 				<td><s:submit type="submit" value="submit" class="btn btn-primary"/>
-                <s:hidden name="employeeDetail.employeeID"></s:hidden>
-                <s:hidden name="employeeDetail.versionNo"></s:hidden>
+                <s:hidden name="personDetail.personID"></s:hidden>
+                <s:hidden name="personDetail.versionNo"></s:hidden>
 
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>

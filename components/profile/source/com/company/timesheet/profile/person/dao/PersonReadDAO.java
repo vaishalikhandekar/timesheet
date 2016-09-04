@@ -24,15 +24,15 @@ public class PersonReadDAO {
 	Statement statement = null;
 	String returnMassegeStr = "";
 	
-	public String readEmployee(PersonDetail employeeDetail){
+	public String readperson(PersonDetail personDetail){
 		
-		String employeeSQLStr = "SELECT * FROM EMPLOYEE WHERE  employeeID=\'" + employeeDetail.getEmployeeID() + "\' ";
+		String personSQLStr = "SELECT * FROM person WHERE  personID=\'" + personDetail.getPersonID() + "\' ";
 
 		try {
 
 			Connection connection = DBConnection.getDBConnection();
 
-			PreparedStatement preparedStatement = connection.prepareStatement(employeeSQLStr);
+			PreparedStatement preparedStatement = connection.prepareStatement(personSQLStr);
 
 			// System.out.println(preparedStatement.);
 			resultSet = preparedStatement.executeQuery();
@@ -43,18 +43,18 @@ public class PersonReadDAO {
 
 			if (resultSet.next()) {
 
-				employeeDetail.setEmployeeID(resultSet.getLong("employeeID"));
-				employeeDetail.setTitle(resultSet.getString("title"));
-				employeeDetail.setFirstName(resultSet.getString("firstName"));
-				employeeDetail.setMiddleName(resultSet.getString("middleName"));
-				employeeDetail.setLastName(resultSet.getString("lastName"));
-				employeeDetail.setDateOfBirth(resultSet.getDate("dateOfBirth"));
-				employeeDetail.setGender(resultSet.getString("gender"));
-				employeeDetail.setRecordStatus(resultSet.getString("recordStatus"));
-				employeeDetail.setRegistrationDate(resultSet.getTimestamp("registrationDate"));
-				employeeDetail.setVersionNo(resultSet.getInt("versionNo"));
-				employeeDetail.setStartDate(resultSet.getDate("startDate"));
-				employeeDetail.setEndDate(resultSet.getDate("endDate"));
+				personDetail.setPersonID(resultSet.getLong("personID"));
+				personDetail.setTitle(resultSet.getString("title"));
+				personDetail.setFirstName(resultSet.getString("firstName"));
+				personDetail.setMiddleName(resultSet.getString("middleName"));
+				personDetail.setLastName(resultSet.getString("lastName"));
+				personDetail.setDateOfBirth(resultSet.getDate("dateOfBirth"));
+				personDetail.setGender(resultSet.getString("gender"));
+				personDetail.setRecordStatus(resultSet.getString("recordStatus"));
+				personDetail.setRegistrationDate(resultSet.getTimestamp("registrationDate"));
+				personDetail.setVersionNo(resultSet.getInt("versionNo"));
+				personDetail.setStartDate(resultSet.getDate("startDate"));
+				personDetail.setEndDate(resultSet.getDate("endDate"));
 			}
 			returnMassegeStr = CRUDConstants.RETURN_MESSAGE_SUCCESS;
 

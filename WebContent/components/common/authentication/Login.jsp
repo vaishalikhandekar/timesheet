@@ -28,7 +28,7 @@
 		</table>
 
 		<br>
-		<a href="/TimeSheet/components/profile/jsp/employee/EmployeeRegistration.jsp">New User</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<a href="/TimeSheet/components/profile/jsp/person/PersonRegistration.jsp">New User</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 				<br>
 		<br>
 

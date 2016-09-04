@@ -52,12 +52,12 @@ public class PersonLoginDAO {
 			// store resultset object into the resultSet object
 			resultSet = preparedStatementUsers.executeQuery();
 
-			String employeeSQLStr = "SELECT employeeID FROM Users WHERE  USERNAME='" + usersDetail.getUserName() + "'";
-			PreparedStatement preparedStatementPerson = connection.prepareStatement(employeeSQLStr);
+			String personSQLStr = "SELECT personID FROM Users WHERE  USERNAME='" + usersDetail.getUserName() + "'";
+			PreparedStatement preparedStatementPerson = connection.prepareStatement(personSQLStr);
 			ResultSet resultSetPerson = preparedStatementPerson.executeQuery();
 
 			if (resultSetPerson.next()) {
-				usersDetail.setemployeeID(resultSetPerson.getLong("employeeID"));
+				usersDetail.setPersonID(resultSetPerson.getLong("personID"));
 			}
 
 			// if resultSet contain values then return success

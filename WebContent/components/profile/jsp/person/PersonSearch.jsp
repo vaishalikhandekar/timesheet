@@ -21,15 +21,15 @@
 
             <tr>
                 <td>First Name</td>
-                <td><s:textfield type="text" name="employeeSearchDetails.employeeSearchCriteria.firstName" /></td>
+                <td><s:textfield type="text" name="personSearchDetails.personSearchCriteria.firstName" /></td>
             </tr>
             <tr>
                 <td>Middle Name</td>
-                <td><s:textfield type="text" name="employeeSearchDetails.employeeSearchCriteria.middleName" /></td>
+                <td><s:textfield type="text" name="personSearchDetails.personSearchCriteria.middleName" /></td>
             </tr>
             <tr>
                 <td>Last Name</td>
-                <td><s:textfield type="text" name="employeeSearchDetails.employeeSearchCriteria.lastName" /></td>
+                <td><s:textfield type="text" name="personSearchDetails.personSearchCriteria.lastName" /></td>
             </tr>
             <!--  <tr>
 				<td>Date of Birth:</td>
@@ -59,7 +59,7 @@
                 </tr>
             </thead>
 
-            <s:iterator value="employeeSearchResult.employeeDetailList" status="stat">
+            <s:iterator value="personSearchResult.personDetailList" status="stat">
 
                 <tbody>
                     <tr>

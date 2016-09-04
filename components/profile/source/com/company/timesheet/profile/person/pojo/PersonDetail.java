@@ -7,7 +7,7 @@ import java.util.List;
 
 public class PersonDetail {
 
-	private long employeeID;
+	private long personID;
 
 	private String title;
 
@@ -50,13 +50,12 @@ public class PersonDetail {
 	}
 
 	
-
-	public long getEmployeeID() {
-		return employeeID;
+	public long getPersonID() {
+		return personID;
 	}
 
-	public void setEmployeeID(long employeeID) {
-		this.employeeID = employeeID;
+	public void setPersonID(long personID) {
+		this.personID = personID;
 	}
 
 	public String getTitle() {

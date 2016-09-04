@@ -16,50 +16,50 @@ public class PersonSearchDAO {
 
 	Connection connection = null;
 
-	public List<PersonDetail> searchEmployeeInfo(PersonSearchDetails employeeSearchDetails) {
+	public List<PersonDetail> searchpersonInfo(PersonSearchDetails personSearchDetails) {
 
-		List<PersonDetail> employeeDetailList = new ArrayList<PersonDetail>();
-		PersonSearchCriteria employeeSearchCriteria = employeeSearchDetails.getEmployeeSearchCriteria();
-		PersonDetail employeeDetail = null;
+		List<PersonDetail> personDetailList = new ArrayList<PersonDetail>();
+		PersonSearchCriteria personSearchCriteria = personSearchDetails.getpersonSearchCriteria();
+		PersonDetail personDetail = null;
 
 		String whereStr = "";
 
 		String emptyStr = "";
 
-		if (employeeSearchCriteria.getFirstName() != null && !employeeSearchCriteria.getFirstName().equals(emptyStr)) {
+		if (personSearchCriteria.getFirstName() != null && !personSearchCriteria.getFirstName().equals(emptyStr)) {
 			whereStr += (whereStr == "") ? " WHERE " : " AND ";
-			whereStr += " firstName = '" + employeeSearchCriteria.getFirstName() + "'";
+			whereStr += " firstName = '" + personSearchCriteria.getFirstName() + "'";
 		}
-		if (employeeSearchCriteria.getMiddleName() != null && !employeeSearchCriteria.getMiddleName().equals(emptyStr)) {
+		if (personSearchCriteria.getMiddleName() != null && !personSearchCriteria.getMiddleName().equals(emptyStr)) {
 			whereStr += (whereStr == "") ? " WHERE " : " AND ";
-			whereStr += " middleName = '" + employeeSearchCriteria.getMiddleName() + "'";
+			whereStr += " middleName = '" + personSearchCriteria.getMiddleName() + "'";
 		}
-		if (employeeSearchCriteria.getLastName() != null && !employeeSearchCriteria.getLastName().equals(emptyStr)) {
+		if (personSearchCriteria.getLastName() != null && !personSearchCriteria.getLastName().equals(emptyStr)) {
 			whereStr += (whereStr == "") ? " WHERE " : " AND ";
-			whereStr += " lastName = '" + employeeSearchCriteria.getLastName() + "'";
+			whereStr += " lastName = '" + personSearchCriteria.getLastName() + "'";
 		}
 
 		if (!whereStr.equals(emptyStr)) {
 
 			try {
 				connection = DBConnection.getDBConnection();
-				String employeeSQLStr = "SELECT * " + " FROM Employee " + whereStr;
+				String personSQLStr = "SELECT * " + " FROM person " + whereStr;
 
-				PreparedStatement preparedstatement = connection.prepareStatement(employeeSQLStr);
+				PreparedStatement preparedstatement = connection.prepareStatement(personSQLStr);
 
 				ResultSet resultSet = preparedstatement.executeQuery();
 
 				while (resultSet.next()) {
 
-					employeeDetail = new PersonDetail();
-					employeeDetail.setEmployeeID(resultSet.getLong("employeeID"));
-					employeeDetail.setTitle(resultSet.getString("title"));
-					employeeDetail.setFirstName(resultSet.getString("firstName"));
-					employeeDetail.setMiddleName(resultSet.getString("middleName"));
-					employeeDetail.setLastName(resultSet.getString("lastName"));
-					employeeDetail.setGender(resultSet.getString("gender"));
-					employeeDetail.setDateOfBirth(resultSet.getDate("dateOfBirth"));
-					employeeDetailList.add(employeeDetail);
+					personDetail = new PersonDetail();
+					personDetail.setPersonID(resultSet.getLong("personID"));
+					personDetail.setTitle(resultSet.getString("title"));
+					personDetail.setFirstName(resultSet.getString("firstName"));
+					personDetail.setMiddleName(resultSet.getString("middleName"));
+					personDetail.setLastName(resultSet.getString("lastName"));
+					personDetail.setGender(resultSet.getString("gender"));
+					personDetail.setDateOfBirth(resultSet.getDate("dateOfBirth"));
+					personDetailList.add(personDetail);
 				}
 
 			} catch (Exception exception) {
@@ -70,12 +70,12 @@ public class PersonSearchDAO {
 			String errorMessage = "";
 
 			errorMessage = "Please enter at least one attribute";
-			employeeSearchDetails.setErrorMessage(errorMessage);
+			personSearchDetails.setErrorMessage(errorMessage);
 			;
 
 		}
 
-		return employeeDetailList;
+		return personDetailList;
 
 	}
 }

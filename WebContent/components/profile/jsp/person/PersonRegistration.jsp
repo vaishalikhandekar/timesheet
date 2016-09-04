@@ -47,7 +47,7 @@ $(function () {
 						<div class="modal-body"> -->
 
 		<s:form class="form-inline" name="Registration"
-			action="/CreateEmployeeSubmit" method="POST" role="form"
+			action="/CreatePersonSubmit" method="POST" role="form"
 			theme="bootstrap">
 
             <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
@@ -56,7 +56,7 @@ $(function () {
 				<label>Name<span class="glyphicon glyphicon-asterisk-ok icon-red"></span></label>
 				<s:select
 					list="#{'Mr.':'Mr.', 'Mrs.':'Mrs.','Miss.':'Miss.', 'Kumar':'Kumar'}"
-					name="employeeDetail.title" placeholder="Title"
+					name="personDetail.title" placeholder="Title"
 					class="form-control" >
                     <span class="glyphicon glyphicon-asterisk"></span>
 				</s:select>
@@ -64,18 +64,18 @@ $(function () {
 			</div>
 
 			<div class="form-group">
-				<s:textfield type="text" name="employeeDetail.firstName"
+				<s:textfield type="text" name="personDetail.firstName"
 					placeholder="FirstName" class="form-control" />
 			</div>
 
 
 			<div class="form-group">
-				<s:textfield type="text" name="employeeDetail.middleName"
+				<s:textfield type="text" name="personDetail.middleName"
 					placeholder="MiddleName" class="form-control" />
 			</div>
 
 			<div class="form-group">
-				<s:textfield type="text" name="employeeDetail.lastName"
+				<s:textfield type="text" name="personDetail.lastName"
 					placeholder="LastName" class="form-control" />
 			</div>
 			<br>
@@ -83,13 +83,13 @@ $(function () {
             
 			<div class="form-group">
 				<label>DateOfBirth:</label> 
-                <s:textfield type="text" name="employeeDetail.dateOfBirth"
+                <s:textfield type="text" name="personDetail.dateOfBirth"
                     class="form-control" placeholder="mm/dd/yy"/>
            
 			</div>
 
-			<%--  <s:select label="Gender" list="genderMap" name="employeeDetail.gender" class="form-control" /> --%>
-			<s:radio list="{'Male','Female'}" name="employeeDetail.gender"></s:radio>
+			<%--  <s:select label="Gender" list="genderMap" name="personDetail.gender" class="form-control" /> --%>
+			<s:radio list="{'Male','Female'}" name="personDetail.gender"></s:radio>
 
 
 			<br>
@@ -97,7 +97,7 @@ $(function () {
 
 			<div class="form-group">
 				<label>UserName:</label>
-				<s:textfield type="text" name="employeeDetail.usersDetail.userName"
+				<s:textfield type="text" name="personDetail.usersDetail.userName"
 					class="form-control" />
                     
                     
@@ -105,20 +105,20 @@ $(function () {
 
 			<div class="form-group">
 				<label>Password:</label>
-				<s:textfield type="password" name="employeeDetail.usersDetail.password"
+				<s:textfield type="password" name="personDetail.usersDetail.password"
 					class="form-control" />
 			</div>
 			
 			
 			<div class="form-group">
 				<label>Start Date:</label>
-				<s:textfield type="text" name="employeeDetail.startDate"
+				<s:textfield type="text" name="personDetail.startDate"
 					class="form-control" placeholder="mm/dd/yy"/>
 			</div>
             
 			<div class="form-group">
 				<label>End Date:</label>
-				<s:textfield type="text" name="employeeDetail.endDate"
+				<s:textfield type="text" name="personDetail.endDate"
 					class="form-control" placeholder="mm/dd/yy"/>
 			</div>
 
@@ -140,7 +140,7 @@ $(function () {
 			</div>
 		</s:form>
 
-		<!-- <s:form action="/TimeSheet/EmployeeLogOut" method="POST" class="form-inline">
+		<!-- <s:form action="/TimeSheet/personLogOut" method="POST" class="form-inline">
 			<br>
 			 <s:submit type="submit" value="Cancel" class="btn btn-primary" /> 
 		</s:form> -->

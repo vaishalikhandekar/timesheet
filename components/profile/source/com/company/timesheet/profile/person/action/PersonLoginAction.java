@@ -1,3 +1,4 @@
+
 package com.company.timesheet.profile.person.action;
 
 import java.util.Map;
@@ -75,9 +76,9 @@ public class PersonLoginAction extends ActionSupport implements SessionAware, Se
 		 * } else {
 		 */
 
-		PersonLoginDAO loginEmployeeDAO = new PersonLoginDAO();
-		String returnMassegeStr = loginEmployeeDAO.login(usersDetail);
-		session.put("employeeID", usersDetail.getemployeeID());
+		PersonLoginDAO loginPersonDAO = new PersonLoginDAO();
+		String returnMassegeStr = loginPersonDAO.login(usersDetail);
+		session.put("personID", usersDetail.getPersonID());
 
 		if (returnMassegeStr.equals(CRUDConstants.RETURN_MESSAGE_SUCCESS)) {
 

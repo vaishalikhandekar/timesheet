@@ -16,49 +16,41 @@ import com.opensymphony.xwork2.ActionSupport;
 public class PersonListAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
-	
-	private List<PersonDetail> employeeDetailList;
-	
-	private PersonDetail employeeDetail;
-	
-	public PersonDetail getEmployeeDetail() {
-		return employeeDetail;
+
+	private List<PersonDetail> personDetailList;
+
+	private PersonDetail personDetail;
+
+	public PersonDetail getPersonDetail() {
+		return personDetail;
 	}
 
-
-
-	public void setEmployeeDetail(PersonDetail employeeDetail) {
-		this.employeeDetail = employeeDetail;
+	public void setPersonDetail(PersonDetail personDetail) {
+		this.personDetail = personDetail;
 	}
 
-
-
-	public List<PersonDetail> getEmployeeDetailList() {
-		return employeeDetailList;
+	public List<PersonDetail> getPersonDetailList() {
+		return personDetailList;
 	}
 
-
-
-	public void setEmployeeDetailList(List<PersonDetail> employeeDetailList) {
-		this.employeeDetailList = employeeDetailList;
+	public void setPersonDetailList(List<PersonDetail> personDetailList) {
+		this.personDetailList = personDetailList;
 	}
-
 
 	@Override
 	public String execute() throws Exception {
-		
+
 		String pageForwardStr = "";
-		
-		PersonListDAO listEmployeeDAO = new PersonListDAO();
-		List<PersonDetail> employeeDetailList = listEmployeeDAO.listEmployee();
-		
-		setEmployeeDetailList(employeeDetailList);
-		
-		PersonDetail employeeDetail =  employeeDetailList.get(0);
-		setEmployeeDetail(employeeDetail);
-		
-		
-		if (employeeDetailList != null) {
+
+		PersonListDAO listPersonDAO = new PersonListDAO();
+		List<PersonDetail> personDetailList = listPersonDAO.listPerson();
+
+		setPersonDetailList(personDetailList);
+
+		// personDetail = personDetailList.get(0);
+		// setPersonDetail(personDetail);
+
+		if (personDetailList != null) {
 
 			pageForwardStr = SUCCESS;
 
@@ -69,7 +61,7 @@ public class PersonListAction extends ActionSupport {
 		}
 
 		return pageForwardStr;
-		
+
 	}
 
 }

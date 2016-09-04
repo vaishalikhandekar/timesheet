@@ -1,5 +1,5 @@
-CREATE TABLE Employee ( 
-	employeeID NUMBER(19,0) NOT NULL,
+CREATE TABLE Person ( 
+	personID NUMBER(19,0) NOT NULL,
 	title VARCHAR2(30),
 	firstName VARCHAR2(15),
 	middleName VARCHAR2(30),
@@ -17,7 +17,7 @@ CREATE TABLE Employee (
    
 CREATE TABLE Users(
   userName VARCHAR2(15) NOT NULL,
-  employeeID NUMBER(19,0),
+  personID NUMBER(19,0),
   password VARCHAR2(80),
   accountEnabled VARCHAR2(30),
   loginFailureCount NUMBER(20),
@@ -43,7 +43,7 @@ CREATE TABLE Project (
 CREATE TABLE ProjectPersonLink (
 	projectPersonLinkID NUMBER(19,0) NOT NULL,
 	projectID NUMBER(19,0),
-	employeeID NUMBER(19,0),
+	personID NUMBER(19,0),
 	role VARCHAR2(10),
 	startDate DATE,
     endDate DATE,

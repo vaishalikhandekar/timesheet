@@ -7,28 +7,28 @@ import com.company.timesheet.profile.person.pojo.PersonDetail;
 
 public class PersonSearchResult {
 
-	List<PersonDetail>	EmployeeDetailList	= new ArrayList<PersonDetail>();
+	List<PersonDetail>	PersonDetailList	= new ArrayList<PersonDetail>();
 
-	Long				numberOfEmployee;
+	Long				numberOfPerson;
 
-	public List<PersonDetail> getEmployeeDetailList() {
+	public List<PersonDetail> getPersonDetailList() {
 
-		return EmployeeDetailList;
+		return PersonDetailList;
 	}
 
-	public void setEmployeeDetailList(List<PersonDetail> EmployeeDetailList) {
+	public void setPersonDetailList(List<PersonDetail> PersonDetailList) {
 
-		this.EmployeeDetailList = EmployeeDetailList;
+		this.PersonDetailList = PersonDetailList;
 	}
 
-	public Long getNumberOfEmployee() {
+	public Long getNumberOfPerson() {
 
-		return numberOfEmployee;
+		return numberOfPerson;
 	}
 
-	public void setNumberOfEmployee(Long numberOfEmployee) {
+	public void setNumberOfPerson(Long numberOfPerson) {
 
-		this.numberOfEmployee = numberOfEmployee;
+		this.numberOfPerson = numberOfPerson;
 	}
 
 }

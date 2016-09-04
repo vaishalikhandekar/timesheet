@@ -25,74 +25,74 @@ public class PersonCreateDAO {
 
 	/**
 	 * 
-	 * @param employeeDetail
+	 * @param personDetail
 	 * @return
 	 */
-	public String registerEmployee(PersonDetail employeeDetail) {
+	public String registerPerson(PersonDetail personDetail) {
 
 		PreparedStatement preparedStatement = null;
 		String returnMassegeStr = "";
-		boolean employeeExistInd = employeeExist(employeeDetail);
-		boolean userNameExistInd = checkUserNameExist(employeeDetail);
+		boolean personExistInd = personExist(personDetail);
+		boolean userNameExistInd = checkUserNameExist(personDetail);
 
-		if (!employeeExistInd && !userNameExistInd) {
+		if (!personExistInd && !userNameExistInd) {
 
-			UsersDetail usersDetail = employeeDetail.getUsersDetail();
+			UsersDetail usersDetail = personDetail.getUsersDetail();
 
 			Connection connection = null;
 			try {
 				connection = DBConnection.getDBConnection();
 
-				String usersSQLStr = "INSERT	INTO	USERS(userName, password, recordStatus, employeeID)	VALUES('" + usersDetail.getUserName()
+				String usersSQLStr = "INSERT	INTO	USERS(userName, password, recordStatus, personID)	VALUES('" + usersDetail.getUserName()
 						+ "','" + usersDetail.getPassword() + "','Active', ?)";
 				preparedStatement = connection.prepareStatement(usersSQLStr);
-				long employeeID = UniqueID.nextUniqueID();
-				preparedStatement.setLong(1, employeeID);
+				long personID = UniqueID.nextUniqueID();
+				preparedStatement.setLong(1, personID);
 
 				preparedStatement.execute();
 
-				employeeDetail.setEmployeeID(employeeID);
+				personDetail.setPersonID(personID);
 				
 				
-				String employeeSQLStr = "INSERT INTO EMPLOYEE(employeeID, title, firstName, middleName, lastName, userName, gender, dateOfBirth, comments, REGISTRATIONDATE, recordStatus, versionNo) "
+				String personSQLStr = "INSERT INTO Person(personID, title, firstName, middleName, lastName, userName, gender, dateOfBirth, comments, REGISTRATIONDATE, recordStatus, versionNo) "
 						+ "VALUES (?, '"
-						+ employeeDetail.getTitle()
+						+ personDetail.getTitle()
 						+ "', '"
-						+ employeeDetail.getFirstName()
+						+ personDetail.getFirstName()
 						+ "','"
-						+ employeeDetail.getMiddleName()
+						+ personDetail.getMiddleName()
 						+ "','"
-						+ employeeDetail.getLastName()
+						+ personDetail.getLastName()
 						+ "', "
 						+ "'" + usersDetail.getUserName() + "','"
 						
-						+ employeeDetail.getGender()
+						+ personDetail.getGender()
 						
-						+ "' ,?,'"+employeeDetail.getComment()+"',?, 'Active'," + " 1 )";
+						+ "' ,?,'"+personDetail.getComment()+"',?, 'Active'," + " 1 )";
 
-				PreparedStatement preparedStatement1 = connection.prepareStatement(employeeSQLStr);
+				PreparedStatement preparedStatement1 = connection.prepareStatement(personSQLStr);
 
-				preparedStatement1.setLong(1, employeeDetail.getEmployeeID());
-				preparedStatement1.setDate(2, JavaUtildates.convertUtilToSql(employeeDetail.getDateOfBirth()));
+				preparedStatement1.setLong(1, personDetail.getPersonID());
+				preparedStatement1.setDate(2, JavaUtildates.convertUtilToSql(personDetail.getDateOfBirth()));
 
 				String crrentDateTime = JavaUtildates.getCurrentDateTime();
 
 				Timestamp timestamp = Timestamp.valueOf(crrentDateTime);
 				preparedStatement1.setTimestamp(3, timestamp);
 				
-				/*preparedStatement1.setDate(4, JavaUtildates.convertUtilToSql(employeeDetail.getStartDate()));
-				preparedStatement1.setDate(5, JavaUtildates.convertUtilToSql(employeeDetail.getEndDate()));*/
+				/*preparedStatement1.setDate(4, JavaUtildates.convertUtilToSql(personDetail.getStartDate()));
+				preparedStatement1.setDate(5, JavaUtildates.convertUtilToSql(personDetail.getEndDate()));*/
 
 
 				preparedStatement1.execute();
 				
-				//inserting data into AuditTrail Table for Employee Table
+				//inserting data into AuditTrail Table for person Table
 				AuditTrailDetails auditTrailDetails = new AuditTrailDetails();
 				
-				auditTrailDetails.setTableName("Employee");
+				auditTrailDetails.setTableName("person");
 				auditTrailDetails.setOperationType("Create");
 				auditTrailDetails.setUserName(usersDetail.getUserName());
-				auditTrailDetails.setRelatedID(employeeDetail.getEmployeeID());
+				auditTrailDetails.setRelatedID(personDetail.getPersonID());
 				auditTrailDetails.setTransactionType("Online");
 				
 				CreateAuditTrailDAO createAuditTrailDAO = new CreateAuditTrailDAO();
@@ -101,12 +101,12 @@ public class PersonCreateDAO {
 				returnMassegeStr = CRUDConstants.RETURN_MESSAGE_SUCCESS;
 
 			} catch (SQLException e) {
-				employeeDetail.getErrorMessageList().add("Username already exist");
+				personDetail.getErrorMessageList().add("Username already exist");
 				e.printStackTrace();
 				returnMassegeStr = CRUDConstants.RETURN_MESSAGE_FAILURE;
 
 			} catch (Exception e) {
-				employeeDetail.getErrorMessageList().add("Main exception");
+				personDetail.getErrorMessageList().add("Main exception");
 				e.printStackTrace();
 				returnMassegeStr = CRUDConstants.RETURN_MESSAGE_FAILURE;
 			}
@@ -117,34 +117,34 @@ public class PersonCreateDAO {
 
 	/**
 	 * 
-	 * @param employeeDetail
+	 * @param personDetail
 	 */
-	public boolean employeeExist(PersonDetail employeeDetail) {
+	public boolean personExist(PersonDetail personDetail) {
 
-		boolean employeeExistInd = false;
+		boolean personExistInd = false;
 
 		try {
 
-			PersonSearchCriteria employeeSearchCriteria = new PersonSearchCriteria();
+			PersonSearchCriteria personSearchCriteria = new PersonSearchCriteria();
 
-			employeeSearchCriteria.setFirstName(employeeDetail.getFirstName() == null ? "" : employeeDetail.getFirstName());
-			employeeSearchCriteria.setMiddleName(employeeDetail.getMiddleName() == null ? "" : employeeDetail.getMiddleName());
-			employeeSearchCriteria.setLastName(employeeDetail.getLastName() == null ? "" : employeeDetail.getLastName());
+			personSearchCriteria.setFirstName(personDetail.getFirstName() == null ? "" : personDetail.getFirstName());
+			personSearchCriteria.setMiddleName(personDetail.getMiddleName() == null ? "" : personDetail.getMiddleName());
+			personSearchCriteria.setLastName(personDetail.getLastName() == null ? "" : personDetail.getLastName());
 
-			PersonSearchDetails employeeSearchDetails = new PersonSearchDetails();
-			employeeSearchDetails.setEmployeeSearchCriteria(employeeSearchCriteria);
+			PersonSearchDetails personSearchDetails = new PersonSearchDetails();
+			personSearchDetails.setpersonSearchCriteria(personSearchCriteria);
 
 			//
 			PersonSearchDAO searchPersonDAO = new PersonSearchDAO();
 
 			//
-			List<PersonDetail> employeeDetailList = searchPersonDAO.searchEmployeeInfo(employeeSearchDetails);
+			List<PersonDetail> personDetailList = searchPersonDAO.searchpersonInfo(personSearchDetails);
 
-			if (employeeDetailList.size() > 0) {
+			if (personDetailList.size() > 0) {
 
-				employeeDetail.getErrorMessageList().add("Person already exist");
+				personDetail.getErrorMessageList().add("Person already exist");
 
-				employeeExistInd = true;
+				personExistInd = true;
 			}
 
 		} catch (Exception e) {
@@ -152,22 +152,22 @@ public class PersonCreateDAO {
 			e.printStackTrace();
 		}
 
-		return employeeExistInd;
+		return personExistInd;
 
 	}
 
-	public boolean checkUserNameExist(PersonDetail employeeDetail) {
+	public boolean checkUserNameExist(PersonDetail personDetail) {
 
 		Connection connection = null;
 		try {
 			connection = DBConnection.getDBConnection();
 
-			String usersSQLStr = "SELECT userName FROM USERS where userName='" + employeeDetail.getUsersDetail().getUserName() + "'";
+			String usersSQLStr = "SELECT userName FROM USERS where userName='" + personDetail.getUsersDetail().getUserName() + "'";
 			PreparedStatement preparedStatement = connection.prepareStatement(usersSQLStr);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 
-				employeeDetail.getErrorMessageList().add("UserName already exist");
+				personDetail.getErrorMessageList().add("UserName already exist");
 				return true;
 
 			}

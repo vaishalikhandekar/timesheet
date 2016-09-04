@@ -30,10 +30,10 @@
             <h1>Person</h1>
                     <div>
                         <br />
-                        <a href="SearchEmployee">Person Search</a>
+                        <a href="SearchPerson">Person Search</a>
                         <br />
                         <br />
-                        <a href="ListEmployee">Person List</a>
+                        <a href="ListPerson">Person List</a>
                 </div>
                 
                 <h1>Project</h1>

@@ -43,7 +43,7 @@ public class ReadProjectEmployeeLinkDAO {
 
 			if (resultSet.next()) {
 				projectPersonLinkDetail.setProjectID(resultSet.getLong("projectID"));
-				projectPersonLinkDetail.setEmployeeID(resultSet.getLong("employeeID"));
+				//projectPersonLinkDetail.setEmployeeID(resultSet.getLong("employeeID"));
 				projectPersonLinkDetail.setProjectPersonLinkID(resultSet.getLong("projectPersonLinkID"));
 				projectPersonLinkDetail.setRole(resultSet.getString("role"));
 				projectPersonLinkDetail.setComments(resultSet.getString("comments"));

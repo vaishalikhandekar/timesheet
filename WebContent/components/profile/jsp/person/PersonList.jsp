@@ -32,7 +32,7 @@
 
     <div class="pull-right" class="container">
 
-        <div class="modal fade" id="DeleteEmployee" data-keyboard="false" data-backdrop="static">
+        <div class="modal fade" id="DeletePerson" data-keyboard="false" data-backdrop="static">
 
             <div class="modal-dialog modal-lg">
 
@@ -45,13 +45,13 @@
 
                     <div class="modal-body">
 
-                        <s:form class="form-inline" name="DeleteEmployee" namespace="/" action="DeleteEmployee" method="POST" role="form" theme="bootstrap">
+                        <s:form class="form-inline" name="DeletePerson" namespace="/" action="DeletePerson" method="POST" role="form" theme="bootstrap">
 
                             <p>Are You Sure ?</p>
 
                             <div class="modal-footer">
                                 <s:submit type="submit" id="submit" value="Delete" class="btn btn-primary" />
-                                <s:hidden name="employeeDetail.employeeID"></s:hidden>
+                                <s:hidden name="personDetail.personID"></s:hidden>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
 
@@ -71,7 +71,7 @@
 
     <div class="pull-right" class="container">
 
-        <div class="modal fade" id="updateEmployeeModal" data-keyboard="false" data-backdrop="static">
+        <div class="modal fade" id="updatePersonModal" data-keyboard="false" data-backdrop="static">
 
             <div class="modal-dialog modal-lg">
 
@@ -83,44 +83,44 @@
                     </div>
 
                     <div class="modal-body">
-                        <s:form class="form-inline" name="UpdateEmployee" action="UpdateEmployeeSubmit" method="POST" namespace="/"  role="form" theme="bootstrap">
+                        <s:form class="form-inline" name="UpdatePerson" action="UpdatePersonSubmit" method="POST" namespace="/"  role="form" theme="bootstrap">
 
                                  <table>
                                 <tr>
                                     <td>Title</td>
-                                    <td><s:textfield name="employeeDetail.title" /></td>
+                                    <td><s:textfield name="personDetail.title" /></td>
                                 </tr>
 
                                 <tr>
                                     <td>First Name</td>
-                                    <td><s:textfield name="employeeDetail.firstName" /></td>
+                                    <td><s:textfield name="personDetail.firstName" /></td>
                                 </tr>
                                 <tr>
                                     <td>Middle Name</td>
-                                    <td><s:textfield name="employeeDetail.middleName" /></td>
+                                    <td><s:textfield name="personDetail.middleName" /></td>
                                 </tr>
                                 <tr>
                                     <td>Last Name</td>
-                                    <td><s:textfield name="employeeDetail.lastName" /></td>
+                                    <td><s:textfield name="personDetail.lastName" /></td>
                                 </tr>
                                 <tr>
                                     <td>Gender</td>
-                                    <td><s:textfield name="employeeDetail.gender" /></td>
+                                    <td><s:textfield name="personDetail.gender" /></td>
                                 </tr>
                                 <tr>
                                     <td>Date Of Birth</td>
-                                    <td><s:textfield name="employeeDetail.dateOfBirth" /></td>
+                                    <td><s:textfield name="personDetail.dateOfBirth" /></td>
                                 </tr>
                                 <tr>
                                     <td>Registration Date</td>
-                                    <td><s:textfield name="employeeDetail.registrationDate" /></td>
+                                    <td><s:textfield name="personDetail.registrationDate" /></td>
                                 </tr>
                             </table>
                                 
                            
                             <div class="modal-footer">
-                                <s:submit type="submit" value="submit" class="btn btn-primary" /> <s:hidden name="employeeDetail.employeeID"></s:hidden>
-                                    <s:hidden name="employeeDetail.versionNo"></s:hidden>
+                                <s:submit type="submit" value="submit" class="btn btn-primary" /> <s:hidden name="personDetail.personID"></s:hidden>
+                                    <s:hidden name="personDetail.versionNo"></s:hidden>
 
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
@@ -144,24 +144,24 @@
     <div class="tabbable full-width-tabs">
         <ul class="nav nav-tabs">
 
-            <li class="active"><a data-toggle="tab" href="#EmployeeList">Person List</a></li>
+            <li class="active"><a data-toggle="tab" href="#PersonList">Person List</a></li>
         </ul>
 
         <div class="tab-content">
-            <div id="EmployeeList" class="tab-pane fade in active">
+            <div id="PersonList" class="tab-pane fade in active">
 
 
-                <!-- Create New Employee -->
+                <!-- Create New Person -->
 
                 <br />
                 <div class="pull-right" class="container">
 
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Create New Employee</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Create New Person</button>
                 </div>
                 <br /> <br />
 
 
-                <s:form action="/ListEmployee" method="post">
+                <s:form action="/ListPerson" method="post">
 
                     <table class="table table-striped">
                         <thead>
@@ -178,7 +178,7 @@
                             </tr>
                         </thead>
 
-                        <s:iterator value="employeeDetailList" status="stat">
+                        <s:iterator value="personDetailList" status="stat">
 
                             <tr>
                                 <td><s:property value="title" /></td>
@@ -189,12 +189,12 @@
                                 <td><s:property value="dateOfBirth" /></td>
                                 <td><s:property value="registrationDate" /></td>
 
-                                <td><s:url var="updateEmployeeURL" action="ReadEmployee" escapeAmp="false">
-                                        <s:param name="employeeDetail.employeeID" value="%{employeeID}" />
+                                <td><s:url var="updatePersonURL" action="ReadPerson" escapeAmp="false">
+                                        <s:param name="personDetail.personID" value="%{personID}" />
                                         <s:param name="act" value="%{updateAction}" />
-                                    </s:url> <s:a href="%{updateEmployeeURL}">Update</s:a> 
+                                    </s:url> <s:a href="%{updatePersonURL}">Update</s:a> 
                                     
-                                    <a href="#DeleteEmployee" data-toggle="modal">Delete</a></td>
+                                    <a href="#DeletePerson" data-toggle="modal">Delete</a></td>
                             </tr>
                         </s:iterator>
 
