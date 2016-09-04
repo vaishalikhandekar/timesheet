@@ -29,7 +29,9 @@
         </action>
 
         <action name="CreatePersonSubmit" class="com.company.timesheet.profile.person.action.PersonCreateAction">
-            <result name="success" type="tiles">PersonHome</result>
+            <result name="success" type="redirect">
+                <param name="location">/ListPerson</param>
+            </result>
             <result name="error">/index</result>
             <result name="input">/index</result>
         </action>
