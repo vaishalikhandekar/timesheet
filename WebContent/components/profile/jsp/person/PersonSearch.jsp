@@ -16,7 +16,7 @@
 
 
 
-    <s:form action=/SearchPersonSubmit" method="POST">
+    <s:form action="/SearchPersonSubmit" method="POST">
         <table >
 
             <tr>
@@ -43,7 +43,6 @@
             </tr>
         </table>
         <br>
-        <!--</s:form>-->
        
         <table class="table table-striped">
             <thead>
