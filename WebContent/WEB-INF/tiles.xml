@@ -17,10 +17,12 @@
         <put-attribute name="title" value="Welcome" />
         <put-attribute name="body" value="/Welcome.jsp" />
     </definition>
+	
     <definition name="/customer.tiles" extends="baseLayout">
         <put-attribute name="title" value="Customer Form" />
         <put-attribute name="body" value="/Customer.jsp" />
     </definition>
+	
     <definition name="/customer.success.tiles" extends="baseLayout">
         <put-attribute name="title" value="Customer Added" />
         <put-attribute name="body" value="/SuccessCustomer.jsp" />
@@ -43,7 +45,7 @@
     
     
     <definition name="userWorkspaceLayout" template="/components/common/layout/userworkspace/UserWorkspaceLayout.jsp">
-        <put-attribute name="title" value="ITOS Default" />
+        <put-attribute name="title" value="TimeSheet Default" />
         <put-attribute name="header" value="/components/common/layout/userworkspace/UserWorkspaceHeader.jsp" />
         <put-attribute name="menu" value="/components/common/layout/userworkspace/UserWorkspaceMenu.jsp" />
         <put-attribute name="body" value="" />

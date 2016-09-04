@@ -16,7 +16,7 @@
 
 
 
-    <s:form action="/ITOS/SearchPersonSubmit" method="POST">
+    <s:form action=/SearchPersonSubmit" method="POST">
         <table >
 
             <tr>
@@ -44,8 +44,7 @@
         </table>
         <br>
         <!--</s:form>-->
-        <!--<s:form action="/ITOS/SearchPerson" method="POST">-->
-
+       
         <table class="table table-striped">
             <thead>
 

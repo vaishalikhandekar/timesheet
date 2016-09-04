@@ -12,7 +12,7 @@
 <br>
 <body>
 
-	<form action="/ITOS/PersonLogin" method="POST">
+	<form action="/PersonLogin" method="POST">
 
 
 		<fieldset style="width: 400px">
@@ -57,14 +57,14 @@
 				<br>
 				<input type="submit" name="submit" value="Login"></input> &nbsp&nbsp
 				<a href="RegistrationForm.jsp">New User</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<a href="/ITOS/SearchPerson">Search</a>
-				<br><br><a href="/ITOS/ListCodeTableHeader">List Code Table </a>
+				<a href="/SearchPerson">Search</a>
+				<br><br><a href="/ListCodeTableHeader">List Code Table </a>
 				
-				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/ITOS/ListProperties"> Properties List</a>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/ListProperties"> Properties List</a>
 			
-				<br><br><a href="/ITOS/ListKeyServer"> List KeyServer</a>
-				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/ITOS/ListRole"> List Role</a><br><br>
-				<a href="/ITOS/ListUserRoleLink"> List UserRoleLink</a>
+				<br><br><a href="/ListKeyServer"> List KeyServer</a>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/ListRole"> List Role</a><br><br>
+				<a href="/ListUserRoleLink"> List UserRoleLink</a>
 				
 
 			</table>

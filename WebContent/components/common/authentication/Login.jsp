@@ -11,7 +11,7 @@
 <br>
 <body>
 
-	<s:form action="/ITOS/EmployeeLogin" method="POST">
+	<s:form action="/Login" method="POST">
 
 		<table border="1">
 			<!--   <fieldset style="width: 400px;height: 400px">-->

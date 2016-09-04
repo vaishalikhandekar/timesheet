@@ -8,9 +8,6 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.company.timesheet.core.audittrail.dao.CreateAuditTrailDAO;
 import com.company.timesheet.core.audittrail.pojo.AuditTrailDetails;
-/*import com.company.itos.core.audittrail.dao.CreateAuditTrailDAO;
-import com.company.itos.core.audittrail.pojo.AuditTrailDetails;
-import com.company.itos.core.properties.pojo.PropertiesDetail;*/
 import com.company.timesheet.core.util.CRUDConstants;
 import com.opensymphony.xwork2.ActionSupport;
 
