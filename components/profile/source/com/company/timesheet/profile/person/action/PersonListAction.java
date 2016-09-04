@@ -47,8 +47,8 @@ public class PersonListAction extends ActionSupport {
 
 		setPersonDetailList(personDetailList);
 
-		// personDetail = personDetailList.get(0);
-		// setPersonDetail(personDetail);
+		//personDetail = personDetailList.get(0);
+		//setPersonDetail(personDetail);
 
 		if (personDetailList != null) {
 
