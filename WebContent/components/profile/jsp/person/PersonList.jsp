@@ -251,7 +251,8 @@
                 </div>
 
             </div>
-            <br /> <br />
+            <br />
+            <br />
 
 
             <s:form action="/ListPerson" method="post">

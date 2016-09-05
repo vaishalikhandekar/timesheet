@@ -2,9 +2,11 @@
 <project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="TimeSheet">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/project/properties"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/components/profile/source"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/components/core/source"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/project/properties"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/components/project/source"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/components/timesheet/source"/>
         <property name="context-root" value="TimeSheet"/>
         <property name="java-output-path" value="/TimeSheet/build/classes"/>
     </wb-module>
