@@ -2,11 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
 
-<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
-<%@ taglib prefix="sjg" uri="/struts-jquery-grid-tags"%>
 
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title></title>
@@ -51,21 +48,20 @@
 </script>
 
 <script>
-  $( function() {
-	  $('.datepick').each(function(){
-		    $(this).datepicker(
-		    		{
-		    			
-		    			changeMonth: true,
-			    	      changeYear: true,
-		    			
-		    		}
-		    
-		    );
+	$(function() {
+		$('.datepick').each(function() {
+			$(this).datepicker({
+
+				changeMonth : true,
+				changeYear : true,
+
+			}
+
+			);
 		});
-  } );
-  </script>
-  
+	});
+</script>
+
 </head>
 
 <body>
@@ -183,37 +179,37 @@
 
                                             <br />
                                             <table>
-                                                 
+
                                                 <div class="form-group">
-                                                    <label>Project Name:</label> <s:textfield type="text" class="form-control" name="projectDetail.projectName" />
+                                                    <label>Project Name:</label>
+                                                    <s:textfield type="text" class="form-control" name="projectDetail.projectName" />
                                                 </div>
 
                                                 <br />
                                                 <br />
 
                                                 <div class="form-group">
-                                                    <label>Description:</label> <s:textfield type="text" class="form-control" name="projectDetail.description" />
+                                                    <label>Description:</label>
+                                                    <s:textfield type="text" class="form-control" name="projectDetail.description" />
                                                 </div>
 
                                                 <br />
                                                 <br />
 
                                                 <div class="form-group">
-                                                    <label>Start Date:</label> <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectDetail.startDate"
-                                                        placeholder="mm/dd/yy" />
+                                                    <label>Start Date:</label> <input type="text" class="datepick" id="date_1" class="dateTxt"
+                                                        name="projectDetail.startDate" placeholder="mm/dd/yy" />
                                                 </div>
 
                                                 <br />
                                                 <br />
 
                                                 <div class="form-group">
-                                                    <label>End Date:</label> <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectDetail.endDate"
-                                                        placeholder="mm/dd/yy" />
+                                                    <label>End Date:</label> <input type="text" class="datepick" id="date_2" class="dateTxt"
+                                                        name="projectDetail.endDate" placeholder="mm/dd/yy" />
                                                 </div>
-                                                
+
                                                 <div class="container">
-       
-
                                             </table>
                                             <br />
 
@@ -241,34 +237,32 @@
                     <!-- *******************************code to display Project List******************************* -->
 
 
-                  <s:form name="ListForm" id="ListForm" method="post">
+                    <s:form name="ListForm" id="ListForm" method="post">
 
-                    <!-- <a href="CreateProject">Create New Project</a> -->
-                    <br> <br>
-                    <div class="container">
-                        <table class="table table-striped" border="1"; width=100%>
-                            <thead>
+                        <div class="container">
+                            <table class="table table-striped" border="1" ; width=100%>
+                                <thead>
 
-                                <tr class="success">
-                                    <th>Project Name</th>
-                                    <th>Record Status</th>
-                                    <th>Start Date</th>
-                                    <th>End Date</th>
-                                    <th colspan=3>Action</th>
-                                </tr>
-                            </thead>
+                                    <tr class="success">
+                                        <th>Project Name</th>
+                                        <th>Record Status</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th colspan=3>Action</th>
+                                    </tr>
+                                </thead>
 
-                            <s:iterator value="projectDetailList" status="stat">
+                                <s:iterator value="projectDetailList" status="stat">
 
-                                <tr>
-                                    <td><s:property value="projectName" /></td>
-                                    <td><s:property value="recordStatus" /></td>
-                                    <td><s:property value="startDate" /></td>
-                                    <td><s:property value="endDate" /></td>
+                                    <tr>
+                                        <td><s:property value="projectName" /></td>
+                                        <td><s:property value="recordStatus" /></td>
+                                        <td><s:property value="startDate" /></td>
+                                        <td><s:property value="endDate" /></td>
 
-                                    <td><s:url id="ViewProjectURL" action="ReadProject" escapeAmp="false">
-                                            <s:param name="projectDetail.projectID" value="%{projectID}" />
-                                        </s:url> <s:a href="%{ViewProjectURL}">View</s:a> <!-- <s:url var="updateProjectURL" action="ReadProject"
+                                        <td><s:url id="ViewProjectURL" action="ReadProject" escapeAmp="false">
+                                                <s:param name="projectDetail.projectID" value="%{projectID}" />
+                                            </s:url> <s:a href="%{ViewProjectURL}">View</s:a> <!-- <s:url var="updateProjectURL" action="ReadProject"
                                                                     escapeAmp="false">
                                                                     <s:param name="projectDetail.projectID" value="%{projectID}"
                                                                     />
@@ -276,23 +270,22 @@
                                                                     </s:url>
 
                                                                     <s:a href="%{updateProjectURL}">Update</s:a> --> <s:url id="updateProjectURL">
-                                        </s:url> <s:a href="%{updateProjectURL}" id="updateProjectID">Update</s:a> 
-                                        <s:url id="ProjectDeleteURL">
-                                        </s:url> <s:a href="%{ProjectDeleteURL}" id="deleteProjectID">Delete</s:a> <!-- <s:a href="%{ProjectDeleteURL}" onclick="return confirm('Are
+                                            </s:url> <s:a href="%{updateProjectURL}" id="updateProjectID">Update</s:a> <s:url id="ProjectDeleteURL">
+                                            </s:url> <s:a href="%{ProjectDeleteURL}" id="deleteProjectID">Delete</s:a> <!-- <s:a href="%{ProjectDeleteURL}" onclick="return confirm('Are
                                                                     u sure?');">Delete</s:a> --> <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
                                                                     data-target="#modal-2"
                                                                     value="%{projectID}">Delete</button> --> <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
                                                                     onclick="check()"
                                                                     value="%{projectID}">Delete</button> --></td>
 
-                                </tr>
+                                    </tr>
 
-                            </s:iterator>
+                                </s:iterator>
 
-                        </table>
-                    </div>
+                            </table>
+                        </div>
 
-                     </s:form> 
+                    </s:form>
 
                 </div>
             </div>
