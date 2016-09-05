@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.company.timesheet.profile.timesheetlineitem.dao;
+package com.company.timesheet.timesheetlineitem.dao;
 
 import java.beans.Statement;
 import java.sql.Connection;
@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
-import com.company.timesheet.profile.timesheetlineitem.pojo.TimeSheetLineItemDetail;
+import com.company.timesheet.timesheetlineitem.pojo.TimeSheetLineItemDetail;
 
 /**
  * @author vaish

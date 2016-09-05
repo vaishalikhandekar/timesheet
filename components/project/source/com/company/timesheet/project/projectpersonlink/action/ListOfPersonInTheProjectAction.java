@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.company.timesheet.profile.projectpersonlink.action;
+package com.company.timesheet.project.projectpersonlink.action;
 
 import java.util.List;
 

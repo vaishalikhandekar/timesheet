@@ -1,4 +1,4 @@
-package com.company.timesheet.profile.timesheet.pojo;
+package com.company.timesheet.timesheet.pojo;
 
 import java.util.Date;
 

@@ -12,7 +12,7 @@ import com.company.timesheet.profile.person.dao.PersonSearchDAO;
 import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.company.timesheet.profile.person.pojo.PersonSearchDetails;
 import com.company.timesheet.profile.person.pojo.PersonSearchResult;
-import com.company.timesheet.profile.projectpersonlink.pojo.ProjectPersonLinkDetail;
+import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class PersonSearchAction extends ActionSupport implements SessionAware {

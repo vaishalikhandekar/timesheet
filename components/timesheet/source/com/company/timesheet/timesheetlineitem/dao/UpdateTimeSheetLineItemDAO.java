@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.company.timesheet.profile.timesheetlineitem.dao;
+package com.company.timesheet.timesheetlineitem.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,7 +13,7 @@ import com.company.timesheet.core.audittrail.pojo.AuditTrailDetails;
 import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.JavaUtildates;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
-import com.company.timesheet.profile.timesheetlineitem.pojo.TimeSheetLineItemDetail;
+import com.company.timesheet.timesheetlineitem.pojo.TimeSheetLineItemDetail;
 
 /**
  * @author vaish

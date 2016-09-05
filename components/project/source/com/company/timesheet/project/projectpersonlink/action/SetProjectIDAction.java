@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.company.timesheet.profile.projectpersonlink.action;
+package com.company.timesheet.project.projectpersonlink.action;
 
 import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
 import com.opensymphony.xwork2.ActionSupport;

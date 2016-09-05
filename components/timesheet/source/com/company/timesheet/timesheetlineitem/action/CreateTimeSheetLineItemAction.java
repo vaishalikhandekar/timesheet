@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.company.timesheet.profile.timesheetlineitem.action;
+package com.company.timesheet.timesheetlineitem.action;
 
 import com.company.timesheet.core.util.CRUDConstants;
-import com.company.timesheet.profile.timesheetlineitem.dao.CreateTimeSheetLineItemDAO;
-import com.company.timesheet.profile.timesheetlineitem.pojo.TimeSheetLineItemDetail;
+import com.company.timesheet.timesheetlineitem.dao.CreateTimeSheetLineItemDAO;
+import com.company.timesheet.timesheetlineitem.pojo.TimeSheetLineItemDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

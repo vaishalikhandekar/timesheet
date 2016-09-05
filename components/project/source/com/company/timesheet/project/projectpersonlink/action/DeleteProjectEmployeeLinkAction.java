@@ -1,10 +1,10 @@
 /**
  * 
  */
-package com.company.timesheet.profile.projectpersonlink.action;
+package com.company.timesheet.project.projectpersonlink.action;
 
 import com.company.timesheet.core.util.CRUDConstants;
-import com.company.timesheet.project.projectpersonlink.dao.CreateProjectEmployeeLinkDAO;
+import com.company.timesheet.project.projectpersonlink.dao.DeleteProjectEmployeeLinkDAO;
 import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -12,10 +12,8 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author vaish
  *
  */
-public class CreateProjectEmployeeLinkAction extends ActionSupport {
-	
-	private static final long serialVersionUID = 1L;
-	
+public class DeleteProjectEmployeeLinkAction extends ActionSupport {
+		
 	ProjectPersonLinkDetail projectPersonLinkDetail;
 	
 	public ProjectPersonLinkDetail getProjectPersonLinkDetail() {
@@ -32,10 +30,8 @@ public class CreateProjectEmployeeLinkAction extends ActionSupport {
 		
 		String pageForwardStr = "";
 		
-		System.out.println("projectPersonLinkDetail.projectDetail.projectID");
-		
-		CreateProjectEmployeeLinkDAO createProjectEmployeeLinkDAO = new CreateProjectEmployeeLinkDAO();
-		String returnMassegeStr = createProjectEmployeeLinkDAO.CreateProjectEmployeeLink(projectPersonLinkDetail);
+		DeleteProjectEmployeeLinkDAO deleteProjectEmployeeLinkDAO = new DeleteProjectEmployeeLinkDAO();
+		String returnMassegeStr = deleteProjectEmployeeLinkDAO.DeleteProjectEmployeeLink(projectPersonLinkDetail);
 		
 		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
 
@@ -46,7 +42,7 @@ public class CreateProjectEmployeeLinkAction extends ActionSupport {
 			pageForwardStr = ERROR;
 
 		}
-		
+
 		return pageForwardStr;
 		
 	}

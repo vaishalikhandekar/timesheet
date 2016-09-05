@@ -9,7 +9,7 @@ import java.util.List;
 
 import com.company.timesheet.core.util.dataaccess.DBConnection;
 import com.company.timesheet.profile.person.pojo.PersonDetail;
-import com.company.timesheet.profile.timesheet.pojo.TimeSheetDetail;
+import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 
 public class PersonListDAO {
 	

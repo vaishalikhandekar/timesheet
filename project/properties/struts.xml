@@ -126,7 +126,7 @@
 
         <!-- ProjectPersonLink -->
 
-        <action name="AddPersonToProject" class="com.company.timesheet.profile.projectpersonlink.action.SetProjectIDAction">
+        <action name="AddPersonToProject" class="com.company.timesheet.project.projectpersonlink.action.SetProjectIDAction">
             <result name="success" type="tiles">AddPersonToProject</result>
             <result name="error">/index</result>
         </action>
@@ -135,7 +135,7 @@
             <param name="location"> AddPersonToProject</param> <param name="projectPersonLinkDetail.projectDetail.projectID">${projectPersonLinkDetail.projectDetail.projectID}</param>
             </result> </action> -->
 
-        <action name="CreateProjectPersonLinkSubmit" class="com.company.timesheet.profile.projectpersonlink.action.CreateProjectEmployeeLinkAction">
+        <action name="CreateProjectPersonLinkSubmit" class="com.company.timesheet.project.projectpersonlink.action.CreateProjectEmployeeLinkAction">
             <result name="success" type="redirect">
                 <param name="location"> /ListOfPersonInTheProject</param>
                 <param name="projectPersonLinkDetail.projectDetail.projectID">${projectPersonLinkDetail.projectDetail.projectID}</param>
@@ -144,7 +144,7 @@
             <result name="error">/index</result>
         </action>
 
-         <action name="ListOfPersonInTheProject" class="com.company.timesheet.profile.projectpersonlink.action.ListOfPersonInTheProjectAction">
+         <action name="ListOfPersonInTheProject" class="com.company.timesheet.project.projectpersonlink.action.ListOfPersonInTheProjectAction">
             <result name="success" type="tiles">ListOfPersonInTheProject</result> 
             <result name="error">/index</result> 
             </action>
@@ -153,10 +153,10 @@
 
 
 
+    <!-- TimeSheet -->
 
 
-
-        <action name="TimeSheetList" class="com.company.timesheet.profile.timesheet.action.TimeSheetListAction">
+        <action name="TimeSheetList" class="com.company.timesheet.timesheet.action.TimeSheetListAction">
             <result name="success" type="tiles">TimeSheetList</result>
             <result name="error">/index</result>
         </action>
@@ -165,7 +165,7 @@
             <result type="tiles">CreateTimeSheetLineItem</result>
         </action>
 
-        <!-- <action name="CreateTimeSheetLineItemSubmit" class="com.company.timesheet.profile.timesheetlineitem.action.CreateTimeSheetLineItemAction">
+        <!-- <action name="CreateTimeSheetLineItemSubmit" class="com.company.timesheet.timesheetlineitem.action.CreateTimeSheetLineItemAction">
             <result name="success" type="tiles">TimeSheetList</result> <result name="error">/index</result>
             </action> -->
 

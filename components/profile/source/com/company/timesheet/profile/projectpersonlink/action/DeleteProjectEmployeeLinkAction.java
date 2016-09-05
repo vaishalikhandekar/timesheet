@@ -4,8 +4,8 @@
 package com.company.timesheet.profile.projectpersonlink.action;
 
 import com.company.timesheet.core.util.CRUDConstants;
-import com.company.timesheet.profile.projectpersonlink.dao.DeleteProjectEmployeeLinkDAO;
-import com.company.timesheet.profile.projectpersonlink.pojo.ProjectPersonLinkDetail;
+import com.company.timesheet.project.projectpersonlink.dao.DeleteProjectEmployeeLinkDAO;
+import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

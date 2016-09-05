@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.company.timesheet.profile.timesheet.dao;
+package com.company.timesheet.timesheet.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.company.timesheet.core.util.dataaccess.DBConnection;
-import com.company.timesheet.profile.timesheet.pojo.TimeSheetDetail;
+import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

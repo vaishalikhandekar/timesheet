@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.company.timesheet.profile.timesheet.action;
+package com.company.timesheet.timesheet.action;
 
 import java.util.List;
 
 import com.company.timesheet.profile.person.pojo.PersonDetail;
-import com.company.timesheet.profile.timesheet.dao.TimeSheetListDAO;
-import com.company.timesheet.profile.timesheet.pojo.TimeSheetDetail;
+import com.company.timesheet.timesheet.dao.TimeSheetListDAO;
+import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

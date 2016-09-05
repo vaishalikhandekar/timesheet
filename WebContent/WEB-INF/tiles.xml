@@ -123,28 +123,28 @@
     
     <definition name="AddPersonToProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Add Person To Project" />
-        <put-attribute name="body" value="/components/profile/jsp/ProjectPersonLink/AddPersonToProject.jsp" />
+        <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/AddPersonToProject.jsp" />
     </definition>
     
     <definition name="ListOfPersonInTheProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="List Of Person In The Project" />
-        <put-attribute name="body" value="/components/profile/jsp/ProjectPersonLink/ListOfPersonInTheProject.jsp" />
+        <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ListOfPersonInTheProject.jsp" />
     </definition>
     
     
     
     
-    
+    <!-- TimeSheet -->
     
     
     <definition name="TimeSheetList" extends="userWorkspaceLayout">
         <put-attribute name="title" value="TimeSheet List" />
-        <put-attribute name="body" value="/components/profile/jsp/timesheet/TimeSheetList.jsp" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheetList.jsp" />
     </definition>
     
     <definition name="CreateTimeSheetLineItem" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Create TimeSheetLineItem" />
-        <put-attribute name="body" value="/components/profile/jsp/timeSheetLineItem/CreateTimeSheetLineItem.jsp" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timeSheetLineItem/CreateTimeSheetLineItem.jsp" />
     </definition>
     
     

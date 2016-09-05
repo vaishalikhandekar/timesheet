@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.company.timesheet.profile.projectpersonlink.dao;
+package com.company.timesheet.project.projectpersonlink.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

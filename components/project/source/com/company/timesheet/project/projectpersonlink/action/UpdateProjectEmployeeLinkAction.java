@@ -1,10 +1,10 @@
 /**
  * 
  */
-package com.company.timesheet.profile.projectpersonlink.action;
+package com.company.timesheet.project.projectpersonlink.action;
 
 import com.company.timesheet.core.util.CRUDConstants;
-import com.company.timesheet.project.projectpersonlink.dao.CreateProjectEmployeeLinkDAO;
+import com.company.timesheet.project.projectpersonlink.dao.UpdateProjectEmployeeLinkDAO;
 import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -12,11 +12,9 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author vaish
  *
  */
-public class CreateProjectEmployeeLinkAction extends ActionSupport {
-	
-	private static final long serialVersionUID = 1L;
-	
-	ProjectPersonLinkDetail projectPersonLinkDetail;
+public class UpdateProjectEmployeeLinkAction extends ActionSupport {
+			
+	ProjectPersonLinkDetail projectPersonLinkDetail;		
 	
 	public ProjectPersonLinkDetail getProjectPersonLinkDetail() {
 		return projectPersonLinkDetail;
@@ -30,25 +28,20 @@ public class CreateProjectEmployeeLinkAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		
-		String pageForwardStr = "";
+		String pageForwardStr ="";
 		
-		System.out.println("projectPersonLinkDetail.projectDetail.projectID");
-		
-		CreateProjectEmployeeLinkDAO createProjectEmployeeLinkDAO = new CreateProjectEmployeeLinkDAO();
-		String returnMassegeStr = createProjectEmployeeLinkDAO.CreateProjectEmployeeLink(projectPersonLinkDetail);
+		UpdateProjectEmployeeLinkDAO updateProjectEmployeeLinkDAO = new UpdateProjectEmployeeLinkDAO();
+		String returnMassegeStr = updateProjectEmployeeLinkDAO.updateProjectEmployeeLink(projectPersonLinkDetail);
 		
 		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
 
 			pageForwardStr = SUCCESS;
 
 		} else {
-
 			pageForwardStr = ERROR;
-
 		}
-		
 		return pageForwardStr;
-		
+	
 	}
 
 }
