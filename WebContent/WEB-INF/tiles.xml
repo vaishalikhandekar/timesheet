@@ -90,7 +90,7 @@
     </definition>
     
      <definition name="ReadPerson" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="Search Person" />
+        <put-attribute name="title" value="Read Person" />
         <put-attribute name="body" value="/components/profile/jsp/person/Person_readPerson.jsp" />
     </definition>
     

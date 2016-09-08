@@ -16,14 +16,14 @@ public class PersonReadAction extends ActionSupport {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private PersonDetail personDetail;
+	private PersonDetail personDetail = null;
 	String act = "";
 
-	public PersonDetail getpersonDetail() {
+	public PersonDetail getPersonDetail() {
 		return personDetail;
 	}
 
-	public void setpersonDetail(PersonDetail personDetail) {
+	public void setPersonDetail(PersonDetail personDetail) {
 		this.personDetail = personDetail;
 	}
 

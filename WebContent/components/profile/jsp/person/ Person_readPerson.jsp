@@ -30,7 +30,7 @@
 
 <body>
 
-    <jsp:include page="Person_navPerson.jsp"></jsp:include>
+    
 
     <s:form action="/ReadPerson" method="post">
 
@@ -68,8 +68,6 @@
         </table>
 
     </s:form>
-    </div>
-    </div>
 
 </body>
 </html>

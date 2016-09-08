@@ -274,7 +274,9 @@
 
                                         <td><s:url id="ViewProjectURL" action="ReadProject" escapeAmp="false">
                                                 <s:param name="projectDetail.projectID" value="%{projectID}" />
-                                            </s:url> <s:a href="%{ViewProjectURL}">View</s:a> <!-- <s:url var="updateProjectURL" action="ReadProject"
+                                            </s:url> <s:a href="%{ViewProjectURL}">View</s:a> 
+                                            
+                                            <!-- <s:url var="updateProjectURL" action="ReadProject"
                                                                     escapeAmp="false">
                                                                     <s:param name="projectDetail.projectID" value="%{projectID}"
                                                                     />

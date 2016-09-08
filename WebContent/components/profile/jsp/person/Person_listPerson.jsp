@@ -11,18 +11,18 @@
 <title>Time Sheet List</title>
 
 <script>
-    $(function() {
-        $('.datepick').each(function() {
-            $(this).datepicker({
+	$(function() {
+		$('.datepick').each(function() {
+			$(this).datepicker({
 
-                changeMonth : true,
-                changeYear : true,
+				changeMonth : true,
+				changeYear : true,
 
-            }
+			}
 
-            );
-        });
-    });
+			);
+		});
+	});
 </script>
 
 
@@ -177,83 +177,82 @@
                                     <s:form class="form-inline" name="CreatePerson" namespace="/" action="CreatePersonSubmit" method="POST" role="form"
                                         theme="bootstrap">
 
-                                        
-                                        <div class="form-group">
-                                        <table>
-
-                                            <label>Name</label>
-                                            <s:select list="#{'Mr.':'Mr.', 'Mrs.':'Mrs.','Miss.':'Miss.', 'Kumar':'Kumar'}" name="personDetail.title"
-                                                placeholder="Title" class="form-control">
-                                                
-                                            </s:select>
-                                            <!-- <input type="email" class="form-control" id="email" placeholder="Enter email">-->
-                                        </div>
 
                                         <div class="form-group">
-                                            <s:textfield type="text" name="personDetail.firstName" placeholder="FirstName" class="form-control" />
-                                        </div>
+                                            <table>
+
+                                                <label>Name</label>
+                                                <s:select list="#{'Mr.':'Mr.', 'Mrs.':'Mrs.','Miss.':'Miss.', 'Kumar':'Kumar'}" name="personDetail.title"
+                                                    placeholder="Title" class="form-control">
+
+                                                </s:select>
+                                                <!-- <input type="email" class="form-control" id="email" placeholder="Enter email">-->
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <s:textfield type="text" name="personDetail.firstName" placeholder="FirstName" class="form-control" />
+                                                </div>
 
 
-                                        <div class="form-group">
-                                            <s:textfield type="text" name="personDetail.middleName" placeholder="MiddleName" class="form-control" />
-                                        </div>
+                                                <div class="form-group">
+                                                    <s:textfield type="text" name="personDetail.middleName" placeholder="MiddleName" class="form-control" />
+                                                </div>
 
-                                        <div class="form-group">
-                                            <s:textfield type="text" name="personDetail.lastName" placeholder="LastName" class="form-control" />
-                                        </div>
-                                        <br>
-                                        <br>
+                                                <div class="form-group">
+                                                    <s:textfield type="text" name="personDetail.lastName" placeholder="LastName" class="form-control" />
+                                                </div>
+                                                <br>
+                                                <br>
 
-                                        <div class="form-group">
-                                            <label>DateOfBirth:</label>
-                                            <input type="text" class="datepick" id="date_1" name="personDetail.dateOfBirth" class="form-control"  />
+                                                <div class="form-group">
+                                                    <label>DateOfBirth:</label> <input type="text" class="datepick" id="date_1" name="personDetail.dateOfBirth"
+                                                        class="form-control" />
 
-                                        </div>
+                                                </div>
 
-                                        <%--  <s:select label="Gender" list="genderMap" name="personDetail.gender" class="form-control" /> --%>
-                                        <s:radio list="{'Male','Female'}" name="personDetail.gender"></s:radio>
-
-
-                                        <br>
-                                        <br>
-
-                                        <div class="form-group">
-                                            <label>UserName:</label>
-                                            <s:textfield type="text" name="personDetail.usersDetail.userName" class="form-control" />
+                                                <%--  <s:select label="Gender" list="genderMap" name="personDetail.gender" class="form-control" /> --%>
+                                                <s:radio list="{'Male','Female'}" name="personDetail.gender"></s:radio>
 
 
-                                        </div>
+                                                <br>
+                                                <br>
 
-                                        <div class="form-group">
-                                            <label>Password:</label>
-                                            <s:textfield type="password" name="personDetail.usersDetail.password" class="form-control" />
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label>Start Date:</label>
-                                            <input type="text" class="datepick" id="date_2" name="personDetail.startDate" class="form-control" />
-                                        </div>
-                                        <br />
-                                        <br />
-
-                                        <div class="form-group">
-                                            <label>End Date:</label>
-                                            <input type="text" class="datepick" id="date_3" name="personDetail.endDate" class="form-control"  />
-                                        </div>
-                                        </table>
-                                        <br />
-                                        <br />
+                                                <div class="form-group">
+                                                    <label>UserName:</label>
+                                                    <s:textfield type="text" name="personDetail.usersDetail.userName" class="form-control" />
 
 
-                                        <div class="modal-footer">
-                                            <s:submit type="submit" id="submit" value="Submit" class="btn btn-primary" />
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            <div class="checkbox">
-                                                <label><input type="checkbox"> Remember me</label>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Password:</label>
+                                                    <s:textfield type="password" name="personDetail.usersDetail.password" class="form-control" />
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label>Start Date:</label> <input type="text" class="datepick" id="date_2" name="personDetail.startDate"
+                                                        class="form-control" />
+                                                </div>
+                                                <br />
+                                                <br />
+
+                                                <div class="form-group">
+                                                    <label>End Date:</label> <input type="text" class="datepick" id="date_3" name="personDetail.endDate"
+                                                        class="form-control" />
+                                                </div>
+                                            </table>
+                                            <br />
+                                            <br />
+
+
+                                            <div class="modal-footer">
+                                                <s:submit type="submit" id="submit" value="Submit" class="btn btn-primary" />
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"> Remember me</label>
+                                                </div>
                                             </div>
-                                        </div>
-
                                     </s:form>
 
                                 </div>
@@ -298,19 +297,17 @@
                             <td><s:property value="gender" /></td>
                             <td><s:property value="dateOfBirth" /></td>
                             <td><s:property value="registrationDate" /></td>
-                                
+
                             <td><s:url var="readPersonURL" action="ReadPerson" escapeAmp="false">
                                     <s:param name="personDetail.personID" value="%{personID}" />
-                                </s:url> <s:a href="%{readPersonURL}">View</s:a> 
+                                </s:url> <s:a href="%{readPersonURL}">View</s:a>
                                 
-                            <s:url var="updatePersonURL" action="ReadPerson" escapeAmp="false">
+                                 <s:url var="updatePersonURL" action="ReadPerson" escapeAmp="false">
                                     <s:param name="personDetail.personID" value="%{personID}" />
                                     <s:param name="act" value="%{updateAction}" />
-                                </s:url> <s:a href="%{updatePersonURL}">Update</s:a> 
+                                </s:url> 
                                 
-                                <a href="#DeletePerson" data-toggle="modal">Delete</a>
-                                
-                                </td>
+                                <s:a href="%{updatePersonURL}">Update</s:a> <a href="#DeletePerson" data-toggle="modal">Delete</a></td>
                         </tr>
                     </s:iterator>
 
