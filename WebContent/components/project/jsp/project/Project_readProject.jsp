@@ -16,36 +16,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Time Sheet List</title>
 
-<script type="text/javascript">
-	$.fx.speeds._default = 1000;
-	$(function() {
-
-		$("#deleteProjectID").click(function() {
-			$("#deleteProjectID-model").dialog("open");
-			return false;
-		});
-
-		$("#deleteProjectID-model").dialog({
-			resizable : false,
-			height : 140,
-			modal : true,
-			autoOpen : false,
-			buttons : {
-				"DeleteProject" : function() {
-					$(this).dialog("submit");
-					submit = true;
-					$('#deleteProject').submit();
-				},
-				Cancel : function() {
-					$(this).dialog("close");
-				}
-			}
-		});
-
-	});
-
-</script>
-
 </head>
 <body>
 
@@ -69,7 +39,7 @@
 
                         <s:form class="form-inline" name="DeleteProject" namespace="/" action="DeleteProject" method="POST" role="form" theme="bootstrap">
 
-                            <p>Are You Sure</p>
+                            <p>Are You Sure ?</p>
 
 
                             <div class="modal-footer">
@@ -93,26 +63,12 @@
 
 
 
-    <!-- ***************************************Code for delete modal***************************** -->
 
-    <div class="body">
-
-        <div id="deleteProjectID-model" title="Delete Project">
-
-
-            <s:form namespace="/" action="DeleteProject" method="post" id="deleteProject">
-
-                <!-- <p>Are U sure?</p> -->
-
-                <s:hidden name="projectDetail.projectID" value="%{projectID}" />
-            </s:form>
-        </div>
-
-        <br>
-
+    
         <jsp:include page="Project_navProject.jsp"></jsp:include>
 
         <br />
+    <!-- ***************************************Code for adding Person to Project***************************** -->
 
         <%
         	ProjectDetail projectDetail = (ProjectDetail) request
@@ -149,9 +105,8 @@
                     <td><s:property value="projectDetail.startDate" /></td>
                     <td><s:property value="projectDetail.endDate" /></td>
 
-                    <td><a href="#DeleteProject" data-toggle="modal">Delete</a> <%--      <s:param name="projectDetail.projectID" value="%{projectID}" /> --%>
-
-
+                    <td><a href="#DeleteProject" data-toggle="modal">Delete</a> 
+                    
                         <s:url id="AddPersonToProjectURL" action="AddPersonToProject" escapeAmp="false">
                             <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
                         </s:url> <s:a href="%{AddPersonToProjectURL}">Add Person</s:a></td>

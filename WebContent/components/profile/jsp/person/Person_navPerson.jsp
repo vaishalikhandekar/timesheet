@@ -73,7 +73,7 @@
                         <s:url var="PersonHome" action="/ReadPerson">
                             <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                         </s:url>
-                        <a href="${PersonHome}">Home</a>
+                        <a href="${PersonHome}"><span class="glyphicon glyphicon-home"></span> Home</a>
                     </li>
 
                     <li>

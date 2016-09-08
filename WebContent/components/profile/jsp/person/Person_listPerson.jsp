@@ -300,15 +300,15 @@
 
                             <td><s:url var="readPersonURL" action="ReadPerson" escapeAmp="false">
                                     <s:param name="personDetail.personID" value="%{personID}" />
-                                </s:url> <s:a href="%{readPersonURL}">View</s:a>
+                                </s:url> <s:a href="%{readPersonURL}"><span class="glyphicon glyphicon-eye-open"></span> <!-- View --></s:a>
                                 
                                  <s:url var="updatePersonURL" action="ReadPerson" escapeAmp="false">
                                     <s:param name="personDetail.personID" value="%{personID}" />
                                     <s:param name="act" value="%{updateAction}" />
                                 </s:url> 
-                                <s:a href="%{updatePersonURL}">Update</s:a>
+                                <s:a href="%{updatePersonURL}"><span class="glyphicon glyphicon-pencil"></span> <!-- Update --></s:a>
                                 
-                                 <a href="#DeletePerson" data-toggle="modal">Delete</a></td>
+                                 <a href="#DeletePerson" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span> <!-- Delete --></a></td>
                         </tr>
                     </s:iterator>
 
