@@ -21,12 +21,34 @@ public class PersonSearchAction extends ActionSupport implements SessionAware {
 
 	private Map<String, Object> session;
 	HttpServletRequest request;
-	
 
-	
-
+	public  PersonDetail personDetail;
 	public  PersonSearchDetails personSearchDetails;
 	public PersonSearchResult personSearchResult;
+
+	public PersonDetail getPersonDetail() {
+		return personDetail;
+	}
+
+	public void setPersonDetail(PersonDetail personDetail) {
+		this.personDetail = personDetail;
+	}
+
+	public PersonSearchDetails getPersonSearchDetails() {
+		return personSearchDetails;
+	}
+
+	public void setPersonSearchDetails(PersonSearchDetails personSearchDetails) {
+		this.personSearchDetails = personSearchDetails;
+	}
+
+	public PersonSearchResult getPersonSearchResult() {
+		return personSearchResult;
+	}
+
+	public void setPersonSearchResult(PersonSearchResult personSearchResult) {
+		this.personSearchResult = personSearchResult;
+	}
 
 	public void setSession(Map<String, Object> sessionInput) {
 		this.session = sessionInput;
@@ -47,35 +69,6 @@ public class PersonSearchAction extends ActionSupport implements SessionAware {
 		this.request = request;
 	}
 
-	/**
-	 * @return the personSearchDetails
-	 */
-	public PersonSearchDetails getpersonSearchDetails() {
-		return personSearchDetails;
-	}
-
-	/**
-	 * @param personSearchDetails
-	 *            the personSearchDetails to set
-	 */
-	public void setPersonSearchDetails(PersonSearchDetails personSearchDetails) {
-		this.personSearchDetails = personSearchDetails;
-	}
-
-
-	/**
-	 * @return the personSearchResult
-	 */
-	public PersonSearchResult getpersonSearchResult() {
-		return personSearchResult;
-	}
-
-	/**
-	 * @param personSearchResult the personSearchResult to set
-	 */
-	public void setpersonSearchResult(PersonSearchResult personSearchResult) {
-		this.personSearchResult = personSearchResult;
-	}
 	
 	
 	public String execute() throws Exception {
@@ -100,7 +93,9 @@ public class PersonSearchAction extends ActionSupport implements SessionAware {
 				
 				ProjectPersonLinkDetail projectPersonLinkDetail = new ProjectPersonLinkDetail();
 					
-				PersonDetail personDetail = personDetailList.get(0);
+				 personDetail = personDetailList.get(0);
+				 setPersonDetail(personDetail);
+				
 				//projectPersonLinkDetail.setProjectDetail(personDetail);
 			
 		if (personDetailList != null) {

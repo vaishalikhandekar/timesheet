@@ -132,7 +132,7 @@ public class PersonCreateDAO {
 			personSearchCriteria.setLastName(personDetail.getLastName() == null ? "" : personDetail.getLastName());
 
 			PersonSearchDetails personSearchDetails = new PersonSearchDetails();
-			personSearchDetails.setpersonSearchCriteria(personSearchCriteria);
+			personSearchDetails.setPersonSearchCriteria(personSearchCriteria);
 
 			//
 			PersonSearchDAO searchPersonDAO = new PersonSearchDAO();

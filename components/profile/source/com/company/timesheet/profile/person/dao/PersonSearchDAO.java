@@ -19,7 +19,7 @@ public class PersonSearchDAO {
 	public List<PersonDetail> searchpersonInfo(PersonSearchDetails personSearchDetails) {
 
 		List<PersonDetail> personDetailList = new ArrayList<PersonDetail>();
-		PersonSearchCriteria personSearchCriteria = personSearchDetails.getpersonSearchCriteria();
+		PersonSearchCriteria personSearchCriteria = personSearchDetails.getPersonSearchCriteria();
 		PersonDetail personDetail = null;
 
 		String whereStr = "";

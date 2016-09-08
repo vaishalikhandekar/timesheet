@@ -8,39 +8,29 @@ public class PersonSearchDetails {
 	
 	private String errorMessage;
 
-	public PersonSearchCriteria getpersonSearchCriteria() {
-
+	public PersonSearchCriteria getPersonSearchCriteria() {
 		return personSearchCriteria;
 	}
 
-	public void setpersonSearchCriteria(PersonSearchCriteria personSearchCriteria) {
-
+	public void setPersonSearchCriteria(PersonSearchCriteria personSearchCriteria) {
 		this.personSearchCriteria = personSearchCriteria;
 	}
 
-	public PersonSearchResult getpersonSearchResult() {
-
+	public PersonSearchResult getPersonSearchResult() {
 		return personSearchResult;
 	}
 
-	public void setpersonSearchResult(PersonSearchResult personSearchResult) {
-
+	public void setPersonSearchResult(PersonSearchResult personSearchResult) {
 		this.personSearchResult = personSearchResult;
 	}
 
-	
 	public String getErrorMessage() {
-	
 		return errorMessage;
 	}
 
-	
 	public void setErrorMessage(String errorMessage) {
-	
 		this.errorMessage = errorMessage;
 	}
 
 	
-	
-
 }
