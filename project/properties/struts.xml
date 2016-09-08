@@ -79,6 +79,11 @@
             <result name="success" type="tiles">SearchPerson</result>
             <result name="error">/index</result>
         </action>
+        
+        <action name="PersonProjectList" class="com.company.timesheet.profile.person.action.PersonReadAction">
+            <result name="success" type="tiles">PersonProjectList</result>
+            <result name="error">/index</result>
+        </action>
 
 
 
@@ -146,10 +151,10 @@
             <result name="error">/index</result>
         </action>
 
-        <!-- <action name="ListOfPersonInTheProject" class="com.company.timesheet.project.projectpersonlink.action.ListOfPersonInTheProjectAction">
+         <action name="ListOfPersonInTheProject" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkListPersonInTheProjectAction">
             <result name="success" type="tiles">ListOfPersonInTheProject</result>
             <result name="error">/index</result>
-        </action> -->
+        </action> 
 
 
 

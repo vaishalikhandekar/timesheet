@@ -82,6 +82,12 @@
                         <li>
                             <a href="#">Team</a>
                         </li>
+                        <li>
+                            <a href="#">Time Sheets</a>
+                        </li>
+                        <li>
+                            <a href="#">Time Sheets Administration</a>
+                        </li>
                     </ul>
                     
                 </div>

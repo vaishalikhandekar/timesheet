@@ -44,19 +44,7 @@
 
 	});
 
-	$(function() {
-		$("#accordion").accordion({
-			autoHeight : false,
-			navigation : true,
-			collapsible : true,
-			active : false
-		});
-	});
 </script>
-
-
-
-
 
 </head>
 <body>
@@ -64,8 +52,6 @@
     <!-- ***************************************Code for delete modal***************************** -->
 
     <div class="pull-right" class="container">
-
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Create New Project</button>
 
         <div class="modal fade" id="DeleteProject" data-keyboard="false" data-backdrop="static">
 
@@ -136,7 +122,7 @@
         %>
 
         <a href="AddPersonToProject?projectID=<%=projectID%>">Add Person To Project</a>
-        <br/>
+        <br />
 
         <s:form action="/ReadProject" method="post">
             <br>
@@ -168,9 +154,7 @@
 
                         <s:url id="AddPersonToProjectURL" action="AddPersonToProject" escapeAmp="false">
                             <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
-                        </s:url> 
-                        <s:a href="%{AddPersonToProjectURL}">Add Person</s:a>
-                        </td>
+                        </s:url> <s:a href="%{AddPersonToProjectURL}">Add Person</s:a></td>
 
                 </tr>
                 <s:hidden name="projectDetail.projectID"></s:hidden>

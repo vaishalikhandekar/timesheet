@@ -38,15 +38,13 @@
             <a href="ListProject">Project List</a>
             <br />
             <br />
-            <a href="ProjectNav">ProjectNav</a>
-
         </div>
 
         <h1>Time Sheet</h1>
         <div>
 
             <br />
-            <a href="TimeSheetList">TimeSheet List</a>
+            <a href="TimeSheetList">Time Sheets</a>
             <br />
             <br />
             <a href="CreateTimeSheetLineItem">Create TimeSheetLineItem</a>

@@ -90,6 +90,11 @@
         <put-attribute name="body" value="/components/profile/jsp/person/Person_readPerson.jsp" />
     </definition>
     
+     <definition name="PersonProjectList" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Person Project List" />
+        <put-attribute name="body" value="/components/profile/jsp/person/Person_listProjects.jsp" />
+    </definition>
+    
     
     <!-- Project -->
     	
