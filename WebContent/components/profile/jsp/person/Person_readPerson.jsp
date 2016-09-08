@@ -1,6 +1,6 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 
 
 <!DOCTYPE html>
@@ -10,28 +10,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Time Sheet List</title>
 
-<script>
-	$(function() {
-		$('.datepick').each(function() {
-			$(this).datepicker({
-
-				changeMonth : true,
-				changeYear : true,
-
-			}
-
-			);
-		});
-	});
-</script>
-
-
 </head>
 
 <body>
-
+ 
+    <jsp:include page="Person_navPerson.jsp"></jsp:include>
     
-
     <s:form action="/ReadPerson" method="post">
 
         <table class="table table-striped">

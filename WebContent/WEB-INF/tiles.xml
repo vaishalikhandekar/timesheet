@@ -84,10 +84,6 @@
         <put-attribute name="body" value="/components/profile/jsp/person/Person_updatePerson.jsp" />
     </definition> -->
     
-     <definition name="SearchPerson" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="Search Person" />
-        <put-attribute name="body" value="/components/profile/jsp/person/Person_searchPerson.jsp" />
-    </definition>
     
      <definition name="ReadPerson" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Read Person" />
