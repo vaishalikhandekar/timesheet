@@ -12,11 +12,20 @@
 </head>
 <body>
 
+    <div class="tabbable full-width-tabs">
+        <ul class="nav nav-tabs">
+
+            <li class="active"><a data-toggle="tab" href="#PersonList">Person Name</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="PersonList" class="tab-pane fade in active">
+
     <!-- add pannel to the page -->
     <div class="panel panel-primary">
 
         <div class="panel-heading">
-            <h3 class="panel-title">Person Name</h3>
+            <h3 class="panel-title"></h3>
         </div>
 
         <div class="panel-body">
@@ -59,21 +68,26 @@
             </div>
             <div id="navbarCollapse" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
+
                     <li class="active">
                         <s:url var="PersonHome" action="/ReadPerson">
                             <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                         </s:url>
                         <a href="${PersonHome}">Home</a>
-                        <!--  <a href="ReadProject">Home</a> -->
                     </li>
+
                     <li>
                         <s:url var="PersonProjectList" action="/PersonProjectList">
                             <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                         </s:url>
                         <a href="${PersonProjectList}">Projects</a>
                     </li>
+
                     <li>
-                        <a href="#">Time Sheets</a>
+                        <s:url var="TimeSheetList" action="/PersonTimeSheetList">
+                            <s:param name="personDetail.personID" value="%{personDetail.personID}" />
+                        </s:url>
+                        <a href="${TimeSheetList}">Time Sheets</a>
                     </li>
 
                 </ul>
@@ -82,6 +96,9 @@
         </nav>
     </div>
 
+</div>
+</div>
+</div>
 
 </body>
 </html>

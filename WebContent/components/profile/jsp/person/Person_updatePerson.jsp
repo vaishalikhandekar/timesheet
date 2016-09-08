@@ -7,37 +7,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 
-<script>
-  $( function() {
-    $( "#updatePersonModal" ).dialog({
-      resizable: false,
-      height: "auto",
-      width: 200,
-      modal: true,
-    });
-  } );
-  </script>
-
 </head>
 <body>
 	
-     <div class="pull-right" class="container">
-
-        <div class="modal fade" id="updatePersonModal" data-keyboard="false" data-backdrop="static">
-
-            <div class="modal-dialog modal-lg">
-
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                          <button class="close" type="button" data-dismiss="modal">&times;</button>
-                        <h3 class="modal-title">Delete Project</h3>
-                    </div>
-
-                    <div class="modal-body">
+    <div class="container" style="border: thin solid black">
 	<s:form
 		action="/UpdatePersonSubmit"
 		method="POST">
+   <h3 class="well">Update Person</h3>
 
 		
 		<table>
@@ -77,31 +54,18 @@
 				<td><s:textfield name="personDetail.registrationDate"
 					/></td>
 			</tr>
-		</table>
 
-                  <div class="modal-footer">
-				<td><s:submit type="submit" value="submit" class="btn btn-primary"/>
+				<s:submit type="submit" value="submit" class="btn btn-primary"/>
+                
                 <s:hidden name="personDetail.personID"></s:hidden>
                 <s:hidden name="personDetail.versionNo"></s:hidden>
 
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
+		</table>
+            <br/>
 
                         </s:form>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-            
-
-
-
+            <br/>
+</div>
 
 </body>
 </html>

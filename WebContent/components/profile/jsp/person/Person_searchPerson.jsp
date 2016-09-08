@@ -14,11 +14,12 @@
 </head>
 <body>
 
-
+    <div class="container" style="border: thin solid black"> 
+        <br>
 
     <s:form action="/SearchPersonSubmit" method="POST">
         <table >
-
+    <h4 class="well">Person Search</h4>
             <tr>
                 <td>First Name</td>
                 <td><s:textfield type="text" name="personSearchDetails.personSearchCriteria.firstName" /></td>
@@ -31,14 +32,14 @@
                 <td>Last Name</td>
                 <td><s:textfield type="text" name="personSearchDetails.personSearchCriteria.lastName" /></td>
             </tr>
-           
-
-
-
+                       
             <tr>
                 <td><input type="submit" value="Submit"></td>
             </tr>
         </table>
+            <br/>
+            <br/>
+         </div>
         <br>
        
         <table class="table table-striped">
@@ -69,5 +70,7 @@
                         <s:hidden name="personDetail.personID"></s:hidden>
         </table>
     </s:form>
+   <br/>
+    
 </body>
 </html>

@@ -9,10 +9,11 @@
 </head>
 <body>
 
+<div class="container" style="border: thin solid black">
 <s:form
 		action="/UpdateProjectSubmit"
 		method="POST">
-
+ <h3 class="well">Update Project</h3>
 		
 		<table>
 			<tr>
@@ -44,7 +45,7 @@
 
 			<tr>
 
-				<td><s:submit type="submit" value="submit"/>
+				<td><s:submit type="submit" value="submit" class="btn btn-primary"/>
                 <s:hidden name="projectDetail.projectID"></s:hidden>
                 <s:hidden name="projectDetail.versionNo"></s:hidden>
 
@@ -52,9 +53,10 @@
 
 
 		</table>
+         <br/>
 
 	</s:form>
-
+ <br/>
 
 </body>
 </html>

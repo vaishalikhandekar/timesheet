@@ -59,10 +59,9 @@
 			action="/CreatePersonSubmit" method="POST" role="form"
 			theme="bootstrap">
 
-            <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
 			<div class="form-group">
 
-				<label>Name<span class="glyphicon glyphicon-asterisk-ok icon-red"></span></label>
+				<label>Name</label>
 				<s:select
 					list="#{'Mr.':'Mr.', 'Mrs.':'Mrs.','Miss.':'Miss.', 'Kumar':'Kumar'}"
 					name="personDetail.title" placeholder="Title"

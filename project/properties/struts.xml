@@ -54,9 +54,7 @@
         </action>
 
         <action name="ReadPerson" class="com.company.timesheet.profile.person.action.PersonReadAction">
-            <result name="SENTTOUPDATE" type="redirect">
-                <param name="location">/ListPersonForUpdate</param>
-            </result>
+            <result name="SENTTOUPDATE" type="tiles">PersonUpdate </result>
             <result name="success" type="tiles">ReadPerson</result>
             <result name="error">/index</result>
         </action>
@@ -84,6 +82,11 @@
             <result name="success" type="tiles">PersonProjectList</result>
             <result name="error">/index</result>
         </action>
+        
+        <action name="PersonTimeSheetList" class="com.company.timesheet.profile.person.action.PersonReadAction">
+            <result name="success" type="tiles">PersonTimeSheetList</result>
+            <result name="error">/index</result>
+        </action>
 
 
 
@@ -96,7 +99,15 @@
         <action name="CreateProject">
             <result type="tiles">CreateProject</result>
         </action>
+        
+        <action name="ProjectSearch">
+            <result type="tiles">ProjectSearch</result>
+        </action>
 
+        <action name="SearchProjectSubmit" class="com.company.timesheet.project.action.ProjectSearchAction">
+            <result name="success" type="tiles">ProjectSearch</result>
+            <result name="error">/index</result>
+        </action>
         <action name="CreateProjectSubmit" class="com.company.timesheet.project.action.ProjectCreateAction">
             <result name="success" type="redirect">
                 <param name="location">/ListProject</param>
@@ -127,6 +138,16 @@
             <result name="success" type="redirect">
                 <param name="location"> /ListProject </param>
             </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="ProjectPersonList" class="com.company.timesheet.project.action.ProjectReadAction">
+            <result name="success" type="tiles">ProjectPersonList</result>
+            <result name="error">/index</result>
+        </action>
+        
+        <action name="ProjectPersonTeam" class="com.company.timesheet.project.action.ProjectReadAction">
+            <result name="success" type="tiles">ProjectPersonTeam</result>
             <result name="error">/index</result>
         </action>
 
@@ -168,6 +189,19 @@
             <result name="error">/index</result>
         </action>
 
+
+        <action name="TimeSheets" class="com.company.timesheet.project.action.ProjectReadAction">
+            <result name="success" type="tiles">TimeSheets</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="TimeSheetsAdministration" class="com.company.timesheet.project.action.ProjectReadAction">
+            <result name="success" type="tiles">TimeSheetsAdministration</result>
+            <result name="error">/index</result>
+        </action>
+        
+        <!-- TimeSheet LineItem -->
+        
         <action name="CreateTimeSheetLineItem">
             <result type="tiles">CreateTimeSheetLineItem</result>
         </action>
@@ -175,8 +209,7 @@
         <!-- <action name="CreateTimeSheetLineItemSubmit" class="com.company.timesheet.timesheetlineitem.action.CreateTimeSheetLineItemAction">
             <result name="success" type="tiles">TimeSheetList</result> <result name="error">/index</result>
             </action> -->
-
-
+        
 
     </package>
 

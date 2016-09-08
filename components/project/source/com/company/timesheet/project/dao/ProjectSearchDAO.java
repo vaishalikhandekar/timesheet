@@ -36,14 +36,6 @@ public class ProjectSearchDAO {
 			whereStr += (whereStr == "") ? " WHERE " : " AND ";
 			whereStr += " projectName = '" + projectSearchCriteria.getProjectName() + "'";
 		}
-		if (projectSearchCriteria.getStartDate() != null && !projectSearchCriteria.getStartDate().equals(emptyStr)) {
-			whereStr += (whereStr == "") ? " WHERE " : " AND ";
-			whereStr += " startDate = '" + projectSearchCriteria.getStartDate() + "'";
-		}
-		if (projectSearchCriteria.getEndDate() != null && !projectSearchCriteria.getEndDate().equals(emptyStr)) {
-			whereStr += (whereStr == "") ? " WHERE " : " AND ";
-			whereStr += " endDate = '" + projectSearchCriteria.getEndDate() + "'";
-		}
 
 		if (!whereStr.equals(emptyStr)) {
 

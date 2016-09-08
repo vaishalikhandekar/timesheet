@@ -1,5 +1,6 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,17 +19,19 @@
 
     <!-- add pannel to the page -->
 
-     <div class="panel panel-primary">
+    <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">Project Title</h3>
         </div>
 
         <div class="panel-body">
-            <br /> <br /> Context Panel
+            <br />
+            <br />
+            Context Panel
         </div>
     </div>
 
-   <!-- <ul class="nav nav-tabs">
+    <!-- <ul class="nav nav-tabs">
         <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
         <li><a href="#person" data-toggle="tab">Person</a></li>
         <li><a href="#team" data-toggle="tab">Team</a></li>
@@ -55,44 +58,59 @@
 
     <!-- Code for NavBar -->
     <div class="bs-example">
-            <nav role="navigation" class="navbar navbar-light" style="background-color:#e3f2fd">
-                <div class="navbar-header">
-                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div id="navbarCollapse" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active">
+        <nav role="navigation" class="navbar navbar-light" style="background-color:#e3f2fd">
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
 
-                            <s:url var="test" action="/ReadProject">
-                            </s:url>
-                            <s:param name="projectDetail.projectID" value="%{projectID}" /> 
-                            <a href="${test}">Home</a>
+                <li class="active">
 
+                    <s:url var="ProjectHome" action="/ReadProject">
+                        <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
+                    </s:url>
+                    <a href="${ProjectHome}">Home</a>
 
-                            <!--  <a href="ReadProject">Home</a> -->
-                        </li>
-                        <li>
-                            <a href="ListOfPersonInTheProject">Person</a>
-                        </li>
-                        <li>
-                            <a href="#">Team</a>
-                        </li>
-                        <li>
-                            <a href="#">Time Sheets</a>
-                        </li>
-                        <li>
-                            <a href="#">Time Sheets Administration</a>
-                        </li>
-                    </ul>
-                    
-                </div>
-            </nav>
-        </div> 
+                </li>
+
+                <li>
+
+                    <s:url var="ProjectPersonList" action="/ProjectPersonList">
+                        <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
+                    </s:url>
+                    <a href="${ProjectPersonList}">PersonList</a>
+
+                </li>
+                
+                <li>
+                    <s:url var="Team" action="/ProjectPersonTeam">
+                        <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
+                    </s:url>
+                    <a href="${Team}">Team</a>
+                </li>
+                
+                <li>
+                   <s:url var="TimeSheets" action="/TimeSheets">
+                        <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
+                    </s:url>
+                    <a href="${TimeSheets}">TimeSheets</a>
+                </li>
+                
+                <li>
+                 <s:url var="TimeSheetsAdministration" action="/TimeSheetsAdministration">
+                        <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
+                    </s:url>
+                    <a href="${TimeSheetsAdministration}">Time Sheets Administration</a>
+                </li>
+                
+            </ul>
+
+        </div>
+        </nav>
+    </div>
 
 
 </body>

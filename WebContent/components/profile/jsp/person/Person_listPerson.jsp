@@ -272,7 +272,7 @@
 
             <s:form action="/ListPerson" method="post">
 
-                <table class="table table-striped">
+                <table class="table table-striped" border="1" ; width=100%>
                     <thead>
 
                         <tr class="success">
@@ -306,8 +306,9 @@
                                     <s:param name="personDetail.personID" value="%{personID}" />
                                     <s:param name="act" value="%{updateAction}" />
                                 </s:url> 
+                                <s:a href="%{updatePersonURL}">Update</s:a>
                                 
-                                <s:a href="%{updatePersonURL}">Update</s:a> <a href="#DeletePerson" data-toggle="modal">Delete</a></td>
+                                 <a href="#DeletePerson" data-toggle="modal">Delete</a></td>
                         </tr>
                     </s:iterator>
 

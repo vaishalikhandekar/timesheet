@@ -253,10 +253,11 @@
 
                         <div class="container">
                             <table class="table table-striped" border="1" ; width=100%>
-                                <thead>
+                                <thead >
 
-                                    <tr class="success">
-                                        <th>Project Name</th>
+                                    <tr class="success" >
+                                        <th >Project Name</th>
+                                        <th>Description</th>
                                         <th>Record Status</th>
                                         <th>Start Date</th>
                                         <th>End Date</th>
@@ -268,6 +269,7 @@
 
                                     <tr>
                                         <td><s:property value="projectName" /></td>
+                                        <td><s:property value="description" /></td>
                                         <td><s:property value="recordStatus" /></td>
                                         <td><s:property value="startDate" /></td>
                                         <td><s:property value="endDate" /></td>
@@ -276,15 +278,19 @@
                                                 <s:param name="projectDetail.projectID" value="%{projectID}" />
                                             </s:url> <s:a href="%{ViewProjectURL}">View</s:a> 
                                             
-                                            <!-- <s:url var="updateProjectURL" action="ReadProject"
+                                             <s:url var="updateProjectURL" action="ReadProject"
                                                                     escapeAmp="false">
                                                                     <s:param name="projectDetail.projectID" value="%{projectID}"
                                                                     />
                                                                     <s:param name="act" value="%{updateAction}" />
                                                                     </s:url>
 
-                                                                    <s:a href="%{updateProjectURL}">Update</s:a> --> <s:url id="updateProjectURL">
-                                            </s:url> <s:a href="%{updateProjectURL}" id="updateProjectID">Update</s:a> <s:url id="ProjectDeleteURL">
+                                                                    <s:a href="%{updateProjectURL}">Update</s:a>  
+                                                                    
+                                                                    <%-- <s:url id="updateProjectURL">
+                                            </s:url> <s:a href="%{updateProjectURL}" id="updateProjectID">Update</s:a> --%> 
+                                            
+                                            <s:url id="ProjectDeleteURL">
                                             </s:url> <s:a href="%{ProjectDeleteURL}" id="deleteProjectID">Delete</s:a> <!-- <s:a href="%{ProjectDeleteURL}" onclick="return confirm('Are
                                                                     u sure?');">Delete</s:a> --> <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
                                                                     data-target="#modal-2"
