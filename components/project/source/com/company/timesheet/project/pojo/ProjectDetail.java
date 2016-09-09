@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.company.timesheet.profile.person.pojo.PersonDetail;
+import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
+
 /**
  * @author vaish
  *
@@ -16,6 +19,8 @@ public class ProjectDetail {
 	private String projectName;
 	
 	private Long projectID;
+	
+	private Long personID;
 	
 	private String description;
 	
@@ -33,6 +38,10 @@ public class ProjectDetail {
 	
 	private String updateAction = "update";
 	
+	private ProjectPersonLinkDetail projectPersonLinkDetail;
+	
+	private PersonDetail personDetail;
+	
 	public String getUpdateAction() {
 		return updateAction;
 	}
@@ -43,6 +52,15 @@ public class ProjectDetail {
 
 
 	
+	public ProjectPersonLinkDetail getProjectPersonLinkDetail() {
+		return projectPersonLinkDetail;
+	}
+
+	public void setProjectPersonLinkDetail(
+			ProjectPersonLinkDetail projectPersonLinkDetail) {
+		this.projectPersonLinkDetail = projectPersonLinkDetail;
+	}
+
 	public String getProjectName() {
 		return projectName;
 	}
@@ -57,6 +75,14 @@ public class ProjectDetail {
 
 	public void setProjectID(Long projectID) {
 		this.projectID = projectID;
+	}
+
+	public Long getPersonID() {
+		return personID;
+	}
+
+	public void setPersonID(Long personID) {
+		this.personID = personID;
 	}
 
 	public String getDescription() {
@@ -113,6 +139,14 @@ public class ProjectDetail {
 
 	public void setErrorMessageList(List<String> errorMessageList) {
 		this.errorMessageList = errorMessageList;
+	}
+
+	public PersonDetail getPersonDetail() {
+		return personDetail;
+	}
+
+	public void setPersonDetail(PersonDetail personDetail) {
+		this.personDetail = personDetail;
 	}
 	
 	

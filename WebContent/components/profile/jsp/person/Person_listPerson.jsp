@@ -90,32 +90,46 @@
                             <table>
                                 <tr>
                                     <td>Title</td>
-                                    <td><s:textfield name="personDetail.title" /></td>
+                                    <td>
+                                        <s:textfield name="personDetail.title" />
+                                    </td>
                                 </tr>
 
                                 <tr>
                                     <td>First Name</td>
-                                    <td><s:textfield name="personDetail.firstName" /></td>
+                                    <td>
+                                        <s:textfield name="personDetail.firstName" />
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Middle Name</td>
-                                    <td><s:textfield name="personDetail.middleName" /></td>
+                                    <td>
+                                        <s:textfield name="personDetail.middleName" />
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Last Name</td>
-                                    <td><s:textfield name="personDetail.lastName" /></td>
+                                    <td>
+                                        <s:textfield name="personDetail.lastName" />
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Gender</td>
-                                    <td><s:textfield name="personDetail.gender" /></td>
+                                    <td>
+                                        <s:textfield name="personDetail.gender" />
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Date Of Birth</td>
-                                    <td><s:textfield name="personDetail.dateOfBirth" /></td>
+                                    <td>
+                                        <s:textfield name="personDetail.dateOfBirth" />
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Registration Date</td>
-                                    <td><s:textfield name="personDetail.registrationDate" /></td>
+                                    <td>
+                                        <s:textfield name="personDetail.registrationDate" />
+                                    </td>
                                 </tr>
                             </table>
 
@@ -146,16 +160,17 @@
     <div class="tabbable full-width-tabs">
         <ul class="nav nav-tabs">
 
-            <li class="active"><a data-toggle="tab" href="#PersonList">Person List</a></li>
+            <li class="active">
+                <a data-toggle="tab" href="#PersonList">Person List</a>
+            </li>
         </ul>
 
         <div class="tab-content">
-            <div id="PersonList" class="tab-pane fade in active">
 
+            <div id="PersonList" class="tab-pane fade in active">
 
                 <!-- ************************Create New Person************************ -->
 
-                <br />
                 <div class="pull-right" class="container">
 
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Create New Person</button>
@@ -241,10 +256,18 @@
                                                     <label>End Date:</label> <input type="text" class="datepick" id="date_3" name="personDetail.endDate"
                                                         class="form-control" />
                                                 </div>
+
+                                                <div class="form-group">
+                                                    <label>Email Address:</label> <input type="text" name="personDetail.emailAddress" class="form-control" />
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Phone Number:</label> <input type="text" name="personDetail.phoneNumber" class="form-control" />
+                                                </div>
+
                                             </table>
                                             <br />
                                             <br />
-
 
                                             <div class="modal-footer">
                                                 <s:submit type="submit" id="submit" value="Submit" class="btn btn-primary" />
@@ -272,46 +295,72 @@
 
             <s:form action="/ListPerson" method="post">
 
-                <table class="table table-striped" border="1" ; width=100%>
+                <table class="table table-striped" border="1">
                     <thead>
 
                         <tr class="success">
-                            <th align="left">Title</th>
-                            <th>First Name</th>
-                            <th>Middle Name</th>
-                            <th>Last Name</th>
-                            <th>Gender</th>
-                            <th>Date Of Birth</th>
-                            <th>Registration Date</th>
-                            <th colspan=3>Action</th>
+                            <th style="text-align:center">Action</th>
+                            <th style="text-align:center">Title</th>
+                            <th style="text-align:center">First Name</th>
+                            <th style="text-align:center">Middle Name</th>
+                            <th style="text-align:center">Last Name</th>
+                            <th style="text-align:center">Gender</th>
+                            <th style="text-align:center">Date Of Birth</th>
+                            <th style="text-align:center">Registration Date</th>
                         </tr>
+
                     </thead>
 
                     <s:iterator value="personDetailList" status="stat">
 
                         <tr>
-                            <td><s:property value="title" /></td>
-                            <td><s:property value="firstName" /></td>
-                            <td><s:property value="middleName" /></td>
-                            <td><s:property value="lastName" /></td>
-                            <td><s:property value="gender" /></td>
-                            <td><s:property value="dateOfBirth" /></td>
-                            <td><s:property value="registrationDate" /></td>
 
-                            <td><s:url var="readPersonURL" action="ReadPerson" escapeAmp="false">
+                            <td align="center">
+                                <s:url var="readPersonURL" action="ReadPerson" escapeAmp="false">
                                     <s:param name="personDetail.personID" value="%{personID}" />
-                                </s:url> <s:a href="%{readPersonURL}"><span class="glyphicon glyphicon-eye-open"></span> <!-- View --></s:a>
-                                
-                                 <s:url var="updatePersonURL" action="ReadPerson" escapeAmp="false">
+                                </s:url>
+                                <s:a href="%{readPersonURL}">
+                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                    <!-- View -->
+                                </s:a>&nbsp
+                                <s:url var="updatePersonURL" action="ReadPerson" escapeAmp="false">
                                     <s:param name="personDetail.personID" value="%{personID}" />
                                     <s:param name="act" value="%{updateAction}" />
-                                </s:url> 
-                                <s:a href="%{updatePersonURL}"><span class="glyphicon glyphicon-pencil"></span> <!-- Update --></s:a>
-                                
-                                 <a href="#DeletePerson" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span> <!-- Delete --></a></td>
-                        </tr>
-                    </s:iterator>
+                                </s:url>
+                                <s:a href="%{updatePersonURL}">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                    <!-- Update -->
+                                </s:a>&nbsp
+                                <a href="#DeletePerson" data-toggle="modal">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                    <!-- Delete -->
+                                </a>
+                            </td>
+                            <td align="center">
+                                <s:property value="title" />
+                            </td>
+                            <td align="center">
+                                <s:property value="firstName" />
+                            </td>
+                            <td align="center">
+                                <s:property value="middleName" />
+                            </td>
+                            <td align="center">
+                                <s:property value="lastName" />
+                            </td>
+                            <td align="center">
+                                <s:property value="gender" />
+                            </td>
+                            <td align="center">
+                                <s:property value="dateOfBirth" />
+                            </td>
+                            <td align="center">
+                                <s:property value="registrationDate" />
+                            </td>
 
+                        </tr>
+
+                    </s:iterator>
 
                 </table>
 

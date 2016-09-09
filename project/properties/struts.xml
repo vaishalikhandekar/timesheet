@@ -38,7 +38,10 @@
 
 
         <action name="PersonLogin" class="com.company.timesheet.profile.person.action.PersonLoginAction">
-            <result name="success" type="tiles">PersonHome</result>
+            <result name="success" type="tiles">
+            <param name="location"> PersonLogin</param>
+             <param name="personDetail.personID">${usersDetail.personID}</param>
+             </result>
             <result name="error">/index</result>
         </action>
 
@@ -78,7 +81,7 @@
             <result name="error">/index</result>
         </action>
         
-        <action name="PersonProjectList" class="com.company.timesheet.profile.person.action.PersonReadAction">
+        <action name="PersonProjectList" class="com.company.timesheet.profile.person.action.PersonProjectListAction">
             <result name="success" type="tiles">PersonProjectList</result>
             <result name="error">/index</result>
         </action>
@@ -141,7 +144,7 @@
             <result name="error">/index</result>
         </action>
 
-        <action name="ProjectPersonList" class="com.company.timesheet.project.action.ProjectReadAction">
+        <action name="ProjectPersonList" class="com.company.timesheet.project.action.ProjectPersonListAction">
             <result name="success" type="tiles">ProjectPersonList</result>
             <result name="error">/index</result>
         </action>

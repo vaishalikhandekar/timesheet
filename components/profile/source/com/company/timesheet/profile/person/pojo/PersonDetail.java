@@ -26,12 +26,16 @@ public class PersonDetail {
 	private String recordStatus;
 
 	private String comment;
+	
+	private String emailAddress;
 
 	private Timestamp registrationDate;
 
 	private UsersDetail usersDetail = null;
 
 	private int versionNo;
+	
+	private int phoneNumber;
 	
 	private Date startDate;
 	
@@ -130,6 +134,14 @@ public class PersonDetail {
 		this.comment = comment;
 	}
 
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+
 	public Timestamp getRegistrationDate() {
 		return registrationDate;
 	}
@@ -152,6 +164,14 @@ public class PersonDetail {
 
 	public void setVersionNo(int versionNo) {
 		this.versionNo = versionNo;
+	}
+
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 	public Date getStartDate() {

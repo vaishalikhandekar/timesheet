@@ -54,7 +54,7 @@ public class PersonCreateDAO {
 				personDetail.setPersonID(personID);
 				
 				
-				String personSQLStr = "INSERT INTO Person(personID, title, firstName, middleName, lastName, userName, gender, dateOfBirth, comments, REGISTRATIONDATE, recordStatus, versionNo) "
+				String personSQLStr = "INSERT INTO Person(personID, title, firstName, middleName, lastName, userName, gender, dateOfBirth, comments, emailAddress, phoneNumber, REGISTRATIONDATE, recordStatus, versionNo) "
 						+ "VALUES (?, '"
 						+ personDetail.getTitle()
 						+ "', '"
@@ -68,7 +68,7 @@ public class PersonCreateDAO {
 						
 						+ personDetail.getGender()
 						
-						+ "' ,?,'"+personDetail.getComment()+"',?, 'Active'," + " 1 )";
+						+ "' ,?,'"+personDetail.getComment()+"','"+personDetail.getEmailAddress()+"','"+personDetail.getPhoneNumber()+"',?, 'Active'," + " 1 )";
 
 				PreparedStatement preparedStatement1 = connection.prepareStatement(personSQLStr);
 

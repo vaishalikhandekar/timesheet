@@ -126,7 +126,16 @@
 				<label>End Date:</label>
 				    <input type="text" class="datepick" id="date_3" name="personDetail.endDate" class="form-control"  />
 			</div>
+            
+			<div class="form-group">
+				<label>Email Address:</label>
+				    <input type="text" name="personDetail.emailAddress" class="form-control"  />
+			</div>
 
+			<div class="form-group">
+				<label>Phone Number:</label>
+				    <input type="text" name="personDetail.phoneNumber" class="form-control"  />
+			</div>
 			
 			
 

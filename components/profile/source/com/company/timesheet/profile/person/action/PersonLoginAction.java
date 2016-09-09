@@ -10,6 +10,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.profile.person.dao.PersonLoginDAO;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.company.timesheet.profile.person.pojo.UsersDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -26,6 +27,7 @@ public class PersonLoginAction extends ActionSupport implements SessionAware, Se
 	private Map<String, Object> session;
 	HttpServletRequest request;
 	private UsersDetail usersDetail;
+	private PersonDetail personDetail;
 
 	/**
 	 * @return the usersDetail
@@ -63,6 +65,14 @@ public class PersonLoginAction extends ActionSupport implements SessionAware, Se
 		this.request = request;
 	}
 
+	public PersonDetail getPersonDetail() {
+		return personDetail;
+	}
+
+	public void setPersonDetail(PersonDetail personDetail) {
+		this.personDetail = personDetail;
+	}
+
 	public String execute() throws Exception {
 
 		String pageForwardStr = "";
@@ -79,11 +89,14 @@ public class PersonLoginAction extends ActionSupport implements SessionAware, Se
 		PersonLoginDAO loginPersonDAO = new PersonLoginDAO();
 		String returnMassegeStr = loginPersonDAO.login(usersDetail);
 		session.put("personID", usersDetail.getPersonID());
+		
+		//personDetail.setPersonID(usersDetail.getPersonID());
+		//setPersonDetail(personDetail);
 
 		if (returnMassegeStr.equals(CRUDConstants.RETURN_MESSAGE_SUCCESS)) {
 
 			pageForwardStr = SUCCESS;
-			// pageForwardStr += "?personID=" + usersDetail.getRelatedID();
+		 //pageForwardStr += "?personID=" + usersDetail.getPersonID();
 
 		} else {
 

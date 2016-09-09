@@ -57,11 +57,11 @@ public class ProjectPersonLinkDetail {
 		this.projectID = projectID;
 	}
 
-	public Long getpersonID() {
+	public Long getPersonID() {
 		return personID;
 	}
 
-	public void setpersonID(Long personID) {
+	public void setPersonID(Long personID) {
 		this.personID = personID;
 	}
 

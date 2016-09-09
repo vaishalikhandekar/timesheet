@@ -2,12 +2,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
 
-
 <!DOCTYPE html>
 <html>
 <head>
 <title></title>
-
 
 <script>
 	$(function() {
@@ -18,59 +16,56 @@
 				changeYear : true,
 
 			}
-
 			);
 		});
 	});
 </script>
 
 <script type="text/javascript">
-    $.fx.speeds._default = 1000;
-    $(function() {
+	$.fx.speeds._default = 1000;
+	$(function() {
 
-        $("#deleteProjectID").click(function() {
-            $("#deleteProjectID-model").dialog("open");
-            return false;
-        });
+		$("#deleteProjectID").click(function() {
+			$("#deleteProjectID-model").dialog("open");
+			return false;
+		});
 
-        $("#deleteProjectID-model").dialog({
-            resizable : false,
-            height : 180,
-            modal : true,
-            autoOpen : false,
-            buttons : {
-                "Delete Project" : function() {
-        $.ajax({
-              type: 'POST',
-              url: "/TimeSheet/DeleteProject",
-             // data: {projectDetail.projectID = projectID},
-              cache: false
-         })
-         .done(function( submit ) {
-             // handle your data
-             // example: data.actionAttribute
-         }); 
-                    $(this).dialog("submit");
-                    submit = true;
-                    $('#deleteProject').submit();
-                },
-                Cancel : function() {
-                    $(this).dialog("close");
-                }
-            }
-        });
+		$("#deleteProjectID-model").dialog({
+			resizable : false,
+			height : 180,
+			modal : true,
+			autoOpen : false,
+			buttons : {
+				"Delete Project" : function() {
+					$.ajax({
+						type : 'POST',
+						url : "/TimeSheet/DeleteProject",
+						// data: {projectDetail.projectID = projectID},
+						cache : false
+					}).done(function(submit) {
+						// handle your data
+						// example: data.actionAttribute
+					});
+					$(this).dialog("submit");
+					submit = true;
+					$('#deleteProject').submit();
+				},
+				Cancel : function() {
+					$(this).dialog("close");
+				}
+			}
+		});
 
-        
-    });
+	});
 
-    $(function() {
-        $("#accordion").accordion({
-            autoHeight : false,
-            navigation : true,
-            collapsible : true,
-            active : false
-        });
-    });
+	$(function() {
+		$("#accordion").accordion({
+			autoHeight : false,
+			navigation : true,
+			collapsible : true,
+			active : false
+		});
+	});
 </script>
 </head>
 
@@ -81,7 +76,9 @@
     <div class="tabbable full-width-tabs">
         <ul class="nav nav-tabs">
 
-            <li class="active"><a data-toggle="tab" href="#ListProject">Project List</a></li>
+            <li class="active">
+                <a data-toggle="tab" href="#ListProject">Project List</a>
+            </li>
         </ul>
 
         <div class="tab-content">
@@ -253,50 +250,69 @@
 
                         <div class="container">
                             <table class="table table-striped" border="1" ; width=100%>
-                                <thead >
+                                <thead>
 
-                                    <tr class="success" >
-                                        <th >Project Name</th>
-                                        <th>Description</th>
-                                        <th>Record Status</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th colspan=3>Action</th>
+                                    <tr class="success">
+                                        <th style="text-align:center">Project Name</th>
+                                        <th style="text-align:center">Description</th>
+                                        <th style="text-align:center">Record Status</th>
+                                        <th style="text-align:center">Start Date</th>
+                                        <th style="text-align:center">End Date</th>
+                                        <th colspan=3 style="text-align:center">Action</th>
                                     </tr>
                                 </thead>
 
                                 <s:iterator value="projectDetailList" status="stat">
 
                                     <tr>
-                                        <td><s:property value="projectName" /></td>
-                                        <td><s:property value="description" /></td>
-                                        <td><s:property value="recordStatus" /></td>
-                                        <td><s:property value="startDate" /></td>
-                                        <td><s:property value="endDate" /></td>
+                                        <td align="center">
+                                            <s:property value="projectName" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="description" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="recordStatus" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="startDate" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="endDate" />
+                                        </td>
 
-                                        <td><s:url id="ViewProjectURL" action="ReadProject" escapeAmp="false">
+                                        <td align="center">
+                                            <s:url id="ViewProjectURL" action="ReadProject" escapeAmp="false">
                                                 <s:param name="projectDetail.projectID" value="%{projectID}" />
-                                            </s:url> <s:a href="%{ViewProjectURL}">View</s:a> 
-                                            
-                                             <s:url var="updateProjectURL" action="ReadProject"
-                                                                    escapeAmp="false">
-                                                                    <s:param name="projectDetail.projectID" value="%{projectID}"
-                                                                    />
-                                                                    <s:param name="act" value="%{updateAction}" />
-                                                                    </s:url>
+                                            </s:url>
+                                            <s:a href="%{ViewProjectURL}"><span class="glyphicon glyphicon-eye-open"></span>
+                                    <!-- View --></s:a>&nbsp&nbsp
 
-                                                                    <s:a href="%{updateProjectURL}">Update</s:a>  
-                                                                    
-                                                                    <%-- <s:url id="updateProjectURL">
-                                            </s:url> <s:a href="%{updateProjectURL}" id="updateProjectID">Update</s:a> --%> 
-                                            
+                                            <s:url var="updateProjectURL" action="ReadProject" escapeAmp="false">
+                                                <s:param name="projectDetail.projectID" value="%{projectID}" />
+                                                <s:param name="act" value="%{updateAction}" />
+                                            </s:url>
+
+                                            <s:a href="%{updateProjectURL}"><span class="glyphicon glyphicon-pencil"></span>
+                                    <!-- Update -->
+                                </s:a>&nbsp&nbsp
+
+                                            <%-- <s:url id="updateProjectURL">
+                                            </s:url> <s:a href="%{updateProjectURL}" id="updateProjectID">Update</s:a> --%>
+
                                             <s:url id="ProjectDeleteURL">
-                                            </s:url> <s:a href="%{ProjectDeleteURL}" id="deleteProjectID">Delete</s:a> <!-- <s:a href="%{ProjectDeleteURL}" onclick="return confirm('Are
-                                                                    u sure?');">Delete</s:a> --> <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            </s:url>
+                                            <s:a href="%{ProjectDeleteURL}" id="deleteProjectID"><span class="glyphicon glyphicon-trash"></span>
+                                    <!-- Delete --></s:a>
+                                            <!-- <s:a href="%{ProjectDeleteURL}" onclick="return confirm('Are
+                                                                    u sure?');">Delete</s:a> -->
+                                            <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
                                                                     data-target="#modal-2"
-                                                                    value="%{projectID}">Delete</button> --> <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                                    value="%{projectID}">Delete</button> -->
+                                            <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
                                                                     onclick="check()"
-                                                                    value="%{projectID}">Delete</button> --></td>
+                                                                    value="%{projectID}">Delete</button> -->
+                                        </td>
 
 
                                         <!-- Script for delete -->

@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-   
      <h2> <a href="/TimeSheet/index">Time Sheet</a></h2>
         <br/>
     <a href="PersonLogOut">LogOut</a>

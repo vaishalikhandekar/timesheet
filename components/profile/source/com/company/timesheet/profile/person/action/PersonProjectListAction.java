@@ -3,10 +3,15 @@
  */
 package com.company.timesheet.profile.person.action;
 
+import java.util.List;
+
 import com.company.timesheet.core.util.CRUDConstants;
+import com.company.timesheet.profile.person.dao.PersonProjectListDAO;
 import com.company.timesheet.profile.person.dao.PersonReadDAO;
 import com.company.timesheet.profile.person.dao.PersonUpdateDAO;
 import com.company.timesheet.profile.person.pojo.PersonDetail;
+import com.company.timesheet.project.pojo.ProjectDetail;
+import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -18,6 +23,8 @@ public class PersonProjectListAction extends ActionSupport {
 private static final long serialVersionUID = 1L;
 	
 	private PersonDetail personDetail;
+	List<ProjectPersonLinkDetail>  projectPersonLinkDetailList;
+	
 
 	public PersonDetail getPersonDetail() {
 		return personDetail;
@@ -28,16 +35,26 @@ private static final long serialVersionUID = 1L;
 	}
 
 	
+	public List<ProjectPersonLinkDetail> getProjectPersonLinkDetailList() {
+		return projectPersonLinkDetailList;
+	}
+
+	public void setProjectPersonLinkDetailList(
+			List<ProjectPersonLinkDetail> projectPersonLinkDetailList) {
+		this.projectPersonLinkDetailList = projectPersonLinkDetailList;
+	}
+
 	@Override
 	public String execute() throws Exception {
 	
 		String pageForwardStr = "";
 
-		PersonUpdateDAO updatepersonDAO = new PersonUpdateDAO();
-		String returnMassegeStr = updatepersonDAO.updatePerson(personDetail);
-		setPersonDetail(personDetail);
+		PersonProjectListDAO personProjectListDAO  = new PersonProjectListDAO();
+		List<ProjectPersonLinkDetail>  projectPersonLinkDetailList = personProjectListDAO.listProject(personDetail);
 
-		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
+		setProjectPersonLinkDetailList(projectPersonLinkDetailList);
+		
+		if (projectPersonLinkDetailList != null) {
 
 			pageForwardStr = SUCCESS;
 
