@@ -25,7 +25,7 @@
 
 		<!-- Start recording progress to a log file -->
 		<mkdir dir="${dir.bld.log}"/>
-		<!--<record name="${dir.bld.log}/Build_${tim.start.sort}.txt" loglevel="${prp.loglevel}" />-->
+		<record name="${dir.bld.log}/Build_${tim.start.sort}.txt" loglevel="${prp.loglevel}" />
 
 		<!-- Check for a J2EE installation -->
 		<antcall target="check.prop" inheritall="false">
