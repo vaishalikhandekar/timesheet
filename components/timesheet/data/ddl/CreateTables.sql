@@ -41,6 +41,7 @@ CREATE TABLE TimeSheetApprovalLevel (
 CREATE TABLE TimeSheet (
 	timeSheetID NUMBER(19,0) NOT NULL,
 	projectTimeSheetProcessID NUMBER(19,0),
+	projectPersonLinkID NUMBER(19,0),
 	totalRegularHours NUMBER(10),
 	totalActualHours NUMBER(10),
 	createdDateTime TIMESTAMP,
