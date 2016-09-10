@@ -11,7 +11,6 @@ import com.company.timesheet.core.util.dataaccess.DBConnection;
 import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.company.timesheet.project.pojo.ProjectDetail;
 import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
-import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 
 public class ProjectListForPersonDAO {
 

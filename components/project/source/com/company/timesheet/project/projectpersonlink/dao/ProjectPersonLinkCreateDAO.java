@@ -6,7 +6,6 @@ package com.company.timesheet.project.projectpersonlink.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.List;
 
 import com.company.timesheet.core.audittrail.dao.CreateAuditTrailDAO;
 import com.company.timesheet.core.audittrail.pojo.AuditTrailDetails;
@@ -14,8 +13,6 @@ import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.JavaUtildates;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
 import com.company.timesheet.core.util.type.UniqueID;
-import com.company.timesheet.profile.person.dao.PersonSearchDAO;
-import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.company.timesheet.project.pojo.ProjectDetail;
 import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
 
@@ -45,20 +42,20 @@ public class ProjectPersonLinkCreateDAO {
 					+ projectPersonLinkDetail.getComments()
 					+ "',?,?, 'Active'," + " 1 )";
 
-			PreparedStatement preparedStatement1 = connection.prepareStatement(projectSQLStr);
+			preparedStatement = connection.prepareStatement(projectSQLStr);
 			
 			long projectPersonLinkID = UniqueID.nextUniqueID();
-			preparedStatement1.setLong(1, projectPersonLinkID);
+			preparedStatement.setLong(1, projectPersonLinkID);
 			
-			preparedStatement1.setLong(2, projectDetail.getProjectID());
+			preparedStatement.setLong(2, projectDetail.getProjectID());
 			
 			projectPersonLinkDetail.setProjectPersonLinkID(projectPersonLinkID);
 			
-			preparedStatement1.setDate(3, JavaUtildates.convertUtilToSql(projectPersonLinkDetail.getStartDate()));
-			preparedStatement1.setDate(4, JavaUtildates.convertUtilToSql(projectPersonLinkDetail.getEndDate()));
+			preparedStatement.setDate(3, JavaUtildates.convertUtilToSql(projectPersonLinkDetail.getStartDate()));
+			preparedStatement.setDate(4, JavaUtildates.convertUtilToSql(projectPersonLinkDetail.getEndDate()));
 
 
-			preparedStatement1.execute();
+			preparedStatement.execute();
 			
 			//inserting data into AuditTrail Table for Employee Table
 			AuditTrailDetails auditTrailDetails = new AuditTrailDetails();
