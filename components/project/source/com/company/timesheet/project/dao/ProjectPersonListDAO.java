@@ -20,58 +20,69 @@ import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDet
  *
  */
 public class ProjectPersonListDAO {
-		
-	public List<ProjectPersonLinkDetail> projectPersonList(ProjectDetail projectDetail){
+
+	public List<ProjectPersonLinkDetail> projectPersonList(
+			ProjectDetail projectDetail) {
 		List<ProjectPersonLinkDetail> projectPersonLinkDetailList = new ArrayList<ProjectPersonLinkDetail>();
-		
+
 		Connection connection = null;
 		PersonDetail personDetail = null;
 		ProjectPersonLinkDetail projectPersonLinkDetail = null;
-		
+
 		try {
 			connection = DBConnection.getDBConnection();
 
-			String ProjectPersonLinkSQLStr = "select p.FIRSTNAME, p.LASTNAME, p.STARTDATE,p.ENDDATE ,ppl.ROLE, pr.PROJECTID, pr.PROJECTNAME from PROJECTPERSONLINK ppl left outer join project pr on pr.projectID = ppl.projectID left outer join PERSON p   on p.PERSONID = ppl.PERSONID where ppl.projectID = 201";
+			StringBuffer projectPersonLinkSQLStrBuf = new StringBuffer();
+			
+			projectPersonLinkSQLStrBuf.append("SELECT ");
+			projectPersonLinkSQLStrBuf.append("p.FIRSTNAME, p.LASTNAME, p.STARTDATE, p.ENDDATE ,ppl.ROLE, pr.PROJECTID, pr.PROJECTNAME ");
+			projectPersonLinkSQLStrBuf.append("FROM ");
+			projectPersonLinkSQLStrBuf.append("PROJECTPERSONLINK ppl left outer join project pr on pr.projectID = ppl.projectID left outer join PERSON p   on p.PERSONID = ppl.PERSONID ");
+			projectPersonLinkSQLStrBuf.append("WHERE ");
+			projectPersonLinkSQLStrBuf.append(" ppl.projectID = ?");
 
 			PreparedStatement preparedStatement = connection
-					.prepareStatement(ProjectPersonLinkSQLStr);
+					.prepareStatement(projectPersonLinkSQLStrBuf.toString());
 
+			preparedStatement.setLong(1, projectDetail.getProjectID());
 			ResultSet resultSet = preparedStatement.executeQuery();
+			
 			while (resultSet.next()) {
 
 				projectPersonLinkDetail = new ProjectPersonLinkDetail();
 				projectDetail = new ProjectDetail();
 				personDetail = new PersonDetail();
 
-				/*projectPersonLinkDetail.setPersonID(resultSet
-						.getLong("personID"));
-				projectPersonLinkDetail.setProjectID(resultSet
-						.getLong("projectID"));
-				projectPersonLinkDetail.setProjectPersonLinkID(resultSet
-						.getLong("projectPersonLinkID"));*/
-				
-				projectPersonLinkDetail.setRole(resultSet
-						.getString("role"));
-				
+				/*
+				 * projectPersonLinkDetail.setPersonID(resultSet
+				 * .getLong("personID"));
+				 * projectPersonLinkDetail.setProjectID(resultSet
+				 * .getLong("projectID"));
+				 * projectPersonLinkDetail.setProjectPersonLinkID(resultSet
+				 * .getLong("projectPersonLinkID"));
+				 */
+
+				projectPersonLinkDetail.setRole(resultSet.getString("role"));
+
 				projectDetail.setProjectID(resultSet.getLong("projectID"));
-				projectDetail.setProjectName(resultSet.getString("projectName"));
-				
+				projectDetail
+						.setProjectName(resultSet.getString("projectName"));
+
 				personDetail.setFirstName(resultSet.getString("firstName"));
 				personDetail.setLastName(resultSet.getString("lastName"));
-				
+
 				projectPersonLinkDetail.setProjectDetail(projectDetail);
 				projectPersonLinkDetail.setPersonDetail(personDetail);
-			}
-			
-			projectPersonLinkDetailList.add(projectPersonLinkDetail);
 				
-		}catch (SQLException e) {
+				projectPersonLinkDetailList.add(projectPersonLinkDetail);
+			}
+
+
+		} catch (SQLException e) {
 
 			e.printStackTrace();
 		}
-	
 
-		
 		return projectPersonLinkDetailList;
 	}
 }

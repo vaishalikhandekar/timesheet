@@ -81,7 +81,7 @@
                     <s:url var="ProjectPersonList" action="/ProjectPersonList">
                         <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
                     </s:url>
-                    <a href="${ProjectPersonList}"><span class="glyphicon glyphicon-user"></span> PersonList</a>
+                    <a href="${ProjectPersonList}"><span class="glyphicon glyphicon-user"></span> Person List</a>
 
                 </li>
                 

@@ -5,7 +5,6 @@ package com.company.timesheet.project.action;
 
 import java.util.List;
 
-import com.company.timesheet.project.dao.ProjectListDAO;
 import com.company.timesheet.project.dao.ProjectPersonListDAO;
 import com.company.timesheet.project.pojo.ProjectDetail;
 import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
@@ -21,7 +20,7 @@ public class ProjectPersonListAction extends ActionSupport {
 	
 	private List<ProjectPersonLinkDetail> projectPersonLinkDetailList;
 	
-	private ProjectDetail projectDetail;
+	private ProjectDetail projectDetail = null;
 	
 
 	public List<ProjectPersonLinkDetail> getProjectPersonLinkDetailList() {

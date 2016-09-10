@@ -9,37 +9,37 @@
 <title></title>
 <body>
 
-<jsp:include page="Project_navProject.jsp"></jsp:include>
-                    <!-- *******************************code to display Project List******************************* -->
+    <jsp:include page="Project_navProject.jsp"></jsp:include>
+    <!-- *******************************code to display Project List******************************* -->
 
 
-                    <s:form name="ListForm" id="ListForm" method="post">
+    <s:form name="ListForm" id="ListForm" method="post">
 
-                        <div class="container">
-                            <table class="table table-striped" border="1" ; width=100%>
-                                <thead>
+        <div class="container">
+            <table class="table table-striped" border="1" ; width=100%>
+                <thead>
 
-                                    <tr class="success">
-                                        <th align="center">First Name</th>
-                                        <th align="center">Last Name</th>
-                                        <th align="center">Role</th>
-                                    </tr>
-                                </thead>
+                    <tr class="success">
+                        <th align="center">First Name</th>
+                        <th align="center">Last Name</th>
+                        <th align="center">Role</th>
+                    </tr>
+                </thead>
 
-                                <s:iterator value="projectPersonLinkDetailList" status="stat">
+                <s:iterator value="projectPersonLinkDetailList" status="stat">
 
-                                    <tr>
-                                        <td><s:property value="personDetail.firstName" /></td>
-                                        <td><s:property value="personDetail.lastName" /></td>
-                                        <td><s:property value="role" /></td>
+                    <tr>
+                        <td><s:property value="personDetail.firstName" /></td>
+                        <td><s:property value="personDetail.lastName" /></td>
+                        <td><s:property value="role" /></td>
 
-                                    </tr>
-                                </s:iterator>
+                    </tr>
+                </s:iterator>
 
-                            </table>
-                        </div>
+            </table>
+        </div>
 
-                    </s:form>
+    </s:form>
 
 </body>
 </html>
