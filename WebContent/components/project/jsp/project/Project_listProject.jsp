@@ -241,24 +241,21 @@
 
                     <!-- *******************************code to update Project ******************************* -->
 
-
-
                     <!-- *******************************code to display Project List******************************* -->
-
 
                     <s:form name="ListForm" id="ListForm" method="post">
 
                         <div class="container">
-                            <table class="table table-striped" border="1" ; width=100%>
+                            <table class="table table-striped" border="1">
                                 <thead>
 
                                     <tr class="success">
+                                        <th style="text-align:center">Action</th>
                                         <th style="text-align:center">Project Name</th>
                                         <th style="text-align:center">Description</th>
                                         <th style="text-align:center">Record Status</th>
                                         <th style="text-align:center">Start Date</th>
                                         <th style="text-align:center">End Date</th>
-                                        <th colspan=3 style="text-align:center">Action</th>
                                     </tr>
                                 </thead>
 
@@ -266,27 +263,11 @@
 
                                     <tr>
                                         <td align="center">
-                                            <s:property value="projectName" />
-                                        </td>
-                                        <td align="center">
-                                            <s:property value="description" />
-                                        </td>
-                                        <td align="center">
-                                            <s:property value="recordStatus" />
-                                        </td>
-                                        <td align="center">
-                                            <s:property value="startDate" />
-                                        </td>
-                                        <td align="center">
-                                            <s:property value="endDate" />
-                                        </td>
-
-                                        <td align="center">
                                             <s:url id="ViewProjectURL" action="ReadProject" escapeAmp="false">
                                                 <s:param name="projectDetail.projectID" value="%{projectID}" />
                                             </s:url>
                                             <s:a href="%{ViewProjectURL}"><span class="glyphicon glyphicon-eye-open"></span>
-                                    <!-- View --></s:a>&nbsp&nbsp
+                                    <!-- View --></s:a>&nbsp;&nbsp;
 
                                             <s:url var="updateProjectURL" action="ReadProject" escapeAmp="false">
                                                 <s:param name="projectDetail.projectID" value="%{projectID}" />
@@ -295,7 +276,7 @@
 
                                             <s:a href="%{updateProjectURL}"><span class="glyphicon glyphicon-pencil"></span>
                                     <!-- Update -->
-                                </s:a>&nbsp&nbsp
+                                </s:a>&nbsp;&nbsp;
 
                                             <%-- <s:url id="updateProjectURL">
                                             </s:url> <s:a href="%{updateProjectURL}" id="updateProjectID">Update</s:a> --%>
@@ -313,10 +294,24 @@
                                                                     onclick="check()"
                                                                     value="%{projectID}">Delete</button> -->
                                         </td>
-
+                                        
+                                        <td align="center">
+                                            <s:property value="projectName" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="description" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="recordStatus" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="startDate" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="endDate" />
+                                        </td>
 
                                         <!-- Script for delete -->
-
 
                                     </tr>
                                 </s:iterator>

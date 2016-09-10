@@ -13,18 +13,16 @@
 <script>
 	$(function() {
 		$('.datepick').each(function() {
+			
 			$(this).datepicker({
 
 				changeMonth : true,
 				changeYear : true,
 
-			}
-
-			);
+			});
 		});
 	});
 </script>
-
 
 </head>
 
@@ -290,12 +288,11 @@
 
             </div>
             <br />
-            <br />
-
 
             <s:form action="/ListPerson" method="post">
 
                 <table class="table table-striped" border="1">
+                
                     <thead>
 
                         <tr class="success">
@@ -316,13 +313,15 @@
                         <tr>
 
                             <td align="center">
+                            
                                 <s:url var="readPersonURL" action="ReadPerson" escapeAmp="false">
                                     <s:param name="personDetail.personID" value="%{personID}" />
                                 </s:url>
                                 <s:a href="%{readPersonURL}">
                                     <span class="glyphicon glyphicon-eye-open"></span>
                                     <!-- View -->
-                                </s:a>&nbsp
+                                </s:a>&nbsp;&nbsp;
+                                
                                 <s:url var="updatePersonURL" action="ReadPerson" escapeAmp="false">
                                     <s:param name="personDetail.personID" value="%{personID}" />
                                     <s:param name="act" value="%{updateAction}" />
@@ -330,30 +329,39 @@
                                 <s:a href="%{updatePersonURL}">
                                     <span class="glyphicon glyphicon-pencil"></span>
                                     <!-- Update -->
-                                </s:a>&nbsp
+                                </s:a>&nbsp;&nbsp;
+                                
                                 <a href="#DeletePerson" data-toggle="modal">
                                     <span class="glyphicon glyphicon-trash"></span>
                                     <!-- Delete -->
                                 </a>
+                                
                             </td>
+                            
                             <td align="center">
                                 <s:property value="title" />
                             </td>
+                            
                             <td align="center">
                                 <s:property value="firstName" />
                             </td>
+                            
                             <td align="center">
                                 <s:property value="middleName" />
                             </td>
+                            
                             <td align="center">
                                 <s:property value="lastName" />
                             </td>
+                            
                             <td align="center">
                                 <s:property value="gender" />
                             </td>
+                            
                             <td align="center">
                                 <s:property value="dateOfBirth" />
                             </td>
+                            
                             <td align="center">
                                 <s:property value="registrationDate" />
                             </td>
@@ -365,7 +373,9 @@
                 </table>
 
             </s:form>
+            
         </div>
+        
     </div>
 
 </body>

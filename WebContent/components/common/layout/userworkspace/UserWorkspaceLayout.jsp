@@ -3,7 +3,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
 <!DOCTYPE html>
-<html style="height: 100%;">
+<html>
 
 <head>
 
@@ -21,10 +21,25 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 
+<style>
+
+    table, th, td {
+        border: 1px solid gray;
+        border-collapse: collapse;
+    }
+    
+    html {
+        height:100%;
+    }
+    body {
+        width: 100%; height:97%;
+    }
+    
+</style>
 
 </head>
 
-<body style="height: 100%;">
+<body>
 
     <table style="width: 100%; height: 100%; border: 1; cellpadding: 2; cellspacing: 2; align: top">
 
