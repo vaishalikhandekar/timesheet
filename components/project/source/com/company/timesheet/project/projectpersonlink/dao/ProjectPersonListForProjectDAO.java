@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.company.timesheet.project.dao;
+package com.company.timesheet.project.projectpersonlink.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,7 +19,7 @@ import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDet
  * @author vaish
  *
  */
-public class ProjectPersonListDAO {
+public class ProjectPersonListForProjectDAO {
 
 	public List<ProjectPersonLinkDetail> projectPersonList(
 			ProjectDetail projectDetail) {
