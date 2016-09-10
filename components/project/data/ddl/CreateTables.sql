@@ -2,6 +2,7 @@
 CREATE TABLE Project (
 	projectID NUMBER(19,0) NOT NULL,
 	projectName VARCHAR2(30),
+	acronym VARCHAR2(30),
 	description VARCHAR2(200),
 	startDate DATE,
     endDate DATE,

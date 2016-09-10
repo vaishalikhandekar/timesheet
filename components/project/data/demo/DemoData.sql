@@ -1,5 +1,5 @@
-INSERT INTO Project(projectID ,	projectName , 		description,           startDate,                          endDate,                            comments, recordStatus, versionNo)
-              VALUES( 201,	     'D2Sol',          'Consulting Companey',   to_date('26-Jun-90', 'DD-MON-RR'),   to_date('26-Jun-16', 'DD-MON-RR'),  null,     'Active',		1);
+INSERT INTO Project(projectID ,	projectName, 		acronym, 	description,           startDate,                          endDate,                            comments, recordStatus, versionNo)
+              VALUES( 201,	     'HTML Project',    'HTMLP',	'HTML Project Desc',   to_date('26-Jun-90', 'DD-MON-RR'),   to_date('26-Jun-16', 'DD-MON-RR'),  null,     'Active',		1);
 
               
 INSERT INTO ProjectPersonLink(projectPersonLinkID ,	projectID ,  personID,    role,          startDate,                          endDate,                            comments, recordStatus, versionNo)
@@ -7,16 +7,16 @@ INSERT INTO ProjectPersonLink(projectPersonLinkID ,	projectID ,  personID,    ro
               
 
 
-INSERT INTO Project(projectID ,	projectName , 		description,           startDate,                          endDate,                            comments, recordStatus, versionNo)
-              VALUES( 202,	     'Wipro',          'Producting Companey',   to_date('26-Jun-90', 'DD-MON-RR'),   to_date('26-Jun-16', 'DD-MON-RR'),  null,     'Active',		1);
+INSERT INTO Project(projectID ,	projectName , 		acronym, 	description,           startDate,                          endDate,                            comments, recordStatus, versionNo)
+              VALUES( 202,	     'JAVA Project',    'JAVAP',	'JAVA Project Desc',   to_date('26-Jun-90', 'DD-MON-RR'),   to_date('26-Jun-16', 'DD-MON-RR'),  null,     'Active',		1);
 
               
 INSERT INTO ProjectPersonLink(projectPersonLinkID ,	projectID ,  personID,    role,          startDate,                          endDate,                            comments, recordStatus, versionNo)
              		   VALUES( 302,	                202,                101,  'Developer',    to_date('26-Jun-90', 'DD-MON-RR'),   to_date('26-Jun-16', 'DD-MON-RR'),  null,     'Active',		1);
               
 
-INSERT INTO Project(projectID ,	projectName , 		description,           startDate,                          endDate,                            comments, recordStatus, versionNo)
-              VALUES( 203,	     'IBM',          'Manufturing Companey',   to_date('26-Jun-90', 'DD-MON-RR'),   to_date('26-Jun-16', 'DD-MON-RR'),  null,     'Active',		1);
+INSERT INTO Project(projectID ,	projectName , 		acronym, 	description,           startDate,                          endDate,                            comments, recordStatus, versionNo)
+              VALUES( 203,	     'Demo Project',    'DEMOP',	'Demo Project Desc',   to_date('26-Jun-90', 'DD-MON-RR'),   to_date('26-Jun-16', 'DD-MON-RR'),  null,     'Active',		1);
 
               
 INSERT INTO ProjectPersonLink(projectPersonLinkID ,	projectID ,  personID,    role,          startDate,                          endDate,                            comments, recordStatus, versionNo)
@@ -24,8 +24,8 @@ INSERT INTO ProjectPersonLink(projectPersonLinkID ,	projectID ,  personID,    ro
               
 
              		   
-INSERT INTO Project(projectID ,	projectName , 		description,           startDate,                          endDate,                            comments, recordStatus, versionNo)
-              VALUES( 204,	     'Navigator',          'Consulting Companey',   to_date('26-Jun-90', 'DD-MON-RR'),   to_date('26-Jun-16', 'DD-MON-RR'),  null,     'Active',		1);
+INSERT INTO Project(projectID ,	projectName , 		acronym, 	description,           startDate,                          endDate,                            comments, recordStatus, versionNo)
+              VALUES( 204,	     'House Project',   'HOUSEP',	'House Project Desc',   to_date('26-Jun-90', 'DD-MON-RR'),   to_date('26-Jun-16', 'DD-MON-RR'),  null,     'Active',		1);
 
               
 INSERT INTO ProjectPersonLink(projectPersonLinkID ,	projectID ,  personID,    role,          startDate,                          endDate,                            comments, recordStatus, versionNo)
