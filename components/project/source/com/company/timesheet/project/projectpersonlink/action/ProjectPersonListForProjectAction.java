@@ -22,6 +22,7 @@ public class ProjectPersonListForProjectAction extends ActionSupport {
 	
 	private ProjectDetail projectDetail = null;
 	
+	private ProjectPersonLinkDetail projectPersonLinkDetail = null;
 
 	public List<ProjectPersonLinkDetail> getProjectPersonLinkDetailList() {
 		return projectPersonLinkDetailList;
@@ -49,7 +50,6 @@ public class ProjectPersonListForProjectAction extends ActionSupport {
 		List<ProjectPersonLinkDetail> projectPersonLinkDetailList = projectPersonListForProjectDAO.projectPersonList(projectDetail);
 		
 		setProjectPersonLinkDetailList(projectPersonLinkDetailList);
-		
 		
 		if (projectPersonLinkDetailList != null) {
 

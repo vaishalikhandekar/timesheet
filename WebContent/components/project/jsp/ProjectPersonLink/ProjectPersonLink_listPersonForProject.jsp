@@ -9,9 +9,17 @@
 <title></title>
 <body>
 
+                                
     <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
     <!-- *******************************code to display Project List******************************* -->
 
+<s:url var="AddPersonToProjectURL" action="AddPersonToProject" escapeAmp="false">
+                                    <s:param name="projectPersonLinkDetail.projectID" value="%{projectDetail.projectID}" />
+                                </s:url>
+                                <s:a href="%{AddPersonToProjectURL}">Add Person 
+                                </s:a>
+                                <br/>
+                                <br/>
 
     <s:form name="ListForm" id="ListForm" method="post">
 

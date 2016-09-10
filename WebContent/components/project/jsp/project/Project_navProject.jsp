@@ -19,7 +19,7 @@
 
     <!-- add pannel to the page -->
 
-    <div class="panel panel-primary">
+    <div class="panel panel-info">
         <div class="panel-heading">
             <h3 class="panel-title">Project Title</h3>
         </div>

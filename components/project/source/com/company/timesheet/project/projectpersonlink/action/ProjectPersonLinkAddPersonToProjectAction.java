@@ -18,7 +18,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author vaish
  *
  */
-public class ProjectPersonLinkCreateAction extends ActionSupport {
+public class ProjectPersonLinkAddPersonToProjectAction extends ActionSupport {
 	
 	private static final long serialVersionUID = 1L;
 	

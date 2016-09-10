@@ -22,43 +22,20 @@
 
         <div class="tab-content">
             <div id="PersonList" class="tab-pane fade in active">
-
                 <!-- add pannel to the page -->
-                <div class="panel panel-primary">
+                <div class="panel panel-info">
 
                     <div class="panel-heading">
                         <h3 class="panel-title"></h3>
                     </div>
 
                     <div class="panel-body">
-                        <img src="/image/RunAppDownload.jpg" class="img-rounded" alt="Cinque Terre" width="150" height="150"> 
+                        <img src="/image/RunAppDownload.jpg" class="img-rounded" alt="Cinque Terre" width="100" height="100"> 
                     </div>
                 </div>
 
-                <!-- <ul class="nav nav-tabs">
-        <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-        <li><a href="#person" data-toggle="tab">Person</a></li>
-        <li><a href="#team" data-toggle="tab">Team</a></li>
-    </ul>
-
-    <div class="tab-content">
-        <div class="tab-pane active" id="home">
-            Home Content
-
-            <form action="/ListEmployee" id="login-form" method="post" name="login-form"></form>
-        </div>
-        <div class="tab-pane" id="person">
-            Profile Content <a href="ListOfPersonInTheProject"></a>
-        </div>
-        <div class="tab-pane" id="team" >
-        
-        <a href="ListProject" id="team">Project List</a>
-        
-        </div>
-    </div>
- -->
-
                 <!-- Code for NavBar -->
+                
                 <div class="bs-example">
                     <nav role="navigation" class="navbar navbar-light" style="background-color: #e3f2fd">
                         <div class="navbar-header">

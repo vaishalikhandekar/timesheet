@@ -168,7 +168,7 @@
             <param name="location"> AddPersonToProject</param> <param name="projectPersonLinkDetail.projectDetail.projectID">${projectPersonLinkDetail.projectDetail.projectID}</param>
             </result> </action> -->
 
-        <action name="CreateProjectPersonLinkSubmit" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkCreateAction">
+        <action name="CreateProjectPersonLinkSubmit" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkAddPersonToProjectAction">
             <result name="success" type="redirect">
                 <param name="location"> /ListOfPersonInTheProject</param>
                <!--  <param name="projectPersonLinkDetail.projectDetail.projectID">${projectPersonLinkDetail.projectDetail.projectID}</param>-->

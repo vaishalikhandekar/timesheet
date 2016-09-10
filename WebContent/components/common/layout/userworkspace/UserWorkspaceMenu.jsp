@@ -14,6 +14,7 @@
 		$("#accordion").accordion({
 			collapsible : true
 		});
+			// $(this).addClass('accordion-group panel panel-default');
 	});
 </script>
 

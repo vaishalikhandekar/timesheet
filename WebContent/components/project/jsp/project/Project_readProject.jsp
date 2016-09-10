@@ -60,25 +60,9 @@
 
     </div>
 
-
-
-
-
-    
         <jsp:include page="Project_navProject.jsp"></jsp:include>
 
-        <br />
     <!-- ***************************************Code for adding Person to Project***************************** -->
-
-        <%
-        	ProjectDetail projectDetail = (ProjectDetail) request
-        			.getAttribute("projectDetail");
-
-        	Long projectID = (Long) request.getAttribute("projectID");
-        %>
-
-        <a href="AddPersonToProject?projectID=<%=projectID%>">Add Person To Project</a>
-        <br />
 
         <s:form action="/ReadProject" method="post">
             <br>
