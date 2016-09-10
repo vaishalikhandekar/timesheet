@@ -43,7 +43,7 @@ CREATE TABLE TimeSheet (
 	projectTimeSheetProcessID NUMBER(19,0),
 	projectPersonLinkID NUMBER(19,0),
 	totalRegularHours NUMBER(10),
-	totalActualHours NUMBER(10),
+	totalNoOfHoursWorked NUMBER(10),
 	createdDateTime TIMESTAMP,
 	submittedDateTime TIMESTAMP,
 	timeSheetStatus VARCHAR2(10),
