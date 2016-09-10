@@ -11,11 +11,13 @@ CREATE TABLE TimeSheetProcess (
 	versionNo NUMBER(10)
 );
 
-CREATE TABLE ProjectTimeSheetProcessLink (
-	projectTimeSheetProcessLinkID NUMBER(19,0) NOT NULL,
-	timeSheetProcessID NUMBER(19,0),
+CREATE TABLE ProjectTimeSheetProcess (
+	projectTimeSheetProcessID NUMBER(19,0) NOT NULL,
 	projectID NUMBER(19,0),
-	regularHours NUMBER(10),
+	frequency VARCHAR2(30),
+	startDay VARCHAR2(20),
+	minimumApprovalLevelType VARCHAR2(20),
+	regularDailyHours NUMBER(10),
 	startDate DATE,
     endDate DATE,
 	comments VARCHAR2(20),
@@ -25,6 +27,10 @@ CREATE TABLE ProjectTimeSheetProcessLink (
 
 CREATE TABLE TimeSheetApprovalLevel (
 	timeSheetApprovalLevelID NUMBER(19,0) NOT NULL,
+	projectTimeSheetProcessID NUMBER(19,0),
+	projectPersonLinkID NUMBER(19,0),
+	approvalLevelType VARCHAR2(10),
+	approvalCriteria VARCHAR2(10),
 	startDate DATE,
     endDate DATE,
 	comments VARCHAR2(20),
@@ -34,12 +40,13 @@ CREATE TABLE TimeSheetApprovalLevel (
 
 CREATE TABLE TimeSheet (
 	timeSheetID NUMBER(19,0) NOT NULL,
-	projectTimeSheetProcessLinkID NUMBER(19,0),
+	projectTimeSheetProcessID NUMBER(19,0),
 	totalRegularHours NUMBER(10),
 	totalActualHours NUMBER(10),
 	createdDateTime TIMESTAMP,
 	submittedDateTime TIMESTAMP,
 	timeSheetStatus VARCHAR2(10),
+	approvalLevelType VARCHAR2(10),	
 	startDate DATE,
     endDate DATE,
     comments VARCHAR2(20),
@@ -52,8 +59,21 @@ CREATE TABLE TimeSheetLineItem (
 	timeSheetID NUMBER(19,0),
 	category VARCHAR2(20),
 	attendenceDate DATE,
-	actualHoursWorked NUMBER(10),
+	noOfHoursWorked NUMBER(10),
 	comments VARCHAR2(20),
+	recordStatus VARCHAR2(10),	
+	versionNo NUMBER(10)
+);
+
+CREATE TABLE TimeSheetApproval (
+	timeSheetApprovalID NUMBER(19,0) NOT NULL,
+	timeSheetApprovalLevelID NUMBER(19,0),
+	timeSheetID NUMBER(19,0),
+	approvalStatus VARCHAR2(10), -- Requested, Approved, Rejected
+	creationDateTime TIMESTAMP,
+	approvalDateTime TIMESTAMP,
+	rejectedDateTime TIMESTAMP,
+    comments VARCHAR2(20),
 	recordStatus VARCHAR2(10),	
 	versionNo NUMBER(10)
 );
