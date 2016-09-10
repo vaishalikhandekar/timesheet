@@ -22,7 +22,7 @@ import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDet
  */
 public class ProjectPersonLinkCreateDAO {
 			
-	public String CreateProjectEmployeeLink(ProjectPersonLinkDetail projectPersonLinkDetail){
+	public String createProjectEmployeeLink(ProjectPersonLinkDetail projectPersonLinkDetail){
 		
 		ProjectDetail projectDetail = projectPersonLinkDetail.getProjectDetail();
 		
@@ -35,8 +35,8 @@ public class ProjectPersonLinkCreateDAO {
 			connection = DBConnection.getDBConnection();
 			
 			
-			String projectSQLStr = "INSERT INTO ProjectPersonLink(projectPersonLinkID, projectID, role, comments, startDate, endDate, recordStatus, versionNo) "
-					+ "VALUES (?,?, '"
+			String projectSQLStr = "INSERT INTO ProjectPersonLink(projectPersonLinkID, projectID, personID, role, comments, startDate, endDate, recordStatus, versionNo) "
+					+ "VALUES (?,?,?, '"
 					+ projectPersonLinkDetail.getRole()
 					+ "','"
 					+ projectPersonLinkDetail.getComments()
@@ -47,15 +47,17 @@ public class ProjectPersonLinkCreateDAO {
 			long projectPersonLinkID = UniqueID.nextUniqueID();
 			preparedStatement.setLong(1, projectPersonLinkID);
 			
-			preparedStatement.setLong(2, projectDetail.getProjectID());
+			preparedStatement.setLong(2, projectPersonLinkDetail.getProjectID());
+			preparedStatement.setLong(3, projectPersonLinkDetail.getPersonID());
 			
 			projectPersonLinkDetail.setProjectPersonLinkID(projectPersonLinkID);
 			
-			preparedStatement.setDate(3, JavaUtildates.convertUtilToSql(projectPersonLinkDetail.getStartDate()));
-			preparedStatement.setDate(4, JavaUtildates.convertUtilToSql(projectPersonLinkDetail.getEndDate()));
+			preparedStatement.setDate(4, JavaUtildates.convertUtilToSql(projectPersonLinkDetail.getStartDate()));
+			preparedStatement.setDate(5, JavaUtildates.convertUtilToSql(projectPersonLinkDetail.getEndDate()));
 
 
 			preparedStatement.execute();
+			
 			
 			//inserting data into AuditTrail Table for Employee Table
 			AuditTrailDetails auditTrailDetails = new AuditTrailDetails();

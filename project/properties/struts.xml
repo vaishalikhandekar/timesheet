@@ -170,8 +170,8 @@
 
         <action name="CreateProjectPersonLinkSubmit" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkAddPersonToProjectAction">
             <result name="success" type="redirect">
-                <param name="location"> /ListOfPersonInTheProject</param>
-               <!--  <param name="projectPersonLinkDetail.projectDetail.projectID">${projectPersonLinkDetail.projectDetail.projectID}</param>-->
+                <param name="location"> /ProjectPersonList</param>
+                <param name="projectDetail.projectID">${projectPersonLinkDetail.projectID}</param>-->
             </result>
             <result name="error">/index</result>
         </action>

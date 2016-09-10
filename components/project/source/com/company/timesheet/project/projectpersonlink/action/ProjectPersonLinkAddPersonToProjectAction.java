@@ -46,7 +46,9 @@ public class ProjectPersonLinkAddPersonToProjectAction extends ActionSupport {
 		
 		
 		ProjectPersonLinkCreateDAO createProjectEmployeeLinkDAO = new ProjectPersonLinkCreateDAO();
-		String returnMassegeStr = createProjectEmployeeLinkDAO.CreateProjectEmployeeLink(projectPersonLinkDetail);
+		String returnMassegeStr = createProjectEmployeeLinkDAO.createProjectEmployeeLink(projectPersonLinkDetail);
+		
+		setProjectPersonLinkDetail(projectPersonLinkDetail);
 		
 		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
 
