@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.company.timesheet.profile.person.action;
+package com.company.timesheet.project.projectpersonlink.action;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author vaish
  *
  */
-public class PersonProjectListAction extends ActionSupport {
+public class ProjectListForPersonAction extends ActionSupport {
 	
 private static final long serialVersionUID = 1L;
 	

@@ -1,4 +1,4 @@
-package com.company.timesheet.profile.person.dao;
+package com.company.timesheet.project.projectpersonlink.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,7 +13,7 @@ import com.company.timesheet.project.pojo.ProjectDetail;
 import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
 import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 
-public class PersonProjectListDAO {
+public class ProjectListForPersonDAO {
 
 	public List<ProjectPersonLinkDetail> listProject(PersonDetail personDetail) {
 
