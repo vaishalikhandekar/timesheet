@@ -24,7 +24,6 @@
     <div id="accordion">
         <h1>Person</h1>
         <div>
-            <br />
             <a href="SearchPerson">Person Search</a>
             <br />
             <br />
@@ -33,8 +32,6 @@
 
         <h1>Project</h1>
         <div>
-
-            <br />
             <a href="ListProject">Project List</a>
             <br />
             <br />
@@ -44,17 +41,13 @@
 
         <h1>Time Sheet</h1>
         <div>
-
-            <br />
             <a href="TimeSheetList">Time Sheets</a>
             <br />
             <br />
             <a href="CreateTimeSheetLineItem">Create TimeSheetLineItem</a>
-
         </div>
 
     </div>
-
 
 </body>
 

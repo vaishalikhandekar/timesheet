@@ -58,14 +58,6 @@
 
 	});
 
-	$(function() {
-		$("#accordion").accordion({
-			autoHeight : false,
-			navigation : true,
-			collapsible : true,
-			active : false
-		});
-	});
 </script>
 </head>
 
