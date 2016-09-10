@@ -3,14 +3,7 @@
 <%@taglib uri="/struts-tags" prefix="s"%>
 <%@ page import="com.company.timesheet.project.pojo.ProjectDetail"%>
 
-<html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="bootstrap-confirmation.js"></script>
-
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
