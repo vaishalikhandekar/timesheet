@@ -196,6 +196,13 @@
                                                 </div>
 
                                                 <br />
+                                                
+                                                <div class="form-group">
+                                                    <label>Acronym:</label>
+                                                    <s:textfield type="text" class="form-control" name="projectDetail.acronym" />
+                                                </div>
+
+                                                <br />
 
                                                 <div class="form-group">
                                                     <label>Description:</label>

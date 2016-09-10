@@ -34,6 +34,8 @@ public class ProjectDetail {
 	
 	private String comments;
 	
+	private String acronym;
+	
 	List<String> errorMessageList = new ArrayList<String>();
 	
 	private String updateAction = "update";
@@ -131,6 +133,14 @@ public class ProjectDetail {
 
 	public void setComments(String comments) {
 		this.comments = comments;
+	}
+
+	public String getAcronym() {
+		return acronym;
+	}
+
+	public void setAcronym(String acronym) {
+		this.acronym = acronym;
 	}
 
 	public List<String> getErrorMessageList() {

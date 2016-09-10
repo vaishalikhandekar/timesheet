@@ -94,10 +94,6 @@
         <put-attribute name="body" value="/components/profile/jsp/person/Person_readPerson.jsp" />
     </definition>
     
-     <definition name="PersonProjectList" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="Person Project List" />
-        <put-attribute name="body" value="/components/profile/jsp/person/Person_listProjects.jsp" />
-    </definition>
     
      <definition name="PersonTimeSheetList" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Person TimeSheet List" />
@@ -138,10 +134,6 @@
         <put-attribute name="body" value="/components/project/jsp/project/Project_searchProject.jsp" />
     </definition>
     
-    <definition name="ProjectPersonList" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="Project Person List" />
-        <put-attribute name="body" value="/components/project/jsp/project/Project_listPerson.jsp" />
-    </definition>
     
     <definition name="ProjectPersonTeam" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Project Person Team" />
@@ -150,6 +142,16 @@
     
     
     <!-- ProjectPersonLink -->
+    
+     <definition name="PersonProjectList" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Person Project List" />
+        <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ProjectPersonList_listProjectsForPerson.jsp" />
+    </definition>
+    
+    <definition name="ProjectPersonList" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Project Person List" />
+        <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ProjectPersonLink_listPersonForProject.jsp" />
+    </definition>
     
     <definition name="AddPersonToProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Add Person To Project" />

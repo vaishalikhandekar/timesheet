@@ -9,7 +9,7 @@
 <title></title>
 <body>
 
-    <jsp:include page="Project_navProject.jsp"></jsp:include>
+    <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
     <!-- *******************************code to display Project List******************************* -->
 
 

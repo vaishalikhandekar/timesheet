@@ -23,65 +23,68 @@ import com.company.timesheet.project.pojo.ProjectSearchDetails;
  *
  */
 public class ProjectCreateDAO {
-	
-	public String createProject(ProjectDetail projectDetail){
+
+	public String createProject(ProjectDetail projectDetail) {
 		String returnMassegeStr = "";
-		
+
 		PreparedStatement preparedStatement = null;
 		boolean projectExistInd = projectExist(projectDetail);
 
-		if (!projectExistInd ) {
-
+		if (!projectExistInd) {
 
 			Connection connection = null;
 			try {
 				connection = DBConnection.getDBConnection();
 
-				String projectSQLStr = "INSERT INTO PROJECT(projectID, projectName, description, comments, startDate, endDate, recordStatus, versionNo) "
+				String projectSQLStr = "INSERT INTO PROJECT(projectID, projectName, acronym, description, comments, startDate, endDate, recordStatus, versionNo) "
 						+ "VALUES (?, '"
 						+ projectDetail.getProjectName()
+						+ "','"
+						+ projectDetail.getAcronym()
 						+ "', '"
 						+ projectDetail.getDescription()
 						+ "','"
 						+ projectDetail.getComments()
-						+ "',?,?, 'Active'," + " 1 )";
+						+ "',?,?, 'Active',"
+						+ " 1 )";
 
-				PreparedStatement preparedStatement1 = connection.prepareStatement(projectSQLStr);
-				
+				PreparedStatement preparedStatement1 = connection
+						.prepareStatement(projectSQLStr);
+
 				long projectID = UniqueID.nextUniqueID();
 				preparedStatement1.setLong(1, projectID);
-				
-				projectDetail.setProjectID(projectID);
-				
-				preparedStatement1.setDate(2, JavaUtildates.convertUtilToSql(projectDetail.getStartDate()));
-				preparedStatement1.setDate(3, JavaUtildates.convertUtilToSql(projectDetail.getEndDate()));
 
+				projectDetail.setProjectID(projectID);
+
+				preparedStatement1.setDate(2, JavaUtildates
+						.convertUtilToSql(projectDetail.getStartDate()));
+				preparedStatement1.setDate(3, JavaUtildates
+						.convertUtilToSql(projectDetail.getEndDate()));
 
 				preparedStatement1.execute();
-				
-				//inserting data into AuditTrail Table for Project Table
+
+				// inserting data into AuditTrail Table for Project Table
 				AuditTrailDetails auditTrailDetails = new AuditTrailDetails();
-				
+
 				auditTrailDetails.setTableName("Project");
 				auditTrailDetails.setOperationType("Create");
 				auditTrailDetails.setRelatedID(projectDetail.getProjectID());
 				auditTrailDetails.setTransactionType("Online");
-				
+
 				CreateAuditTrailDAO createAuditTrailDAO = new CreateAuditTrailDAO();
 				createAuditTrailDAO.createAuditTrail(auditTrailDetails);
-				
+
 				returnMassegeStr = CRUDConstants.RETURN_MESSAGE_SUCCESS;
 
-			}catch(SQLException e){
-				
+			} catch (SQLException e) {
+
 				e.printStackTrace();
 				returnMassegeStr = CRUDConstants.RETURN_MESSAGE_FAILURE;
 			}
 		}
-		return returnMassegeStr;	
-			
-	}	
+		return returnMassegeStr;
 
+	}
 
 	/**
 	 * 
@@ -95,19 +98,26 @@ public class ProjectCreateDAO {
 
 			ProjectSearchCriteria projectSearchCriteria = new ProjectSearchCriteria();
 
-			projectSearchCriteria.setProjectName(projectDetail.getProjectName() == null ? "" : projectDetail.getProjectName());
-			
-			/*projectSearchCriteria.setStartDate(projectDetail.getStartDate() == null ? "" : projectDetail.getStartDate());
-			projectSearchCriteria.setEndDate(projectDetail.getEndDate() == null ? "" : projectDetail.getEndDate());
-*/
+			projectSearchCriteria
+					.setProjectName(projectDetail.getProjectName() == null ? ""
+							: projectDetail.getProjectName());
+
+			/*
+			 * projectSearchCriteria.setStartDate(projectDetail.getStartDate()
+			 * == null ? "" : projectDetail.getStartDate());
+			 * projectSearchCriteria.setEndDate(projectDetail.getEndDate() ==
+			 * null ? "" : projectDetail.getEndDate());
+			 */
 			ProjectSearchDetails projectSearchDetails = new ProjectSearchDetails();
-			projectSearchDetails.setProjectSearchCriteria(projectSearchCriteria);
+			projectSearchDetails
+					.setProjectSearchCriteria(projectSearchCriteria);
 
 			//
 			ProjectSearchDAO searchProjectDAO = new ProjectSearchDAO();
 
 			//
-			List<ProjectDetail> projectDetailList = searchProjectDAO.searchProjectInfo(projectSearchDetails);
+			List<ProjectDetail> projectDetailList = searchProjectDAO
+					.searchProjectInfo(projectSearchDetails);
 
 			if (projectDetailList.size() > 0) {
 
@@ -123,8 +133,6 @@ public class ProjectCreateDAO {
 
 		return projectExistInd;
 
-		
 	}
-	
 
 }

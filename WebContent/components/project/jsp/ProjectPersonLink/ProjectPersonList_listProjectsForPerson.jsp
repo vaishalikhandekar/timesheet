@@ -13,7 +13,7 @@
 
 <body>
  
-    <jsp:include page="Person_navPerson.jsp"></jsp:include>
+    <jsp:include page="/components/profile/jsp/person/Person_navPerson.jsp"></jsp:include>
     
     <s:form action="/PersonProjectList" method="post">
 
