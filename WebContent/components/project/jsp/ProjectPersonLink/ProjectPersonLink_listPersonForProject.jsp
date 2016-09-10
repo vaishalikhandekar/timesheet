@@ -8,20 +8,6 @@
 <head>
 <title></title>
 
-<script>
-    $(function() {
-        $('.datepick').each(function() {
-
-            $(this).datepicker({
-
-                changeMonth : true,
-                changeYear : true,
-
-            });
-        });
-    });
-</script>
-
 <body>
     <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
 
@@ -47,7 +33,9 @@
                     </div>
 
                     <div class="modal-body">
-                         <a href="SearchPerson">Person Search</a>
+                    
+                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Search Person</button>
+                        
                         <s:form namespace="/" action="CreateProjectPersonLinkSubmit" method="POST" class="form-inline" theme="bootstrap">
 
                                <br>
@@ -98,6 +86,99 @@
         </div>
     </div>
 
+    <!-- *******************************code for Person Search******************************* -->
+    
+    
+     <div class="pull-right" class="container">
+
+        <div class="modal fade" id="modal-2" data-keyboard="false" data-backdrop="static">
+
+            <div class="modal-dialog modal-lg">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <button class="close" type="button" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Person Search</h3>
+                    </div>
+
+                    <div class="modal-body">
+                    
+                    <s:form action="/SearchPersonSubmit" method="POST" class="form-inline" theme="bootstrap">
+                    
+            <div class="form-group">
+                <label>First Name</label>
+                <s:textfield type="text" name="personSearchDetails.personSearchCriteria.firstName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Middle Name</label>
+                <s:textfield type="text" name="personSearchDetails.personSearchCriteria.middleName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <s:textfield type="text" name="personSearchDetails.personSearchCriteria.lastName" class="form-control" />
+            </div>
+
+            <br />
+            <br />
+    <br>
+
+    <table class="table table-striped">
+        <thead>
+
+            <tr>
+                <th>Title</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Date Of Birth</th>
+            </tr>
+        </thead>
+
+        <s:iterator value="personSearchResult.personDetailList" status="stat">
+
+            <tr>
+                <td>
+                    <s:property value="title" />
+                </td>
+                <td>
+                    <s:property value="firstName" />
+                </td>
+                <td>
+                    <s:property value="middleName" />
+                </td>
+                <td>
+                    <s:property value="lastName" />
+                </td>
+                <td>
+                    <s:property value="gender" />
+                </td>
+                <td>
+                    <s:property value="dateOfBirth" />
+                </td>
+            </tr>
+        </s:iterator>
+
+        <s:hidden name="personDetail.personID"></s:hidden>
+    </table>
+    <br/><br/>
+                            <div class="modal-footer">
+                                <s:submit type="submit" id="submit" value="Search" class="btn btn-primary" />
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+
+
+                        </s:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
     <!-- *******************************code to display Project List******************************* -->
 
     <s:form name="ListForm" id="ListForm" method="post">

@@ -9,8 +9,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 
+
 </head>
 <body>
+<!-- code for tab -->
 
     <div class="tabbable full-width-tabs">
         <ul class="nav nav-tabs">
@@ -22,6 +24,8 @@
 
         <div class="tab-content">
             <div id="PersonList" class="tab-pane fade in active">
+            
+            
                 <!-- add pannel to the page -->
                 <div class="panel panel-info">
 
