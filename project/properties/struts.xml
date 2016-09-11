@@ -186,12 +186,23 @@
 
     <!-- TimeSheet -->
 
+        <action name="TimeSheetsProcess" class="com.company.timesheet.timesheet.action.ProjectTimeSheetProcessListAction">
+            <result name="success" type="tiles">TimeSheetsProcess</result>
+            <result name="error">/index</result>
+        </action>
+        
+        <action name="CreateNewProcessSubmit" class="com.company.timesheet.timesheet.action.ProjectTimeSheetProcessCreateAction">
+            <result name="success" type="redirect">
+            <param name="location">/TimeSheetsProcess</param>
+            <param name="projectDetail.projectID">${projectTimeSheetProcessDetail.projectID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
 
         <action name="TimeSheetList" class="com.company.timesheet.timesheet.action.TimeSheetListAction">
             <result name="success" type="tiles">TimeSheetList</result>
             <result name="error">/index</result>
         </action>
-
 
         <action name="TimeSheets" class="com.company.timesheet.project.action.ProjectReadAction">
             <result name="success" type="tiles">TimeSheets</result>

@@ -168,11 +168,15 @@
     <!-- TimeSheet -->
     
     
+    <definition name="TimeSheetsProcess" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="TimeSheets Process" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listProjectTimeSheetProcess.jsp" />
+    </definition>
+    
     <definition name="TimeSheetList" extends="userWorkspaceLayout">
         <put-attribute name="title" value="TimeSheet List" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheet.jsp" />
     </definition>
-    
     
     <definition name="TimeSheets" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Time Sheets" />
