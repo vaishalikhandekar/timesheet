@@ -32,10 +32,10 @@
             <thead>
 
                 <tr>
-                    <th>Project Name</th>
-                    <th>Description</th>
-                    <th>StartDate</th>
-                    <th>EndDate</th>
+                    <th style="text-align: center">Project Name</th>
+                    <th style="text-align: center">Description</th>
+                    <th style="text-align: center">StartDate</th>
+                    <th style="text-align: center">EndDate</th>
                 </tr>
             </thead>
 
@@ -43,10 +43,10 @@
 
                 <tbody>
                     <tr>
-                        <td><s:property value="projectName" /></td>
-                        <td><s:property value="description" /></td>
-                        <td><s:property value="startDate" /></td>
-                        <td><s:property value="endDate" /></td>
+                        <td align="center"><s:property value="projectName" /></td>
+                        <td align="center"><s:property value="description" /></td>
+                        <td align="center"><s:property value="startDate" /></td>
+                        <td align="center"><s:property value="endDate" /></td>
                     </tr>
                 </tbody>
             </s:iterator>

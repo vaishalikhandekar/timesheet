@@ -127,35 +127,35 @@
     <table class="table table-striped">
         <thead>
 
-            <tr>
-                <th>Title</th>
-                <th>First Name</th>
-                <th>Middle Name</th>
-                <th>Last Name</th>
-                <th>Gender</th>
-                <th>Date Of Birth</th>
+            <tr class="success">
+                <th style="text-align: center">Title</th>
+                <th style="text-align: center">First Name</th>
+                <th style="text-align: center">Middle Name</th>
+                <th style="text-align: center">Last Name</th>
+                <th style="text-align: center">Gender</th>
+                <th style="text-align: center">Date Of Birth</th>
             </tr>
         </thead>
 
         <s:iterator value="personSearchResult.personDetailList" status="stat">
 
             <tr>
-                <td>
+                <td align="center">
                     <s:property value="title" />
                 </td>
-                <td>
+                <td align="center">
                     <s:property value="firstName" />
                 </td>
-                <td>
+                <td align="center">
                     <s:property value="middleName" />
                 </td>
-                <td>
+                <td align="center">
                     <s:property value="lastName" />
                 </td>
-                <td>
+                <td align="center">
                     <s:property value="gender" />
                 </td>
-                <td>
+                <td align="center">
                     <s:property value="dateOfBirth" />
                 </td>
             </tr>
@@ -189,9 +189,9 @@
                 <thead>
 
                     <tr class="success">
-                        <th align="center">First Name</th>
-                        <th align="center">Last Name</th>
-                        <th align="center">Role</th>
+                        <th style="text-align: center">First Name</th>
+                        <th style="text-align: center">Last Name</th>
+                        <th style="text-align: center">Role</th>
                     </tr>
                     
                 </thead>
@@ -199,13 +199,13 @@
                 <s:iterator value="projectPersonLinkDetailList" status="stat">
 
                     <tr>
-                        <td>
+                        <td align="center">
                             <s:property value="personDetail.firstName" />
                         </td>
-                        <td>
+                        <td align="center">
                             <s:property value="personDetail.lastName" />
                         </td>
-                        <td>
+                        <td align="center">
                             <s:property value="role" />
                         </td>
 

@@ -105,15 +105,15 @@
         <table class="table table-striped">
             <thead>
 
-                <tr>
-                    <th>Action</th>
-                    <th>Frequency</th>
-                    <th>StartDay</th>
-                    <th>Minimum Approval Level Type</th>
-                    <th>Regular Daily Hours</th>
-                    <th>startDate</th>
-                    <th>end Date</th>
-                    <th>Status</th>
+                <tr class="success">
+                    <th style="text-align: center">Action</th>
+                    <th style="text-align: center">Frequency</th>
+                    <th style="text-align: center">StartDay</th>
+                    <th style="text-align: center">Minimum Approval Level Type</th>
+                    <th style="text-align: center">Regular Daily Hours</th>
+                    <th style="text-align: center">startDate</th>
+                    <th style="text-align: center">end Date</th>
+                    <th style="text-align: center">Status</th>
                 </tr>
             </thead>
 
@@ -153,25 +153,25 @@
                             </s:a>
                         </td>
 
-                        <td>
+                        <td align="center">
                             <s:property value="frequency" />
                         </td>
-                        <td>
+                        <td align="center">
                             <s:property value="startDay" />
                         </td>
-                        <td>
+                        <td align="center">
                             <s:property value="minimumApprovalLevelType" />
                         </td>
-                        <td>
+                        <td align="center">
                             <s:property value="regularDailyHours" />
                         </td>
-                        <td>
+                        <td align="center">
                             <s:property value="startDate" />
                         </td>
-                        <td>
+                        <td align="center">
                             <s:property value="endDate" />
                         </td>
-                        <td>
+                        <td align="center">
                             <s:property value="recordStatus" />
                         </td>
 

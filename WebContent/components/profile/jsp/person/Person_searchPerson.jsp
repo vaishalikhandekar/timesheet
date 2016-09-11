@@ -49,24 +49,24 @@
 
                             <thead>
                                 <tr>
-                                    <th>Title</th>
-                                    <th>First Name</th>
-                                    <th>Middle Name</th>
-                                    <th>Last Name</th>
-                                    <th>Gender</th>
-                                    <th>Date Of Birth</th>
+                                    <th style="text-align: center">Title</th>
+                                    <th style="text-align: center">First Name</th>
+                                    <th style="text-align: center">Middle Name</th>
+                                    <th style="text-align: center">Last Name</th>
+                                    <th style="text-align: center">Gender</th>
+                                    <th style="text-align: center">Date Of Birth</th>
                                 </tr>
                             </thead>
 
                             <s:iterator value="personSearchResult.personDetailList" status="stat">
 
                                 <tr>
-                                    <td><s:property value="title" /></td>
-                                    <td><s:property value="firstName" /></td>
-                                    <td><s:property value="middleName" /></td>
-                                    <td><s:property value="lastName" /></td>
-                                    <td><s:property value="gender" /></td>
-                                    <td><s:property value="dateOfBirth" /></td>
+                                    <td align="center"><s:property value="title" /></td>
+                                    <td align="center"><s:property value="firstName" /></td>
+                                    <td align="center"><s:property value="middleName" /></td>
+                                    <td align="center"><s:property value="lastName" /></td>
+                                    <td align="center"><s:property value="gender" /></td>
+                                    <td align="center"><s:property value="dateOfBirth" /></td>
                                 </tr>
 
                             </s:iterator>

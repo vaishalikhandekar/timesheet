@@ -24,13 +24,13 @@ pageEncoding="ISO-8859-1"%>
             <table class="table table-striped">
                 <thead>
 
-                    <tr>
-                        <th align="left">Project Name</th>
-                        <th>Role</th>
-                        <th>Employee Name</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
-                        <th colspan=3>Action</th>
+                    <tr class="success">
+                        <th  style="text-align: center">Project Name</th>
+                        <th  style="text-align: center">Role</th>
+                        <th  style="text-align: center">Employee Name</th>
+                        <th  style="text-align: center">Start Date</th>
+                        <th  style="text-align: center">End Date</th>
+                        <th colspan=3  style="text-align: center">Action</th>
                     </tr>
                 </thead>
 
@@ -38,19 +38,19 @@ pageEncoding="ISO-8859-1"%>
 
                     <tbody>
                         <tr>
-                            <td>
+                            <td align="center">
                                 <s:property value="projectName" />
                             </td>
-                            <td>
+                            <td align="center">
                                 <s:property value="role" />
                             </td>
-                            <td>
+                            <td align="center">
                                 <s:property value="employeeName" />
                             </td>
-                            <td>
+                            <td align="center">
                                 <s:property value="startDate" />
                             </td>
-                            <td>
+                            <td align="center">
                                 <s:property value="endDate" />
                             </td>
 

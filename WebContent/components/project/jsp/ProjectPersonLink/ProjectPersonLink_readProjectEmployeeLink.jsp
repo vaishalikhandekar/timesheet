@@ -15,9 +15,9 @@
 			<thead>
 
 				<tr>
-					<th align="left">Role</th>
-					<th>Start Date</th>
-					<th>End Date</th>
+					<th style="text-align: center">Role</th>
+					<th style="text-align: center">Start Date</th>
+					<th style="text-align: center">End Date</th>
 				</tr>
 			</thead>
 
@@ -25,9 +25,9 @@
 	
 	<tbody>
 				<tr>
-					<td><s:property value="projectPersonLinkDetail.role"/></td>
-					<td><s:property value="projectPersonLinkDetail.startDate" /></td>
-					<td><s:property value="projectPersonLinkDetail.endDate" /></td>
+					<td align="center"><s:property value="projectPersonLinkDetail.role"/></td>
+					<td align="center"><s:property value="projectPersonLinkDetail.startDate" /></td>
+					<td align="center"><s:property value="projectPersonLinkDetail.endDate" /></td>
 				
 				</tr>
 	</tbody>

@@ -41,13 +41,13 @@
                                <br>
                                <br>
                             <div class="form-group">
-                                <label>Role:</label> <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.role" />
+                                <label>TotalRegularHours:</label> <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.totalRegularHours" />
                             </div>
                             <br/>
                             <br/>
                             
                             <div class="form-group">
-                                <label>PersonID:</label> <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.personID" />
+                                <label>TotalNoOfHoursWorked:</label> <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.totalNoOfHoursWorked" />
                             </div>
                             <br/>
                             <br/>
@@ -93,16 +93,16 @@
         <table class="table table-striped">
             <thead>
 
-                <tr>
-                    <th>Project Name</th>
-                    <th>Total Regular Hours</th>
-                    <th>Total No Of Hours Worked</th>
-                    <th>createdDateTime</th>
-                    <th>Submitted DateTime</th>
-                    <th>Time Sheet Status</th>
-                    <th>Approval Level Type</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
+                <tr class="success">
+                    <th style="text-align: center">Project Name</th>
+                    <th style="text-align: center">Total Regular Hours</th>
+                    <th style="text-align: center">Total No Of Hours Worked</th>
+                    <th style="text-align: center">createdDateTime</th>
+                    <th style="text-align: center">Submitted DateTime</th>
+                    <th style="text-align: center">Time Sheet Status</th>
+                    <th style="text-align: center">Approval Level Type</th>
+                    <th style="text-align: center">Start Date</th>
+                    <th style="text-align: center">End Date</th>
                 </tr>
             </thead>
 
@@ -110,15 +110,15 @@
 
                 <tbody>
                     <tr>
-                        <td><s:property value="projectName" /></td>
-                        <td><s:property value="totalRegularHours" /></td>
-                        <td><s:property value="totalNoOfHoursWorked" /></td>
-                        <td><s:property value="createdDateTime" /></td>
-                        <td><s:property value="submittedDateTime" /></td>
-                        <td><s:property value="timeSheetStatus" /></td>
-                        <td><s:property value="approvalLevelType" /></td>
-                        <td><s:property value="startDate" /></td>
-                        <td><s:property value="endDate" /></td>
+                        <td align="center"><s:property value="projectName" /></td>
+                        <td align="center"><s:property value="totalRegularHours" /></td>
+                        <td align="center"><s:property value="totalNoOfHoursWorked" /></td>
+                        <td align="center"><s:property value="createdDateTime" /></td>
+                        <td align="center"><s:property value="submittedDateTime" /></td>
+                        <td align="center"><s:property value="timeSheetStatus" /></td>
+                        <td align="center"><s:property value="approvalLevelType" /></td>
+                        <td align="center"><s:property value="startDate" /></td>
+                        <td align="center"><s:property value="endDate" /></td>
 
                     </tr>
                 </tbody>

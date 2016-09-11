@@ -22,20 +22,20 @@
             <thead>
 
                 <tr class="success">
-                    <th align="left">Project Name</th>
-                    <th>Role</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
+                    <th style="text-align: center">Project Name</th>
+                    <th style="text-align: center">Role</th>
+                    <th style="text-align: center">Start Date</th>
+                    <th style="text-align: center">End Date</th>
                 </tr>
             </thead>
             
             <s:iterator value="projectPersonLinkDetailList" status="stat">
             
             <tr>
-                <td><s:property value="projectDetail.projectName" /></td>
-                <td><s:property value="role" /></td>
-                <td><s:property value="projectDetail.startDate" /></td>
-                <td><s:property value="projectDetail.endDate" /></td>
+                <td align="center"><s:property value="projectDetail.projectName" /></td>
+                <td align="center"><s:property value="role" /></td>
+                <td align="center"><s:property value="projectDetail.startDate" /></td>
+                <td align="center"><s:property value="projectDetail.endDate" /></td>
 
                  </tr>
 

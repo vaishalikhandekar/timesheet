@@ -64,25 +64,25 @@
             <thead>
 
                 <tr class="success">
-                    <th align="left">Title</th>
-                    <th>First Name</th>
-                    <th>Middle Name</th>
-                    <th>Last Name</th>
-                    <th>Gender</th>
-                    <th>Date Of Birth</th>
-                    <th>Registration Date</th>
-                    <th colspan=2>Action</th>
+                    <th style="text-align: center">Title</th>
+                    <th style="text-align: center">First Name</th>
+                    <th style="text-align: center">Middle Name</th>
+                    <th style="text-align: center">Last Name</th>
+                    <th style="text-align: center">Gender</th>
+                    <th style="text-align: center">Date Of Birth</th>
+                    <th style="text-align: center">Registration Date</th>
+                    <th colspan=2 style="text-align: center">Action</th>
                 </tr>
             </thead>
 
             <tr>
-                <td><s:property value="personDetail.title" /></td>
-                <td><s:property value="personDetail.firstName" /></td>
-                <td><s:property value="personDetail.middleName" /></td>
-                <td><s:property value="personDetail.lastName" /></td>
-                <td><s:property value="personDetail.gender" /></td>
-                <td><s:property value="personDetail.dateOfBirth" /></td>
-                <td><s:property value="personDetail.registrationDate" /></td>
+                <td align="center"><s:property value="personDetail.title" /></td>
+                <td align="center"><s:property value="personDetail.firstName" /></td>
+                <td align="center"><s:property value="personDetail.middleName" /></td>
+                <td align="center"><s:property value="personDetail.lastName" /></td>
+                <td align="center"><s:property value="personDetail.gender" /></td>
+                <td align="center"><s:property value="personDetail.dateOfBirth" /></td>
+                <td align="center"><s:property value="personDetail.registrationDate" /></td>
 
                 <td>
                  <s:url var="updatePersonURL" action="ReadPerson" escapeAmp="false">

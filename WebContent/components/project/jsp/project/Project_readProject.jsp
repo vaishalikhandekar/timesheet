@@ -66,23 +66,23 @@
                 <thead>
 
                     <tr>
-                        <th>Project Name</th>
-                        <th>Description</th>
-                        <th>Record Status</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
-                        <th colspan=2>Action</th>
+                        <th style="text-align: center">Project Name</th>
+                        <th style="text-align: center">Description</th>
+                        <th style="text-align: center">Record Status</th>
+                        <th style="text-align: center">Start Date</th>
+                        <th style="text-align: center">End Date</th>
+                        <th colspan=2 style="text-align: center">Action</th>
                     </tr>
                 </thead>
 
                 <tr>
-                    <td><s:property value="projectDetail.projectName" /></td>
-                    <td><s:property value="projectDetail.description" /></td>
-                    <td><s:property value="projectDetail.recordStatus" /></td>
-                    <td><s:property value="projectDetail.startDate" /></td>
-                    <td><s:property value="projectDetail.endDate" /></td>
+                    <td align="center"><s:property value="projectDetail.projectName" /></td>
+                    <td align="center"><s:property value="projectDetail.description" /></td>
+                    <td align="center"><s:property value="projectDetail.recordStatus" /></td>
+                    <td align="center"><s:property value="projectDetail.startDate" /></td>
+                    <td align="center"><s:property value="projectDetail.endDate" /></td>
 
-                    <td><a href="#DeleteProject" data-toggle="modal">Delete</a> 
+                    <td align="center"><a href="#DeleteProject" data-toggle="modal">Delete</a> 
                     
                         <s:url id="AddPersonToProjectURL" action="AddPersonToProject" escapeAmp="false">
                             <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />

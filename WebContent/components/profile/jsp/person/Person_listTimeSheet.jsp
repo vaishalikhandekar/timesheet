@@ -18,14 +18,14 @@
         <table class="table table-striped">
             <thead>
 
-                <tr>
-                    <th align="left">Month</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
-                    <th>Maximum Total Hours</th>
-                    <th>Actual Total Hours</th>
-                    <th>Submitted Date</th>
-                    <th>Status</th>
+                <tr class="success">
+                    <th style="text-align: center">Month</th>
+                    <th style="text-align: center">Start Date</th>
+                    <th style="text-align: center">End Date</th>
+                    <th style="text-align: center">Maximum Total Hours</th>
+                    <th style="text-align: center">Actual Total Hours</th>
+                    <th style="text-align: center">Submitted Date</th>
+                    <th style="text-align: center">Status</th>
                 </tr>
             </thead>
 
@@ -33,13 +33,13 @@
 
                 <tbody>
                     <tr>
-                        <td><s:property value="month" /></td>
-                        <td><s:property value="startDate" /></td>
-                        <td><s:property value="endDate" /></td>
-                        <td><s:property value="maximumTotalHours" /></td>
-                        <td><s:property value="actualTotalHours" /></td>
-                        <td><s:property value="submittedDate" /></td>
-                        <td><s:property value="timeSheetStatus" /></td>
+                        <td align="center"><s:property value="month" /></td>
+                        <td align="center"><s:property value="startDate" /></td>
+                        <td align="center"><s:property value="endDate" /></td>
+                        <td align="center"><s:property value="maximumTotalHours" /></td>
+                        <td align="center"><s:property value="actualTotalHours" /></td>
+                        <td align="center"><s:property value="submittedDate" /></td>
+                        <td align="center"><s:property value="timeSheetStatus" /></td>
 
                     </tr>
                 </tbody>

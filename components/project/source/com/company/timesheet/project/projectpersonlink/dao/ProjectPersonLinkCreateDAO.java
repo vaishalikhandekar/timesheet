@@ -62,7 +62,7 @@ public class ProjectPersonLinkCreateDAO {
 			//inserting data into AuditTrail Table for Employee Table
 			AuditTrailDetails auditTrailDetails = new AuditTrailDetails();
 			
-			auditTrailDetails.setTableName("ProjectEmployeeLinkID");
+			auditTrailDetails.setTableName("ProjectEmployeeLink");
 			auditTrailDetails.setOperationType("Create");
 			auditTrailDetails.setRelatedID(projectPersonLinkDetail.getProjectPersonLinkID());
 			auditTrailDetails.setTransactionType("Online");
