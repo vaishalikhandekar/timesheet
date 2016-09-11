@@ -24,6 +24,10 @@ public class TimeSheetDetail {
 	
 	private String projectName;
 	
+	private String firstName;
+	
+	private String lastName;
+	
 	private Date startDate ;
 	
 	private Date endDate ;
@@ -118,7 +122,23 @@ public class TimeSheetDetail {
         this.projectName = projectName;
     }
 
-    public Date getStartDate() {
+    public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public Date getStartDate() {
 		return startDate;
 	}
 

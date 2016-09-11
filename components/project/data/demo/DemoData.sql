@@ -20,7 +20,10 @@ INSERT INTO Project(projectID ,	projectName , 		acronym, 	description,          
 
               
 INSERT INTO ProjectPersonLink(projectPersonLinkID ,	projectID ,  personID,    role,          startDate,                          endDate,                            comments, recordStatus, versionNo)
-             		   VALUES( 3003,	                2003,                1002,  'Developer',    to_date('26-Jun-90', 'DD-MON-RR'),   to_date('26-Jun-16', 'DD-MON-RR'),  null,     'Active',		1);
+ 		   				VALUES( 3003,	           	2003,           1002,  'Developer',    to_date('26-Jun-90', 'DD-MON-RR'),   to_date('26-Jun-16', 'DD-MON-RR'),  null,     'Active',		1);
+              
+INSERT INTO ProjectPersonLink(projectPersonLinkID ,	projectID ,  personID,    role,          startDate,                          endDate,                            comments, recordStatus, versionNo)
+             		   VALUES( 3007,	            2003,        	1003,  'Developer',    to_date('26-Jun-90', 'DD-MON-RR'),   to_date('26-Jun-16', 'DD-MON-RR'),  null,     'Active',		1);
               
 
              		   

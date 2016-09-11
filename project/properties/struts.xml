@@ -205,6 +205,11 @@
             <result name="error">/index</result>
         </action>
 
+        <action name="TimeSheetsForProject" class="com.company.timesheet.timesheet.action.TimeSheetsForProjectAction">
+            <result name="success" type="tiles">TimeSheetsForProject</result>
+            <result name="error">/index</result>
+        </action>
+
         <action name="TimeSheets" class="com.company.timesheet.project.action.ProjectReadAction">
             <result name="success" type="tiles">TimeSheets</result>
             <result name="error">/index</result>
