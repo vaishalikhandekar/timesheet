@@ -7,25 +7,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-
-
+<title></title>
 </head>
+
 <body>
-<!-- code for tab -->
+    <!-- code for tab -->
 
     <div class="tabbable full-width-tabs">
+
         <ul class="nav nav-tabs">
 
             <li class="active">
-                <a data-toggle="tab" href="#PersonList">Person Name</a>
+                <a data-toggle="tab" href="#PersonName">Person Name</a>
             </li>
+
         </ul>
 
         <div class="tab-content">
-            <div id="PersonList" class="tab-pane fade in active">
-            
-            
+
+            <div id="PersonName" class="tab-pane fade in active">
+
+
                 <!-- add pannel to the page -->
                 <div class="panel panel-info">
 
@@ -34,21 +36,28 @@
                     </div>
 
                     <div class="panel-body">
-                        <img src="/image/RunAppDownload.jpg" class="img-rounded" alt="Cinque Terre" width="100" height="100"> 
+                        <img src="/image/RunAppDownload.jpg" class="img-rounded" alt="Cinque Terre" width="100" height="100">
                     </div>
+
                 </div>
 
                 <!-- Code for NavBar -->
-                
+
                 <div class="bs-example">
+
                     <nav role="navigation" class="navbar navbar-light" style="background-color: #e3f2fd">
+
                         <div class="navbar-header">
                             <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
-                                    class="icon-bar"></span>
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
                             </button>
                         </div>
+
                         <div id="navbarCollapse" class="collapse navbar-collapse">
+
                             <ul class="nav navbar-nav">
 
                                 <li class="active">
@@ -56,7 +65,8 @@
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
                                     <a href="${PersonHome}">
-                                        <span class="glyphicon glyphicon-home"></span> Home
+                                        <span class="glyphicon glyphicon-home"></span>
+                                        Home
                                     </a>
                                 </li>
 
@@ -77,12 +87,17 @@
                             </ul>
 
                         </div>
+                        
                     </nav>
+                    
                 </div>
 
             </div>
+            
         </div>
+        
     </div>
 
 </body>
+
 </html>
