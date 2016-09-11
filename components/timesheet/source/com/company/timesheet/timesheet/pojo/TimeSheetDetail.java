@@ -4,33 +4,35 @@ import java.util.Date;
 
 public class TimeSheetDetail {
 	
-	private String month;
-	
 	private Long timeSheetID;
+	
+	private Long projectTimeSheetProcessID;
+	
+	private Long projectPersonLinkID;
 	
 	private int totalRegularHours ;
 
-	private int totalActualHours ;
+	private int totalNoOfHoursWorked ;
 
-	private Date submittedDate ;
+	private Date createdDateTime ;
+	
+	private Date submittedDateTime ;
+	
+	private String timeSheetStatus;
+	
+	private String approvalLevelType;
+	
+	private String projectName;
 	
 	private Date startDate ;
 	
 	private Date endDate ;
 
-	private String timeSheetStatus;
+	private String comments;
 	
 	private String recordStatus;
 	
 	private int versionNo ;
-
-	public String getMonth() {
-		return month;
-	}
-
-	public void setMonth(String month) {
-		this.month = month;
-	}
 
 	public Long getTimeSheetID() {
 		return timeSheetID;
@@ -38,6 +40,22 @@ public class TimeSheetDetail {
 
 	public void setTimeSheetID(Long timeSheetID) {
 		this.timeSheetID = timeSheetID;
+	}
+
+	public Long getProjectTimeSheetProcessID() {
+		return projectTimeSheetProcessID;
+	}
+
+	public void setProjectTimeSheetProcessID(Long projectTimeSheetProcessID) {
+		this.projectTimeSheetProcessID = projectTimeSheetProcessID;
+	}
+
+	public Long getProjectPersonLinkID() {
+		return projectPersonLinkID;
+	}
+
+	public void setProjectPersonLinkID(Long projectPersonLinkID) {
+		this.projectPersonLinkID = projectPersonLinkID;
 	}
 
 	public int getTotalRegularHours() {
@@ -48,23 +66,59 @@ public class TimeSheetDetail {
 		this.totalRegularHours = totalRegularHours;
 	}
 
-	public int getTotalActualHours() {
-		return totalActualHours;
+	public int getTotalNoOfHoursWorked() {
+		return totalNoOfHoursWorked;
 	}
 
-	public void setTotalActualHours(int totalActualHours) {
-		this.totalActualHours = totalActualHours;
+	public void setTotalNoOfHoursWorked(int totalNoOfHoursWorked) {
+		this.totalNoOfHoursWorked = totalNoOfHoursWorked;
 	}
 
-	public Date getSubmittedDate() {
-		return submittedDate;
+	public Date getCreatedDateTime() {
+		return createdDateTime;
 	}
 
-	public void setSubmittedDate(Date submittedDate) {
-		this.submittedDate = submittedDate;
+	public void setCreatedDateTime(Date createdDateTime) {
+		this.createdDateTime = createdDateTime;
 	}
 
-	public Date getStartDate() {
+	public Date getSubmittedDateTime() {
+		return submittedDateTime;
+	}
+
+	public void setSubmittedDateTime(Date submittedDateTime) {
+		this.submittedDateTime = submittedDateTime;
+	}
+
+	public String getTimeSheetStatus() {
+		return timeSheetStatus;
+	}
+
+	public void setTimeSheetStatus(String timeSheetStatus) {
+		this.timeSheetStatus = timeSheetStatus;
+	}
+
+	public String getApprovalLevelType() {
+		return approvalLevelType;
+	}
+
+	public void setApprovalLevelType(String approvalLevelType) {
+		this.approvalLevelType = approvalLevelType;
+	}
+
+	
+    public String getProjectName() {
+    
+        return projectName;
+    }
+
+    
+    public void setProjectName(String projectName) {
+    
+        this.projectName = projectName;
+    }
+
+    public Date getStartDate() {
 		return startDate;
 	}
 
@@ -80,12 +134,12 @@ public class TimeSheetDetail {
 		this.endDate = endDate;
 	}
 
-	public String getTimeSheetStatus() {
-		return timeSheetStatus;
+	public String getComments() {
+		return comments;
 	}
 
-	public void setTimeSheetStatus(String timeSheetStatus) {
-		this.timeSheetStatus = timeSheetStatus;
+	public void setComments(String comments) {
+		this.comments = comments;
 	}
 
 	public String getRecordStatus() {
@@ -103,6 +157,5 @@ public class TimeSheetDetail {
 	public void setVersionNo(int versionNo) {
 		this.versionNo = versionNo;
 	}
-	
-	
-}
+
+	}

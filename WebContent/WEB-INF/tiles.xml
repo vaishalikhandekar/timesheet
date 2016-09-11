@@ -95,14 +95,9 @@
     </definition>
     
     
-     <definition name="PersonTimeSheetList" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="Person TimeSheet List" />
-        <put-attribute name="body" value="/components/profile/jsp/person/Person_listTimeSheet.jsp" />
-    </definition>
     
     
     <!-- Project -->
-    	
     	
     <definition name="ProjectNav" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Project Nav" />
@@ -167,6 +162,10 @@
     
     <!-- TimeSheet -->
     
+     <definition name="PersonTimeSheetList" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Person TimeSheet List" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheet.jsp" />
+    </definition>
     
     <definition name="TimeSheetsProcess" extends="userWorkspaceLayout">
         <put-attribute name="title" value="TimeSheets Process" />

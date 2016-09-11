@@ -11,54 +11,89 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.company.timesheet.core.util.dataaccess.DBConnection;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
-import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * @author vaish
  *
  */
-public class TimeSheetListDAO  {
-	
-	public List<TimeSheetDetail> listTimeSheet(){
-		
-		List<TimeSheetDetail> timeSheetDetailList = new ArrayList<TimeSheetDetail>();
-		
-		Connection connection = null;
-		ResultSet resultSet;
-		try {
-			connection = DBConnection.getDBConnection();
+public class TimeSheetListDAO {
 
-			String timeSheetSQLStr = "SELECT * FROM TIMESHEET WHERE	RECORDSTATUS='Active'";
+    public List<TimeSheetDetail> listTimeSheet(PersonDetail personDetail) {
 
-			// statement = connection.createStatement();
+        List<TimeSheetDetail> timeSheetDetailList = new ArrayList<TimeSheetDetail>();
 
-			PreparedStatement preparedStatement = connection.prepareStatement(timeSheetSQLStr);
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet;
+        TimeSheetDetail timeSheetDetail = null;
+        try {
+            connection = DBConnection.getDBConnection();
 
-			resultSet = preparedStatement.executeQuery();
+            // get projectPersonLinkID from ProjectPersonLink table
 
-			while (resultSet.next()) {
-				
-				TimeSheetDetail timeSheetDetail = new TimeSheetDetail();
-				
-				timeSheetDetail.setMonth(resultSet.getString("month"));
-				//timeSheetDetail.setMaximumTotalHours(resultSet.getInt("maximumTotalHours"));
-				//timeSheetDetail.setActualTotalHours(resultSet.getInt("actualTotalHours"));
-				timeSheetDetail.setSubmittedDate(resultSet.getDate("submittedDate"));
-				timeSheetDetail.setStartDate(resultSet.getDate("startDate"));
-				timeSheetDetail.setEndDate(resultSet.getDate("endDate"));
-				timeSheetDetail.setTimeSheetStatus(resultSet.getString("timeSheetStatus"));
-				
-				timeSheetDetailList.add(timeSheetDetail);
-			}
-		
-		}catch (SQLException e) {
+            StringBuffer timeSheetSQLStrBuf = new StringBuffer();
 
-			e.printStackTrace();
-		}
-	
-		return timeSheetDetailList;
-	
+            timeSheetSQLStrBuf.append("SELECT ");
+            timeSheetSQLStrBuf.append("timeSheet.timeSheetID, ");
+            timeSheetSQLStrBuf.append("timeSheet.projectTimeSheetProcessID, ");
+            timeSheetSQLStrBuf.append("timeSheet.projectPersonLinkID, ");
+            timeSheetSQLStrBuf.append("timeSheet.totalRegularHours, ");
+            timeSheetSQLStrBuf.append("timeSheet.totalNoOfHoursWorked, ");
+            timeSheetSQLStrBuf.append("timeSheet.createdDateTime, ");
+            timeSheetSQLStrBuf.append("timeSheet.submittedDateTime, ");
+            timeSheetSQLStrBuf.append("timeSheet.startDate, ");
+            timeSheetSQLStrBuf.append("timeSheet.endDate, ");
+            timeSheetSQLStrBuf.append("timeSheet.timeSheetStatus, ");
+            timeSheetSQLStrBuf.append("timeSheet.approvalLevelType,  ");
+            timeSheetSQLStrBuf.append("timeSheet.recordStatus, ");
+            timeSheetSQLStrBuf.append("project.projectName ");
+            timeSheetSQLStrBuf.append("FROM ");
+            timeSheetSQLStrBuf.append("TimeSheet timeSheet ");
+            timeSheetSQLStrBuf.append("LEFT OUTER JOIN ProjectPersonLink projectPersonLink ");
+            timeSheetSQLStrBuf.append("ON timeSheet.projectPersonLinkID = projectPersonLink.projectPersonLinkID ");
+            timeSheetSQLStrBuf.append("LEFT OUTER JOIN Project project ");
+            timeSheetSQLStrBuf.append("ON project.projectID = projectPersonLink.projectID ");
+            timeSheetSQLStrBuf.append("WHERE ");
+            timeSheetSQLStrBuf.append(" projectPersonLink.personID = ?");
+            timeSheetSQLStrBuf.append(" AND timeSheet.recordStatus = 'Active'");
 
-}
+            preparedStatement = connection.prepareStatement(timeSheetSQLStrBuf.toString());
+
+            preparedStatement.setLong(1, personDetail.getPersonID());
+
+            String timeSheetSQLStr = "select * from TIMESHEET t  left outer join ProjectPersonLink pr on t.projectPersonLinkID = pr.projectPersonLinkID left outer join PERSON p on p.personID = pr.personID WHERE p.personID = 1001 and	RECORDSTATUS='Active'";
+
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+
+                timeSheetDetail = new TimeSheetDetail();
+
+                timeSheetDetail.setTimeSheetID(resultSet.getLong("timeSheetID"));
+                timeSheetDetail.setProjectTimeSheetProcessID(resultSet.getLong("projectTimeSheetProcessID"));
+                timeSheetDetail.setProjectPersonLinkID(resultSet.getLong("projectPersonLinkID"));
+                timeSheetDetail.setTotalRegularHours(resultSet.getInt("totalRegularHours"));
+                timeSheetDetail.setTotalNoOfHoursWorked(resultSet.getInt("totalNoOfHoursWorked"));
+                timeSheetDetail.setCreatedDateTime(resultSet.getDate("createdDateTime"));
+                timeSheetDetail.setSubmittedDateTime(resultSet.getDate("submittedDateTime"));
+                timeSheetDetail.setStartDate(resultSet.getDate("startDate"));
+                timeSheetDetail.setEndDate(resultSet.getDate("endDate"));
+                timeSheetDetail.setTimeSheetStatus(resultSet.getString("timeSheetStatus"));
+                timeSheetDetail.setApprovalLevelType(resultSet.getString("approvalLevelType"));
+                timeSheetDetail.setRecordStatus(resultSet.getString("recordStatus"));
+                timeSheetDetail.setProjectName(resultSet.getString("projectName"));
+
+                timeSheetDetailList.add(timeSheetDetail);
+            }
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+        return timeSheetDetailList;
+
+    }
 }

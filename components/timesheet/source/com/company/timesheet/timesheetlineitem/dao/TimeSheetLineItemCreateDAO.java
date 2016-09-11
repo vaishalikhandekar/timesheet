@@ -80,7 +80,7 @@ public class TimeSheetLineItemCreateDAO {
 					+ "VALUES(?,'"
 					+ timeSheetDetail.getTotalRegularHours()
 					+ "','"
-					+ timeSheetDetail.getTotalActualHours()
+					+ timeSheetDetail.getTotalRegularHours()
 					+ "',?,'Submitted','Active',1, ?,?,)";
 
 			PreparedStatement preparedStatement1 = connection

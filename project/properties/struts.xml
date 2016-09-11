@@ -81,10 +81,6 @@
             <result name="error">/index</result>
         </action>
         
-        <action name="PersonTimeSheetList" class="com.company.timesheet.profile.person.action.PersonReadAction">
-            <result name="success" type="tiles">PersonTimeSheetList</result>
-            <result name="error">/index</result>
-        </action>
 
 
 
@@ -185,6 +181,11 @@
 
 
     <!-- TimeSheet -->
+    
+        <action name="PersonTimeSheetList" class="com.company.timesheet.timesheet.action.TimeSheetListAction">
+            <result name="success" type="tiles">PersonTimeSheetList</result>
+            <result name="error">/index</result>
+        </action>
 
         <action name="TimeSheetsProcess" class="com.company.timesheet.timesheet.action.ProjectTimeSheetProcessListAction">
             <result name="success" type="tiles">TimeSheetsProcess</result>
