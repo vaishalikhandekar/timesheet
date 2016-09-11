@@ -2,13 +2,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
 
-
 <!DOCTYPE html>
 <html>
 <head>
 <title></title>
 
 <body>
+
     <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
 
     <!-- *******************************Modal to Add Person in the Project ******************************* -->
@@ -184,7 +184,8 @@
     <s:form name="ListForm" id="ListForm" method="post">
 
         <div class="container">
-            <table class="table table-striped" border="1" ; width=100%>
+            
+            <table class="table table-striped" style="width: 100%; height: 100%; border: 1;">
                 <thead>
 
                     <tr class="success">
@@ -192,6 +193,7 @@
                         <th align="center">Last Name</th>
                         <th align="center">Role</th>
                     </tr>
+                    
                 </thead>
 
                 <s:iterator value="projectPersonLinkDetailList" status="stat">
@@ -211,6 +213,7 @@
                 </s:iterator>
 
             </table>
+            
         </div>
 
     </s:form>
