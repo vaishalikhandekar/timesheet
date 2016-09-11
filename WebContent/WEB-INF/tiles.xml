@@ -187,6 +187,10 @@
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_timeSheetsAdministration.jsp" />
     </definition>
     
+    <definition name="TimeSheetsForProject" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Project TimeSheet List" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetForProject.jsp" />
+    </definition>
     
      <!-- TimeSheet LineItem -->
     

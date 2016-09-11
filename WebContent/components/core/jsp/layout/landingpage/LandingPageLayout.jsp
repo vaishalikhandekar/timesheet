@@ -19,7 +19,7 @@
     }
     
     body {
-    	width: 100%;
+    	width: 99%;
     	height: 96%;
     }
 </style>

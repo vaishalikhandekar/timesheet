@@ -93,10 +93,10 @@
                 </li>
                 
                 <li>
-                   <s:url var="TimeSheets" action="/TimeSheets">
+                   <s:url var="TimeSheetsForProject" action="/TimeSheetsForProject">
                         <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
                     </s:url>
-                    <a href="${TimeSheets}">TimeSheets</a>
+                    <a href="${TimeSheetsForProject}">Time Sheets</a>
                 </li>
                 
                 <li>
