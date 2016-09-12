@@ -78,10 +78,10 @@
                                 </li>
 
                                 <li>
-                                    <s:url var="TimeSheetList" action="/PersonTimeSheetList">
+                                    <s:url var="TimeSheetsForPerson" action="/TimeSheetsForPerson">
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
-                                    <a href="${TimeSheetList}">Time Sheets</a>
+                                    <a href="${TimeSheetsForPerson}">Time Sheets</a>
                                 </li>
 
                             </ul>

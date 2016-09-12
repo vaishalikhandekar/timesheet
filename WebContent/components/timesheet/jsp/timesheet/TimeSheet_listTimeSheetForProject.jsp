@@ -13,7 +13,6 @@
     
     <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
 
-    <s:form action="/PersonTimeSheetList" method="post">
 
         <!-- *******************************Modal to Add Person in the Project ******************************* -->
 
@@ -124,7 +123,6 @@
 
         </table>
 
-    </s:form>
     
 </body>
 </html>

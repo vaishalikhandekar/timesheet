@@ -182,8 +182,8 @@
 
     <!-- TimeSheet -->
     
-        <action name="PersonTimeSheetList" class="com.company.timesheet.timesheet.action.TimeSheetListAction">
-            <result name="success" type="tiles">PersonTimeSheetList</result>
+        <action name="TimeSheetsForPerson" class="com.company.timesheet.timesheet.action.TimeSheetsForPersonAction">
+            <result name="success" type="tiles">TimeSheetsForPerson</result>
             <result name="error">/index</result>
         </action>
 
@@ -197,11 +197,6 @@
             <param name="location">/TimeSheetsProcess</param>
             <param name="projectDetail.projectID">${projectTimeSheetProcessDetail.projectID}</param>
             </result>
-            <result name="error">/index</result>
-        </action>
-
-        <action name="TimeSheetList" class="com.company.timesheet.timesheet.action.TimeSheetListAction">
-            <result name="success" type="tiles">TimeSheetList</result>
             <result name="error">/index</result>
         </action>
 

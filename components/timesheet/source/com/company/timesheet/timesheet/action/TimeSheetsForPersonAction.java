@@ -6,7 +6,7 @@ package com.company.timesheet.timesheet.action;
 import java.util.List;
 
 import com.company.timesheet.profile.person.pojo.PersonDetail;
-import com.company.timesheet.timesheet.dao.TimeSheetListDAO;
+import com.company.timesheet.timesheet.dao.TimeSheetsForPersonDAO;
 import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -14,7 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author vaish
  *
  */
-public class TimeSheetListAction extends ActionSupport {
+public class TimeSheetsForPersonAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
 
@@ -43,8 +43,8 @@ public class TimeSheetListAction extends ActionSupport {
 
 		String pageForwardStr = "";
 
-		TimeSheetListDAO timeSheetListDAO = new TimeSheetListDAO();
-		List<TimeSheetDetail> timeSheetDetailList = timeSheetListDAO.listTimeSheet(personDetail);
+		TimeSheetsForPersonDAO timeSheetsForPersonDAO = new TimeSheetsForPersonDAO();
+		List<TimeSheetDetail> timeSheetDetailList = timeSheetsForPersonDAO.listTimeSheet(personDetail);
 
 		setTimeSheetDetailList(timeSheetDetailList);
 
