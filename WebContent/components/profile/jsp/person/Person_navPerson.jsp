@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="panel-body">
-                        <img src="/image/RunAppDownload.jpg" class="img-rounded" alt="Cinque Terre" width="100" height="100">
+                        <img src="/TimeSheet/components/profile/images/user.png" class="img-rounded" alt="Cinque Terre" width="100" height="100">
                     </div>
 
                 </div>
@@ -47,14 +47,14 @@
 
                     <nav role="navigation" class="navbar navbar-light" style="background-color: #e3f2fd">
 
-                        <div class="navbar-header">
+                        <%-- <div class="navbar-header">
                             <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                        </div>
+                        </div> --%>
 
                         <div id="navbarCollapse" class="collapse navbar-collapse">
 
