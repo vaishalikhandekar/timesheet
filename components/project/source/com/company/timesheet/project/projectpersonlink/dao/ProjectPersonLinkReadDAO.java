@@ -11,22 +11,25 @@ import java.sql.SQLException;
 
 import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
+import com.company.timesheet.project.pojo.ProjectDetail;
 import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
 
 /**
  * @author vaish
  *
  */
-public class ProjectEmployeeLinkReadDAO {
+public class ProjectPersonLinkReadDAO {
 			
 	PreparedStatement preparedStatement = null;
 	ResultSet resultSet = null;
 	Statement statement = null;
 	String returnMassegeStr = "";
+	ProjectPersonLinkDetail projectPersonLinkDetail = null;
 	
-	public String readProjectEmployeeLink(ProjectPersonLinkDetail projectPersonLinkDetail){
+	public ProjectPersonLinkDetail readProjectEmployeeLink(PersonDetail personDetail){
 						
-		String projectSQLStr = "SELECT * FROM ProjectPersonLink WHERE  projectPersonLinkID=\'" + projectPersonLinkDetail.getProjectPersonLinkID() + "\' ";
+		String projectSQLStr = "SELECT * FROM ProjectPersonLink WHERE  personID=\'" + personDetail.getPersonID() + "\' ";
 
 		try {
 
@@ -42,7 +45,11 @@ public class ProjectEmployeeLinkReadDAO {
 			 */
 
 			if (resultSet.next()) {
+			    
+			    projectPersonLinkDetail = new ProjectPersonLinkDetail();
+			    
 				projectPersonLinkDetail.setProjectID(resultSet.getLong("projectID"));
+				projectPersonLinkDetail.setPersonID(resultSet.getLong("personID"));
 				//projectPersonLinkDetail.setEmployeeID(resultSet.getLong("employeeID"));
 				projectPersonLinkDetail.setProjectPersonLinkID(resultSet.getLong("projectPersonLinkID"));
 				projectPersonLinkDetail.setRole(resultSet.getString("role"));
@@ -50,16 +57,14 @@ public class ProjectEmployeeLinkReadDAO {
 				projectPersonLinkDetail.setStartDate(resultSet.getDate("startDate"));
 				projectPersonLinkDetail.setEndDate(resultSet.getDate("endDate"));
 			}
-			returnMassegeStr = CRUDConstants.RETURN_MESSAGE_SUCCESS;
 
 		} catch (SQLException e) {
-			returnMassegeStr = CRUDConstants.RETURN_MESSAGE_FAILURE;
 			e.printStackTrace();
 		}
 		/**
 		 * personDetail contains all attribute values
 		 */
-		return returnMassegeStr;
+		return projectPersonLinkDetail;
 	}
 
 	}

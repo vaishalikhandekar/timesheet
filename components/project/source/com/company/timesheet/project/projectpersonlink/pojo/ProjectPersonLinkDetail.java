@@ -15,127 +15,161 @@ import com.company.timesheet.project.pojo.ProjectDetail;
  *
  */
 public class ProjectPersonLinkDetail {
-		
-	private Long projectPersonLinkID;
-	
-	private Long projectID;
-	
-	private Long personID;
-	
-	private String role;
-	
-	private String comments;
-	
-	private Date startDate;
-	
-	private Date endDate;
-	
-	private int versionNo;
-	
-	private String recordStatus;
-	
-	private ProjectDetail projectDetail;
-	
-	private PersonDetail personDetail;
-	
-	List<String> errorMessageList = new ArrayList<String>();
 
-	
-	public Long getProjectPersonLinkID() {
-		return projectPersonLinkID;
-	}
+    private Long projectPersonLinkID;
 
-	public void setProjectPersonLinkID(Long projectPersonLinkID) {
-		this.projectPersonLinkID = projectPersonLinkID;
-	}
+    private Long projectID;
 
-	public Long getProjectID() {
-		return projectID;
-	}
+    private Long personID;
 
-	public void setProjectID(Long projectID) {
-		this.projectID = projectID;
-	}
+    private String role;
 
-	public Long getPersonID() {
-		return personID;
-	}
+    private String comments;
 
-	public void setPersonID(Long personID) {
-		this.personID = personID;
-	}
+    private Date startDate;
 
-	public String getRole() {
-		return role;
-	}
+    private Date endDate;
 
-	public void setRole(String role) {
-		this.role = role;
-	}
+    private int versionNo;
 
-	public String getComments() {
-		return comments;
-	}
+    private String recordStatus;
 
-	public void setComments(String comments) {
-		this.comments = comments;
-	}
+    private ProjectDetail projectDetail;
 
-	public Date getStartDate() {
-		return startDate;
-	}
+    private PersonDetail personDetail;
 
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
+    List<String> errorMessageList = new ArrayList<String>();
 
-	public Date getEndDate() {
-		return endDate;
-	}
+    private String updateAction = "update";
 
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
+    public String getUpdateAction() {
 
-	public int getVersionNo() {
-		return versionNo;
-	}
+        return updateAction;
+    }
 
-	public void setVersionNo(int versionNo) {
-		this.versionNo = versionNo;
-	}
+    public void setUpdateAction(String updateAction) {
 
-	public String getRecordStatus() {
-		return recordStatus;
-	}
+        this.updateAction = updateAction;
+    }
 
-	public void setRecordStatus(String recordStatus) {
-		this.recordStatus = recordStatus;
-	}
+    public Long getProjectPersonLinkID() {
 
-	public ProjectDetail getProjectDetail() {
-		return projectDetail;
-	}
+        return projectPersonLinkID;
+    }
 
-	public void setProjectDetail(ProjectDetail projectDetail) {
-		this.projectDetail = projectDetail;
-	}
+    public void setProjectPersonLinkID(Long projectPersonLinkID) {
 
-	public PersonDetail getPersonDetail() {
-		return personDetail;
-	}
+        this.projectPersonLinkID = projectPersonLinkID;
+    }
 
-	public void setPersonDetail(PersonDetail personDetail) {
-		this.personDetail = personDetail;
-	}
+    public Long getProjectID() {
 
-	public List<String> getErrorMessageList() {
-		return errorMessageList;
-	}
+        return projectID;
+    }
 
-	public void setErrorMessageList(List<String> errorMessageList) {
-		this.errorMessageList = errorMessageList;
-	}
-	
-	
+    public void setProjectID(Long projectID) {
+
+        this.projectID = projectID;
+    }
+
+    public Long getPersonID() {
+
+        return personID;
+    }
+
+    public void setPersonID(Long personID) {
+
+        this.personID = personID;
+    }
+
+    public String getRole() {
+
+        return role;
+    }
+
+    public void setRole(String role) {
+
+        this.role = role;
+    }
+
+    public String getComments() {
+
+        return comments;
+    }
+
+    public void setComments(String comments) {
+
+        this.comments = comments;
+    }
+
+    public Date getStartDate() {
+
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+
+        this.endDate = endDate;
+    }
+
+    public int getVersionNo() {
+
+        return versionNo;
+    }
+
+    public void setVersionNo(int versionNo) {
+
+        this.versionNo = versionNo;
+    }
+
+    public String getRecordStatus() {
+
+        return recordStatus;
+    }
+
+    public void setRecordStatus(String recordStatus) {
+
+        this.recordStatus = recordStatus;
+    }
+
+    public ProjectDetail getProjectDetail() {
+
+        return projectDetail;
+    }
+
+    public void setProjectDetail(ProjectDetail projectDetail) {
+
+        this.projectDetail = projectDetail;
+    }
+
+    public PersonDetail getPersonDetail() {
+
+        return personDetail;
+    }
+
+    public void setPersonDetail(PersonDetail personDetail) {
+
+        this.personDetail = personDetail;
+    }
+
+    public List<String> getErrorMessageList() {
+
+        return errorMessageList;
+    }
+
+    public void setErrorMessageList(List<String> errorMessageList) {
+
+        this.errorMessageList = errorMessageList;
+    }
+
 }

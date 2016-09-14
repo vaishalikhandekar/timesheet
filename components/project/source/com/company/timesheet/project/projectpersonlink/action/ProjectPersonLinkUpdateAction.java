@@ -4,7 +4,7 @@
 package com.company.timesheet.project.projectpersonlink.action;
 
 import com.company.timesheet.core.util.CRUDConstants;
-import com.company.timesheet.project.projectpersonlink.dao.ProjectEmployeeLinkUpdateDAO;
+import com.company.timesheet.project.projectpersonlink.dao.ProjectPersonLinkUpdateDAO;
 import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -12,9 +12,13 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author vaish
  *
  */
-public class ProjectEmployeeLinkUpdateAction extends ActionSupport {
+public class ProjectPersonLinkUpdateAction extends ActionSupport {
 			
-	ProjectPersonLinkDetail projectPersonLinkDetail;		
+	/**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
+    ProjectPersonLinkDetail projectPersonLinkDetail;		
 	
 	public ProjectPersonLinkDetail getProjectPersonLinkDetail() {
 		return projectPersonLinkDetail;
@@ -30,8 +34,10 @@ public class ProjectEmployeeLinkUpdateAction extends ActionSupport {
 		
 		String pageForwardStr ="";
 		
-		ProjectEmployeeLinkUpdateDAO updateProjectEmployeeLinkDAO = new ProjectEmployeeLinkUpdateDAO();
-		String returnMassegeStr = updateProjectEmployeeLinkDAO.updateProjectEmployeeLink(projectPersonLinkDetail);
+		ProjectPersonLinkUpdateDAO updateProjectPersonLinkDAO = new ProjectPersonLinkUpdateDAO();
+		String returnMassegeStr = updateProjectPersonLinkDAO.updateProjectEmployeeLink(projectPersonLinkDetail);
+		
+		setProjectPersonLinkDetail(projectPersonLinkDetail);
 		
 		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
 

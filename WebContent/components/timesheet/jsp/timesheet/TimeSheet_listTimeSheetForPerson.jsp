@@ -10,12 +10,54 @@
     <jsp:include page="/components/profile/jsp/person/Person_navPerson.jsp"></jsp:include>
 
     <s:form action="/PersonTimeSheetList" method="post">
-
-        <!-- *******************************Modal to Add Person in the Project ******************************* -->
+    
+    <!-- ***************************************Code for delete modal***************************** -->
 
     <div class="pull-right" class="container">
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Add Person</button>
+        <div class="modal fade" id="DeleteTimeSheet" data-keyboard="false" data-backdrop="static">
+
+            <div class="modal-dialog modal-lg">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <button class="close" type="button" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Delete TimeSheet</h3>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <s:form class="form-inline" name="DeleteTimeSheetFromPerson" namespace="/" action="DeleteTimeSheetFromPerson" method="POST" role="form" theme="bootstrap">
+
+                            <p>Are You Sure ?</p>
+
+
+                            <div class="modal-footer">
+                                <s:submit type="submit" id="submit" value="Delete" class="btn btn-primary" />
+                               <s:hidden name="timeSheetDetail.timeSheetID" value="%{timeSheetDetail.timeSheetID}"></s:hidden>                
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </s:form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+
+        <!-- *******************************Modal to New TimeSheet in the Project ******************************* -->
+
+    <div class="pull-right" class="container">
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Add New TimeSheet</button>
         <br />
         <br />
 
@@ -34,7 +76,7 @@
 
                     <div class="modal-body">
                     
-                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Search Person</button>
+                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Search</button>
                         
                         <s:form namespace="/" action="CreateTimeSheetSubmit" method="POST" class="form-inline" theme="bootstrap">
 
@@ -94,6 +136,7 @@
             <thead>
 
                 <tr class="success">
+                    <th style="text-align:center">Action</th>
                     <th style="text-align: center">Project Name</th>
                     <th style="text-align: center">Total Regular Hours</th>
                     <th style="text-align: center">Total No Of Hours Worked</th>
@@ -110,6 +153,23 @@
 
                 <tbody>
                     <tr>
+                        <td align="center">
+                        
+                        <%-- <s:url var="updateTimeSheetURL" action="ReadTimeSheetFromPerson" escapeAmp="false">
+                            <s:param name="personDetail.personID" value="%{personDetail.personID}" />
+                            <s:param name="act" value="%{updateAction}" />
+                        </s:url>
+                        <s:a href="%{updateTimeSheetURL}">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <!-- Update -->
+                        </s:a> --%>
+
+                        <a href="#DeleteTimeSheet" data-toggle="modal">
+                            <span class="glyphicon glyphicon-trash"></span>
+                            <!-- Delete -->
+                        </a>
+                        
+                        </td>
                         <td align="center"><s:property value="projectName" /></td>
                         <td align="center"><s:property value="totalRegularHours" /></td>
                         <td align="center"><s:property value="totalNoOfHoursWorked" /></td>

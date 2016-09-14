@@ -11,11 +11,10 @@
 
 <body>
 
+    <jsp:include page="Person_userTabs.jsp"></jsp:include>
+    
     <div class="tabbable full-width-tabs">
-        <ul class="nav nav-tabs">
-
-            <li class="active"><a data-toggle="tab" href="#PersonSearch">Search Person</a></li>
-        </ul>
+        
 
         <div class="tab-content">
 

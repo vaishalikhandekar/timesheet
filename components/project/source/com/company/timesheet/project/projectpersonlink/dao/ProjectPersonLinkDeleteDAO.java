@@ -11,6 +11,8 @@ import com.company.timesheet.core.audittrail.dao.CreateAuditTrailDAO;
 import com.company.timesheet.core.audittrail.pojo.AuditTrailDetails;
 import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
+import com.company.timesheet.project.pojo.ProjectDetail;
 import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
 
 /**
@@ -25,7 +27,7 @@ public class ProjectPersonLinkDeleteDAO {
 	 * @return
 	 */
 	public String DeleteProjectEmployeeLink(
-			ProjectPersonLinkDetail projectPersonLinkDetail) {
+	        PersonDetail personDetail) {
 
 		Connection connection = null;
 		String returnMassegeStr = "";
@@ -36,8 +38,8 @@ public class ProjectPersonLinkDeleteDAO {
 			 * of DBConnection class
 			 */
 			connection = DBConnection.getDBConnection();
-			String projectSQLStr = "UPDATE	ProjectPersonLink SET	RECORDSTATUS='cancel'	WHERE	projectEmployeeLinkID="
-					+ projectPersonLinkDetail.getProjectPersonLinkID();
+			String projectSQLStr = "UPDATE	ProjectPersonLink SET	RECORDSTATUS='cancel'	WHERE	personID="
+					+ personDetail.getPersonID();
 			/**
 			 * sending sql statement to the database
 			 */
@@ -50,8 +52,8 @@ public class ProjectPersonLinkDeleteDAO {
 
 			auditTrailDetails.setTableName("ProjectPersonLink");
 			auditTrailDetails.setOperationType("Delete");
-			auditTrailDetails.setRelatedID(projectPersonLinkDetail
-					.getProjectPersonLinkID());
+			auditTrailDetails.setRelatedID(personDetail
+					.getPersonID());
 			auditTrailDetails.setTransactionType("Online");
 
 			CreateAuditTrailDAO createAuditTrailDAO = new CreateAuditTrailDAO();

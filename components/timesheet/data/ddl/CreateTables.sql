@@ -1,16 +1,5 @@
  
 
-CREATE TABLE TimeSheetProcess (
-	timeSheetProcessID NUMBER(19,0) NOT NULL,
-	frequency VARCHAR2(30),
-	startDay VARCHAR2(20),
-	startDate DATE,
-    endDate DATE,
-	comments VARCHAR2(20),
-	recordStatus VARCHAR2(10),	
-	versionNo NUMBER(10)
-);
-
 CREATE TABLE ProjectTimeSheetProcess (
 	projectTimeSheetProcessID NUMBER(19,0) NOT NULL,
 	projectID NUMBER(19,0),

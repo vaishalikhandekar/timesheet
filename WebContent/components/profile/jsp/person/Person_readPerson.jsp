@@ -14,7 +14,7 @@
 
 <body>
 
- <!-- ***************************************Code for delete modal***************************** -->
+    <!-- ***************************************Code for delete modal***************************** -->
 
     <div class="pull-right" class="container">
 
@@ -55,15 +55,16 @@
 
     </div>
 
- 
+
     <jsp:include page="Person_navPerson.jsp"></jsp:include>
-    
+
     <s:form action="/ReadPerson" method="post">
 
         <table class="table table-striped">
             <thead>
 
-                <tr class="success">
+                <tr>
+                    <th style="text-align: center">Action</th>
                     <th style="text-align: center">Title</th>
                     <th style="text-align: center">First Name</th>
                     <th style="text-align: center">Middle Name</th>
@@ -71,30 +72,55 @@
                     <th style="text-align: center">Gender</th>
                     <th style="text-align: center">Date Of Birth</th>
                     <th style="text-align: center">Registration Date</th>
-                    <th colspan=2 style="text-align: center">Action</th>
                 </tr>
             </thead>
 
             <tr>
-                <td align="center"><s:property value="personDetail.title" /></td>
-                <td align="center"><s:property value="personDetail.firstName" /></td>
-                <td align="center"><s:property value="personDetail.middleName" /></td>
-                <td align="center"><s:property value="personDetail.lastName" /></td>
-                <td align="center"><s:property value="personDetail.gender" /></td>
-                <td align="center"><s:property value="personDetail.dateOfBirth" /></td>
-                <td align="center"><s:property value="personDetail.registrationDate" /></td>
 
-                <td>
-                 <s:url var="updatePersonURL" action="ReadPerson" escapeAmp="false">
-                                    <s:param name="personDetail.personID" value="%{personID}" />
-                                    <s:param name="act" value="%{updateAction}" />
-                                </s:url> 
-                                <s:a href="%{updatePersonURL}"><span class="glyphicon glyphicon-pencil"></span> <!-- Update --></s:a>
-                    
-                    <a href="#DeletePerson" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span> <!-- Delete --></a></td>
+
+                <td align="center">
+                
+                    <s:url var="updatePersonURL" action="ReadPerson" escapeAmp="false">
+                        <s:param name="personDetail.personID" value="%{personDetail.personID}" />
+                        <s:param name="act" value="%{updateAction}" />
+                    </s:url>
+                    <s:a href="%{updatePersonURL}">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        <!-- Update -->
+                    </s:a>
+                    &nbsp;&nbsp;
+
+                    <a href="#DeletePerson" data-toggle="modal">
+                        <span class="glyphicon glyphicon-trash"></span>
+                        <!-- Delete -->
+                    </a>
+
+                </td>
+                <td align="center">
+                    <s:property value="personDetail.title" />
+                </td>
+                <td align="center">
+                    <s:property value="personDetail.firstName" />
+                </td>
+                <td align="center">
+                    <s:property value="personDetail.middleName" />
+                </td>
+                <td align="center">
+                    <s:property value="personDetail.lastName" />
+                </td>
+                <td align="center">
+                    <s:property value="personDetail.gender" />
+                </td>
+                <td align="center">
+                    <s:property value="personDetail.dateOfBirth" />
+                </td>
+                <td align="center">
+                    <s:property value="personDetail.registrationDate" />
+                </td>
+
+
+                <s:hidden name="personDetail.personID"></s:hidden>
             </tr>
-                    <s:hidden name="personDetail.personID"></s:hidden>
-
         </table>
 
     </s:form>

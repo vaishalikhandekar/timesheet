@@ -36,7 +36,7 @@
             <a href="ListProject">Project List</a>
             <br />
             <br />
-            <a href="ProjectSearch">Project Search</a>
+            <a href="ProjectSearch" > Project Search</a>
             <br />
         </div>
 

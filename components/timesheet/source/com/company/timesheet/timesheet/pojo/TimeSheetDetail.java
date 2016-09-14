@@ -3,179 +3,221 @@ package com.company.timesheet.timesheet.pojo;
 import java.util.Date;
 
 public class TimeSheetDetail {
-	
-	private Long timeSheetID;
-	
-	private Long projectTimeSheetProcessID;
-	
-	private Long projectPersonLinkID;
-	
-	private int totalRegularHours ;
 
-	private int totalNoOfHoursWorked ;
+    private Long timeSheetID;
 
-	private Date createdDateTime ;
-	
-	private Date submittedDateTime ;
-	
-	private String timeSheetStatus;
-	
-	private String approvalLevelType;
-	
-	private String projectName;
-	
-	private String firstName;
-	
-	private String lastName;
-	
-	private Date startDate ;
-	
-	private Date endDate ;
+    private Long projectTimeSheetProcessID;
 
-	private String comments;
-	
-	private String recordStatus;
-	
-	private int versionNo ;
+    private Long projectPersonLinkID;
 
-	public Long getTimeSheetID() {
-		return timeSheetID;
-	}
+    private int totalRegularHours;
 
-	public void setTimeSheetID(Long timeSheetID) {
-		this.timeSheetID = timeSheetID;
-	}
+    private int totalNoOfHoursWorked;
 
-	public Long getProjectTimeSheetProcessID() {
-		return projectTimeSheetProcessID;
-	}
+    private Date createdDateTime;
 
-	public void setProjectTimeSheetProcessID(Long projectTimeSheetProcessID) {
-		this.projectTimeSheetProcessID = projectTimeSheetProcessID;
-	}
+    private Date submittedDateTime;
 
-	public Long getProjectPersonLinkID() {
-		return projectPersonLinkID;
-	}
+    private String timeSheetStatus;
 
-	public void setProjectPersonLinkID(Long projectPersonLinkID) {
-		this.projectPersonLinkID = projectPersonLinkID;
-	}
+    private String approvalLevelType;
 
-	public int getTotalRegularHours() {
-		return totalRegularHours;
-	}
+    private String projectName;
 
-	public void setTotalRegularHours(int totalRegularHours) {
-		this.totalRegularHours = totalRegularHours;
-	}
+    private String firstName;
 
-	public int getTotalNoOfHoursWorked() {
-		return totalNoOfHoursWorked;
-	}
+    private String lastName;
 
-	public void setTotalNoOfHoursWorked(int totalNoOfHoursWorked) {
-		this.totalNoOfHoursWorked = totalNoOfHoursWorked;
-	}
+    private Date startDate;
 
-	public Date getCreatedDateTime() {
-		return createdDateTime;
-	}
+    private Date endDate;
 
-	public void setCreatedDateTime(Date createdDateTime) {
-		this.createdDateTime = createdDateTime;
-	}
+    private String comments;
 
-	public Date getSubmittedDateTime() {
-		return submittedDateTime;
-	}
+    private String recordStatus;
 
-	public void setSubmittedDateTime(Date submittedDateTime) {
-		this.submittedDateTime = submittedDateTime;
-	}
+    private int versionNo;
 
-	public String getTimeSheetStatus() {
-		return timeSheetStatus;
-	}
+    private String updateAction = "update";
 
-	public void setTimeSheetStatus(String timeSheetStatus) {
-		this.timeSheetStatus = timeSheetStatus;
-	}
+    public String getUpdateAction() {
 
-	public String getApprovalLevelType() {
-		return approvalLevelType;
-	}
+        return updateAction;
+    }
 
-	public void setApprovalLevelType(String approvalLevelType) {
-		this.approvalLevelType = approvalLevelType;
-	}
+    public void setUpdateAction(String updateAction) {
 
-	
+        this.updateAction = updateAction;
+    }
+
+    public Long getTimeSheetID() {
+
+        return timeSheetID;
+    }
+
+    public void setTimeSheetID(Long timeSheetID) {
+
+        this.timeSheetID = timeSheetID;
+    }
+
+    public Long getProjectTimeSheetProcessID() {
+
+        return projectTimeSheetProcessID;
+    }
+
+    public void setProjectTimeSheetProcessID(Long projectTimeSheetProcessID) {
+
+        this.projectTimeSheetProcessID = projectTimeSheetProcessID;
+    }
+
+    public Long getProjectPersonLinkID() {
+
+        return projectPersonLinkID;
+    }
+
+    public void setProjectPersonLinkID(Long projectPersonLinkID) {
+
+        this.projectPersonLinkID = projectPersonLinkID;
+    }
+
+    public int getTotalRegularHours() {
+
+        return totalRegularHours;
+    }
+
+    public void setTotalRegularHours(int totalRegularHours) {
+
+        this.totalRegularHours = totalRegularHours;
+    }
+
+    public int getTotalNoOfHoursWorked() {
+
+        return totalNoOfHoursWorked;
+    }
+
+    public void setTotalNoOfHoursWorked(int totalNoOfHoursWorked) {
+
+        this.totalNoOfHoursWorked = totalNoOfHoursWorked;
+    }
+
+    public Date getCreatedDateTime() {
+
+        return createdDateTime;
+    }
+
+    public void setCreatedDateTime(Date createdDateTime) {
+
+        this.createdDateTime = createdDateTime;
+    }
+
+    public Date getSubmittedDateTime() {
+
+        return submittedDateTime;
+    }
+
+    public void setSubmittedDateTime(Date submittedDateTime) {
+
+        this.submittedDateTime = submittedDateTime;
+    }
+
+    public String getTimeSheetStatus() {
+
+        return timeSheetStatus;
+    }
+
+    public void setTimeSheetStatus(String timeSheetStatus) {
+
+        this.timeSheetStatus = timeSheetStatus;
+    }
+
+    public String getApprovalLevelType() {
+
+        return approvalLevelType;
+    }
+
+    public void setApprovalLevelType(String approvalLevelType) {
+
+        this.approvalLevelType = approvalLevelType;
+    }
+
     public String getProjectName() {
-    
+
         return projectName;
     }
 
-    
     public void setProjectName(String projectName) {
-    
+
         this.projectName = projectName;
     }
 
     public String getFirstName() {
-		return firstName;
-	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+        return firstName;
+    }
 
-	public String getLastName() {
-		return lastName;
-	}
+    public void setFirstName(String firstName) {
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+        this.firstName = firstName;
+    }
 
-	public Date getStartDate() {
-		return startDate;
-	}
+    public String getLastName() {
 
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
+        return lastName;
+    }
 
-	public Date getEndDate() {
-		return endDate;
-	}
+    public void setLastName(String lastName) {
 
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
+        this.lastName = lastName;
+    }
 
-	public String getComments() {
-		return comments;
-	}
+    public Date getStartDate() {
 
-	public void setComments(String comments) {
-		this.comments = comments;
-	}
+        return startDate;
+    }
 
-	public String getRecordStatus() {
-		return recordStatus;
-	}
+    public void setStartDate(Date startDate) {
 
-	public void setRecordStatus(String recordStatus) {
-		this.recordStatus = recordStatus;
-	}
+        this.startDate = startDate;
+    }
 
-	public int getVersionNo() {
-		return versionNo;
-	}
+    public Date getEndDate() {
 
-	public void setVersionNo(int versionNo) {
-		this.versionNo = versionNo;
-	}
+        return endDate;
+    }
 
-	}
+    public void setEndDate(Date endDate) {
+
+        this.endDate = endDate;
+    }
+
+    public String getComments() {
+
+        return comments;
+    }
+
+    public void setComments(String comments) {
+
+        this.comments = comments;
+    }
+
+    public String getRecordStatus() {
+
+        return recordStatus;
+    }
+
+    public void setRecordStatus(String recordStatus) {
+
+        this.recordStatus = recordStatus;
+    }
+
+    public int getVersionNo() {
+
+        return versionNo;
+    }
+
+    public void setVersionNo(int versionNo) {
+
+        this.versionNo = versionNo;
+    }
+
+}

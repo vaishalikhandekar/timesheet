@@ -19,7 +19,7 @@ import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDet
  * @author vaish
  *
  */
-public class ProjectEmployeeLinkUpdateDAO {
+public class ProjectPersonLinkUpdateDAO {
 					
 	PreparedStatement preparedStatement = null;
 	Connection connection = null;
@@ -40,7 +40,7 @@ String returnMassegeStr = "";
 			try {
 				connection = DBConnection.getDBConnection();
 				String projectPersonLinkSQLStr = "UPDATE	ProjectPersonLink	SET role='" + projectPersonLinkDetail.getRole() + "', startDate= ?, endDate = ? , versionNo ='"
-						+ versionNoFromDatabase + "' " + "	where	projectPersonLinkID='" + projectPersonLinkDetail.getProjectID() + "'";
+						+ versionNoFromDatabase + "' " + "	where	projectPersonLinkID='" + projectPersonLinkDetail.getProjectPersonLinkID() + "'";
 
 				preparedStatement = connection.prepareStatement(projectPersonLinkSQLStr);
 

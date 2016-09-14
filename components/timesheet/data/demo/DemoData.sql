@@ -22,4 +22,10 @@ INSERT INTO TimeSheet(timeSheetID, projectTimeSheetProcessID ,	projectPersonLink
                
 INSERT INTO TimeSheet(timeSheetID, projectTimeSheetProcessID ,	projectPersonLinkID , totalRegularHours,    totalNoOfHoursWorked,     createdDateTime,                     submittedDateTime,                  timeSheetStatus, approvalLevelType,  startDate,                          endDate, comments, recordStatus, versionNo)
                VALUES( 5012,	             4002,                  3007,                8,                  8,                        to_date('26-Jun-90', 'DD-MON-RR'),  to_date('26-Jun-90', 'DD-MON-RR'),   'Created',        'Level2',         to_date('26-Jun-90', 'DD-MON-RR'),  to_date('26-Jun-16', 'DD-MON-RR'), null,    'Active',		1);
+      
+        
+--TimeSheetApprovalLevel
+
+INSERT INTO TimeSheetApprovalLevel(timeSheetApprovalLevelID, projectTimeSheetProcessID ,   projectPersonLinkID , approvalLevelType,    approvalCriteria,     startDate,                          endDate,                            comments, recordStatus, versionNo)
+                            VALUES( 6002,                    4001,                         3001,                   'Level1',                  'created',     to_date('26-Jun-90', 'DD-MON-RR'),  to_date('26-Jun-90', 'DD-MON-RR'),  null,    'Active',       1);
                

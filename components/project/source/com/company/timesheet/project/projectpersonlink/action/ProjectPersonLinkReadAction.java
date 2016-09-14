@@ -4,7 +4,9 @@
 package com.company.timesheet.project.projectpersonlink.action;
 
 import com.company.timesheet.core.util.CRUDConstants;
-import com.company.timesheet.project.projectpersonlink.dao.ProjectEmployeeLinkReadDAO;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
+import com.company.timesheet.project.pojo.ProjectDetail;
+import com.company.timesheet.project.projectpersonlink.dao.ProjectPersonLinkReadDAO;
 import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -15,6 +17,9 @@ import com.opensymphony.xwork2.ActionSupport;
 public class ProjectPersonLinkReadAction extends ActionSupport {
 		
 	ProjectPersonLinkDetail projectPersonLinkDetail;
+	
+	PersonDetail personDetail;
+	
 	String act = "";
 	
 	public ProjectPersonLinkDetail getProjectPersonLinkDetail() {
@@ -26,7 +31,18 @@ public class ProjectPersonLinkReadAction extends ActionSupport {
 		this.projectPersonLinkDetail = projectPersonLinkDetail;
 	}
 
-	public String getAct() {
+    public PersonDetail getPersonDetail() {
+    
+        return personDetail;
+    }
+
+    
+    public void setPersonDetail(PersonDetail personDetail) {
+    
+        this.personDetail = personDetail;
+    }
+
+    public String getAct() {
 		return act;
 	}
 
@@ -39,15 +55,17 @@ public class ProjectPersonLinkReadAction extends ActionSupport {
 		
 				String pageForwardStr = "";
 				
-		ProjectEmployeeLinkReadDAO readProjectEmployeeLinkDAO = new ProjectEmployeeLinkReadDAO();
-		String returnMassegeStr = readProjectEmployeeLinkDAO.readProjectEmployeeLink(projectPersonLinkDetail);
+		ProjectPersonLinkReadDAO readProjectPersonLinkDAO = new ProjectPersonLinkReadDAO();
+		ProjectPersonLinkDetail projectPersonLinkDetail = readProjectPersonLinkDAO.readProjectEmployeeLink(personDetail);
+		
+		setProjectPersonLinkDetail(projectPersonLinkDetail);
 		
 		if (act != null && act.equals("update")
-				&& returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
+				&& projectPersonLinkDetail != null) {
 
 			pageForwardStr = "SENTTOUPDATE";
 
-		} else if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
+		} else if (projectPersonLinkDetail != null) {
 			pageForwardStr = SUCCESS;
 
 		}

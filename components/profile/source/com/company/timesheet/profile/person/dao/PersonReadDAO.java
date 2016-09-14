@@ -48,6 +48,7 @@ public class PersonReadDAO {
 				personDetail.setFirstName(resultSet.getString("firstName"));
 				personDetail.setMiddleName(resultSet.getString("middleName"));
 				personDetail.setLastName(resultSet.getString("lastName"));
+				personDetail.setEmailAddress(resultSet.getString("emailAddress"));
 				personDetail.setDateOfBirth(resultSet.getDate("dateOfBirth"));
 				personDetail.setGender(resultSet.getString("gender"));
 				personDetail.setRecordStatus(resultSet.getString("recordStatus"));

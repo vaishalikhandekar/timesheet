@@ -4,6 +4,8 @@
 package com.company.timesheet.project.projectpersonlink.action;
 
 import com.company.timesheet.core.util.CRUDConstants;
+import com.company.timesheet.profile.person.pojo.PersonDetail;
+import com.company.timesheet.project.pojo.ProjectDetail;
 import com.company.timesheet.project.projectpersonlink.dao.ProjectPersonLinkDeleteDAO;
 import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
 import com.opensymphony.xwork2.ActionSupport;
@@ -14,9 +16,21 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class ProjectPersonLinkDeleteAction extends ActionSupport {
 		
-	ProjectPersonLinkDetail projectPersonLinkDetail;
+	ProjectPersonLinkDetail projectPersonLinkDetail = null;
+	PersonDetail personDetail = null;
 	
-	public ProjectPersonLinkDetail getProjectPersonLinkDetail() {
+    public PersonDetail getPersonDetail() {
+    
+        return personDetail;
+    }
+
+    
+    public void setPersonDetail(PersonDetail personDetail) {
+    
+        this.personDetail = personDetail;
+    }
+
+    public ProjectPersonLinkDetail getProjectPersonLinkDetail() {
 		return projectPersonLinkDetail;
 	}
 
@@ -31,7 +45,9 @@ public class ProjectPersonLinkDeleteAction extends ActionSupport {
 		String pageForwardStr = "";
 		
 		ProjectPersonLinkDeleteDAO deleteProjectEmployeeLinkDAO = new ProjectPersonLinkDeleteDAO();
-		String returnMassegeStr = deleteProjectEmployeeLinkDAO.DeleteProjectEmployeeLink(projectPersonLinkDetail);
+		String returnMassegeStr = deleteProjectEmployeeLinkDAO.DeleteProjectEmployeeLink(personDetail);
+		
+		setPersonDetail(personDetail);
 		
 		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
 

@@ -25,7 +25,7 @@ public class ProjectListForPersonDAO {
 		try {
 			connection = DBConnection.getDBConnection();
 
-			String ProjectPersonLinkSQLStr = "select ppl.PROJECTPERSONLINKID, ppl.PROJECTID, ppl.PERSONID, ppl.ROLE, p.PROJECTNAME, p.PROJECTID, p.STARTDATE, p.ENDDATE  from PROJECTPERSONLINK ppl left outer join project p on p.projectID = ppl.projectID where ppl.PERSONID = '"+personDetail.getPersonID()+"'";
+			String ProjectPersonLinkSQLStr = "select ppl.PROJECTPERSONLINKID, ppl.PROJECTID, ppl.PERSONID, ppl.ROLE, p.PROJECTNAME, p.PROJECTID, p.STARTDATE, p.ENDDATE  from PROJECTPERSONLINK ppl left outer join project p on p.projectID = ppl.projectID where ppl.PERSONID = '"+personDetail.getPersonID()+"' and ppl.RecordStatus='Active'";
 
 			PreparedStatement preparedStatement = connection
 					.prepareStatement(ProjectPersonLinkSQLStr);

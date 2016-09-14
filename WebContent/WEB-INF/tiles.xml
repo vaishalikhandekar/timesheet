@@ -138,6 +138,16 @@
     
     <!-- ProjectPersonLink -->
     
+     <definition name="UpdateProjectPersonLink" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Update Project Person Link" />
+        <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ProjectPersonLink_updateProjectPersonLink.jsp" />
+    </definition>
+    
+     <definition name="UpdateProjectEmployeeLinkSubmit" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="UpdateProjectEmployeeLinkSubmit" />
+        <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ProjectPersonList_listProjectsForPerson.jsp" />
+    </definition>
+    
      <definition name="PersonProjectList" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Person Project List" />
         <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ProjectPersonList_listProjectsForPerson.jsp" />
@@ -185,6 +195,11 @@
     <definition name="TimeSheetsForProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Project TimeSheet List" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetForProject.jsp" />
+    </definition>
+    
+    <definition name="UpdateTimeSheetFromPerson" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="UpdateTimeSheetFromPerson" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_updateTimeSheetFromPerson.jsp" />
     </definition>
     
      <!-- TimeSheet LineItem -->

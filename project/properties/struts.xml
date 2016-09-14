@@ -39,9 +39,9 @@
 
         <action name="PersonLogin" class="com.company.timesheet.profile.person.action.PersonLoginAction">
             <result name="success" type="tiles">
-            <param name="location"> PersonLogin</param>
-             <param name="personDetail.personID">${usersDetail.personID}</param>
-             </result>
+                <param name="location"> PersonLogin</param>
+                <param name="personDetail.personID">${usersDetail.personID}</param>
+            </result>
             <result name="error">/index</result>
         </action>
 
@@ -93,7 +93,7 @@
         <action name="CreateProject">
             <result type="tiles">CreateProject</result>
         </action>
-        
+
         <action name="ProjectSearch">
             <result type="tiles">ProjectSearch</result>
         </action>
@@ -142,7 +142,29 @@
 
 
         <!-- ProjectPersonLink -->
-       
+
+        <action name="ReadProjectPersonLink" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkReadAction">
+            <result name="SENTTOUPDATE" type="tiles">UpdateProjectPersonLink</result>
+            <result name="success" type="tiles">ReadProjectPersonLink</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="UpdateProjectPersonLinkSubmit" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkUpdateAction">
+            <result name="success" type="redirect">
+            <param name="location">/PersonProjectList</param>
+            <param name="personDetail.personID">${projectPersonLinkDetail.personID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="RemoveProjectFromPerson" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkDeleteAction">
+            <result name="success" type="redirect">
+                <param name="location">/PersonProjectList</param>
+                <param name="personDetail.personID">${personDetail.personID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
         <action name="PersonProjectList" class="com.company.timesheet.project.projectpersonlink.action.ProjectListForPersonAction">
             <result name="success" type="tiles">PersonProjectList</result>
             <result name="error">/index</result>
@@ -152,7 +174,7 @@
             <result name="success" type="tiles">ProjectPersonList</result>
             <result name="error">/index</result>
         </action>
-        
+
         <action name="AddPersonToProject">
             <result name="success" type="tiles">AddPersonToProject</result>
             <result name="error">/index</result>
@@ -166,12 +188,13 @@
         <action name="CreateProjectPersonLinkSubmit" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkAddPersonToProjectAction">
             <result name="success" type="redirect">
                 <param name="location"> /ProjectPersonList</param>
-                <param name="projectDetail.projectID">${projectPersonLinkDetail.projectID}</param>-->
+                <param name="projectDetail.projectID">${projectPersonLinkDetail.projectID}</param>
+                -->
             </result>
             <result name="error">/index</result>
         </action>
 
-         <action name="ListOfPersonInTheProject" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkListPersonInTheProjectAction">
+        <action name="ListOfPersonInTheProject" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkListPersonInTheProjectAction">
             <result name="success" type="tiles">ListOfPersonInTheProject</result>
             <result name="error">/index</result>
         </action> 
@@ -181,7 +204,7 @@
 
 
     <!-- TimeSheet -->
-    
+
         <action name="TimeSheetsForPerson" class="com.company.timesheet.timesheet.action.TimeSheetsForPersonAction">
             <result name="success" type="tiles">TimeSheetsForPerson</result>
             <result name="error">/index</result>
@@ -191,11 +214,11 @@
             <result name="success" type="tiles">TimeSheetsProcess</result>
             <result name="error">/index</result>
         </action>
-        
+
         <action name="CreateNewProcessSubmit" class="com.company.timesheet.timesheet.action.ProjectTimeSheetProcessCreateAction">
             <result name="success" type="redirect">
-            <param name="location">/TimeSheetsProcess</param>
-            <param name="projectDetail.projectID">${projectTimeSheetProcessDetail.projectID}</param>
+                <param name="location">/TimeSheetsProcess</param>
+                <param name="projectDetail.projectID">${projectTimeSheetProcessDetail.projectID}</param>
             </result>
             <result name="error">/index</result>
         </action>
@@ -214,9 +237,28 @@
             <result name="success" type="tiles">TimeSheetsAdministration</result>
             <result name="error">/index</result>
         </action>
+
+        <action name="DeleteTimeSheetFromPerson" class="com.company.timesheet.timesheet.action.TimeSheetDeleteFromPersonAction">
+            <result name="success" type="redirect">
+                <param name="location">/TimeSheetsForPerson</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="ReadTimeSheetFromPerson" class="com.company.timesheet.timesheet.action.TimeSheetReadFromPersonAction">
+            <result name="SENTTOUPDATE" type="tiles">UpdateTimeSheetFromPerson</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="UpdateTimeSheetSubmit" class="com.company.timesheet.timesheet.action.TimeSheetUpdateFromPersonAction">
+            <result name="success" type="redirect">
+                <param name="location">/TimeSheetsForPerson</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
         
         <!-- TimeSheet LineItem -->
-        
+
         <action name="CreateTimeSheetLineItem">
             <result type="tiles">CreateTimeSheetLineItem</result>
         </action>
@@ -224,7 +266,7 @@
         <!-- <action name="CreateTimeSheetLineItemSubmit" class="com.company.timesheet.timesheetlineitem.action.CreateTimeSheetLineItemAction">
             <result name="success" type="tiles">TimeSheetList</result> <result name="error">/index</result>
             </action> -->
-        
+
 
     </package>
 

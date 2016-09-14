@@ -15,14 +15,20 @@
 
     <div class="tabbable full-width-tabs">
 
-        <ul class="nav nav-tabs">
+        <%-- <ul class="nav nav-tabs">
 
             <li class="active">
-                <a data-toggle="tab" href="#PersonName">Person Name</a>
+                <a data-toggle="tab" href="#PersonName">
+                    <s:property value="personDetail.firstName" />
+                    &nbsp;
+                    <s:property value="personDetail.lastName" />
+                </a>
             </li>
 
-        </ul>
+        </ul> --%>
 
+        <jsp:include page="Person_userTabs.jsp"></jsp:include>
+        
         <div class="tab-content">
 
             <div id="PersonName" class="tab-pane fade in active">
@@ -36,7 +42,16 @@
                     </div>
 
                     <div class="panel-body">
-                        <img src="/TimeSheet/components/profile/images/user.png" class="img-rounded" alt="Cinque Terre" width="100" height="100">
+                        <img src="/TimeSheet/components/profile/images/user.png" class="img-rounded" alt="Cinque Terre" width="100" height="100" />
+                        <s:property value="personDetail.firstName" />
+                        &nbsp
+                        <s:property value="personDetail.lastName" />
+                        &nbsp
+                        <s:property value="personDetail.emailAddress" />
+                        &nbsp
+                        <s:property value="personDetail.phoneNumber" />
+
+
                     </div>
 
                 </div>
@@ -65,8 +80,7 @@
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
                                     <a href="${PersonHome}">
-                                        <span class="glyphicon glyphicon-home"></span>
-                                        Home
+                                        <span class="glyphicon glyphicon-home"></span> Home
                                     </a>
                                 </li>
 
@@ -87,15 +101,15 @@
                             </ul>
 
                         </div>
-                        
+
                     </nav>
-                    
+
                 </div>
 
             </div>
-            
+
         </div>
-        
+
     </div>
 
 </body>
