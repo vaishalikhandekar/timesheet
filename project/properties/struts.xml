@@ -290,13 +290,11 @@
         
         <!-- TimeSheet LineItem -->
 
-        <action name="CreateTimeSheetLineItem">
-            <result type="tiles">CreateTimeSheetLineItem</result>
+        <action name="ViewTimeSheetLineItemFromPerson" class="com.company.timesheet.timesheet.action.ReadTimeSheetLineItemFromPersonAction">
+            <result name="success" type="tiles">ViewTimeSheetLineItemFromPerson</result>
+            <result name="error">/index</result>
         </action>
-
-        <!-- <action name="CreateTimeSheetLineItemSubmit" class="com.company.timesheet.timesheetlineitem.action.CreateTimeSheetLineItemAction">
-            <result name="success" type="tiles">TimeSheetList</result> <result name="error">/index</result>
-            </action> -->
+      
 
 
     </package>

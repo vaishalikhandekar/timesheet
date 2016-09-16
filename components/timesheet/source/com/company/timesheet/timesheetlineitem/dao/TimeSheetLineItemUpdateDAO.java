@@ -13,7 +13,7 @@ import com.company.timesheet.core.audittrail.pojo.AuditTrailDetails;
 import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.JavaUtildates;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
-import com.company.timesheet.timesheetlineitem.pojo.TimeSheetLineItemDetail;
+import com.company.timesheet.timesheet.pojo.TimeSheetLineItemDetail;
 
 /**
  * @author vaish

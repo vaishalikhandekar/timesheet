@@ -154,6 +154,15 @@
                     <tr>
                         <td align="center">
                         
+                         <s:url id="ViewTimeSheetLineItemFromPersonURL" action="ViewTimeSheetLineItemFromPerson" escapeAmp="false">
+                                <s:param name="timeSheetDetail.timeSheetID" value="%{timeSheetID}" />
+                            </s:url>
+                            <s:a href="%{ViewTimeSheetLineItemFromPersonURL}">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <!-- View -->
+                            </s:a>
+                            &nbsp;&nbsp;
+                        
                         <%-- <s:url var="updateTimeSheetURL" action="ReadTimeSheetFromPerson" escapeAmp="false">
                             <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                             <s:param name="act" value="%{updateAction}" />

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.company.timesheet.timesheetlineitem.dao;
+package com.company.timesheet.timesheet.dao;
 
 import java.beans.Statement;
 import java.sql.Connection;
@@ -11,22 +11,24 @@ import java.sql.SQLException;
 
 import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
-import com.company.timesheet.timesheetlineitem.pojo.TimeSheetLineItemDetail;
+import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
+import com.company.timesheet.timesheet.pojo.TimeSheetLineItemDetail;
 
 /**
  * @author vaish
  *
  */
-public class TimeSheetLineItemReadDAO {
+public class ReadTimeSheetLineItemFromPersonDAO {
 	
 	PreparedStatement preparedStatement = null;
 	ResultSet resultSet = null;
 	Statement statement = null;
 	String returnMassegeStr = "";
+	TimeSheetLineItemDetail timeSheetLineItemDetail = null;
 		
-		public String ReadTimeSheetLineItem(TimeSheetLineItemDetail timeSheetLineItemDetail){
+		public TimeSheetLineItemDetail ReadTimeSheetLineItem(TimeSheetDetail timeSheetDetail){
 				
-			String timeSheetLineSQLStr = "SELECT * FROM TimeSheetLineItem WHERE  projectID=\'" + timeSheetLineItemDetail.getTimeSheetLineItemID() + "\' ";
+			String timeSheetLineSQLStr = "SELECT * FROM TimeSheetLineItem WHERE  timeSheetID=\'" + timeSheetDetail.getTimeSheetID() + "\' ";
 
 			try {
 
@@ -42,14 +44,16 @@ public class TimeSheetLineItemReadDAO {
 				 */
 
 				if (resultSet.next()) {
+				    timeSheetLineItemDetail = new TimeSheetLineItemDetail();
+				    
 					timeSheetLineItemDetail.setTimeSheetLineItemID(resultSet.getLong("timeSheetLineItemID"));
+					timeSheetLineItemDetail.setTimeSheetID(resultSet.getLong("timeSheetID"));
 					timeSheetLineItemDetail.setCategory(resultSet.getString("category"));
 					timeSheetLineItemDetail.setAttendenceDate(resultSet.getDate("attendenceDate"));
+					timeSheetLineItemDetail.setNoOfHoursWorked(resultSet.getInt("noOfHoursWorked"));
 					timeSheetLineItemDetail.setComments(resultSet.getString("comments"));
 					timeSheetLineItemDetail.setRecordStatus(resultSet.getString("recordStatus"));
 					timeSheetLineItemDetail.setVersionNo(resultSet.getInt("versionNo"));
-					timeSheetLineItemDetail.setActualRegularHoursWorked(resultSet.getInt("actualRegularHoursWorked"));
-					timeSheetLineItemDetail.setActualOvertimeHoursWorked(resultSet.getInt("actualOvertimeHoursWorked"));
 				}
 				returnMassegeStr = CRUDConstants.RETURN_MESSAGE_SUCCESS;
 
@@ -60,7 +64,7 @@ public class TimeSheetLineItemReadDAO {
 			/**
 			 * personDetail contains all attribute values
 			 */
-			return returnMassegeStr;
+			return timeSheetLineItemDetail;
 		}
 
 				

@@ -183,23 +183,24 @@ tr.break td {
                                         <s:form name="CreateProject" namespace="/" action="CreateProjectSubmit" method="POST" role="form" theme="bootstrap">
 
                                             <table >
-                                                
+                                              <!--    <colgroup span="3"></colgroup> -->
                                                 <tr>
 
                                                     <th>Project Name</th>
                                                     <td>
                                                         <input type="text" class="form-control" name="projectDetail.projectName" />
                                                     </td>
-
-
-                                                    <th style="text-align: right">Acronym</th>
+                                                    
+                                                    <th></th>
+                                                    <th>Acronym</th>
                                                     <td>
                                                         <input type="text" class="form-control" name="projectDetail.acronym" />
                                                     </td>
                                                 </tr>
                                                 
-                                                <tr class="break"><td colspan="2"></td></tr>
                                                 
+                                                <tr class="break"><td colspan="2"></td></tr>
+                                               <!--  <colgroup span="3"></colgroup> -->
                                                 <tr>
 
                                                     <th>Start Date</th>
@@ -207,8 +208,7 @@ tr.break td {
                                                         <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectDetail.startDate"
                                                             placeholder="mm/dd/yy" />
                                                     </td>
-
-
+                                                        
                                                     <th>End Date</th>
                                                     <td>
                                                         <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectDetail.endDate"
@@ -216,6 +216,7 @@ tr.break td {
                                                     </td>
 
                                                 </tr>
+                                                
             
                                                      <tr class="break"><td colspan="2"></td></tr>
             
