@@ -94,7 +94,7 @@
                         <span class="glyphicon glyphicon-trash"></span>
                         <!-- Delete -->
                     </a>
-
+                    
                 </td>
                 <td align="center">
                     <s:property value="personDetail.title" />

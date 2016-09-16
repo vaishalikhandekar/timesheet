@@ -28,13 +28,12 @@
 
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Project Title</h3>
+                        <h3 class="panel-title"><s:property value="projectDetail.projectName" /></h3>
                     </div>
 
                     <div class="panel-body">
                         <br />
                         <br />
-                        Context Panel
                     </div>
                 </div>
 
@@ -72,7 +71,7 @@
                                     </s:url>
                                     <a href="${ProjectPersonList}">
                                         <span class="glyphicon glyphicon-user"></span>
-                                        Person List
+                                        Persons
                                     </a>
 
                                 </li>

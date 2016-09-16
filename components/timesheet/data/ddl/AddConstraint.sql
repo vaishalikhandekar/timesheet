@@ -1,4 +1,3 @@
-ALTER TABLE TimeSheetProcess ADD CONSTRAINT TimeSheetProcess PRIMARY KEY(timeSheetProcessID);
 
 ALTER TABLE TimeSheetApprovalLevel ADD CONSTRAINT TimeSheetApprovalLevel PRIMARY KEY(timeSheetApprovalLevelID);
 

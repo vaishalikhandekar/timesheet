@@ -9,7 +9,6 @@
 <body>
     <jsp:include page="/components/profile/jsp/person/Person_navPerson.jsp"></jsp:include>
 
-    <s:form action="/PersonTimeSheetList" method="post">
     
     <!-- ***************************************Code for delete modal***************************** -->
 
@@ -36,7 +35,7 @@
 
                             <div class="modal-footer">
                                 <s:submit type="submit" id="submit" value="Delete" class="btn btn-primary" />
-                               <s:hidden name="timeSheetDetail.timeSheetID" value="%{timeSheetDetail.timeSheetID}"></s:hidden>                
+                               <s:hidden name="personDetail.personID" value="%{personDetail.personID}"></s:hidden>                
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
 
@@ -128,7 +127,7 @@
         </div>
     </div>
 
-        
+            <s:form action="/PersonTimeSheetList" method="post">
         
         <br>
         <br>

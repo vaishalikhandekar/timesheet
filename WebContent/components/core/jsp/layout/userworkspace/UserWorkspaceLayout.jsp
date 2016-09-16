@@ -37,11 +37,11 @@
 
 <style>
 
-    table, th, td {
+  /*   table, th, td {
         border: 1px solid gray;
         border-collapse: collapse;
     }
-    
+     */
     html {
         height:100%;
     }
@@ -57,16 +57,16 @@
 
     <table style="width: 100%; height: 100%; border: 1; cellpadding: 2; cellspacing: 2; align: top">
 
-        <tr>
+        <tr bgcolor="#40E0D0" >
             <td height="10%" colspan="2" ><tiles:insertAttribute name="header" /></td>
         </tr>
 
-        <tr>
-            <td width="15%" valign="top"><tiles:insertAttribute name="menu" /></td>
+        <tr >
+            <td width="15%" valign="top" bgcolor="#AFEEEE"><tiles:insertAttribute name="menu" /></td>
             <td width="85%" valign="top"><tiles:insertAttribute name="body" /></td>
         </tr>
 
-        <tr>
+        <tr >
             <td height="5%" colspan="2" ><tiles:insertAttribute name="footer" /></td>
         </tr>
 

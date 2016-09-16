@@ -6,10 +6,50 @@
 <html>
 <head>
 <title></title>
-
 <body>
 
     <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
+    
+     <!-- ***************************************Code for delete modal***************************** -->
+
+    <div class="pull-right" class="container">
+
+        <div class="modal fade" id="DeletePersonFromProject" data-keyboard="false" data-backdrop="static">
+
+            <div class="modal-dialog modal-lg">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button class="close" type="button" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Delete Project</h3>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <s:form class="form-inline" name="DeletePersonFromProject" namespace="/" action="DeletePersonFromProject" method="POST" role="form" theme="bootstrap">
+
+                            <p>Are You Sure ?</p>
+
+                            <div class="modal-footer">
+                                <s:submit type="submit" id="submit" value="Delete" class="btn btn-primary" />
+                                <s:hidden name="projectDetail.projectID" ></s:hidden>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </s:form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    
 
     <!-- *******************************Modal to Add Person in the Project ******************************* -->
 
@@ -33,34 +73,37 @@
                     </div>
 
                     <div class="modal-body">
-                    
-                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Search Person</button>
-                        
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Search Person</button>
+
                         <s:form namespace="/" action="CreateProjectPersonLinkSubmit" method="POST" class="form-inline" theme="bootstrap">
 
-                               <br>
-                               <br>
+                            <br>
+                            <br>
                             <div class="form-group">
-                                <label>Role:</label> <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.role" />
+                                <label>Role:</label>
+                                <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.role" />
                             </div>
-                            <br/>
-                            <br/>
-                            
-                            <div class="form-group">
-                                <label>PersonID:</label> <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.personID" />
-                            </div>
-                            <br/>
-                            <br/>
+                            <br />
+                            <br />
 
                             <div class="form-group">
-                                <label>Comments:</label> <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.comments" />
+                                <label>PersonID:</label>
+                                <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.personID" />
+                            </div>
+                            <br />
+                            <br />
+
+                            <div class="form-group">
+                                <label>Comments:</label>
+                                <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.comments" />
                             </div>
                             <br>
                             <br>
 
                             <div class="form-group">
-                                <label>Start Date:</label> <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectPersonLinkDetail.startDate"
-                                    placeholder="mm/dd/yy"  />
+                                <label>Start Date:</label> <input type="text" class="datepick" id="date_1" class="dateTxt"
+                                    name="projectPersonLinkDetail.startDate" placeholder="mm/dd/yy" />
                             </div>
                             <br>
                             <br>
@@ -87,9 +130,9 @@
     </div>
 
     <!-- *******************************code for Person Search******************************* -->
-    
-    
-     <div class="pull-right" class="container">
+
+
+    <div class="pull-right" class="container">
 
         <div class="modal fade" id="modal-2" data-keyboard="false" data-backdrop="static">
 
@@ -104,66 +147,67 @@
                     </div>
 
                     <div class="modal-body">
-                    
-                    <s:form action="/SearchPersonSubmit" method="POST" class="form-inline" theme="bootstrap">
-                    
-            <div class="form-group">
-                <label>First Name</label>
-                <s:textfield type="text" name="personSearchDetails.personSearchCriteria.firstName" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label>Middle Name</label>
-                <s:textfield type="text" name="personSearchDetails.personSearchCriteria.middleName" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label>Last Name</label>
-                <s:textfield type="text" name="personSearchDetails.personSearchCriteria.lastName" class="form-control" />
-            </div>
 
-            <br />
-            <br />
-    <br>
+                        <s:form action="/SearchPersonSubmit" method="POST" class="form-inline" theme="bootstrap">
 
-    <table class="table table-striped">
-        <thead>
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <s:textfield type="text" name="personSearchDetails.personSearchCriteria.firstName" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Middle Name</label>
+                                <s:textfield type="text" name="personSearchDetails.personSearchCriteria.middleName" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <s:textfield type="text" name="personSearchDetails.personSearchCriteria.lastName" class="form-control" />
+                            </div>
 
-            <tr class="success">
-                <th style="text-align: center">Title</th>
-                <th style="text-align: center">First Name</th>
-                <th style="text-align: center">Middle Name</th>
-                <th style="text-align: center">Last Name</th>
-                <th style="text-align: center">Gender</th>
-                <th style="text-align: center">Date Of Birth</th>
-            </tr>
-        </thead>
+                            <br />
+                            <br />
+                            <br>
 
-        <s:iterator value="personSearchResult.personDetailList" status="stat">
+                            <table class="table table-striped">
+                                <thead>
 
-            <tr>
-                <td align="center">
-                    <s:property value="title" />
-                </td>
-                <td align="center">
-                    <s:property value="firstName" />
-                </td>
-                <td align="center">
-                    <s:property value="middleName" />
-                </td>
-                <td align="center">
-                    <s:property value="lastName" />
-                </td>
-                <td align="center">
-                    <s:property value="gender" />
-                </td>
-                <td align="center">
-                    <s:property value="dateOfBirth" />
-                </td>
-            </tr>
-        </s:iterator>
+                                    <tr class="success">
+                                        <th style="text-align: center">Title</th>
+                                        <th style="text-align: center">First Name</th>
+                                        <th style="text-align: center">Middle Name</th>
+                                        <th style="text-align: center">Last Name</th>
+                                        <th style="text-align: center">Gender</th>
+                                        <th style="text-align: center">Date Of Birth</th>
+                                    </tr>
+                                </thead>
 
-        <s:hidden name="personDetail.personID"></s:hidden>
-    </table>
-    <br/><br/>
+                                <s:iterator value="personSearchResult.personDetailList" status="stat">
+
+                                    <tr>
+                                        <td align="center">
+                                            <s:property value="title" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="firstName" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="middleName" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="lastName" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="gender" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="dateOfBirth" />
+                                        </td>
+                                    </tr>
+                                </s:iterator>
+
+                                <s:hidden name="personDetail.personID"></s:hidden>
+                            </table>
+                            <br />
+                            <br />
                             <div class="modal-footer">
                                 <s:submit type="submit" id="submit" value="Search" class="btn btn-primary" />
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -176,44 +220,83 @@
             </div>
         </div>
     </div>
-    
-    
-    
-    <!-- *******************************code to display Project List******************************* -->
+
+
+
+    <!-- *******************************code to display Person List******************************* -->
 
     <s:form name="ListForm" id="ListForm" method="post">
 
         <div class="container">
-            
+
             <table class="table table-striped" style="width: 100%; height: 100%; border: 1;">
                 <thead>
 
                     <tr class="success">
-                        <th style="text-align: center">First Name</th>
-                        <th style="text-align: center">Last Name</th>
+                        <th style="text-align: center">Action</th>
                         <th style="text-align: center">Role</th>
+                        <th style="text-align: center">Title</th>
+                        <th style="text-align: center">First Name</th>
+                        <th style="text-align: center">Middle Name</th>
+                        <th style="text-align: center">Last Name</th>
+                        <th style="text-align: center">Gender</th>
+                        <th style="text-align: center">Date Of Birth</th>
+                        <th style="text-align: center">Registration Date</th>
                     </tr>
-                    
+
                 </thead>
 
                 <s:iterator value="projectPersonLinkDetailList" status="stat">
 
                     <tr>
                         <td align="center">
+
+                            <s:url var="updatePersonURL" action="ReadPersonFromProject" escapeAmp="false">
+                                <s:param name="projectPersonLinkDetail.projectPersonLinkID" value="%{projectPersonLinkID}" />
+                                <s:param name="act" value="%{updateAction}" />
+                            </s:url>
+                            <s:a href="%{updatePersonURL}">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <!-- Update -->
+                            </s:a>
+                            &nbsp;&nbsp;
+
+                            <a href="#DeletePersonFromProject" data-toggle="modal">
+                                <span class="glyphicon glyphicon-trash"></span>
+                                <!-- Delete -->
+                            </a>
+
+                        </td>
+                        <td align="center">
+                            <s:property value="role" />
+                        </td>
+                        <td align="center">
+                            <s:property value="personDetail.title" />
+                        </td>
+                        <td align="center">
                             <s:property value="personDetail.firstName" />
+                        </td>
+                        <td align="center">
+                            <s:property value="personDetail.middleName" />
                         </td>
                         <td align="center">
                             <s:property value="personDetail.lastName" />
                         </td>
                         <td align="center">
-                            <s:property value="role" />
+                            <s:property value="personDetail.gender" />
+                        </td>
+                        <td align="center">
+                            <s:property value="personDetail.dateOfBirth" />
+                        </td>
+                        <td align="center">
+                            <s:property value="personDetail.registrationDate" />
                         </td>
 
                     </tr>
                 </s:iterator>
 
             </table>
-            
+
         </div>
 
     </s:form>

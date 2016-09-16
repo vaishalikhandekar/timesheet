@@ -40,6 +40,7 @@ public class ProjectTimeSheetProcessListDAO  {
 				
 				projectTimeSheetProcessDetail = new ProjectTimeSheetProcessDetail();
 				
+				projectTimeSheetProcessDetail.setProjectTimeSheetProcessID(resultSet.getLong("projectTimeSheetProcessID"));
 				projectTimeSheetProcessDetail.setFrequency(resultSet.getString("frequency"));
 				projectTimeSheetProcessDetail.setStartDay(resultSet.getString("startDay"));
 				projectTimeSheetProcessDetail.setMinimumApprovalLevelType(resultSet.getString("minimumApprovalLevelType"));

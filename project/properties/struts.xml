@@ -61,7 +61,6 @@
             <result name="success" type="tiles">ReadPerson</result>
             <result name="error">/index</result>
         </action>
-
         <action name="UpdatePersonSubmit" class="com.company.timesheet.profile.person.action.PersonUpdateAction">
             <result name="success" type="redirect">
                 <param name="location">/ListPerson</param>
@@ -143,6 +142,28 @@
 
         <!-- ProjectPersonLink -->
 
+        <action name="DeletePersonFromProject" class="com.company.timesheet.project.projectpersonlink.action.DeletePersonFromProjectAction">
+            <result name="success" type="redirect">
+                <param name="location">/ProjectPersonList</param>
+                <param name="projectDetail.projectID">${projectDetail.projectID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+        
+        <action name="ReadPersonFromProject" class="com.company.timesheet.project.projectpersonlink.action.ReadPersonFromProjectAction">
+            <result name="SENTTOUPDATE" type="tiles">UpdatePersonFromProject </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="UpdatePersonFromProjectSubmit" class="com.company.timesheet.project.projectpersonlink.action.UpdatePersonFromProjectAction">
+            <result name="success" type="redirect">
+                <param name="location">/ProjectPersonList</param>
+                <param name="personDetail.personID">${personDetail.personID}</param>
+            </result>
+            <result name="error">/index</result>
+            <result name="input">/index</result>
+        </action>
+        
         <action name="ReadProjectPersonLink" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkReadAction">
             <result name="SENTTOUPDATE" type="tiles">UpdateProjectPersonLink</result>
             <result name="success" type="tiles">ReadProjectPersonLink</result>
@@ -170,7 +191,7 @@
             <result name="error">/index</result>
         </action>
 
-        <action name="ProjectPersonList" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonListForProjectAction">
+        <action name="ProjectPersonList" class="com.company.timesheet.project.projectpersonlink.action.PersonListForProjectAction">
             <result name="success" type="tiles">ProjectPersonList</result>
             <result name="error">/index</result>
         </action>
@@ -193,11 +214,6 @@
             </result>
             <result name="error">/index</result>
         </action>
-
-        <action name="ListOfPersonInTheProject" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkListPersonInTheProjectAction">
-            <result name="success" type="tiles">ListOfPersonInTheProject</result>
-            <result name="error">/index</result>
-        </action> 
 
 
 
@@ -238,12 +254,13 @@
             <result name="error">/index</result>
         </action>
 
-        <action name="DeleteTimeSheetFromPerson" class="com.company.timesheet.timesheet.action.TimeSheetDeleteFromPersonAction">
+        <action name="DeleteTimeSheetFromPerson" class="com.company.timesheet.timesheet.action.DeleteTimeSheetFromPersonAction">
             <result name="success" type="redirect">
                 <param name="location">/TimeSheetsForPerson</param>
             </result>
             <result name="error">/index</result>
         </action>
+        
 
         <action name="ReadTimeSheetFromPerson" class="com.company.timesheet.timesheet.action.TimeSheetReadFromPersonAction">
             <result name="SENTTOUPDATE" type="tiles">UpdateTimeSheetFromPerson</result>
@@ -256,6 +273,20 @@
             </result>
             <result name="error">/index</result>
         </action>
+        
+        <action name="DeleteTimeSheetFromProject" class="com.company.timesheet.timesheet.action.DeleteTimeSheetFromProjectAction">
+            <result name="success" type="redirect">
+                <param name="location">/TimeSheetsForProject</param>
+                  <param name="projectDetail.projectID">${projectDetail.projectID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+        
+        <action name="ViewTimeSheetApprovalLevelList" class="com.company.timesheet.timesheet.action.TimeSheetAprovalLevelListAction">
+            <result name="success" type="tiles">ViewTimeSheetApprovalLevelList</result>
+            <result name="error">/index</result>
+        </action>
+        
         
         <!-- TimeSheet LineItem -->
 

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <h2>
+    <h2 style="color:white">
         <a href="/TimeSheet/index">Time Sheet</a>
     </h2>
     <br />

@@ -6,7 +6,13 @@
 <html>
 <head>
 <title></title>
+<style type="text/css">
 
+tr.break td {
+  height: 10px;
+}
+
+</style>
 <script>
 	$(function() {
 		$('.datepick').each(function() {
@@ -15,8 +21,7 @@
 				changeMonth : true,
 				changeYear : true,
 
-			}
-			);
+			});
 		});
 	});
 </script>
@@ -57,7 +62,6 @@
 		});
 
 	});
-
 </script>
 </head>
 
@@ -176,46 +180,56 @@
 
                                     <div class="modal-body">
 
-                                        <s:form class="form-inline" name="CreateProject" namespace="/" action="CreateProjectSubmit" method="POST" role="form"
-                                            theme="bootstrap">
+                                        <s:form name="CreateProject" namespace="/" action="CreateProjectSubmit" method="POST" role="form" theme="bootstrap">
 
-                                            <br />
-                                            <table>
-
-                                                <div class="form-group">
-                                                    <label>Project Name:</label>
-                                                    <s:textfield type="text" class="form-control" name="projectDetail.projectName" />
-                                                </div>
-
-                                                <br />
+                                            <table >
                                                 
-                                                <div class="form-group">
-                                                    <label>Acronym:</label>
-                                                    <s:textfield type="text" class="form-control" name="projectDetail.acronym" />
-                                                </div>
+                                                <tr>
 
-                                                <br />
+                                                    <th>Project Name</th>
+                                                    <td>
+                                                        <input type="text" class="form-control" name="projectDetail.projectName" />
+                                                    </td>
 
-                                                <div class="form-group">
-                                                    <label>Description:</label>
-                                                    <s:textfield type="text" class="form-control" name="projectDetail.description" />
-                                                </div>
 
-                                                <br />
-                                                <br />
+                                                    <th style="text-align: right">Acronym</th>
+                                                    <td>
+                                                        <input type="text" class="form-control" name="projectDetail.acronym" />
+                                                    </td>
+                                                </tr>
+                                                
+                                                <tr class="break"><td colspan="2"></td></tr>
+                                                
+                                                <tr>
 
-                                                <div class="form-group">
-                                                    <label>Start Date:</label> <input type="text" class="datepick" id="date_1" class="dateTxt"
-                                                        name="projectDetail.startDate" placeholder="mm/dd/yy" />
-                                                </div>
+                                                    <th>Start Date</th>
+                                                    <td>
+                                                        <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectDetail.startDate"
+                                                            placeholder="mm/dd/yy" />
+                                                    </td>
 
-                                                <br />
-                                                <br />
 
-                                                <div class="form-group">
-                                                    <label>End Date:</label> <input type="text" class="datepick" id="date_2" class="dateTxt"
-                                                        name="projectDetail.endDate" placeholder="mm/dd/yy" />
-                                                </div>
+                                                    <th>End Date</th>
+                                                    <td>
+                                                        <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectDetail.endDate"
+                                                            placeholder="mm/dd/yy" />
+                                                    </td>
+
+                                                </tr>
+            
+                                                     <tr class="break"><td colspan="2"></td></tr>
+            
+                                                <tr>
+
+
+                                                    <th>Description</th>
+                                                    <td>
+                                                        <!-- <input type="text" class="form-control" name="projectDetail.description" /> -->
+                                                        <textarea name="projectDetail.description"  cols="45" rows="3"></textarea>
+                                                    </td>
+                                                </tr>
+
+
 
                                                 <div class="container">
                                             </table>
@@ -249,12 +263,12 @@
                                 <thead>
 
                                     <tr class="success">
-                                        <th style="text-align:center">Action</th>
-                                        <th style="text-align:center">Project Name</th>
-                                        <th style="text-align:center">Description</th>
-                                        <th style="text-align:center">Record Status</th>
-                                        <th style="text-align:center">Start Date</th>
-                                        <th style="text-align:center">End Date</th>
+                                        <th style="text-align: center">Action</th>
+                                        <th style="text-align: center">Project Name</th>
+                                        <th style="text-align: center">Description</th>
+                                        <th style="text-align: center">Record Status</th>
+                                        <th style="text-align: center">Start Date</th>
+                                        <th style="text-align: center">End Date</th>
                                     </tr>
                                 </thead>
 
@@ -265,25 +279,32 @@
                                             <s:url id="ViewProjectURL" action="ReadProject" escapeAmp="false">
                                                 <s:param name="projectDetail.projectID" value="%{projectID}" />
                                             </s:url>
-                                            <s:a href="%{ViewProjectURL}"><span class="glyphicon glyphicon-eye-open"></span>
-                                    <!-- View --></s:a>&nbsp;&nbsp;
+                                            <s:a href="%{ViewProjectURL}">
+                                                <span class="glyphicon glyphicon-eye-open"></span>
+                                                <!-- View -->
+                                            </s:a>
+                                            &nbsp;&nbsp;
 
                                             <s:url var="updateProjectURL" action="ReadProject" escapeAmp="false">
                                                 <s:param name="projectDetail.projectID" value="%{projectID}" />
                                                 <s:param name="act" value="%{updateAction}" />
                                             </s:url>
 
-                                            <s:a href="%{updateProjectURL}"><span class="glyphicon glyphicon-pencil"></span>
-                                    <!-- Update -->
-                                </s:a>&nbsp;&nbsp;
+                                            <s:a href="%{updateProjectURL}">
+                                                <span class="glyphicon glyphicon-pencil"></span>
+                                                <!-- Update -->
+                                            </s:a>
+                                            &nbsp;&nbsp;
 
                                             <%-- <s:url id="updateProjectURL">
                                             </s:url> <s:a href="%{updateProjectURL}" id="updateProjectID">Update</s:a> --%>
 
                                             <s:url id="ProjectDeleteURL">
                                             </s:url>
-                                            <s:a href="%{ProjectDeleteURL}" id="deleteProjectID"><span class="glyphicon glyphicon-trash"></span>
-                                    <!-- Delete --></s:a>
+                                            <s:a href="%{ProjectDeleteURL}" id="deleteProjectID">
+                                                <span class="glyphicon glyphicon-trash"></span>
+                                                <!-- Delete -->
+                                            </s:a>
                                             <!-- <s:a href="%{ProjectDeleteURL}" onclick="return confirm('Are
                                                                     u sure?');">Delete</s:a> -->
                                             <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
@@ -293,7 +314,7 @@
                                                                     onclick="check()"
                                                                     value="%{projectID}">Delete</button> -->
                                         </td>
-                                        
+
                                         <td align="center">
                                             <s:property value="projectName" />
                                         </td>

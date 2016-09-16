@@ -28,12 +28,12 @@
             <a href="SearchPerson">Person Search</a>
             <br />
             <br />
-            <a href="ListPerson">Person List</a>
+            <a href="ListPerson">Persons</a>
         </div>
 
         <h1>Project</h1>
         <div>
-            <a href="ListProject">Project List</a>
+            <a href="ListProject">Projects</a>
             <br />
             <br />
             <a href="ProjectSearch" > Project Search</a>

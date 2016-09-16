@@ -6,7 +6,7 @@ package com.company.timesheet.project.projectpersonlink.action;
 import java.util.List;
 
 import com.company.timesheet.project.pojo.ProjectDetail;
-import com.company.timesheet.project.projectpersonlink.dao.ProjectPersonListForProjectDAO;
+import com.company.timesheet.project.projectpersonlink.dao.PersonListForProjectDAO;
 import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -14,7 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author vaish
  *
  */
-public class ProjectPersonListForProjectAction extends ActionSupport {
+public class PersonListForProjectAction extends ActionSupport {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -46,7 +46,7 @@ public class ProjectPersonListForProjectAction extends ActionSupport {
 		
 		String pageForwardStr = "";
 		
-		ProjectPersonListForProjectDAO projectPersonListForProjectDAO = new ProjectPersonListForProjectDAO();
+		PersonListForProjectDAO projectPersonListForProjectDAO = new PersonListForProjectDAO();
 		List<ProjectPersonLinkDetail> projectPersonLinkDetailList = projectPersonListForProjectDAO.projectPersonList(projectDetail);
 		
 		setProjectPersonLinkDetailList(projectPersonLinkDetailList);

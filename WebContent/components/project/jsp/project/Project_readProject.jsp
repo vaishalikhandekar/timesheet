@@ -53,50 +53,75 @@
 
     </div>
 
-        <jsp:include page="Project_navProject.jsp"></jsp:include>
+    <jsp:include page="Project_navProject.jsp"></jsp:include>
 
     <!-- ***************************************Code for adding Person to Project***************************** -->
 
-        <s:form action="/ReadProject" method="post">
-            <br>
-            <br>
+    <s:form action="/ReadProject" method="post">
+        <br>
+        <br>
 
 
-            <table class="table table-striped">
-                <thead>
-
-                    <tr>
-                        <th style="text-align: center">Project Name</th>
-                        <th style="text-align: center">Description</th>
-                        <th style="text-align: center">Record Status</th>
-                        <th style="text-align: center">Start Date</th>
-                        <th style="text-align: center">End Date</th>
-                        <th colspan=2 style="text-align: center">Action</th>
-                    </tr>
-                </thead>
+        <table class="table table-striped">
+            <thead>
 
                 <tr>
-                    <td align="center"><s:property value="projectDetail.projectName" /></td>
-                    <td align="center"><s:property value="projectDetail.description" /></td>
-                    <td align="center"><s:property value="projectDetail.recordStatus" /></td>
-                    <td align="center"><s:property value="projectDetail.startDate" /></td>
-                    <td align="center"><s:property value="projectDetail.endDate" /></td>
-
-                    <td align="center"><a href="#DeleteProject" data-toggle="modal">Delete</a> 
-                    
-                        <s:url id="AddPersonToProjectURL" action="AddPersonToProject" escapeAmp="false">
-                            <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
-                        </s:url> <s:a href="%{AddPersonToProjectURL}">Add Person</s:a></td>
-
+                    <th style="text-align: center">Action</th>
+                    <th style="text-align: center">Project Name</th>
+                    <th style="text-align: center">Description</th>
+                    <th style="text-align: center">Record Status</th>
+                    <th style="text-align: center">Start Date</th>
+                    <th style="text-align: center">End Date</th>
                 </tr>
-                <s:hidden name="projectDetail.projectID"></s:hidden>
+            </thead>
+
+            <tr>
+
+                <td align="center">
+
+                    <s:url var="updateProjectURL" action="ReadProject" escapeAmp="false">
+                        <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
+                        <s:param name="act" value="%{updateAction}" />
+                    </s:url>
+
+                    <s:a href="%{updateProjectURL}">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        <!-- Update -->
+                    </s:a>
+                    &nbsp;&nbsp;
+
+                    <a href="#DeleteProject" data-toggle="modal">
+                        <span class="glyphicon glyphicon-trash"></span>
+                        <!-- Delete -->
+                    </a>
+                </td>
+
+                <td align="center">
+                    <s:property value="projectDetail.projectName" />
+                </td>
+                <td align="center">
+                    <s:property value="projectDetail.description" />
+                </td>
+                <td align="center">
+                    <s:property value="projectDetail.recordStatus" />
+                </td>
+                <td align="center">
+                    <s:property value="projectDetail.startDate" />
+                </td>
+                <td align="center">
+                    <s:property value="projectDetail.endDate" />
+                </td>
 
 
-            </table>
-            <br>
+            </tr>
+            <s:hidden name="projectDetail.projectID"></s:hidden>
 
 
-        </s:form>
+        </table>
+        <br>
+
+
+    </s:form>
 
     </div>
 </body>

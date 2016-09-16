@@ -11,9 +11,9 @@
     
     <!-- *******************************Modal to Add New Process ******************************* -->
 
-    <div class="pull-right" class="container">
+   <%--  <div class="pull-right" class="container">
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Add New Process</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Add New Level</button>
         <br />
         <br />
 
@@ -96,10 +96,9 @@
         </div>
     </div>
     
+ --%>
+    <%-- <s:form action="/ViewTimeSheetApprovalLevelList" method="post"> --%>
 
-    <s:form action="/TimeSheetsProcess" method="post">
-
-        <!--   <a href="CreateTimeSheet">New TimeSheet</a> -->
         <br>
         <br>
         <table class="table table-striped">
@@ -107,17 +106,15 @@
 
                 <tr class="success">
                     <th style="text-align: center">Action</th>
-                    <th style="text-align: center">Frequency</th>
-                    <th style="text-align: center">StartDay</th>
-                    <th style="text-align: center">Minimum Approval Level Type</th>
-                    <th style="text-align: center">Regular Daily Hours</th>
+                    <th style="text-align: center">ApprovalLevelType</th>
+                    <th style="text-align: center">ApprovalCriteria</th>
                     <th style="text-align: center">startDate</th>
                     <th style="text-align: center">end Date</th>
                     <th style="text-align: center">Status</th>
                 </tr>
             </thead>
 
-            <s:iterator value="projectTimeSheetProcessDetailList" status="stat">
+            <s:iterator value="timeSheetAprovalLevelDetailList" status="stat">
 
                 <tbody>
                     <tr>
@@ -154,17 +151,12 @@
                         </td>
 
                         <td align="center">
-                            <s:property value="frequency" />
+                            <s:property value="approvalLevelType" />
                         </td>
                         <td align="center">
-                            <s:property value="startDay" />
+                            <s:property value="approvalCriteria" />
                         </td>
-                        <td align="center">
-                            <s:property value="minimumApprovalLevelType" />
-                        </td>
-                        <td align="center">
-                            <s:property value="regularDailyHours" />
-                        </td>
+                        
                         <td align="center">
                             <s:property value="startDate" />
                         </td>
@@ -182,6 +174,6 @@
 
         </table>
 
-    </s:form>
+  <%--   </s:form> --%>
 </body>
 </html>

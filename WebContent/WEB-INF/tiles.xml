@@ -138,6 +138,11 @@
     
     <!-- ProjectPersonLink -->
     
+   <definition name="UpdatePersonFromProject" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Update Person" />
+        <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ProjectPersonLink_updatePersonFromProject.jsp" />
+    </definition> 
+    
      <definition name="UpdateProjectPersonLink" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Update Project Person Link" />
         <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ProjectPersonLink_updateProjectPersonLink.jsp" />
@@ -163,10 +168,7 @@
         <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ProjectPersonLink_addPersonToProject.jsp" />
     </definition>
     
-    <definition name="ListOfPersonInTheProject" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="List Of Person In The Project" />
-        <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ProjectPersonLink_listOfPersonInTheProject.jsp" />
-    </definition>
+  
     
     
     
@@ -200,6 +202,11 @@
     <definition name="UpdateTimeSheetFromPerson" extends="userWorkspaceLayout">
         <put-attribute name="title" value="UpdateTimeSheetFromPerson" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_updateTimeSheetFromPerson.jsp" />
+    </definition>
+    
+    <definition name="ViewTimeSheetApprovalLevelList" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="View TimeSheet Approval Level List" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetAprovalLevelList.jsp" />
     </definition>
     
      <!-- TimeSheet LineItem -->
