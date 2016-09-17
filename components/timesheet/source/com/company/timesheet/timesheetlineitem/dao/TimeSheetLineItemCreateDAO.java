@@ -5,12 +5,6 @@ package com.company.timesheet.timesheetlineitem.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-//import java.util.Date;
-import java.util.List;
 
 import com.company.timesheet.core.audittrail.dao.CreateAuditTrailDAO;
 import com.company.timesheet.core.audittrail.pojo.AuditTrailDetails;
@@ -18,8 +12,9 @@ import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.JavaUtildates;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
 import com.company.timesheet.core.util.type.UniqueID;
-import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 import com.company.timesheet.timesheet.pojo.TimeSheetLineItemDetail;
+
+//import java.util.Date;
 
 /**
  * @author vaish
@@ -27,170 +22,73 @@ import com.company.timesheet.timesheet.pojo.TimeSheetLineItemDetail;
  */
 public class TimeSheetLineItemCreateDAO {
 
-	public String createTimeSheetLineItem(
-			TimeSheetLineItemDetail timeSheetLineItemDetail) {
+    /**
+     * 
+     * @param timeSheetLineItemDetail
+     * @return
+     */
+    public String createTimeSheetLineItem(TimeSheetLineItemDetail timeSheetLineItemDetail) {
 
-		TimeSheetDetail timeSheetDetail = timeSheetLineItemDetail
-				.getTimeSheetDetail();
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        String returnMassegeStr = "";
 
-		PreparedStatement preparedStatement = null;
-		String returnMassegeStr = "";
+        try {
 
-		Connection connection = null;
-		try {
+            connection = DBConnection.getDBConnection();
 
-			connection = DBConnection.getDBConnection();
+            StringBuffer timeSheetLineItemSQLStrBuf = new StringBuffer();
 
-			String TimeSheetLineItemSQLStr = "INSERT	INTO	TimeSheetLineItem(timeSheetLineItemID, timeSheetID, category, attendenceDate, actualRegularHoursWorked, actualOvertimeHoursWorked, comments, startDate, endDate, recordStatus, versionNo)	"
-					+ " VALUES(?,?'"
-					+ timeSheetLineItemDetail.getCategory()
-					+ "','"
-					+ timeSheetLineItemDetail.getAttendenceDate()
-					+ "','"
-					+ timeSheetLineItemDetail.getActualRegularHoursWorked()
-					+ "','"
-					+ timeSheetLineItemDetail.getActualOvertimeHoursWorked()
-					+ "','"
-					+ timeSheetLineItemDetail.getComments()
-					+ "',?,?,'Active', 1)";
+            timeSheetLineItemSQLStrBuf.append(" INSERT INTO ");
+            timeSheetLineItemSQLStrBuf.append(" TimeSheetLineItem (");
+            timeSheetLineItemSQLStrBuf.append(" timeSheetLineItemID, timeSheetID, category, ");
+            timeSheetLineItemSQLStrBuf.append(" attendenceDate, noOfHoursWorked, ");
+            timeSheetLineItemSQLStrBuf.append(" comments, recordStatus, versionNo ");
+            timeSheetLineItemSQLStrBuf.append(" ) VALUES ( ");
+            timeSheetLineItemSQLStrBuf.append(" ?, ?, ?, ");
+            timeSheetLineItemSQLStrBuf.append(" ?, ?, ");
+            timeSheetLineItemSQLStrBuf.append(" ?, ?, ? )");
 
-			preparedStatement = connection
-					.prepareStatement(TimeSheetLineItemSQLStr);
+            preparedStatement = connection.prepareStatement(timeSheetLineItemSQLStrBuf.toString());
 
-			long timeSheetLineItemID = UniqueID.nextUniqueID();
+            long timeSheetLineItemID = UniqueID.nextUniqueID();
 
-			preparedStatement.setLong(1, timeSheetLineItemID);
+            preparedStatement.setLong(1, timeSheetLineItemID);
 
-			Long timeSheetID = UniqueID.nextUniqueID();
+            preparedStatement.setLong(2, timeSheetLineItemDetail.getTimeSheetID());
 
-			preparedStatement.setLong(2, timeSheetID);
+            preparedStatement.setString(3, timeSheetLineItemDetail.getCategory());
 
-			preparedStatement.setDate(3, JavaUtildates
-					.convertUtilToSql(timeSheetLineItemDetail.getStartDate()));
+            preparedStatement.setDate(4, JavaUtildates.convertUtilToSql(timeSheetLineItemDetail.getAttendenceDate()));
 
-			preparedStatement.setDate(4, JavaUtildates
-					.convertUtilToSql(timeSheetLineItemDetail.getEndDate()));
+            preparedStatement.setInt(5, timeSheetLineItemDetail.getNoOfHoursWorked());
 
-			preparedStatement.execute();
+            preparedStatement.setString(6, timeSheetLineItemDetail.getComments());
 
-			String TimeSheetSQLStr = "INSERT	INTO	TimeSheet(timeSheetID, totalRegularHours, totalActualHours, submittedDate, timeSheetStatus, recordStatus, versionNo, startDate, endDate)	"
-					+ "VALUES(?,'"
-					+ timeSheetDetail.getTotalRegularHours()
-					+ "','"
-					+ timeSheetDetail.getTotalRegularHours()
-					+ "',?,'Submitted','Active',1, ?,?,)";
+            preparedStatement.setString(7, "Active");
 
-			PreparedStatement preparedStatement1 = connection
-					.prepareStatement(TimeSheetSQLStr);
+            preparedStatement.setInt(8, 1);
 
-			preparedStatement1.setLong(1, timeSheetID);
+            preparedStatement.execute();
 
-			String crrentDateTime = JavaUtildates.getCurrentDateTime();
+            // inserting data into AuditTrail Table for TimeSheetLineItem Table
+            CreateAuditTrailDAO createAuditTrailDAO = new CreateAuditTrailDAO();
 
-			Timestamp timestamp = Timestamp.valueOf(crrentDateTime);
-			preparedStatement1.setTimestamp(2, timestamp);
+            AuditTrailDetails auditTrailDetails = new AuditTrailDetails();
 
-			preparedStatement1.setDate(3, JavaUtildates
-					.convertUtilToSql(timeSheetLineItemDetail.getStartDate()));
+            auditTrailDetails.setTableName("TimeSheetLineItem");
+            auditTrailDetails.setOperationType("Create");
+            auditTrailDetails.setRelatedID(timeSheetLineItemDetail.getTimeSheetLineItemID());
+            auditTrailDetails.setTransactionType("Online");
 
-			preparedStatement1.setDate(4, JavaUtildates
-					.convertUtilToSql(timeSheetLineItemDetail.getEndDate()));
+            createAuditTrailDAO.createAuditTrail(auditTrailDetails);
 
-			preparedStatement1.execute();
+            returnMassegeStr = CRUDConstants.RETURN_MESSAGE_SUCCESS;
 
-			// inserting data into AuditTrail Table for TimeSheetLineItem Table
-			AuditTrailDetails auditTrailDetails = new AuditTrailDetails();
+        } catch (Exception e) {
 
-			auditTrailDetails.setTableName("TimeSheetLineItem");
-			auditTrailDetails.setOperationType("Create");
-			auditTrailDetails.setRelatedID(timeSheetLineItemDetail
-					.getTimeSheetLineItemID());
-			auditTrailDetails.setTransactionType("Online");
-
-			CreateAuditTrailDAO createAuditTrailDAO = new CreateAuditTrailDAO();
-			createAuditTrailDAO.createAuditTrail(auditTrailDetails);
-
-			// inserting data into AuditTrail Table for TimeSheet Table
-
-			auditTrailDetails.setTableName("TimeSheet");
-			auditTrailDetails.setOperationType("Create");
-			auditTrailDetails.setRelatedID(timeSheetDetail.getTimeSheetID());
-			auditTrailDetails.setTransactionType("Online");
-
-			createAuditTrailDAO.createAuditTrail(auditTrailDetails);
-
-			returnMassegeStr = CRUDConstants.RETURN_MESSAGE_SUCCESS;
-
-		} catch (Exception e) {
-
-		}
-		return returnMassegeStr;
-	}
-
-	public static List<Date> getDateRange(Date startDate, Date endDate) {
-
-		TimeSheetLineItemDetail timeSheetLineItemDetail;
-
-		List<Date> ret = new ArrayList<Date>();
-
-		/*
-		 * startDate = JavaUtildates
-		 * .convertUtilToSql(timeSheetLineItemDetail.getStartDate()); endDate =
-		 * JavaUtildates
-		 * .convertUtilToSql(timeSheetLineItemDetail.getEndDate());
-		 */
-
-		while (startDate.before(endDate) || startDate.equals(endDate)) {
-			ret.add(startDate);
-			// startDate = startDate+1;
-		}
-		return ret;
-	}
-
-	public static void main(String[] args) {
-
-		/*
-		 * DateTime start = DateTime.parse("2012-1-1");
-		 * System.out.println("Start: " + start);
-		 * 
-		 * DateTime end = DateTime.parse("2012-12-31");
-		 * System.out.println("End: " + end);
-		 * 
-		 * List<DateTime> between = getDateRange(start, end); for (DateTime d :
-		 * between) { System.out.println(" " + d); }
-		 */
-	}
+        }
+        return returnMassegeStr;
+    }
 
 }
-// One Way
-
-/*
- * //Monday, February 29 is a leap day in 2016 (otherwise, February only has 28
- * days) LocalDate start = LocalDate.parse("2016-02-28"), end =
- * LocalDate.parse("2016-03-02");
- * 
- * //4 days between (end is inclusive in this example) Stream.iterate(start,
- * date -> date.plusDays(1)) .limit(ChronoUnit.DAYS.between(start, end) + 1)
- * .forEach(System.out::println);
- */
-
-// Second Way
-
-/*
- * long oneDayMilSec = 86400000; // number of milliseconds in one day
- * SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
- * 
- * try {
- * 
- * Date startDate = sdf.parse("2012-02-15"); Date endDate =
- * sdf.parse("2012-03-15");
- * 
- * long startDateMilSec = startDate.getTime(); long endDateMilSec =
- * endDate.getTime();
- * 
- * for(long d=startDateMilSec; d<=endDateMilSec; d=d+oneDayMilSec){
- * System.out.println(new Date(d)); }
- * 
- * } catch (ParseException e) { e.printStackTrace(); }
- */
-

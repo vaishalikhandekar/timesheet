@@ -42,6 +42,7 @@ public class ProjectReadDAO {
 				 */
 
 				if (resultSet.next()) {
+				    
 					projectDetail.setProjectID(resultSet.getLong("projectID"));
 					projectDetail.setProjectName(resultSet.getString("projectName"));
 					projectDetail.setDescription(resultSet.getString("description"));
@@ -50,6 +51,7 @@ public class ProjectReadDAO {
 					projectDetail.setVersionNo(resultSet.getInt("versionNo"));
 					projectDetail.setStartDate(resultSet.getDate("startDate"));
 					projectDetail.setEndDate(resultSet.getDate("endDate"));
+					projectDetail.setUpdateAction("update");
 				}
 				returnMassegeStr = CRUDConstants.RETURN_MESSAGE_SUCCESS;
 

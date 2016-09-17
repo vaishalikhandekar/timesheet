@@ -39,8 +39,8 @@ public class TimeSheetLineItemUpdateDAO {
 
 			try {
 				connection = DBConnection.getDBConnection();
-				String projectSQLStr = "UPDATE	TimeSheetLineItem	SET category='" + timeSheetLineItemDetail.getCategory() + "',attendenceDate = ?, comments='" + timeSheetLineItemDetail.getComments() + "',actualRegularHoursWorked = '"+timeSheetLineItemDetail.getActualRegularHoursWorked()+"',actualOvertimeHoursWorked = '"+timeSheetLineItemDetail.getActualOvertimeHoursWorked()+"', versionNo ='"
-						+ versionNoFromDatabase + "' " + "	where	projectID='" + timeSheetLineItemDetail.getTimeSheetLineItemID() + "'";
+				String projectSQLStr = "";//"UPDATE	TimeSheetLineItem	SET category='" + timeSheetLineItemDetail.getCategory() + "',attendenceDate = ?, comments='" + timeSheetLineItemDetail.getComments() + "',actualRegularHoursWorked = '"+timeSheetLineItemDetail.getActualRegularHoursWorked()+"',actualOvertimeHoursWorked = '"+timeSheetLineItemDetail.getActualOvertimeHoursWorked()+"', versionNo ='"
+						//+ versionNoFromDatabase + "' " + "	where	projectID='" + timeSheetLineItemDetail.getTimeSheetLineItemID() + "'";
 
 				preparedStatement = connection.prepareStatement(projectSQLStr);
 
