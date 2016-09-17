@@ -55,7 +55,7 @@
 
     <jsp:include page="Project_navProject.jsp"></jsp:include>
 
-    <!-- ***************************************Code for adding Person to Project***************************** -->
+    <!-- ***************************************Code for Persons to Project***************************** -->
 
     <s:form action="/ReadProject" method="post">
         <br>

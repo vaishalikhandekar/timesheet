@@ -56,6 +56,7 @@ public class PersonReadDAO {
 				personDetail.setVersionNo(resultSet.getInt("versionNo"));
 				personDetail.setStartDate(resultSet.getDate("startDate"));
 				personDetail.setEndDate(resultSet.getDate("endDate"));
+				personDetail.setUpdateAction("update");
 			}
 			returnMassegeStr = CRUDConstants.RETURN_MESSAGE_SUCCESS;
 

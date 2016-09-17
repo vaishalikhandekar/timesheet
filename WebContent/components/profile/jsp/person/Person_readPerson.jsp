@@ -82,7 +82,7 @@
                 
                     <s:url var="updatePersonURL" action="ReadPerson" escapeAmp="false">
                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
-                        <s:param name="act" value="%{updateAction}" />
+                        <s:param name="act" value="%{personDetail.updateAction}" />
                     </s:url>
                     <s:a href="%{updatePersonURL}">
                         <span class="glyphicon glyphicon-pencil"></span>
