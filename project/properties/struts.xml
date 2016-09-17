@@ -287,6 +287,14 @@
             <result name="error">/index</result>
         </action>
         
+        <action name="TimeSheetCreate" class="com.company.timesheet.timesheet.action.TimeSheetCreateAction">
+            <result name="success" type="redirect">
+                <param name="location">/TimeSheetsForPerson</param>
+                  <param name="personDetail.personID">${timeSheetCreateDetails.personID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+        
         
         <!-- TimeSheet LineItem -->
 

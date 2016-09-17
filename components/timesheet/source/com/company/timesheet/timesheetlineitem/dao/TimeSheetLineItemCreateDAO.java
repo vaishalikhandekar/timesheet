@@ -26,7 +26,6 @@ import com.company.timesheet.timesheet.pojo.TimeSheetLineItemDetail;
  *
  */
 public class TimeSheetLineItemCreateDAO {
-	
 
 	public String createTimeSheetLineItem(
 			TimeSheetLineItemDetail timeSheetLineItemDetail) {
@@ -39,8 +38,6 @@ public class TimeSheetLineItemCreateDAO {
 
 		Connection connection = null;
 		try {
-
-			
 
 			connection = DBConnection.getDBConnection();
 
@@ -129,38 +126,40 @@ public class TimeSheetLineItemCreateDAO {
 		}
 		return returnMassegeStr;
 	}
-	
+
 	public static List<Date> getDateRange(Date startDate, Date endDate) {
-		
+
 		TimeSheetLineItemDetail timeSheetLineItemDetail;
 
-        List<Date> ret = new ArrayList<Date>();
-        
-         /*startDate = JavaUtildates
-				.convertUtilToSql(timeSheetLineItemDetail.getStartDate());
-         endDate = JavaUtildates
-        		 .convertUtilToSql(timeSheetLineItemDetail.getEndDate());*/
-        
-        while(startDate.before(endDate) || startDate.equals(endDate)) {
-            ret.add(startDate);
-            //startDate = startDate+1;
-        }
-        return ret;
-    }
+		List<Date> ret = new ArrayList<Date>();
 
-    public static void main(String[] args) {
+		/*
+		 * startDate = JavaUtildates
+		 * .convertUtilToSql(timeSheetLineItemDetail.getStartDate()); endDate =
+		 * JavaUtildates
+		 * .convertUtilToSql(timeSheetLineItemDetail.getEndDate());
+		 */
 
-        /*DateTime start = DateTime.parse("2012-1-1");
-        System.out.println("Start: " + start);
+		while (startDate.before(endDate) || startDate.equals(endDate)) {
+			ret.add(startDate);
+			// startDate = startDate+1;
+		}
+		return ret;
+	}
 
-        DateTime end = DateTime.parse("2012-12-31");
-        System.out.println("End: " + end);
+	public static void main(String[] args) {
 
-        List<DateTime> between = getDateRange(start, end);
-        for (DateTime d : between) {
-            System.out.println(" " + d);
-        }*/
-    }
+		/*
+		 * DateTime start = DateTime.parse("2012-1-1");
+		 * System.out.println("Start: " + start);
+		 * 
+		 * DateTime end = DateTime.parse("2012-12-31");
+		 * System.out.println("End: " + end);
+		 * 
+		 * List<DateTime> between = getDateRange(start, end); for (DateTime d :
+		 * between) { System.out.println(" " + d); }
+		 */
+	}
 
 }
 // One Way
