@@ -56,7 +56,7 @@ public class TimeSheetAprovalLevelListDAO  {
 				timeSheetAprovalLevelDetail.setRecordStatus(resultSet.getString("recordStatus"));
 				timeSheetAprovalLevelDetail.setVersionNo(resultSet.getInt("versionNo"));
 				
-				/*String projectPersonLinkDetailSQLStr = "SELECT projectID FROM ProjectPersonLink WHERE projectPersonLinkID = '"+timeSheetAprovalLevelDetail.getProjectPersonLinkID()+"' and   RECORDSTATUS='Active'";
+				String projectPersonLinkDetailSQLStr = "SELECT projectID FROM ProjectPersonLink WHERE projectPersonLinkID = '"+timeSheetAprovalLevelDetail.getProjectPersonLinkID()+"' and   RECORDSTATUS='Active'";
 
 	             preparedStatement1 = connection.prepareStatement(projectPersonLinkDetailSQLStr);
 
@@ -67,7 +67,7 @@ public class TimeSheetAprovalLevelListDAO  {
 	                
 	                timeSheetAprovalLevelDetail.setProjectPersonLinkDetail(projectPersonLinkDetail);
 	            }
-*/				
+				
 				timeSheetAprovalLevelDetailList.add(timeSheetAprovalLevelDetail);
 			}
 		

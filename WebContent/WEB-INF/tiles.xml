@@ -206,6 +206,7 @@
     
     <definition name="ViewTimeSheetApprovalLevelList" extends="userWorkspaceLayout">
         <put-attribute name="title" value="View TimeSheet Approval Level List" />
+        <put-attribute name="projectDetail.projectID" value="${timeSheetAprovalLevelDetail.projectDetail.projectID}" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetAprovalLevelList.jsp" />
     </definition>
     
