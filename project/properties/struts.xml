@@ -39,7 +39,7 @@
 
         <action name="PersonLogin" class="com.company.timesheet.profile.person.action.PersonLoginAction">
             <result name="success" type="tiles">
-                <param name="location"> PersonLogin</param>
+                <param name="location">PersonLogin</param>
                 <param name="personDetail.personID">${usersDetail.personID}</param>
             </result>
             <result name="error">/index</result>

@@ -14,8 +14,15 @@ import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.company.timesheet.profile.person.pojo.UsersDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
+/**
+ * 
+ * @author Rahul
+ */
 public class PersonLoginAction extends ActionSupport implements SessionAware, ServletRequestAware {
 
+    /**
+     * 
+     */
 	private static final long serialVersionUID = 1L;
 
 	/*
