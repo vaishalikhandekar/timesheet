@@ -38,8 +38,8 @@
 
 
         <action name="PersonLogin" class="com.company.timesheet.profile.person.action.PersonLoginAction">
-            <result name="success" type="tiles">
-                <param name="location">PersonLogin</param>
+            <result name="success" type="redirect">
+                <param name="location">/ReadPerson</param>
                 <param name="personDetail.personID">${usersDetail.personID}</param>
             </result>
             <result name="error">/index</result>
@@ -57,7 +57,7 @@
         </action>
 
         <action name="ReadPerson" class="com.company.timesheet.profile.person.action.PersonReadAction">
-            <result name="SENTTOUPDATE" type="tiles">PersonUpdate </result>
+            <result name="SENTTOUPDATE" type="tiles">PersonUpdate</result>
             <result name="success" type="tiles">ReadPerson</result>
             <result name="error">/index</result>
         </action>
