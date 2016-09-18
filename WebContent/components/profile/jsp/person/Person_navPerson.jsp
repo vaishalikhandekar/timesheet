@@ -43,14 +43,15 @@
 
                     <div class="panel-body">
                         <img src="/TimeSheet/components/profile/images/user.png" class="img-rounded" alt="Cinque Terre" width="100" height="100" />
-                        <s:property value="personDetail.firstName" />
-                        &nbsp
+                        Full Name : &nbsp; <s:property value="personDetail.firstName" />
+                        &nbsp;
                         <s:property value="personDetail.lastName" />
-                        &nbsp
+                        <br />
+                        Email Address : &nbsp;
                         <s:property value="personDetail.emailAddress" />
-                        &nbsp
+                        <br />
+                        Phone Number : &nbsp;
                         <s:property value="personDetail.phoneNumber" />
-
 
                     </div>
 

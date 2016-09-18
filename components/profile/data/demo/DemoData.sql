@@ -1,5 +1,5 @@
-INSERT INTO Person(personID ,	title , 		firstName,  middleName, lastName,   userName, gender,  dateOfBirth,                       registrationDate,               startDate,   endDate, comments, recordStatus, versionNo)
-              VALUES( 1001,	     'Mr',           'Jack',      'V',     'Don', 'jd',     'Male', to_date('26-Jun-90', 'DD-MON-RR'), to_date('26-Jun-16', 'DD-MON-RR'), null,       null,           null, 	    'Active',		1);
+INSERT INTO Person(personID ,	title , 		firstName,  middleName, lastName,   userName, gender,  emailAddress, 	phoneNumber,	dateOfBirth,                       registrationDate,               startDate,   endDate, comments, recordStatus, versionNo)
+              VALUES( 1001,	     'Mr',           'Jack',      'V',     'Don', 'jd',     'Male', 	'jack@gmail.com',	'1231231234', to_date('26-Jun-90', 'DD-MON-RR'), to_date('26-Jun-16', 'DD-MON-RR'), null,       null,           null, 	    'Active',		1);
               
               
 INSERT INTO Users(userName ,	personID , password,  accountEnabled, loginFailureCount,   creationDate,               passwordExpiryDate, recordStatus, versionNo)
