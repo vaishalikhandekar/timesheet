@@ -21,7 +21,13 @@ import com.company.timesheet.timesheet.pojo.TimeSheetLineItemDetail;
  *
  */
 public class ReadTimeSheetLineItemFromPersonDAO {
-
+    
+    
+    /**
+     * 
+     * @param timeSheetKey
+     * @return
+     */
     public List<TimeSheetLineItemDetail> readTimeSheetLineItem(TimeSheetKey timeSheetKey) {
 
         List<TimeSheetLineItemDetail> timeSheetLineItemDetailList = new ArrayList<TimeSheetLineItemDetail>();
@@ -51,7 +57,8 @@ public class ReadTimeSheetLineItemFromPersonDAO {
              * attribute
              */
 
-            if (resultSet.next()) {
+            while (resultSet.next()) {
+                
                 timeSheetLineItemDetail = new TimeSheetLineItemDetail();
 
                 timeSheetLineItemDetail.setTimeSheetLineItemID(resultSet.getLong("timeSheetLineItemID"));

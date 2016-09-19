@@ -93,11 +93,12 @@ public class TimeSheetReadDAO {
                 timeSheetDetail.setRecordStatus(resultSet.getString("recordStatus"));
                 timeSheetDetail.setProjectName(resultSet.getString("projectName"));
                 
-                ReadTimeSheetLineItemFromPersonDAO readTimeSheetLineItemFromPersonDAO = new ReadTimeSheetLineItemFromPersonDAO();
-                List<TimeSheetLineItemDetail> timeSheetLineItemDetailList =  readTimeSheetLineItemFromPersonDAO.readTimeSheetLineItem(timeSheetKey);
-
-                timeSheetDetail.setTimeSheetLineItemDetailList(timeSheetLineItemDetailList);
             }
+            
+            ReadTimeSheetLineItemFromPersonDAO readTimeSheetLineItemFromPersonDAO = new ReadTimeSheetLineItemFromPersonDAO();
+            List<TimeSheetLineItemDetail> timeSheetLineItemDetailList =  readTimeSheetLineItemFromPersonDAO.readTimeSheetLineItem(timeSheetKey);
+            
+            timeSheetDetail.setTimeSheetLineItemDetailList(timeSheetLineItemDetailList);
 
             returnMassegeStr = CRUDConstants.RETURN_MESSAGE_SUCCESS;
 

@@ -60,7 +60,7 @@ public class ReadTimeSheetLineItemFromPersonAction extends ActionSupport {
 				String pageForwardStr = "";
 			
 		ReadTimeSheetLineItemFromPersonDAO readTimeSheetLineItemFromPersonDAO = new ReadTimeSheetLineItemFromPersonDAO();
-		 timeSheetLineItemDetail = readTimeSheetLineItemFromPersonDAO.ReadTimeSheetLineItem(timeSheetLineItemDetail);
+		// timeSheetLineItemDetail = readTimeSheetLineItemFromPersonDAO.ReadTimeSheetLineItem(timeSheetLineItemDetail);
 		 
 		 setTimeSheetLineItemDetail(timeSheetLineItemDetail);
 		
