@@ -147,8 +147,8 @@
 
                             &nbsp;&nbsp;&nbsp;
 
-                            <s:url var="updateTimeSheetURL" action="ReadTimeSheetFromPerson" escapeAmp="false">
-                                <s:param name="personDetail.personID" value="%{personDetail.personID}" />
+                            <s:url var="updateTimeSheetURL" action="TimeSheetRead" escapeAmp="false">
+                                <s:param name="timeSheetKey.timeSheetID" value="%{timeSheetID}" />
                                 <s:param name="act" value="%{updateAction}" />
                             </s:url>
                             <s:a href="%{updateTimeSheetURL}">

@@ -7,31 +7,41 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
+import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
-import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
+import com.company.timesheet.timesheet.pojo.TimeSheetKey;
+import com.company.timesheet.timesheet.pojo.TimeSheetLineItemDetail;
 
 /**
  * @author vaish
  *
  */
-public class TimeSheetsForPersonDAO {
+public class TimeSheetReadDAO {
 
-    public List<TimeSheetDetail> listTimeSheet(PersonDetail personDetail) {
-
-        List<TimeSheetDetail> timeSheetDetailList = new ArrayList<TimeSheetDetail>();
-
+   
+    /**
+     * 
+     * @param timeSheetKey
+     * @return
+     */
+    public TimeSheetDetail readTimeSheet(TimeSheetKey timeSheetKey) {
+        
         Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet;
-        TimeSheetDetail timeSheetDetail = null;
-        try {
-            connection = DBConnection.getDBConnection();
 
-            // get projectPersonLinkID from ProjectPersonLink table
+        PreparedStatement preparedStatement = null;
+
+        ResultSet resultSet = null;
+
+        TimeSheetDetail timeSheetDetail = null;
+
+        String returnMassegeStr = "";
+
+        try {
+
+            connection = DBConnection.getDBConnection();
 
             StringBuffer timeSheetSQLStrBuf = new StringBuffer();
 
@@ -56,18 +66,18 @@ public class TimeSheetsForPersonDAO {
             timeSheetSQLStrBuf.append("LEFT OUTER JOIN Project project ");
             timeSheetSQLStrBuf.append("ON project.projectID = projectPersonLink.projectID ");
             timeSheetSQLStrBuf.append("WHERE ");
-            timeSheetSQLStrBuf.append(" projectPersonLink.personID = ?");
+            timeSheetSQLStrBuf.append(" timeSheet.timeSheetID = ?");
             timeSheetSQLStrBuf.append(" AND timeSheet.recordStatus = 'Active'");
 
             preparedStatement = connection.prepareStatement(timeSheetSQLStrBuf.toString());
 
-            preparedStatement.setLong(1, personDetail.getPersonID());
+            preparedStatement.setLong(1, timeSheetKey.getTimeSheetID());
 
             resultSet = preparedStatement.executeQuery();
 
+            timeSheetDetail = new TimeSheetDetail();
+            
             while (resultSet.next()) {
-
-                timeSheetDetail = new TimeSheetDetail();
 
                 timeSheetDetail.setTimeSheetID(resultSet.getLong("timeSheetID"));
                 timeSheetDetail.setProjectTimeSheetProcessID(resultSet.getLong("projectTimeSheetProcessID"));
@@ -82,17 +92,23 @@ public class TimeSheetsForPersonDAO {
                 timeSheetDetail.setApprovalLevelType(resultSet.getString("approvalLevelType"));
                 timeSheetDetail.setRecordStatus(resultSet.getString("recordStatus"));
                 timeSheetDetail.setProjectName(resultSet.getString("projectName"));
+                
+                ReadTimeSheetLineItemFromPersonDAO readTimeSheetLineItemFromPersonDAO = new ReadTimeSheetLineItemFromPersonDAO();
+                List<TimeSheetLineItemDetail> timeSheetLineItemDetailList =  readTimeSheetLineItemFromPersonDAO.readTimeSheetLineItem(timeSheetKey);
 
-              
-                timeSheetDetailList.add(timeSheetDetail);
+                timeSheetDetail.setTimeSheetLineItemDetailList(timeSheetLineItemDetailList);
             }
 
-        } catch (SQLException e) {
+            returnMassegeStr = CRUDConstants.RETURN_MESSAGE_SUCCESS;
 
+        } catch (SQLException e) {
+            returnMassegeStr = CRUDConstants.RETURN_MESSAGE_FAILURE;
             e.printStackTrace();
         }
-
-        return timeSheetDetailList;
-
+        /**
+         * personDetail contains all attribute values
+         */
+        return timeSheetDetail;
     }
+
 }

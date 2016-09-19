@@ -88,6 +88,11 @@
         <put-attribute name="body" value="/components/profile/jsp/person/Person_updatePerson.jsp" />
     </definition> 
     
+   <definition name="PersonUpdateFromList" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Update Person FromList" />
+        <put-attribute name="body" value="/components/profile/jsp/person/Person_updatePersonFromList.jsp" />
+    </definition> 
+    
     
      <definition name="ReadPerson" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Read Person" />
@@ -199,9 +204,9 @@
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetForProject.jsp" />
     </definition>
     
-    <definition name="UpdateTimeSheetFromPerson" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="UpdateTimeSheetFromPerson" />
-        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_updateTimeSheetFromPerson.jsp" />
+    <definition name="TimeSheetUpdate" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="TimeSheet Update" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_updateTimeSheetLineItem.jsp" />
     </definition>
     
     <definition name="ViewTimeSheetApprovalLevelList" extends="userWorkspaceLayout">

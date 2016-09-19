@@ -58,10 +58,19 @@
 
         <action name="ReadPerson" class="com.company.timesheet.profile.person.action.PersonReadAction">
             <result name="SENTTOUPDATE" type="tiles">PersonUpdate</result>
+            <result name="SENTTOUPDATELIST" type="tiles">PersonUpdateFromList </result>
             <result name="success" type="tiles">ReadPerson</result>
             <result name="error">/index</result>
         </action>
+        
         <action name="UpdatePersonSubmit" class="com.company.timesheet.profile.person.action.PersonUpdateAction">
+            <result name="success" type="redirect">
+                <param name="location">/ReadPerson</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+        
+        <action name="UpdatePersonFromListSubmit" class="com.company.timesheet.profile.person.action.PersonUpdateAction">
             <result name="success" type="redirect">
                 <param name="location">/ListPerson</param>
             </result>
@@ -262,8 +271,8 @@
         </action>
         
 
-        <action name="ReadTimeSheetFromPerson" class="com.company.timesheet.timesheet.action.TimeSheetReadFromPersonAction">
-            <result name="SENTTOUPDATE" type="tiles">UpdateTimeSheetFromPerson</result>
+        <action name="TimeSheetRead" class="com.company.timesheet.timesheet.action.TimeSheetReadAction">
+            <result name="SENTTOUPDATE" type="tiles">TimeSheetUpdate</result>
             <result name="error">/index</result>
         </action>
 

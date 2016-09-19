@@ -1,6 +1,7 @@
 package com.company.timesheet.timesheet.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class TimeSheetDetail {
 
@@ -39,6 +40,8 @@ public class TimeSheetDetail {
     private int versionNo;
 
     private String updateAction = "update";
+    
+    private List<TimeSheetLineItemDetail> timeSheetLineItemDetailList = null;
 
     public String getUpdateAction() {
 
@@ -218,6 +221,24 @@ public class TimeSheetDetail {
     public void setVersionNo(int versionNo) {
 
         this.versionNo = versionNo;
+    }
+
+    
+    /**
+     * @return the timeSheetLineItemDetailList
+     */
+    public List<TimeSheetLineItemDetail> getTimeSheetLineItemDetailList() {
+    
+        return timeSheetLineItemDetailList;
+    }
+
+    
+    /**
+     * @param timeSheetLineItemDetailList the timeSheetLineItemDetailList to set
+     */
+    public void setTimeSheetLineItemDetailList(List<TimeSheetLineItemDetail> timeSheetLineItemDetailList) {
+    
+        this.timeSheetLineItemDetailList = timeSheetLineItemDetailList;
     }
 
 }
