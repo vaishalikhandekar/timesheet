@@ -19,50 +19,60 @@ import com.opensymphony.xwork2.ActionSupport;
  *
  */
 public class ProjectListForPersonAction extends ActionSupport {
-	
-private static final long serialVersionUID = 1L;
-	
-	private PersonDetail personDetail;
-	List<ProjectPersonLinkDetail>  projectPersonLinkDetailList;
-	
 
-	public PersonDetail getPersonDetail() {
-		return personDetail;
-	}
+    private static final long serialVersionUID = 1L;
 
-	public void setPersonDetail(PersonDetail personDetail) {
-		this.personDetail = personDetail;
-	}
+    /**
+     * 
+     */
+    private PersonDetail personDetail = null;
 
-	
-	public List<ProjectPersonLinkDetail> getProjectPersonLinkDetailList() {
-		return projectPersonLinkDetailList;
-	}
+    List<ProjectPersonLinkDetail> projectPersonLinkDetailList;
 
-	public void setProjectPersonLinkDetailList(
-			List<ProjectPersonLinkDetail> projectPersonLinkDetailList) {
-		this.projectPersonLinkDetailList = projectPersonLinkDetailList;
-	}
+    public PersonDetail getPersonDetail() {
 
-	@Override
-	public String execute() throws Exception {
-	
-		String pageForwardStr = "";
+        return personDetail;
+    }
 
-		ProjectListForPersonDAO projectListForPersonDAO  = new ProjectListForPersonDAO();
-		List<ProjectPersonLinkDetail>  projectPersonLinkDetailList = projectListForPersonDAO.listProject(personDetail);
+    public void setPersonDetail(PersonDetail personDetail) {
 
-		setProjectPersonLinkDetailList(projectPersonLinkDetailList);
-		
-		if (projectPersonLinkDetailList != null) {
+        this.personDetail = personDetail;
+    }
 
-			pageForwardStr = SUCCESS;
+    public List<ProjectPersonLinkDetail> getProjectPersonLinkDetailList() {
 
-		} else {
-			pageForwardStr = ERROR;
-		}
-		return pageForwardStr;
-		
-	}
+        return projectPersonLinkDetailList;
+    }
+
+    public void setProjectPersonLinkDetailList(List<ProjectPersonLinkDetail> projectPersonLinkDetailList) {
+
+        this.projectPersonLinkDetailList = projectPersonLinkDetailList;
+    }
+
+    @Override
+    public String execute() throws Exception {
+
+        String pageForwardStr = "";
+
+        ProjectListForPersonDAO projectListForPersonDAO = new ProjectListForPersonDAO();
+        List<ProjectPersonLinkDetail> projectPersonLinkDetailList = projectListForPersonDAO.listProject(personDetail);
+
+        PersonReadDAO readPersonDAO = new PersonReadDAO();
+        readPersonDAO.readperson(personDetail);
+        
+        setPersonDetail(personDetail);
+        
+        setProjectPersonLinkDetailList(projectPersonLinkDetailList);
+
+        if (projectPersonLinkDetailList != null) {
+
+            pageForwardStr = SUCCESS;
+
+        } else {
+            pageForwardStr = ERROR;
+        }
+        return pageForwardStr;
+
+    }
 
 }

@@ -5,6 +5,7 @@ package com.company.timesheet.timesheet.action;
 
 import java.util.List;
 
+import com.company.timesheet.profile.person.dao.PersonReadDAO;
 import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.company.timesheet.timesheet.dao.TimeSheetsForPersonDAO;
 import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
@@ -47,8 +48,12 @@ public class TimeSheetsForPersonAction extends ActionSupport {
 		List<TimeSheetDetail> timeSheetDetailList = timeSheetsForPersonDAO.listTimeSheet(personDetail);
 
 		setTimeSheetDetailList(timeSheetDetailList);
-		setPersonDetail(personDetail);
-
+		
+		PersonReadDAO readPersonDAO = new PersonReadDAO();
+        readPersonDAO.readperson(personDetail);
+        
+        setPersonDetail(personDetail);
+        
 		if (timeSheetDetailList != null) {
 
 			pageForwardStr = SUCCESS;
