@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.company.timesheet.core.util.CRUDConstants;
+import com.company.timesheet.core.util.JavaUtildates;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
 import com.company.timesheet.timesheet.pojo.TimeSheetKey;
 import com.company.timesheet.timesheet.pojo.TimeSheetLineItemDetail;
@@ -60,15 +61,21 @@ public class TimeSheetLineItemReadFromPersonDAO {
             while (resultSet.next()) {
                 
                 timeSheetLineItemDetail = new TimeSheetLineItemDetail();
+                
 
                 timeSheetLineItemDetail.setTimeSheetLineItemID(resultSet.getLong("timeSheetLineItemID"));
                 timeSheetLineItemDetail.setTimeSheetID(resultSet.getLong("timeSheetID"));
                 timeSheetLineItemDetail.setCategory(resultSet.getString("category"));
                 timeSheetLineItemDetail.setAttendenceDate(resultSet.getDate("attendenceDate"));
+                
+                String dayOfWeek = JavaUtildates.getDayFromGivenDate(timeSheetLineItemDetail.getAttendenceDate());
+                timeSheetLineItemDetail.setDayOfWeek(dayOfWeek);
+                
                 timeSheetLineItemDetail.setNoOfHoursWorked(resultSet.getInt("noOfHoursWorked"));
                 timeSheetLineItemDetail.setComments(resultSet.getString("comments"));
                 timeSheetLineItemDetail.setRecordStatus(resultSet.getString("recordStatus"));
                 timeSheetLineItemDetail.setVersionNo(resultSet.getInt("versionNo"));
+                
 
                 timeSheetLineItemDetailList.add(timeSheetLineItemDetail);
             }

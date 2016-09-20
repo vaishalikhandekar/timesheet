@@ -6,6 +6,7 @@ package com.company.timesheet.core.util;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -79,6 +80,15 @@ public class JavaUtildates {
         
         return sDate;
 
+    }
+    
+    public static String getDayFromGivenDate(java.util.Date Date)
+    {
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEEEE");
+        c.setTime(Date);
+        String dayOfWeek = dateFormat.format(c.getTime());
+        return dayOfWeek;
     }
 
 }

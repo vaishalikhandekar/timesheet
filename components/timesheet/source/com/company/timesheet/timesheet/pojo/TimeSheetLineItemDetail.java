@@ -28,6 +28,7 @@ public class TimeSheetLineItemDetail {
 	
 	List<String> errorMessageList = new ArrayList<String>();
 
+	private String dayOfWeek;
     
     public Long getTimeSheetLineItemID() {
     
@@ -158,6 +159,20 @@ public class TimeSheetLineItemDetail {
     public void setErrorMessageList(List<String> errorMessageList) {
     
         this.errorMessageList = errorMessageList;
+    }
+
+
+    
+    public String getDayOfWeek() {
+    
+        return dayOfWeek;
+    }
+
+
+    
+    public void setDayOfWeek(String dayOfWeek) {
+    
+        this.dayOfWeek = dayOfWeek;
     }
 	
 	
