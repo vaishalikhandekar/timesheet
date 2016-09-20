@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="Project" namespace="/Project" extends="struts-default">
+
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
+
+        <!-- Project -->
+
+        <action name="ProjectNav">
+            <result type="tiles">ProjectNav</result>
+        </action>
+
+        <action name="CreateProject">
+            <result type="tiles">CreateProject</result>
+        </action>
+
+        <action name="ProjectSearch">
+            <result type="tiles">ProjectSearch</result>
+        </action>
+
+        <action name="SearchProjectSubmit" class="com.company.timesheet.project.action.ProjectSearchAction">
+            <result name="success" type="tiles">ProjectSearch</result>
+            <result name="error">/index</result>
+        </action>
+        <action name="CreateProjectSubmit" class="com.company.timesheet.project.action.ProjectCreateAction">
+            <result name="success" type="redirect">
+                <param name="location">/ListProject</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="ListProject" class="com.company.timesheet.project.action.ProjectListAction">
+            <result name="success" type="tiles">ListProject</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="DeleteProject" class="com.company.timesheet.project.action.ProjectDeleteAction">
+
+            <result name="success" type="redirect">
+                <param name="location">/ListProject</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="ReadProject" class="com.company.timesheet.project.action.ProjectReadAction">
+            <result name="SENTTOUPDATE" type="tiles">UpdateProject</result>
+            <result name="success" type="tiles">ReadProject</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="UpdateProjectSubmit" class="com.company.timesheet.project.action.ProjectUpdateAction">
+            <result name="success" type="redirect">
+                <param name="location"> /ListProject </param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="ProjectPersonTeam" class="com.company.timesheet.project.action.ProjectReadAction">
+            <result name="success" type="tiles">ProjectPersonTeam</result>
+            <result name="error">/index</result>
+        </action>
+
+
+        <!-- ProjectPersonLink -->
+
+        <action name="DeletePersonFromProject" class="com.company.timesheet.project.projectpersonlink.action.DeletePersonFromProjectAction">
+            <result name="success" type="redirect">
+                <param name="location">/ProjectPersonList</param>
+                <param name="projectDetail.projectID">${projectDetail.projectID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="ReadPersonFromProject" class="com.company.timesheet.project.projectpersonlink.action.ReadPersonFromProjectAction">
+            <result name="SENTTOUPDATE" type="tiles">UpdatePersonFromProject </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="UpdatePersonFromProjectSubmit" class="com.company.timesheet.project.projectpersonlink.action.UpdatePersonFromProjectAction">
+            <result name="success" type="redirect">
+                <param name="location">/ProjectPersonList</param>
+                <param name="personDetail.personID">${personDetail.personID}</param>
+            </result>
+            <result name="error">/index</result>
+            <result name="input">/index</result>
+        </action>
+
+        <action name="ReadProjectPersonLink" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkReadAction">
+            <result name="SENTTOUPDATE" type="tiles">UpdateProjectPersonLink</result>
+            <result name="success" type="tiles">ReadProjectPersonLink</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="UpdateProjectPersonLinkSubmit" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkUpdateAction">
+            <result name="success" type="redirect">
+                <param name="location">/PersonProjectList</param>
+                <param name="personDetail.personID">${projectPersonLinkDetail.personID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="RemoveProjectFromPerson" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkDeleteAction">
+            <result name="success" type="redirect">
+                <param name="location">/PersonProjectList</param>
+                <param name="personDetail.personID">${personDetail.personID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="PersonProjectList" class="com.company.timesheet.project.projectpersonlink.action.ProjectListForPersonAction">
+            <result name="success" type="tiles">PersonProjectList</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="ProjectPersonList" class="com.company.timesheet.project.projectpersonlink.action.PersonListForProjectAction">
+            <result name="success" type="tiles">ProjectPersonList</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="AddPersonToProject">
+            <result name="success" type="tiles">AddPersonToProject</result>
+            <result name="error">/index</result>
+        </action>
+       
+
+        <!-- <action name="AddPersonToProject"> <result name="success" type="tiles">
+            <param name="location"> AddPersonToProject</param> <param name="projectPersonLinkDetail.projectDetail.projectID">${projectPersonLinkDetail.projectDetail.projectID}</param>
+            </result> </action> -->
+
+        <action name="CreateProjectPersonLinkSubmit" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkAddPersonToProjectAction">
+            <result name="success" type="redirect">
+                <param name="location"> /ProjectPersonList</param>
+                <param name="projectDetail.projectID">${projectPersonLinkDetail.projectID}</param>
+                -->
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+    </package>
+
+    
+</struts>

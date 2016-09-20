@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="TimeSheet" namespace="/TimeSheet" extends="struts-default">
+
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
+
+
+    <!-- TimeSheet -->
+
+        <action name="TimeSheetsForPerson" class="com.company.timesheet.timesheet.action.TimeSheetsForPersonAction">
+            <result name="success" type="tiles">TimeSheetsForPerson</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="TimeSheetsProcess" class="com.company.timesheet.timesheet.action.ProjectTimeSheetProcessListAction">
+            <result name="success" type="tiles">TimeSheetsProcess</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="CreateNewProcessSubmit" class="com.company.timesheet.timesheet.action.ProjectTimeSheetProcessCreateAction">
+            <result name="success" type="redirect">
+                <param name="location">/TimeSheetsProcess</param>
+                <param name="projectDetail.projectID">${projectTimeSheetProcessDetail.projectID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="TimeSheetsForProject" class="com.company.timesheet.timesheet.action.TimeSheetsForProjectAction">
+            <result name="success" type="tiles">TimeSheetsForProject</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="TimeSheets" class="com.company.timesheet.project.action.ProjectReadAction">
+            <result name="success" type="tiles">TimeSheets</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="TimeSheetsAdministration" class="com.company.timesheet.project.action.ProjectReadAction">
+            <result name="success" type="tiles">TimeSheetsAdministration</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="TimeSheetDeleteFromPerson" class="com.company.timesheet.timesheet.action.TimeSheetDeleteFromPersonAction">
+            <result name="success" type="redirect">
+                <param name="location">/TimeSheetsForPerson</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+
+
+
+        <action name="TimeSheetDeleteFromProject" class="com.company.timesheet.timesheet.action.TimeSheetDeleteFromProjectAction">
+            <result name="success" type="redirect">
+                <param name="location">/TimeSheetsForProject</param>
+                <param name="projectDetail.projectID">${projectDetail.projectID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="ViewTimeSheetApprovalLevelList" class="com.company.timesheet.timesheet.action.TimeSheetAprovalLevelListAction">
+            <result name="success" type="tiles">ViewTimeSheetApprovalLevelList</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="TimeSheetRead" class="com.company.timesheet.timesheet.action.TimeSheetReadAction">
+            <result name="SENTTOUPDATE" type="tiles">TimeSheetUpdate</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="TimeSheetCreate" class="com.company.timesheet.timesheet.action.TimeSheetCreateAction">
+            <result name="success" type="redirect">
+                <param name="location">/TimeSheetRead</param>
+                <param name="personDetail.personID">${timeSheetCreateDetails.personID}</param>
+                <param name="act">${timeSheetDetail.updateAction}</param>
+                <param name="timeSheetKey.timeSheetID">${timeSheetDetail.timeSheetID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="TimeSheetUpdate" class="com.company.timesheet.timesheet.action.TimeSheetUpdateFromPersonAction">
+            <result name="success" type="redirect">
+                <param name="location">/TimeSheetsForPerson</param>
+                <param name="personDetail.personID">${personDetail.personID}</param>
+            </result>
+            <result name="error">/index</result>
+            <result name="input">/index</result>
+        </action>
+        
+        <!-- TimeSheet LineItem -->
+
+        <action name="TimeSheetLineItemReadFromPerson" class="com.company.timesheet.timesheet.action.TimeSheetReadAction">
+            <result name="success" type="tiles">TimeSheetLineItemReadFromPerson</result>
+            <result name="error">/index</result>
+        </action>
+
+    </package>
+
+
+</struts>
