@@ -28,7 +28,7 @@
 
                     <div class="modal-body">
 
-                        <s:form class="form-inline" name="DeleteTimeSheetFromPerson" namespace="/" action="DeleteTimeSheetFromPerson" method="POST" role="form"
+                        <s:form class="form-inline" name="TimeSheetDeleteFromPerson" namespace="/" action="DeleteTimeSheetFromPerson" method="POST" role="form"
                             theme="bootstrap">
 
                             <p>Are You Sure ?</p>
@@ -137,10 +137,10 @@
                     <tr>
                         <td align="center">
 
-                            <s:url id="ViewTimeSheetLineItemFromPersonURL" action="ViewTimeSheetLineItemFromPerson" escapeAmp="false">
-                                <s:param name="timeSheetDetail.timeSheetID" value="%{timeSheetID}" />
+                            <s:url id="TimeSheetLineItemReadFromPersonURL" action="TimeSheetLineItemReadFromPerson" escapeAmp="false">
+                                <s:param name="timeSheetKey.timeSheetID" value="%{timeSheetID}" />
                             </s:url>
-                            <s:a href="%{ViewTimeSheetLineItemFromPersonURL}">
+                            <s:a href="%{TimeSheetLineItemReadFromPersonURL}">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <!-- View -->
                             </s:a>

@@ -7,9 +7,7 @@ import java.util.List;
 
 import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.profile.person.pojo.PersonDetail;
-import com.company.timesheet.project.pojo.ProjectDetail;
-import com.company.timesheet.timesheet.dao.DeleteTimeSheetFromProjectDAO;
-import com.company.timesheet.timesheet.dao.DeleteTimeSheetFromPersonDAO;
+import com.company.timesheet.timesheet.dao.TimeSheetDeleteFromPersonDAO;
 import com.company.timesheet.timesheet.dao.TimeSheetsForPersonDAO;
 import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 import com.opensymphony.xwork2.ActionSupport;
@@ -18,13 +16,13 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author vaish
  *
  */
-public class DeleteTimeSheetFromProjectAction extends ActionSupport {
+public class TimeSheetDeleteFromPersonAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
 
-	private TimeSheetDetail timeSheetDetail = null;
+	private TimeSheetDetail timeSheetDetail;
 
-	private ProjectDetail projectDetail = null;
+	private PersonDetail personDetail;
 
     public TimeSheetDetail getTimeSheetDetail() {
     
@@ -36,26 +34,22 @@ public class DeleteTimeSheetFromProjectAction extends ActionSupport {
     
         this.timeSheetDetail = timeSheetDetail;
     }
-	
-    public ProjectDetail getProjectDetail() {
-    
-        return projectDetail;
-    }
-    public void setProjectDetail(ProjectDetail projectDetail) {
-    
-        this.projectDetail = projectDetail;
-    }
 
+    public PersonDetail getPersonDetail() {
+		return personDetail;
+	}
 
-    @Override
+	public void setPersonDetail(PersonDetail personDetail) {
+		this.personDetail = personDetail;
+	}
+
+	@Override
 	public String execute() throws Exception {
 
 		String pageForwardStr = "";
 
-		DeleteTimeSheetFromProjectDAO deleteTimeSheetFromProjectDAO = new DeleteTimeSheetFromProjectDAO();
-		String returnMassegeStr = deleteTimeSheetFromProjectDAO.deleteTimeSheet(projectDetail);
-		
-		setProjectDetail(projectDetail);
+		TimeSheetDeleteFromPersonDAO timeSheetDeleteFromPersonDAO = new TimeSheetDeleteFromPersonDAO();
+		String returnMassegeStr = timeSheetDeleteFromPersonDAO.deleteTimeSheet(personDetail);
 
 		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
 

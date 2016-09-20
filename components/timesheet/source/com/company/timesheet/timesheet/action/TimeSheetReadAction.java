@@ -88,6 +88,7 @@ public class TimeSheetReadAction extends ActionSupport {
 		TimeSheetReadDAO timeSheetReadDAO = new TimeSheetReadDAO();
 		
 		timeSheetDetail = timeSheetReadDAO.readTimeSheet(timeSheetKey);
+		
 		setTimeSheetDetail(timeSheetDetail);
 		
 		if (act != null && act.equals("update")) {

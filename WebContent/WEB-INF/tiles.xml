@@ -217,8 +217,8 @@
     
      <!-- TimeSheet LineItem -->
     
-    <definition name="ViewTimeSheetLineItemFromPerson" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="View TimeSheetLineItemFromPerson" />
+    <definition name="TimeSheetLineItemReadFromPerson" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="TimeSheetLineItem ReadFromPerson" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_readTimeSheetLineItemFromPerson.jsp" />
     </definition>
 </tiles-definitions>

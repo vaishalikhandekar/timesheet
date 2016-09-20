@@ -20,7 +20,7 @@ import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
  * @author vaish
  *
  */
-public class DeleteTimeSheetFromPersonDAO {
+public class TimeSheetDeleteFromPersonDAO {
 
 	/**
 	 * 

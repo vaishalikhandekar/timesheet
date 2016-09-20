@@ -7,7 +7,9 @@ import java.util.List;
 
 import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.profile.person.pojo.PersonDetail;
-import com.company.timesheet.timesheet.dao.DeleteTimeSheetFromPersonDAO;
+import com.company.timesheet.project.pojo.ProjectDetail;
+import com.company.timesheet.timesheet.dao.TimeSheetDeleteFromProjectDAO;
+import com.company.timesheet.timesheet.dao.TimeSheetDeleteFromPersonDAO;
 import com.company.timesheet.timesheet.dao.TimeSheetsForPersonDAO;
 import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 import com.opensymphony.xwork2.ActionSupport;
@@ -16,13 +18,13 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author vaish
  *
  */
-public class DeleteTimeSheetFromPersonAction extends ActionSupport {
+public class TimeSheetDeleteFromProjectAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
 
-	private TimeSheetDetail timeSheetDetail;
+	private TimeSheetDetail timeSheetDetail = null;
 
-	private PersonDetail personDetail;
+	private ProjectDetail projectDetail = null;
 
     public TimeSheetDetail getTimeSheetDetail() {
     
@@ -34,22 +36,26 @@ public class DeleteTimeSheetFromPersonAction extends ActionSupport {
     
         this.timeSheetDetail = timeSheetDetail;
     }
+	
+    public ProjectDetail getProjectDetail() {
+    
+        return projectDetail;
+    }
+    public void setProjectDetail(ProjectDetail projectDetail) {
+    
+        this.projectDetail = projectDetail;
+    }
 
-    public PersonDetail getPersonDetail() {
-		return personDetail;
-	}
 
-	public void setPersonDetail(PersonDetail personDetail) {
-		this.personDetail = personDetail;
-	}
-
-	@Override
+    @Override
 	public String execute() throws Exception {
 
 		String pageForwardStr = "";
 
-		DeleteTimeSheetFromPersonDAO timeSheetDeleteFromPersonDAO = new DeleteTimeSheetFromPersonDAO();
-		String returnMassegeStr = timeSheetDeleteFromPersonDAO.deleteTimeSheet(personDetail);
+		TimeSheetDeleteFromProjectDAO deleteTimeSheetFromProjectDAO = new TimeSheetDeleteFromProjectDAO();
+		String returnMassegeStr = deleteTimeSheetFromProjectDAO.deleteTimeSheet(projectDetail);
+		
+		setProjectDetail(projectDetail);
 
 		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
 

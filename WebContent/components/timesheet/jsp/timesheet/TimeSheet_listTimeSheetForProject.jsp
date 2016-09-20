@@ -31,7 +31,7 @@
 
                     <div class="modal-body">
 
-                        <s:form class="form-inline" name="DeleteTimeSheetFromProject" namespace="/" action="DeleteTimeSheetFromProject" method="POST" role="form" theme="bootstrap">
+                        <s:form class="form-inline" name="TimeSheetDeleteFromProject" namespace="/" action="DeleteTimeSheetFromProject" method="POST" role="form" theme="bootstrap">
 
                             <p>Are You Sure ?</p>
 

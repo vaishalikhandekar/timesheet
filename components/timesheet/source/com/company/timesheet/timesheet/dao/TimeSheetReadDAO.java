@@ -97,7 +97,7 @@ public class TimeSheetReadDAO {
                 
             }
             
-            ReadTimeSheetLineItemFromPersonDAO readTimeSheetLineItemFromPersonDAO = new ReadTimeSheetLineItemFromPersonDAO();
+            TimeSheetLineItemReadFromPersonDAO readTimeSheetLineItemFromPersonDAO = new TimeSheetLineItemReadFromPersonDAO();
             List<TimeSheetLineItemDetail> timeSheetLineItemDetailList =  readTimeSheetLineItemFromPersonDAO.readTimeSheetLineItem(timeSheetKey);
             
             timeSheetDetail.setTimeSheetLineItemDetailList(timeSheetLineItemDetailList);

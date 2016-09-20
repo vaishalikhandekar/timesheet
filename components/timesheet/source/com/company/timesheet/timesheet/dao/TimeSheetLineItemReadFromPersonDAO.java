@@ -20,7 +20,7 @@ import com.company.timesheet.timesheet.pojo.TimeSheetLineItemDetail;
  * @author vaish
  *
  */
-public class ReadTimeSheetLineItemFromPersonDAO {
+public class TimeSheetLineItemReadFromPersonDAO {
     
     
     /**

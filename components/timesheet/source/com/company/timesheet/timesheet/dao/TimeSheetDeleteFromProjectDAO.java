@@ -22,7 +22,7 @@ import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
  * @author vaish
  *
  */
-public class DeleteTimeSheetFromProjectDAO {
+public class TimeSheetDeleteFromProjectDAO {
 
 	/**
 	 * 

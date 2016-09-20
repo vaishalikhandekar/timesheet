@@ -263,7 +263,7 @@
             <result name="error">/index</result>
         </action>
 
-        <action name="DeleteTimeSheetFromPerson" class="com.company.timesheet.timesheet.action.DeleteTimeSheetFromPersonAction">
+        <action name="TimeSheetDeleteFromPerson" class="com.company.timesheet.timesheet.action.TimeSheetDeleteFromPersonAction">
             <result name="success" type="redirect">
                 <param name="location">/TimeSheetsForPerson</param>
             </result>
@@ -273,7 +273,7 @@
 
 
 
-        <action name="DeleteTimeSheetFromProject" class="com.company.timesheet.timesheet.action.DeleteTimeSheetFromProjectAction">
+        <action name="TimeSheetDeleteFromProject" class="com.company.timesheet.timesheet.action.TimeSheetDeleteFromProjectAction">
             <result name="success" type="redirect">
                 <param name="location">/TimeSheetsForProject</param>
                 <param name="projectDetail.projectID">${projectDetail.projectID}</param>
@@ -312,8 +312,8 @@
         
         <!-- TimeSheet LineItem -->
 
-        <action name="ViewTimeSheetLineItemFromPerson" class="com.company.timesheet.timesheet.action.ReadTimeSheetLineItemFromPersonAction">
-            <result name="success" type="tiles">ViewTimeSheetLineItemFromPerson</result>
+        <action name="TimeSheetLineItemReadFromPerson" class="com.company.timesheet.timesheet.action.TimeSheetReadAction">
+            <result name="success" type="tiles">TimeSheetLineItemReadFromPerson</result>
             <result name="error">/index</result>
         </action>
 
