@@ -25,44 +25,57 @@
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 
 <script>
-    $(function() {
-        $('.datepick').each(function() {
-            $(this).datepicker({
-                changeMonth : true,
-                changeYear : true,
-            });
-        });
-    });
+	$(function() {
+		$('.datepick').each(function() {
+			$(this).datepicker({
+				changeMonth : true,
+				changeYear : true,
+			});
+		});
+	});
 </script>
 
 <style>
+table, th, td {
+	border: 1px solid gray;
+	border-collapse: collapse;
+}
 
-    html {
-        height:100%;
-    }
-    body {
-        width: 100%; height:97%;
-    }
-    
+html {
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 97%;
+}
 </style>
 
 </head>
 
 <body>
 
-    <table style="width: 100%; height: 100%; border: 1 solid gray;  border-collapse: collapse; align: top">
+    <table style="width: 100%; height: 100%; border: 1 solid gray; border-collapse: collapse; align: top">
 
-        <tr bgcolor="" >
-            <td height="10%" colspan="2" ><tiles:insertAttribute name="header" /></td>
+        <tr bgcolor="">
+            <td height="10%" colspan="2">
+                <tiles:insertAttribute name="header" />
+            </td>
         </tr>
 
-        <tr >
-            <td width="15%" valign="top" bgcolor=""><tiles:insertAttribute name="menu" /></td>
-            <td width="85%" valign="top"><tiles:insertAttribute name="body" /></td>
+        <tr>
+            <td width="15%" valign="top" bgcolor="">
+                <tiles:insertAttribute name="menu" />
+            </td>
+            <td width="85%" valign="top">
+                <tiles:insertAttribute name="body" />
+            </td>
         </tr>
 
-        <tr >
-            <td height="5%" colspan="2" ><tiles:insertAttribute name="footer" /></td>
+        <tr>
+            <td height="5%" colspan="2">
+                <tiles:insertAttribute name="footer" />
+            </td>
         </tr>
 
     </table>
