@@ -4,6 +4,7 @@
 package com.company.timesheet.timesheetlineitem.action;
 
 import com.company.timesheet.core.util.CRUDConstants;
+import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 import com.company.timesheet.timesheet.pojo.TimeSheetLineItemDetail;
 import com.company.timesheet.timesheetlineitem.dao.TimeSheetLineItemUpdateDAO;
 import com.opensymphony.xwork2.ActionSupport;
@@ -19,7 +20,8 @@ public class TimeSheetLineItemUpdateAction extends ActionSupport {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	TimeSheetLineItemDetail timeSheetLineItemDetail;
+	private TimeSheetLineItemDetail timeSheetLineItemDetail = null;
+	private TimeSheetDetail timeSheetDetail = null;
 	
 	public TimeSheetLineItemDetail getTimeSheetLineItemDetail() {
 		return timeSheetLineItemDetail;
@@ -30,13 +32,25 @@ public class TimeSheetLineItemUpdateAction extends ActionSupport {
 		this.timeSheetLineItemDetail = timeSheetLineItemDetail;
 	}
 
-	@Override
+	
+    public TimeSheetDetail getTimeSheetDetail() {
+    
+        return timeSheetDetail;
+    }
+
+    
+    public void setTimeSheetDetail(TimeSheetDetail timeSheetDetail) {
+    
+        this.timeSheetDetail = timeSheetDetail;
+    }
+
+    @Override
 	public String execute() throws Exception {
 		
 		String pageForwardStr = "";
 	
 		TimeSheetLineItemUpdateDAO updateTimeSheetLineItemDAO = new TimeSheetLineItemUpdateDAO();
-		String returnMassegeStr = updateTimeSheetLineItemDAO.updateTimeSheetLineItem(timeSheetLineItemDetail);
+		String returnMassegeStr = updateTimeSheetLineItemDAO.updateTimeSheetLineItem(timeSheetDetail);
 		
 		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
 

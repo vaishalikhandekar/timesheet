@@ -148,6 +148,9 @@ public class TimeSheetCreateDAO {
 
                 timeSheetLineItemCreateDAO.createTimeSheetLineItem(timeSheetLineItemDetail);
             }
+            
+            timeSheetDetail = new TimeSheetDetail();
+            timeSheetDetail.setTimeSheetID(timeSheetID);
 
         } catch (SQLException e) {
 

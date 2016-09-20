@@ -13,7 +13,7 @@
 
     <br />
 
-    <table style="width: 100%; border: 1;">
+    <table style="width: 100%;">
 
         <col width="20%" />
         <col width="30%" />
@@ -23,11 +23,13 @@
         <tr>
             <th style="text-align: right">Project Name</th>
             <td align="left">
+                &nbsp; &nbsp; &nbsp;
                 <s:property value="timeSheetDetail.projectName" />
             </td>
 
-            <th style="text-align: center">Time Sheet Status</th>
-            <td align="center">
+            <th style="text-align: right">Time Sheet Status</th>
+            <td align="left">
+                &nbsp; &nbsp; &nbsp;
                 <s:property value="timeSheetDetail.timeSheetStatus" />
             </td>
 
@@ -35,13 +37,15 @@
 
         <tr>
 
-            <th style="text-align: center">Start Date</th>
-            <td align="center">
+            <th style="text-align: right">Start Date</th>
+            <td align="left">
+                &nbsp; &nbsp; &nbsp;
                 <s:property value="timeSheetDetail.startDate" />
             </td>
 
-            <th style="text-align: center">End Date</th>
-            <td align="center">
+            <th style="text-align: right">End Date</th>
+            <td align="left">
+                &nbsp; &nbsp; &nbsp;
                 <s:property value="timeSheetDetail.endDate" />
             </td>
 
@@ -51,72 +55,70 @@
 
     <br />
 
-    <s:form action="/UpdateTimeSheetLineItemSubmit" method="POST">
+    <s:form action="/TimeSheetUpdate" method="POST">
 
 
-        <table style="width: 100%; border: 1;">
+        <table class="table table-striped" border="1">
+            <!-- style="width: 100%; border: 1;" -->
 
+            <!--  <col width="20%" />
             <col width="20%" />
             <col width="20%" />
-            <col width="20%" />
-            <col width="30%" />
+            <col width="30%" /> -->
 
             <thead>
 
                 <tr class="success">
 
-                    <th align="center">Category</th>
-                    <th align="center">Attendance Date</th>
-                    <th align="center">No Of Hours Worked</th>
-                    <th align="center">Comments</th>
+                    <th style="text-align: center">Attendance Day</th>
+                    <th style="text-align: center">Attendance Date</th>
+                    <th style="text-align: center">Category</th>
+                    <th style="text-align: center">No Of Hours Worked</th>
+                    <th style="text-align: center">Comments</th>
 
                 </tr>
 
             </thead>
 
 
-            <tbody>
+            <s:iterator value="timeSheetDetail.timeSheetLineItemDetailList" status="stat">
 
-                <s:iterator value="timeSheetDetail.timeSheetLineItemDetailList" status="stat">
-                
-                    <tr>
-                        <td align="center">
-                            <s:textfield name="category" />
-                        </td>
-
-                        <td align="center">
-                            <s:textfield name="attendenceDate" />
-                        </td>
-
-                        <td align="center">
-                            <s:textfield name="noOfHoursWorked" />
-                        </td>
-
-                        <td align="center">
-                            <s:textfield name="comments" />
-                        </td>
-
-                    </tr>
-
-                </s:iterator>
-                
                 <tr>
 
-                    <td>
-                        <s:submit type="submit" value="Save" />
+                    <td align="center">
+                        <s:property value="attendenceDate" />
                     </td>
 
-                    <s:hidden name="timeSheetLineItemID"></s:hidden>
-                    <s:hidden name="versionNo"></s:hidden>
+                    <td align="center">
+                        <s:property value="attendenceDate" />
+                    </td>
+
+                    <td align="center">
+                        <s:textfield name="timeSheetDetail.timeSheetLineItemDetailList[%{#stat.index}].category" value="%{category}" />
+                    </td>
+
+                    <td align="center">
+                        <s:textfield type="text" name="timeSheetDetail.timeSheetLineItemDetailList[%{#stat.index}].noOfHoursWorked" value="%{noOfHoursWorked}"/>
+                    </td>
+
+                    <td align="center">
+                        <s:textfield type="text" name="timeSheetDetail.timeSheetLineItemDetailList[%{#stat.index}].comments" value="%{comments}"/>
+                    </td>
 
                 </tr>
 
-            </tbody>
+            <s:hidden name="timeSheetDetail.timeSheetLineItemDetailList[%{#stat.index}].timeSheetLineItemID" value="%{timeSheetLineItemID}"/>
+            <s:hidden name="timeSheetDetail.timeSheetLineItemDetailList[%{#stat.index}].timeSheetID" value="%{timeSheetID}"/>
+            <s:hidden name="timeSheetDetail.timeSheetLineItemDetailList[%{#stat.index}].versionNo" value="%{versionNo}"/>
 
+            </s:iterator>
+
+            <s:hidden name="timeSheetDetail.timeSheetID"></s:hidden>
+            <s:hidden name="timeSheetDetail.versionNo"></s:hidden>
+
+            <s:submit type="submit" value="Save" class="btn btn-primary" />
 
         </table>
-
-
     </s:form>
 
 

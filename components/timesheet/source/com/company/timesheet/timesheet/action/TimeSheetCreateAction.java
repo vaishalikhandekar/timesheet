@@ -70,6 +70,8 @@ public class TimeSheetCreateAction extends ActionSupport {
 		//getPersonDetail().setPersonID(timeSheetCreateDetails.getPersonID());
 		setTimeSheetCreateDetails(timeSheetCreateDetails);
 		//setPersonDetail(personDetail);
+		
+		setTimeSheetDetail(timeSheetDetail);
 
 		if (timeSheetCreateDetails != null) {
 

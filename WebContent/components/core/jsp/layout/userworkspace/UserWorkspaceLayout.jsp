@@ -37,11 +37,6 @@
 
 <style>
 
-    table, th, td {
-        border: 1px solid gray;
-        border-collapse: collapse;
-    }
-    
     html {
         height:100%;
     }
@@ -55,7 +50,7 @@
 
 <body>
 
-    <table style="width: 100%; height: 100%; border: 1; cellpadding: 2; cellspacing: 2; align: top">
+    <table style="width: 100%; height: 100%; border: 1 solid gray;  border-collapse: collapse; align: top">
 
         <tr bgcolor="" >
             <td height="10%" colspan="2" ><tiles:insertAttribute name="header" /></td>

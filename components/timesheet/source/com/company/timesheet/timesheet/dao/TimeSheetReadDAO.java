@@ -57,6 +57,7 @@ public class TimeSheetReadDAO {
             timeSheetSQLStrBuf.append("timeSheet.endDate, ");
             timeSheetSQLStrBuf.append("timeSheet.timeSheetStatus, ");
             timeSheetSQLStrBuf.append("timeSheet.approvalLevelType,  ");
+            timeSheetSQLStrBuf.append("timeSheet.versionNo,  ");
             timeSheetSQLStrBuf.append("timeSheet.recordStatus, ");
             timeSheetSQLStrBuf.append("project.projectName ");
             timeSheetSQLStrBuf.append("FROM ");
@@ -92,6 +93,7 @@ public class TimeSheetReadDAO {
                 timeSheetDetail.setApprovalLevelType(resultSet.getString("approvalLevelType"));
                 timeSheetDetail.setRecordStatus(resultSet.getString("recordStatus"));
                 timeSheetDetail.setProjectName(resultSet.getString("projectName"));
+                timeSheetDetail.setVersionNo(resultSet.getInt("versionNo"));
                 
             }
             

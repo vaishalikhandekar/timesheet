@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import com.company.timesheet.core.audittrail.dao.CreateAuditTrailDAO;
 import com.company.timesheet.core.audittrail.pojo.AuditTrailDetails;
@@ -15,6 +16,8 @@ import com.company.timesheet.core.util.JavaUtildates;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
 import com.company.timesheet.project.pojo.ProjectDetail;
 import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
+import com.company.timesheet.timesheet.pojo.TimeSheetLineItemDetail;
+import com.company.timesheet.timesheetlineitem.dao.TimeSheetLineItemUpdateDAO;
 
 /**
  * @author vaish
@@ -37,18 +40,29 @@ public class TimeSheetUpdateFromPersonDAO {
 		if (versionNoFromUpdate == versionNoFromDatabase) {
 
 			versionNoFromDatabase++;
+			
+			// Update TimeSheetLineItem
+			
+			List<TimeSheetLineItemDetail> timeSheetLineItemDetailList = timeSheetDetail.getTimeSheetLineItemDetailList();
+			
+			TimeSheetLineItemDetail timeSheetLineItemDetail = new TimeSheetLineItemDetail();
+			timeSheetLineItemDetail.setTimeSheetID(timeSheetDetail.getTimeSheetID());
+			
+			TimeSheetLineItemUpdateDAO updateTimeSheetLineItemDAO = new TimeSheetLineItemUpdateDAO();
+			updateTimeSheetLineItemDAO.updateTimeSheetLineItem(timeSheetDetail);
 
 			try {
 				connection = DBConnection.getDBConnection();
-				String timeSheetSQLStr = "UPDATE	TIMESHEET	SET totalRegularHours='" + timeSheetDetail.getTotalRegularHours() + "',	totalNoOfHoursWorked='"
-						+ timeSheetDetail.getTotalNoOfHoursWorked() + "',startDate= ?, endDate = ? , versionNo ='"
-						+ versionNoFromDatabase + "' " + "	where	timeSheetID='" + timeSheetDetail.getTimeSheetID() + "'";
+				String timeSheetSQLStr = "UPDATE	TIMESHEET	SET totalRegularHours=?,	totalNoOfHoursWorked=?, versionNo ='"
+						+ versionNoFromDatabase + "' " + "	where	timeSheetID=?";
 
 				preparedStatement = connection.prepareStatement(timeSheetSQLStr);
 
-				preparedStatement.setDate(1, JavaUtildates.convertUtilToSql(timeSheetDetail.getStartDate()));
-				preparedStatement.setDate(2, JavaUtildates.convertUtilToSql(timeSheetDetail.getEndDate()));
+				preparedStatement.setInt(1, 56);
+				preparedStatement.setInt(2, timeSheetDetail.getTotalNoOfHoursWorked());
+				preparedStatement.setLong(3, timeSheetDetail.getTimeSheetID());
 				preparedStatement.executeUpdate();
+				//preparedStatement.setDate(2, JavaUtildates.convertUtilToSql(timeSheetDetail.getEndDate()));
 				
 				//inserting data into AuditTrail Table for Person Table
 				AuditTrailDetails auditTrailDetails = new AuditTrailDetails();
@@ -61,6 +75,8 @@ public class TimeSheetUpdateFromPersonDAO {
 				
 				CreateAuditTrailDAO createAuditTrailDAO = new CreateAuditTrailDAO();
 				createAuditTrailDAO.createAuditTrail(auditTrailDetails);
+				
+		        
 
 				returnMassegeStr = CRUDConstants.RETURN_MESSAGE_SUCCESS;
 
