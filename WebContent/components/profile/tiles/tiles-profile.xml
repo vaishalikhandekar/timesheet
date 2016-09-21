@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+    <definition name="userWorkspaceLayout" template="/components/core/jsp/layout/userworkspace/UserWorkspaceLayout.jsp">
+        <put-attribute name="title" value="TimeSheet Default" />
+        <put-attribute name="header" value="/components/core/jsp/layout/userworkspace/UserWorkspaceHeader.jsp" />
+        <put-attribute name="menu" value="/components/core/jsp/layout/userworkspace/UserWorkspaceMenu.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/components/core/jsp/layout/userworkspace/UserWorkspaceFooter.jsp" />
+    </definition>
+
+    <definition name="PersonLogin" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Person Login" />
+        <put-attribute name="body" value="/components/profile/jsp/person/Person_readPerson.jsp" />
+    </definition>
+
+
+    <definition name="CreatePerson" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Create Person" />
+        <put-attribute name="body" value="/components/profile/jsp/person/Person_createPerson.jsp" />
+    </definition>
+
+    <definition name="PersonHome" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Person Home" />
+        <put-attribute name="body" value="/components/profile/jsp/person/Person_homePerson.jsp" />
+    </definition>
+
+    <definition name="SearchPerson" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Search Person" />
+        <put-attribute name="body" value="/components/profile/jsp/person/Person_searchPerson.jsp" />
+    </definition>
+
+    <definition name="ListPerson" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="List Person" />
+        <put-attribute name="body" value="/components/profile/jsp/person/Person_listPerson.jsp" />
+    </definition>
+
+    <definition name="ListPersonForUpdate" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="List Person" />
+        <put-attribute name="body" value="/components/profile/jsp/person/Person_listPerson.jsp" />
+    </definition>
+
+    <definition name="PersonUpdate" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Update Person" />
+        <put-attribute name="body" value="/components/profile/jsp/person/Person_updatePerson.jsp" />
+    </definition>
+
+    <definition name="PersonUpdateFromList" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Update Person FromList" />
+        <put-attribute name="body" value="/components/profile/jsp/person/Person_updatePersonFromList.jsp" />
+    </definition>
+
+
+    <definition name="ReadPerson" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Read Person" />
+        <put-attribute name="body" value="/components/profile/jsp/person/Person_readPerson.jsp" />
+    </definition>
+    
+    
+    
+    
+   
+    
+</tiles-definitions>
