@@ -3,6 +3,7 @@
 <!DOCTYPE tiles-definitions PUBLIC
        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
 <tiles-definitions>
 
     <definition name="baseLayout" template="/components/core/jsp/layout/BaseLayout.jsp">
@@ -12,38 +13,23 @@
         <put-attribute name="body" value="" />
         <put-attribute name="footer" value="/components/core/jsp/layout/Footer.jsp" />
     </definition>
-    
-    <definition name="/welcome.tiles" extends="baseLayout">
-        <put-attribute name="title" value="Welcome" />
-        <put-attribute name="body" value="/Welcome.jsp" />
-    </definition>
-	
-    <definition name="/customer.tiles" extends="baseLayout">
-        <put-attribute name="title" value="Customer Form" />
-        <put-attribute name="body" value="/Customer.jsp" />
-    </definition>
-	
-    <definition name="/customer.success.tiles" extends="baseLayout">
-        <put-attribute name="title" value="Customer Added" />
-        <put-attribute name="body" value="/SuccessCustomer.jsp" />
-    </definition>
-    
+
+
     <definition name="landingPageLayout" template="/components/core/jsp/layout/landingpage/LandingPageLayout.jsp">
         <put-attribute name="title" value="TimeSheet Default" />
         <put-attribute name="header" value="/components/core/jsp/layout/landingpage/LandingPageHeader.jsp" />
         <put-attribute name="body" value="" />
         <put-attribute name="footer" value="/components/core/jsp/layout/landingpage/LandingPageFooter.jsp" />
     </definition>
-    
-    
+
+
     <definition name="index" extends="landingPageLayout">
         <put-attribute name="title" value="TimeSheet LandingPage" />
         <put-attribute name="body" value="/components/core/jsp/layout/landingpage/LandingBody.jsp" />
         <put-attribute name="login" value="/components/core/jsp/authentication/Login.jsp" />
     </definition>
-    
-    
-    
+
+
     <definition name="userWorkspaceLayout" template="/components/core/jsp/layout/userworkspace/UserWorkspaceLayout.jsp">
         <put-attribute name="title" value="TimeSheet Default" />
         <put-attribute name="header" value="/components/core/jsp/layout/userworkspace/UserWorkspaceHeader.jsp" />
@@ -51,50 +37,55 @@
         <put-attribute name="body" value="" />
         <put-attribute name="footer" value="/components/core/jsp/layout/userworkspace/UserWorkspaceFooter.jsp" />
     </definition>
-    
-     <definition name="PersonLogin" extends="userWorkspaceLayout">
+
+    <definition name="404" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="HTTP 404" />
+        <put-attribute name="body" value="/components/core/jsp/common/Error404.jsp" />
+    </definition>
+
+    <definition name="PersonLogin" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Person Login" />
         <put-attribute name="body" value="/components/profile/jsp/person/Person_readPerson.jsp" />
     </definition>
-    
-    
+
+
     <definition name="CreatePerson" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Create Person" />
         <put-attribute name="body" value="/components/profile/jsp/person/Person_createPerson.jsp" />
     </definition>
-    
+
     <definition name="PersonHome" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Person Home" />
         <put-attribute name="body" value="/components/profile/jsp/person/Person_homePerson.jsp" />
     </definition>
-    
+
     <definition name="SearchPerson" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Search Person" />
         <put-attribute name="body" value="/components/profile/jsp/person/Person_searchPerson.jsp" />
     </definition>
-    
+
     <definition name="ListPerson" extends="userWorkspaceLayout">
         <put-attribute name="title" value="List Person" />
         <put-attribute name="body" value="/components/profile/jsp/person/Person_listPerson.jsp" />
     </definition>
-    
+
     <definition name="ListPersonForUpdate" extends="userWorkspaceLayout">
         <put-attribute name="title" value="List Person" />
         <put-attribute name="body" value="/components/profile/jsp/person/Person_listPerson.jsp" />
     </definition>
-    
-   <definition name="PersonUpdate" extends="userWorkspaceLayout">
+
+    <definition name="PersonUpdate" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Update Person" />
         <put-attribute name="body" value="/components/profile/jsp/person/Person_updatePerson.jsp" />
-    </definition> 
-    
-   <definition name="PersonUpdateFromList" extends="userWorkspaceLayout">
+    </definition>
+
+    <definition name="PersonUpdateFromList" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Update Person FromList" />
         <put-attribute name="body" value="/components/profile/jsp/person/Person_updatePersonFromList.jsp" />
-    </definition> 
-    
-    
-     <definition name="ReadPerson" extends="userWorkspaceLayout">
+    </definition>
+
+
+    <definition name="ReadPerson" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Read Person" />
         <put-attribute name="body" value="/components/profile/jsp/person/Person_readPerson.jsp" />
     </definition>
@@ -103,38 +94,38 @@
     
     
     <!-- Project -->
-    	
+
     <definition name="ProjectNav" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Project Nav" />
         <put-attribute name="body" value="/components/project/jsp/project/Project_navProject.jsp" />
     </definition>
-    
+
     <definition name="CreateProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Create Project" />
         <put-attribute name="body" value="/components/project/jsp/project/Project_createProject.jsp" />
     </definition>
-    
+
     <definition name="ListProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="List Project" />
         <put-attribute name="body" value="/components/project/jsp/project/Project_listProject.jsp" />
     </definition>
-    
+
     <definition name="UpdateProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Update Project" />
         <put-attribute name="body" value="/components/project/jsp/project/Project_updateProject.jsp" />
     </definition>
-    
+
     <definition name="ReadProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Read Project" />
         <put-attribute name="body" value="/components/project/jsp/project/Project_readProject.jsp" />
     </definition>
-    
+
     <definition name="ProjectSearch" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Search Project" />
         <put-attribute name="body" value="/components/project/jsp/project/Project_searchProject.jsp" />
     </definition>
-    
-    
+
+
     <definition name="ProjectPersonTeam" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Project Person Team" />
         <put-attribute name="body" value="/components/project/jsp/project/ Project_personTeam.jsp" />
@@ -142,32 +133,32 @@
     
     
     <!-- ProjectPersonLink -->
-    
-   <definition name="UpdatePersonFromProject" extends="userWorkspaceLayout">
+
+    <definition name="UpdatePersonFromProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Update Person" />
         <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ProjectPersonLink_updatePersonFromProject.jsp" />
-    </definition> 
-    
-     <definition name="UpdateProjectPersonLink" extends="userWorkspaceLayout">
+    </definition>
+
+    <definition name="UpdateProjectPersonLink" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Update Project Person Link" />
         <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ProjectPersonLink_updateProjectPersonLink.jsp" />
     </definition>
-    
-     <definition name="UpdateProjectEmployeeLinkSubmit" extends="userWorkspaceLayout">
+
+    <definition name="UpdateProjectEmployeeLinkSubmit" extends="userWorkspaceLayout">
         <put-attribute name="title" value="UpdateProjectEmployeeLinkSubmit" />
         <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ProjectPersonList_listProjectsForPerson.jsp" />
     </definition>
-    
-     <definition name="PersonProjectList" extends="userWorkspaceLayout">
+
+    <definition name="PersonProjectList" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Person Project List" />
         <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ProjectPersonList_listProjectsForPerson.jsp" />
     </definition>
-    
+
     <definition name="ProjectPersonList" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Project Person List" />
         <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ProjectPersonLink_listPersonForProject.jsp" />
     </definition>
-    
+
     <definition name="AddPersonToProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Add Person To Project" />
         <put-attribute name="body" value="/components/project/jsp/ProjectPersonLink/ProjectPersonLink_addPersonToProject.jsp" />
@@ -178,37 +169,37 @@
     
     
     <!-- TimeSheet -->
-    
-     <definition name="TimeSheetsForPerson" extends="userWorkspaceLayout">
+
+    <definition name="TimeSheetsForPerson" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Time Sheets For Person" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetForPerson.jsp" />
     </definition>
-    
+
     <definition name="TimeSheetsProcess" extends="userWorkspaceLayout">
         <put-attribute name="title" value="TimeSheets Process" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listProjectTimeSheetProcess.jsp" />
     </definition>
-    
+
     <definition name="TimeSheets" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Time Sheets" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_timeSheets.jsp" />
     </definition>
-    
+
     <definition name="TimeSheetsAdministration" extends="userWorkspaceLayout">
         <put-attribute name="title" value="TimeSheets Administration" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_timeSheetsAdministration.jsp" />
     </definition>
-    
+
     <definition name="TimeSheetsForProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Project TimeSheet List" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetForProject.jsp" />
     </definition>
-    
+
     <definition name="TimeSheetUpdate" extends="userWorkspaceLayout">
         <put-attribute name="title" value="TimeSheet Update" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_updateTimeSheetLineItem.jsp" />
     </definition>
-    
+
     <definition name="ViewTimeSheetApprovalLevelList" extends="userWorkspaceLayout">
         <put-attribute name="title" value="View TimeSheet Approval Level List" />
         <put-attribute name="projectDetail.projectID" value="${timeSheetAprovalLevelDetail.projectDetail.projectID}" />
@@ -216,9 +207,10 @@
     </definition>
     
      <!-- TimeSheet LineItem -->
-    
+
     <definition name="TimeSheetLineItemReadFromPerson" extends="userWorkspaceLayout">
         <put-attribute name="title" value="TimeSheetLineItem ReadFromPerson" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_readTimeSheetLineItemFromPerson.jsp" />
     </definition>
+    
 </tiles-definitions>
