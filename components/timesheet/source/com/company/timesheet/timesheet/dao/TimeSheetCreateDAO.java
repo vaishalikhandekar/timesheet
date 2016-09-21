@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.Calendar;
 
 import com.company.timesheet.core.audittrail.dao.CreateAuditTrailDAO;
 import com.company.timesheet.core.audittrail.pojo.AuditTrailDetails;
@@ -135,20 +136,30 @@ public class TimeSheetCreateDAO {
             TimeSheetLineItemDetail timeSheetLineItemDetail = null;
 
             Date attendeeDate = startDate;
-            
+
             for (int i = 0; attendeeDate.before(endDate); i++) {
-                
+
                 attendeeDate = JavaUtildates.addDays(startDate, i);
-                
+
                 timeSheetLineItemDetail = new TimeSheetLineItemDetail();
 
                 timeSheetLineItemDetail.setTimeSheetID(timeSheetID);
-                timeSheetLineItemDetail.setCategory("OnSite");
                 timeSheetLineItemDetail.setAttendenceDate(attendeeDate);
+
+                int dayOfWeek = JavaUtildates.getIntegerDayFromGivenDate(timeSheetLineItemDetail.getAttendenceDate());
+                if (dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY) {
+
+                    timeSheetLineItemDetail.setCategory("Weekend");
+
+                } else {
+
+                    timeSheetLineItemDetail.setCategory("OnSite");
+
+                }
 
                 timeSheetLineItemCreateDAO.createTimeSheetLineItem(timeSheetLineItemDetail);
             }
-            
+
             timeSheetDetail = new TimeSheetDetail();
             timeSheetDetail.setTimeSheetID(timeSheetID);
 

@@ -82,11 +82,18 @@ public class JavaUtildates {
 
     }
     
+    public static int getIntegerDayFromGivenDate(java.util.Date Date)
+    {
+        Calendar c = Calendar.getInstance();
+        c.setTime(Date);
+        int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+        return dayOfWeek;
+    }
     public static String getDayFromGivenDate(java.util.Date Date)
     {
         Calendar c = Calendar.getInstance();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("EEEEE");
         c.setTime(Date);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEEEE");
         String dayOfWeek = dateFormat.format(c.getTime());
         return dayOfWeek;
     }

@@ -7,6 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title></title>
+
 </head>
 
 <body>
@@ -80,7 +81,7 @@
                 <tr>
 
                     <td align="center">
-                        <s:property value="attendenceDate" />
+                        <s:property value="dayOfWeek" />
                     </td>
 
                     <td align="center">
@@ -108,6 +109,7 @@
 
             </s:iterator>
 
+            <s:hidden name="personDetail.personID"></s:hidden>
             <s:hidden name="timeSheetDetail.timeSheetID"></s:hidden>
             <s:hidden name="timeSheetDetail.versionNo"></s:hidden>
 

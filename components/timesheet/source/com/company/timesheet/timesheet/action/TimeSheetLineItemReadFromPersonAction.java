@@ -5,6 +5,7 @@ package com.company.timesheet.timesheet.action;
 
 import java.util.List;
 
+import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.company.timesheet.timesheet.dao.TimeSheetLineItemReadFromPersonDAO;
 import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 import com.company.timesheet.timesheet.pojo.TimeSheetKey;
@@ -22,6 +23,8 @@ public class TimeSheetLineItemReadFromPersonAction extends ActionSupport {
      */
     private static final long serialVersionUID = 1L;
     
+    PersonDetail personDetail = null;
+    
     List<TimeSheetLineItemDetail> timeSheetLineItemDetailList = null;
 	
     TimeSheetDetail timeSheetDetail = null;
@@ -30,6 +33,22 @@ public class TimeSheetLineItemReadFromPersonAction extends ActionSupport {
 	
     String act = "";
 	
+    
+    public PersonDetail getPersonDetail() {
+    
+        return personDetail;
+    }
+
+
+
+    
+    public void setPersonDetail(PersonDetail personDetail) {
+    
+        this.personDetail = personDetail;
+    }
+
+
+
     public List<TimeSheetLineItemDetail> getTimeSheetLineItemDetailList() {
     
         return timeSheetLineItemDetailList;
@@ -81,7 +100,7 @@ public class TimeSheetLineItemReadFromPersonAction extends ActionSupport {
 			
 		TimeSheetLineItemReadFromPersonDAO readTimeSheetLineItemFromPersonDAO = new TimeSheetLineItemReadFromPersonDAO();
 		timeSheetLineItemDetailList = readTimeSheetLineItemFromPersonDAO.readTimeSheetLineItem(timeSheetKey);
-		 
+		
 		 setTimeSheetLineItemDetailList(timeSheetLineItemDetailList);
 		
 		if (act != null && act.equals("update")) {

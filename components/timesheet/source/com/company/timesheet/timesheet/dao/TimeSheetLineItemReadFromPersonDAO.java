@@ -43,7 +43,7 @@ public class TimeSheetLineItemReadFromPersonDAO {
 
         TimeSheetLineItemDetail timeSheetLineItemDetail = null;
 
-        String timeSheetLineSQLStr = "SELECT * FROM TimeSheetLineItem WHERE  timeSheetID=\'" + timeSheetKey.getTimeSheetID() + "\' ";
+        String timeSheetLineSQLStr = "SELECT * FROM TimeSheetLineItem WHERE  timeSheetID=\'" + timeSheetKey.getTimeSheetID() + "\' ORDER BY attendenceDate asc  ";
 
         try {
 
