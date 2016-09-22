@@ -12,8 +12,8 @@
 <body>
 
     <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
-    
-     <!-- ***************************************Code for delete modal***************************** -->
+
+    <!-- ***************************************Code for delete modal***************************** -->
 
     <div class="pull-right" class="container">
 
@@ -31,14 +31,15 @@
 
                     <div class="modal-body">
 
-                        <s:form class="form-inline" name="TimeSheetDeleteFromProject" namespace="/" action="DeleteTimeSheetFromProject" method="POST" role="form" theme="bootstrap">
+                        <s:form class="form-inline" name="TimeSheetDeleteFromProject" namespace="/TimeSheet" action="DeleteTimeSheetFromProject" method="POST"
+                            role="form" theme="bootstrap">
 
                             <p>Are You Sure ?</p>
 
 
                             <div class="modal-footer">
                                 <s:submit type="submit" id="submit" value="Delete" class="btn btn-primary" />
-                               <s:hidden name="projectDetail.projectID" value="%{projectDetail.projectID}"></s:hidden>                
+                                <s:hidden name="projectDetail.projectID" value="%{projectDetail.projectID}"></s:hidden>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
 
@@ -78,7 +79,7 @@
 
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Search Person</button>
 
-                        <s:form namespace="/" action="CreateTimeSheetSubmit" method="POST" class="form-inline" theme="bootstrap">
+                        <s:form namespace="/TimeSheet" action="CreateTimeSheetSubmit" method="POST" class="form-inline" theme="bootstrap">
 
                             <br />
                             <div class="form-group">
@@ -100,14 +101,14 @@
                             <br />
 
                             <div class="form-group">
-                                <label>Start Date:</label> <input type="text" class="datepick" id="date_1" class="dateTxt"
-                                    name="projectPersonLinkDetail.startDate" placeholder="mm/dd/yy" />
+                                <label>Start Date:</label>
+                                <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectPersonLinkDetail.startDate" placeholder="mm/dd/yy" />
                             </div>
                             <br />
 
                             <div class="form-group">
-                                <label>End Date:</label> <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectPersonLinkDetail.endDate"
-                                    placeholder="mm/dd/yy" />
+                                <label>End Date:</label>
+                                <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectPersonLinkDetail.endDate" placeholder="mm/dd/yy" />
                             </div>
                             <br />
 
@@ -146,9 +147,9 @@
 
             <tbody>
                 <tr>
-                
-                <td align="center">
-                        
+
+                    <td align="center">
+
                         <%-- <s:url var="updateTimeSheetURL" action="ReadTimeSheetFromProject" escapeAmp="false">
                             <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                             <s:param name="act" value="%{updateAction}" />
@@ -162,8 +163,8 @@
                             <span class="glyphicon glyphicon-trash"></span>
                             <!-- Delete -->
                         </a>
-                        
-                        </td>
+
+                    </td>
 
                     <td align="center">
                         <s:property value="firstName" />

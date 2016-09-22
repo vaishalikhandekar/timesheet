@@ -9,11 +9,11 @@
 <title></title>
 <body>
 
-<jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
+    <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
 
-                    <!-- *******************************code to display Project List******************************* -->
+    <!-- *******************************code to display Project List******************************* -->
 
-<h2>Page Under Construction</h2>
-                    
+    <h2>Page Under Construction</h2>
+
 </body>
 </html>

@@ -28,8 +28,8 @@
 
                     <div class="modal-body">
 
-                        <s:form class="form-inline" name="TimeSheetDeleteFromPerson" namespace="/" action="DeleteTimeSheetFromPerson" method="POST" role="form"
-                            theme="bootstrap">
+                        <s:form class="form-inline" name="TimeSheetDeleteFromPerson" namespace="/TimeSheet" action="DeleteTimeSheetFromPerson" method="POST"
+                            role="form" theme="bootstrap">
 
                             <p>Are You Sure ?</p>
 
@@ -78,7 +78,7 @@
 
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Search</button>
 
-                        <s:form namespace="/" action="TimeSheetCreate" method="POST" class="form-inline" theme="bootstrap">
+                        <s:form namespace="/TimeSheet" action="TimeSheetCreate" method="POST" class="form-inline" theme="bootstrap">
 
                             <br />
                             <div class="form-group">
@@ -109,7 +109,7 @@
         </div>
     </div>
 
-    <s:form action="/PersonTimeSheetList" method="post">
+    <s:form action="/PersonTimeSheetList" namespace="/TimeSheet" method="post">
 
         <br>
         <br>
@@ -137,7 +137,7 @@
                     <tr>
                         <td align="center">
 
-                            <s:url id="TimeSheetLineItemReadFromPersonURL" action="TimeSheetLineItemReadFromPerson" escapeAmp="false">
+                            <s:url id="TimeSheetLineItemReadFromPersonURL" action="TimeSheetLineItemReadFromPerson" namespace="/TimeSheet" escapeAmp="false">
                                 <s:param name="timeSheetKey.timeSheetID" value="%{timeSheetID}" />
                                 <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                             </s:url>
@@ -148,7 +148,7 @@
 
                             &nbsp;&nbsp;&nbsp;
 
-                            <s:url var="updateTimeSheetURL" action="TimeSheetRead" escapeAmp="false">
+                            <s:url var="updateTimeSheetURL" action="TimeSheetRead" namespace="/TimeSheet" escapeAmp="false">
                                 <s:param name="timeSheetKey.timeSheetID" value="%{timeSheetID}" />
                                 <s:param name="act" value="%{updateAction}" />
                             </s:url>

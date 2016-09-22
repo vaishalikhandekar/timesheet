@@ -33,7 +33,8 @@
 
                     <div class="modal-body">
 
-                        <s:form class="form-inline" name="RemoveProjectFromPerson" namespace="/" action="RemoveProjectFromPerson" method="POST" role="form" theme="bootstrap">
+                        <s:form class="form-inline" name="RemoveProjectFromPerson" namespace="/Project" action="RemoveProjectFromPerson" method="POST"
+                            role="form" theme="bootstrap">
 
                             <p>Are You Sure ?</p>
 
@@ -57,7 +58,7 @@
     </div>
 
 
-    <s:form action="/PersonProjectList" method="post">
+    <s:form action="/PersonProjectList" namespace="/Project" method="post">
 
         <table class="table table-striped">
 
@@ -77,7 +78,7 @@
                 <tr>
 
                     <td align="center">
-                        <s:url var="updateProjectURL" action="ReadProjectPersonLink" escapeAmp="false">
+                        <s:url var="updateProjectURL" action="ReadProjectPersonLink" namespace="/Project" escapeAmp="false">
                             <s:param name="personDetail.personID" value="%{personID}" />
                             <s:param name="act" value="%{updateAction}" />
                         </s:url>

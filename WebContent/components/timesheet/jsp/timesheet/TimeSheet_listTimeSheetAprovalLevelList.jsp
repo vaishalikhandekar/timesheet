@@ -8,10 +8,10 @@
 </head>
 <body>
     <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
-    
+
     <!-- *******************************Modal to Add New Process ******************************* -->
 
-   <%--  <div class="pull-right" class="container">
+    <%--  <div class="pull-right" class="container">
 
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Add New Level</button>
         <br />
@@ -99,81 +99,81 @@
  --%>
     <%-- <s:form action="/ViewTimeSheetApprovalLevelList" method="post"> --%>
 
-        <br>
-        <br>
-        <table class="table table-striped">
-            <thead>
+    <br>
+    <br>
+    <table class="table table-striped">
+        <thead>
 
-                <tr class="success">
-                    <th style="text-align: center">Action</th>
-                    <th style="text-align: center">ApprovalLevelType</th>
-                    <th style="text-align: center">ApprovalCriteria</th>
-                    <th style="text-align: center">startDate</th>
-                    <th style="text-align: center">end Date</th>
-                    <th style="text-align: center">Status</th>
+            <tr class="success">
+                <th style="text-align: center">Action</th>
+                <th style="text-align: center">ApprovalLevelType</th>
+                <th style="text-align: center">ApprovalCriteria</th>
+                <th style="text-align: center">startDate</th>
+                <th style="text-align: center">end Date</th>
+                <th style="text-align: center">Status</th>
+            </tr>
+        </thead>
+
+        <s:iterator value="timeSheetAprovalLevelDetailList" status="stat">
+
+            <tbody>
+                <tr>
+
+                    <td align="center">
+                        <s:url id="ViewprojectTimeSheetProcessURL" action="ViewTimeSheetApprovalLevelList" namespace="/TimeSheet" escapeAmp="false">
+                            <s:param name="projectTimeSheetProcessDetail.projectTimeSheetProcessID" value="%{projectTimeSheetProcessID}" />
+                        </s:url>
+                        <s:a href="%{ViewprojectTimeSheetProcessURL}">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <!-- View -->
+                        </s:a>
+                        &nbsp;&nbsp;
+
+                        <s:url var="updateprojectTimeSheetProcessURL" action="" namespace="/TimeSheet" escapeAmp="false">
+                            <s:param name="projectDetail.projectID" value="%{projectID}" />
+                            <s:param name="act" value="%{updateAction}" />
+                        </s:url>
+
+                        <s:a href="%{updateprojectTimeSheetProcessURL}">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <!-- Update -->
+                        </s:a>
+                        &nbsp;&nbsp;
+
+                        <s:url var="deleteprojectTimeSheetProcessURL" action="" namespace="/TimeSheet" escapeAmp="false">
+                            <s:param name="projectDetail.projectID" value="%{projectID}" />
+                        </s:url>
+
+                        <s:a href="%{deleteprojectTimeSheetProcessURL}">
+                            <span class="glyphicon glyphicon-trash"></span>
+                            <!-- Update -->
+                        </s:a>
+                    </td>
+
+                    <td align="center">
+                        <s:property value="approvalLevelType" />
+                    </td>
+                    <td align="center">
+                        <s:property value="approvalCriteria" />
+                    </td>
+
+                    <td align="center">
+                        <s:property value="startDate" />
+                    </td>
+                    <td align="center">
+                        <s:property value="endDate" />
+                    </td>
+                    <td align="center">
+                        <s:property value="recordStatus" />
+                    </td>
+
                 </tr>
-            </thead>
+            </tbody>
 
-            <s:iterator value="timeSheetAprovalLevelDetailList" status="stat">
+        </s:iterator>
 
-                <tbody>
-                    <tr>
+    </table>
 
-                        <td align="center">
-                            <s:url id="ViewprojectTimeSheetProcessURL" action="ViewTimeSheetApprovalLevelList" escapeAmp="false">
-                                <s:param name="projectTimeSheetProcessDetail.projectTimeSheetProcessID" value="%{projectTimeSheetProcessID}" />
-                            </s:url>
-                            <s:a href="%{ViewprojectTimeSheetProcessURL}">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <!-- View -->
-                            </s:a>
-                            &nbsp;&nbsp;
-
-                            <s:url var="updateprojectTimeSheetProcessURL" action="" escapeAmp="false">
-                                <s:param name="projectDetail.projectID" value="%{projectID}" />
-                                <s:param name="act" value="%{updateAction}" />
-                            </s:url>
-
-                            <s:a href="%{updateprojectTimeSheetProcessURL}">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <!-- Update -->
-                            </s:a>
-                            &nbsp;&nbsp;
-
-                            <s:url var="deleteprojectTimeSheetProcessURL" action="" escapeAmp="false">
-                                <s:param name="projectDetail.projectID" value="%{projectID}" />
-                            </s:url>
-
-                            <s:a href="%{deleteprojectTimeSheetProcessURL}">
-                                <span class="glyphicon glyphicon-trash"></span>
-                                <!-- Update -->
-                            </s:a>
-                        </td>
-
-                        <td align="center">
-                            <s:property value="approvalLevelType" />
-                        </td>
-                        <td align="center">
-                            <s:property value="approvalCriteria" />
-                        </td>
-                        
-                        <td align="center">
-                            <s:property value="startDate" />
-                        </td>
-                        <td align="center">
-                            <s:property value="endDate" />
-                        </td>
-                        <td align="center">
-                            <s:property value="recordStatus" />
-                        </td>
-
-                    </tr>
-                </tbody>
-
-            </s:iterator>
-
-        </table>
-
-  <%--   </s:form> --%>
+    <%--   </s:form> --%>
 </body>
 </html>

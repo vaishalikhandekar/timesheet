@@ -9,8 +9,8 @@
 <body>
 
     <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
-    
-     <!-- ***************************************Code for delete modal***************************** -->
+
+    <!-- ***************************************Code for delete modal***************************** -->
 
     <div class="pull-right" class="container">
 
@@ -27,13 +27,14 @@
 
                     <div class="modal-body">
 
-                        <s:form class="form-inline" name="DeletePersonFromProject" namespace="/" action="DeletePersonFromProject" method="POST" role="form" theme="bootstrap">
+                        <s:form class="form-inline" name="DeletePersonFromProject" namespace="/Project" action="DeletePersonFromProject" method="POST"
+                            role="form" theme="bootstrap">
 
                             <p>Are You Sure ?</p>
 
                             <div class="modal-footer">
                                 <s:submit type="submit" id="submit" value="Delete" class="btn btn-primary" />
-                                <s:hidden name="projectDetail.projectID" ></s:hidden>
+                                <s:hidden name="projectDetail.projectID"></s:hidden>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
 
@@ -49,7 +50,7 @@
 
     </div>
 
-    
+
 
     <!-- *******************************Modal to Add Person in the Project ******************************* -->
 
@@ -76,7 +77,7 @@
 
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Search Person</button>
 
-                        <s:form namespace="/" action="CreateProjectPersonLinkSubmit" method="POST" class="form-inline" theme="bootstrap">
+                        <s:form namespace="/Project" action="CreateProjectPersonLinkSubmit" method="POST" class="form-inline" theme="bootstrap">
 
                             <br>
                             <br>
@@ -102,15 +103,15 @@
                             <br>
 
                             <div class="form-group">
-                                <label>Start Date:</label> <input type="text" class="datepick" id="date_1" class="dateTxt"
-                                    name="projectPersonLinkDetail.startDate" placeholder="mm/dd/yy" />
+                                <label>Start Date:</label>
+                                <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectPersonLinkDetail.startDate" placeholder="mm/dd/yy" />
                             </div>
                             <br>
                             <br>
 
                             <div class="form-group">
-                                <label>End Date:</label> <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectPersonLinkDetail.endDate"
-                                    placeholder="mm/dd/yy" />
+                                <label>End Date:</label>
+                                <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectPersonLinkDetail.endDate" placeholder="mm/dd/yy" />
                             </div>
                             <br>
                             <br>
@@ -148,7 +149,7 @@
 
                     <div class="modal-body">
 
-                        <s:form action="/SearchPersonSubmit" method="POST" class="form-inline" theme="bootstrap">
+                        <s:form action="/SearchPersonSubmit" namespace="/Project" method="POST" class="form-inline" theme="bootstrap">
 
                             <div class="form-group">
                                 <label>First Name</label>

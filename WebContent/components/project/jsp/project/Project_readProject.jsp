@@ -30,7 +30,7 @@
 
                     <div class="modal-body">
 
-                        <s:form class="form-inline" name="DeleteProject" namespace="/" action="DeleteProject" method="POST" role="form" theme="bootstrap">
+                        <s:form class="form-inline" name="DeleteProject" namespace="/Project" action="DeleteProject" method="POST" role="form" theme="bootstrap">
 
                             <p>Are You Sure ?</p>
 
@@ -57,7 +57,7 @@
 
     <!-- ***************************************Code for Persons to Project***************************** -->
 
-    <s:form action="/ReadProject" method="post">
+    <s:form action="/ReadProject" namespace="/Project" method="post">
         <br>
         <br>
 
@@ -79,7 +79,7 @@
 
                 <td align="center">
 
-                    <s:url var="updateProjectURL" action="ReadProject" escapeAmp="false">
+                    <s:url var="updateProjectURL" action="ReadProject" namespace="/Project" escapeAmp="false">
                         <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
                         <s:param name="act" value="%{projectDetail.updateAction}" />
                     </s:url>

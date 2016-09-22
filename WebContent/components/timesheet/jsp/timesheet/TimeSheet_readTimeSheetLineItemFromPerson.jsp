@@ -8,8 +8,8 @@
 </head>
 <body>
     <jsp:include page="/components/profile/jsp/person/Person_navPerson.jsp"></jsp:include>
-    
-     <br />
+
+    <br />
 
     <table style="width: 100%;">
 
@@ -49,28 +49,28 @@
 
         </tr>
 
-    
-    
-     <s:form action="/TimeSheetLineItemReadFromPerson" method="post">
-        <br>
-        <br>
-        <table class="table table-striped">
-            <thead>
 
-                <tr class="success">
-                    <th style="text-align: center">Action</th>
-                    <th style="text-align: center">Category</th>
-                    <th style="text-align: center">AttendenceDate</th>
-                    <th style="text-align: center">NoOfHoursWorked</th>
-                    <th style="text-align: center">Comments</th>
-                </tr>
-            </thead>
-         <s:iterator value="timeSheetDetail.timeSheetLineItemDetailList" status="stat">
+
+        <s:form action="/TimeSheetLineItemReadFromPerson" namespace="/TimeSheet" method="post">
+            <br>
+            <br>
+            <table class="table table-striped">
+                <thead>
+
+                    <tr class="success">
+                        <th style="text-align: center">Action</th>
+                        <th style="text-align: center">Category</th>
+                        <th style="text-align: center">AttendenceDate</th>
+                        <th style="text-align: center">NoOfHoursWorked</th>
+                        <th style="text-align: center">Comments</th>
+                    </tr>
+                </thead>
+                <s:iterator value="timeSheetDetail.timeSheetLineItemDetailList" status="stat">
                     <tr>
 
                         <td align="center">
 
-                            <s:url var="updateprojectTimeSheetProcessURL" action="" escapeAmp="false">
+                            <s:url var="updateprojectTimeSheetProcessURL" action="" namespace="/TimeSheet" escapeAmp="false">
                                 <s:param name="projectDetail.projectID" value="%{projectID}" />
                                 <s:param name="act" value="%{updateAction}" />
                             </s:url>
@@ -89,7 +89,7 @@
                         <td align="center">
                             <s:property value="attendenceDate" />
                         </td>
-                        
+
                         <td align="center">
                             <s:property value="noOfHoursWorked" />
                         </td>
@@ -97,9 +97,9 @@
                             <s:property value="comments" />
                         </td>
                     </tr>
-</s:iterator>
-        </table>
+                </s:iterator>
+            </table>
 
-   </s:form> 
+        </s:form>
 </body>
 </html>

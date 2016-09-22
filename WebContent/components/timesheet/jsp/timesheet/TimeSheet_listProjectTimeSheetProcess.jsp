@@ -8,7 +8,7 @@
 </head>
 <body>
     <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
-    
+
     <!-- *******************************Modal to Add New Process ******************************* -->
 
     <div class="pull-right" class="container">
@@ -16,7 +16,6 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Add New Process</button>
         <br />
         <br />
-
 
         <div class="modal fade" id="modal-1" data-keyboard="false" data-backdrop="static">
 
@@ -31,53 +30,58 @@
                     </div>
 
                     <div class="modal-body">
-                    
-                        <s:form namespace="/" action="CreateNewProcessSubmit" method="POST" class="form-inline" theme="bootstrap">
 
-                               <br>
-                               <br>
-                            <div class="form-group">
-                                <label>Frequency:</label> <s:textfield type="text" class="form-control" name="projectTimeSheetProcessDetail.frequency" />
-                            </div>
-                            <br/>
-                            <br/>
-                            
-                            <div class="form-group">
-                                <label>StartDay:</label> <s:textfield type="text" class="form-control" name="projectTimeSheetProcessDetail.startDay" />
-                            </div>
-                            <br/>
-                            <br/>
+                        <s:form namespace="/TimeSheet" action="CreateNewProcessSubmit" method="POST" class="form-inline" theme="bootstrap">
 
-                            <div class="form-group">
-                                <label>Minimum Approval Level Type:</label> <s:textfield type="text" class="form-control" name="projectTimeSheetProcessDetail.minimumApprovalLevelType" />
-                            </div>
                             <br>
                             <br>
+                            <div class="form-group">
+                                <label>Frequency:</label>
+                                <s:textfield type="text" class="form-control" name="projectTimeSheetProcessDetail.frequency" />
+                            </div>
+                            <br />
+                            <br />
 
                             <div class="form-group">
-                                <label>Regular Daily Hours:</label> <input type="text" class="form-control"   name="projectTimeSheetProcessDetail.regularDailyHours"
-                                     />
+                                <label>StartDay:</label>
+                                <s:textfield type="text" class="form-control" name="projectTimeSheetProcessDetail.startDay" />
+                            </div>
+                            <br />
+                            <br />
+
+                            <div class="form-group">
+                                <label>Minimum Approval Level Type:</label>
+                                <s:textfield type="text" class="form-control" name="projectTimeSheetProcessDetail.minimumApprovalLevelType" />
                             </div>
                             <br>
                             <br>
 
                             <div class="form-group">
-                                <label>StartDate:</label> <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectTimeSheetProcessDetail.startDate"
-                                    placeholder="mm/dd/yy"  />
+                                <label>Regular Daily Hours:</label>
+                                <input type="text" class="form-control" name="projectTimeSheetProcessDetail.regularDailyHours" />
                             </div>
                             <br>
                             <br>
-                            
+
                             <div class="form-group">
-                                <label>End Date:</label> <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectTimeSheetProcessDetail.endDate"
+                                <label>StartDate:</label>
+                                <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectTimeSheetProcessDetail.startDate"
                                     placeholder="mm/dd/yy" />
                             </div>
                             <br>
                             <br>
-                            
+
                             <div class="form-group">
-                                <label>Comments:</label> <input type="text" class="form-control"  name="projectTimeSheetProcessDetail.comments"
-                                     />
+                                <label>End Date:</label>
+                                <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectTimeSheetProcessDetail.endDate"
+                                    placeholder="mm/dd/yy" />
+                            </div>
+                            <br>
+                            <br>
+
+                            <div class="form-group">
+                                <label>Comments:</label>
+                                <input type="text" class="form-control" name="projectTimeSheetProcessDetail.comments" />
                             </div>
                             <br>
                             <br>
@@ -95,9 +99,9 @@
             </div>
         </div>
     </div>
-    
 
-    <s:form action="/TimeSheetsProcess" method="post">
+
+    <s:form action="/TimeSheetsProcess" namespace="/TimeSheet" method="post">
 
         <!--   <a href="CreateTimeSheet">New TimeSheet</a> -->
         <br>
@@ -123,7 +127,7 @@
                     <tr>
 
                         <td align="center">
-                            <s:url id="ViewprojectTimeSheetProcessURL" action="ViewTimeSheetApprovalLevelList" escapeAmp="false">
+                            <s:url id="ViewprojectTimeSheetProcessURL" action="ViewTimeSheetApprovalLevelList" namespace="/TimeSheet" escapeAmp="false">
                                 <s:param name="projectTimeSheetProcessDetail.projectTimeSheetProcessID" value="%{projectTimeSheetProcessID}" />
                             </s:url>
                             <s:a href="%{ViewprojectTimeSheetProcessURL}">
@@ -132,7 +136,7 @@
                             </s:a>
                             &nbsp;&nbsp;
 
-                            <s:url var="updateprojectTimeSheetProcessURL" action="" escapeAmp="false">
+                            <s:url var="updateprojectTimeSheetProcessURL" action="" namespace="/TimeSheet" escapeAmp="false">
                                 <s:param name="projectDetail.projectID" value="%{projectID}" />
                                 <s:param name="act" value="%{updateAction}" />
                             </s:url>
@@ -143,7 +147,7 @@
                             </s:a>
                             &nbsp;&nbsp;
 
-                            <s:url var="deleteprojectTimeSheetProcessURL" action="" escapeAmp="false">
+                            <s:url var="deleteprojectTimeSheetProcessURL" action="" namespace="/TimeSheet" escapeAmp="false">
                                 <s:param name="projectDetail.projectID" value="%{projectID}" />
                             </s:url>
 
@@ -183,5 +187,6 @@
         </table>
 
     </s:form>
+    
 </body>
 </html>

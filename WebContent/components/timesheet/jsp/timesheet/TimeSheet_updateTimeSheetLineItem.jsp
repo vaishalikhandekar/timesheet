@@ -56,7 +56,7 @@
 
     <br />
 
-    <s:form action="/TimeSheetUpdate" method="POST">
+    <s:form action="/TimeSheetUpdate" namespace="/TimeSheet" method="POST">
 
 
         <table class="table table-striped" border="1">
@@ -116,7 +116,7 @@
             <s:submit type="submit" value="Save" class="btn btn-primary" />
 
         </table>
-        
+
     </s:form>
 
 

@@ -7,11 +7,9 @@
 <head>
 <title></title>
 <style type="text/css">
-
 tr.break td {
-  height: 10px;
+	height: 10px;
 }
-
 </style>
 <script>
 	$(function() {
@@ -44,7 +42,7 @@ tr.break td {
 				"Delete Project" : function() {
 					$.ajax({
 						type : 'POST',
-						url : "/TimeSheet/DeleteProject",
+						url : "/TimeSheet/Project/DeleteProject",
 						// data: {projectDetail.projectID = projectID},
 						cache : false
 					}).done(function(submit) {
@@ -88,7 +86,7 @@ tr.break td {
                     <div id="deleteProjectID-model" title="Delete Project">
 
 
-                        <s:form namespace="/" action="DeleteProject" method="post" id="deleteProject">
+                        <s:form namespace="/Project" action="DeleteProject" method="post" id="deleteProject">
 
                             <p>Are You sure?</p>
 
@@ -180,27 +178,30 @@ tr.break td {
 
                                     <div class="modal-body">
 
-                                        <s:form name="CreateProject" namespace="/" action="CreateProjectSubmit" method="POST" role="form" theme="bootstrap">
+                                        <s:form name="CreateProject" namespace="/Project" action="CreateProjectSubmit" method="POST" role="form"
+                                            theme="bootstrap">
 
-                                            <table >
-                                              <!--    <colgroup span="3"></colgroup> -->
+                                            <table>
+                                                <!--    <colgroup span="3"></colgroup> -->
                                                 <tr>
 
                                                     <th>Project Name</th>
                                                     <td>
                                                         <input type="text" class="form-control" name="projectDetail.projectName" />
                                                     </td>
-                                                    
+
                                                     <th></th>
                                                     <th>Acronym</th>
                                                     <td>
                                                         <input type="text" class="form-control" name="projectDetail.acronym" />
                                                     </td>
                                                 </tr>
-                                                
-                                                
-                                                <tr class="break"><td colspan="2"></td></tr>
-                                               <!--  <colgroup span="3"></colgroup> -->
+
+
+                                                <tr class="break">
+                                                    <td colspan="2"></td>
+                                                </tr>
+                                                <!--  <colgroup span="3"></colgroup> -->
                                                 <tr>
 
                                                     <th>Start Date</th>
@@ -208,7 +209,7 @@ tr.break td {
                                                         <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectDetail.startDate"
                                                             placeholder="mm/dd/yy" />
                                                     </td>
-                                                        
+
                                                     <th>End Date</th>
                                                     <td>
                                                         <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectDetail.endDate"
@@ -216,17 +217,19 @@ tr.break td {
                                                     </td>
 
                                                 </tr>
-                                                
-            
-                                                     <tr class="break"><td colspan="2"></td></tr>
-            
+
+
+                                                <tr class="break">
+                                                    <td colspan="2"></td>
+                                                </tr>
+
                                                 <tr>
 
 
                                                     <th>Description</th>
                                                     <td>
                                                         <!-- <input type="text" class="form-control" name="projectDetail.description" /> -->
-                                                        <textarea name="projectDetail.description"  cols="45" rows="3"></textarea>
+                                                        <textarea name="projectDetail.description" cols="45" rows="3"></textarea>
                                                     </td>
                                                 </tr>
 
@@ -257,7 +260,7 @@ tr.break td {
 
                     <!-- *******************************code to display Project List******************************* -->
 
-                    <s:form name="ListForm" id="ListForm" method="post">
+                    <s:form name="ListForm" id="ListForm" namespace="/Project" method="post">
 
                         <div class="container">
                             <table class="table table-striped" border="1">
@@ -277,7 +280,7 @@ tr.break td {
 
                                     <tr>
                                         <td align="center">
-                                            <s:url id="ViewProjectURL" action="ReadProject" escapeAmp="false">
+                                            <s:url id="ViewProjectURL" action="ReadProject" namespace="/Project" escapeAmp="false">
                                                 <s:param name="projectDetail.projectID" value="%{projectID}" />
                                             </s:url>
                                             <s:a href="%{ViewProjectURL}">
@@ -286,7 +289,7 @@ tr.break td {
                                             </s:a>
                                             &nbsp;&nbsp;
 
-                                            <s:url var="updateProjectURL" action="ReadProject" escapeAmp="false">
+                                            <s:url var="updateProjectURL" action="ReadProject" namespace="/Project" escapeAmp="false">
                                                 <s:param name="projectDetail.projectID" value="%{projectID}" />
                                                 <s:param name="act" value="%{updateAction}" />
                                             </s:url>
