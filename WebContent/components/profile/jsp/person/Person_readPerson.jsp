@@ -60,22 +60,17 @@
 
     <s:form action="/Profile/ReadPerson" method="post">
 
-        <table class="table table-striped">
-            <thead>
+        <table style="width: 100%;">
 
-                <tr>
-                    <th style="text-align: center">Action</th>
-                    <th style="text-align: center">Title</th>
-                    <th style="text-align: center">First Name</th>
-                    <th style="text-align: center">Middle Name</th>
-                    <th style="text-align: center">Last Name</th>
-                    <th style="text-align: center">Gender</th>
-                    <th style="text-align: center">Date Of Birth</th>
-                    <th style="text-align: center">Registration Date</th>
-                </tr>
-            </thead>
+            <col width="20%" />
+            <col width="30%" />
+            <col width="20%" />
+            <col width="30%" />
+
 
             <tr>
+                <th style="text-align: right">Action:</th>
+                <td align="left">
 
 
                 <td align="center">
@@ -96,31 +91,44 @@
                     </a>
 
                 </td>
-                <td align="center">
-                    <s:property value="personDetail.title" />
+            <th style="text-align: right">Title:</th>
+            <td align="left">
+                &nbsp; &nbsp; &nbsp; <s:property value="personDetail.title" />
+            </td>
+            </tr>
+            <tr>
+            <th style="text-align: right">First Name:</th>
+            <td align="left">
+                &nbsp; &nbsp; &nbsp; <s:property value="personDetail.firstName" />
+            </td>
+            <th style="text-align: right">Middle Name:</th>
+                <td align="left">
+                    &nbsp; &nbsp; &nbsp; <s:property value="personDetail.middleName" />
                 </td>
-                <td align="center">
-                    <s:property value="personDetail.firstName" />
-                </td>
-                <td align="center">
-                    <s:property value="personDetail.middleName" />
-                </td>
-                <td align="center">
-                    <s:property value="personDetail.lastName" />
-                </td>
-                <td align="center">
-                    <s:property value="personDetail.gender" />
-                </td>
-                <td align="center">
-                    <s:property value="personDetail.dateOfBirth" />
-                </td>
-                <td align="center">
-                    <s:property value="personDetail.registrationDate" />
-                </td>
+            </tr>
+            <tr>
 
+            <th style="text-align: right">Last Name:</th>
+                <td align="left">
+                    &nbsp; &nbsp; &nbsp; <s:property value="personDetail.lastName" />
+                </td>
+            <th style="text-align: right">Gender:</th>
+                <td align="left">
+                    &nbsp; &nbsp; &nbsp; <s:property value="personDetail.gender" />
+                </td>
+            </tr>
+            <tr>
+            <th style="text-align: right">Date Of Birth:</th>
+                <td align="left">
+                    &nbsp; &nbsp; &nbsp; <s:property value="personDetail.dateOfBirth" />
+                </td>
+            <th style="text-align: right">Registration Date:</th>
+                <td align="left">
+                    &nbsp; &nbsp; &nbsp; <s:property value="personDetail.registrationDate" />
+                </td>
+            </tr>
 
                 <s:hidden name="personDetail.personID"></s:hidden>
-            </tr>
         </table>
 
     </s:form>

@@ -8,6 +8,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title></title>
+
+<style type="text/css">
+img {
+	float: left;
+}
+
+table {
+	float: left;
+}
+</style>
+
 </head>
 
 <body>
@@ -42,18 +53,41 @@
                     </div>
 
                     <div class="panel-body">
-                        <img src="/TimeSheet/components/profile/images/user.png" class="img-rounded" alt="Cinque Terre" width="100" height="100" /> Full Name :
-                        &nbsp;
-                        <s:property value="personDetail.firstName" />
-                        &nbsp;
-                        <s:property value="personDetail.lastName" />
-                        <br />
-                        Email Address : &nbsp;
-                        <s:property value="personDetail.emailAddress" />
-                        <br />
-                        Phone Number : &nbsp;
-                        <s:property value="personDetail.phoneNumber" />
+                        <table>
+                       <col width="20%" />
+                       <col width="80%" />
+                            <tr>
+                                <td width="45%">
+                                    <img src="/TimeSheet/components/profile/images/user.png" class="img-rounded" alt="Cinque Terre" width="100" height="100" />
+                                </td>
 
+                                <td width="45%">
+                                    <table>
+                                        <tr>
+                                            <th>Full Name :</th>
+                                            <td>
+
+                                                <s:property value="personDetail.firstName" />
+
+                                                <s:property value="personDetail.lastName" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Email Address :</th>
+                                            <td>
+                                                <s:property value="personDetail.emailAddress" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Phone Number:</th>
+                                            <td>
+                                                <s:property value="personDetail.phoneNumber" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
 
                 </div>
