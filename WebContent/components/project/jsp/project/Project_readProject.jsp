@@ -81,7 +81,7 @@
 
                     <s:url var="updateProjectURL" action="ReadProject" escapeAmp="false">
                         <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
-                        <s:param name="act" value="%{updateAction}" />
+                        <s:param name="act" value="%{projectDetail.updateAction}" />
                     </s:url>
 
                     <s:a href="%{updateProjectURL}">
