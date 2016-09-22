@@ -112,7 +112,7 @@ table {
                             <ul class="nav navbar-nav">
 
                                 <li class="active">
-                                    <s:url var="PersonHome" action="/Profile/ReadPerson">
+                                    <s:url var="PersonHome" action="ReadPerson" namespace="/Profile">
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
                                     <a href="${PersonHome}">
@@ -122,14 +122,14 @@ table {
                                 </li>
 
                                 <li>
-                                    <s:url var="PersonProjectList" action="/Project/PersonProjectList">
+                                    <s:url var="PersonProjectList" action="PersonProjectList" namespace="/Project">
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
                                     <a href="${PersonProjectList}">Projects</a>
                                 </li>
 
                                 <li>
-                                    <s:url var="TimeSheetsForPerson" action="/TimeSheet/TimeSheetsForPerson">
+                                    <s:url var="TimeSheetsForPerson" action="TimeSheetsForPerson" namespace="/TimeSheet">
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
                                     <a href="${TimeSheetsForPerson}">Time Sheets</a>
