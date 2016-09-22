@@ -31,7 +31,7 @@
 
                     <div class="modal-body">
 
-                        <s:form namespace="/TimeSheet" action="CreateNewProcessSubmit" method="POST" class="form-inline" theme="bootstrap">
+                        <s:form namespace="/TimeSheet" action="ProjectTimeSheetProcessCreateSubmit" method="POST" class="form-inline" theme="bootstrap">
 
                             <table style="width: 100%;">
                                 <col width="20%" />
@@ -107,7 +107,7 @@
     </div>
 
 
-    <s:form action="/TimeSheetsProcess" namespace="/TimeSheet" method="post">
+    <s:form action="/TimeSheetsProcessList" namespace="/TimeSheet" method="post">
 
         <!--   <a href="CreateTimeSheet">New TimeSheet</a> -->
         <br>
@@ -133,7 +133,7 @@
                     <tr>
 
                         <td align="center">
-                            <s:url id="ViewprojectTimeSheetProcessURL" action="ViewTimeSheetApprovalLevelList" namespace="/TimeSheet" escapeAmp="false">
+                            <s:url id="ViewprojectTimeSheetProcessURL" action="TimeSheetApprovalLevelRead" namespace="/TimeSheet" escapeAmp="false">
                                 <s:param name="projectTimeSheetProcessDetail.projectTimeSheetProcessID" value="%{projectTimeSheetProcessID}" />
                             </s:url>
                             <s:a href="%{ViewprojectTimeSheetProcessURL}">
@@ -142,7 +142,7 @@
                             </s:a>
                             &nbsp;&nbsp;
 
-                            <s:url var="updateprojectTimeSheetProcessURL" action="" namespace="/TimeSheet" escapeAmp="false">
+                            <s:url var="updateprojectTimeSheetProcessURL" action="TimeSheetApprovalLevelRead" namespace="/TimeSheet" escapeAmp="false">
                                 <s:param name="projectDetail.projectID" value="%{projectID}" />
                                 <s:param name="act" value="%{updateAction}" />
                             </s:url>

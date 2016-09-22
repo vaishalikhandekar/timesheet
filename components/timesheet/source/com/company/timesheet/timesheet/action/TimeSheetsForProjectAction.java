@@ -6,7 +6,7 @@ package com.company.timesheet.timesheet.action;
 import java.util.List;
 
 import com.company.timesheet.project.pojo.ProjectDetail;
-import com.company.timesheet.timesheet.dao.TimeSheetsDAO;
+import com.company.timesheet.timesheet.dao.TimeSheetsForProjectDAO;
 import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -44,8 +44,8 @@ public class TimeSheetsForProjectAction extends ActionSupport {
 
 		String pageForwardStr = "";
 
-		TimeSheetsDAO timeSheetsDAO = new TimeSheetsDAO();
-		List<TimeSheetDetail> timeSheetDetailList = timeSheetsDAO.listTimeSheetForProject(projectDetail);
+		TimeSheetsForProjectDAO timeSheetsForProjectDAO = new TimeSheetsForProjectDAO();
+		List<TimeSheetDetail> timeSheetDetailList = timeSheetsForProjectDAO.listTimeSheetForProject(projectDetail);
 
 		setTimeSheetDetailList(timeSheetDetailList);
 

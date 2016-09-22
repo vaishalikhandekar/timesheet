@@ -18,14 +18,14 @@
             <result name="error">/index</result>
         </action>
 
-        <action name="TimeSheetsProcess" class="com.company.timesheet.timesheet.action.ProjectTimeSheetProcessListAction">
-            <result name="success" type="tiles">TimeSheetsProcess</result>
+        <action name="TimeSheetsProcessList" class="com.company.timesheet.timesheet.action.ProjectTimeSheetProcessListAction">
+            <result name="success" type="tiles">TimeSheetsProcessList</result>
             <result name="error">/index</result>
         </action>
 
-        <action name="CreateNewProcessSubmit" class="com.company.timesheet.timesheet.action.ProjectTimeSheetProcessCreateAction">
+        <action name="ProjectTimeSheetProcessCreateSubmit" class="com.company.timesheet.timesheet.action.ProjectTimeSheetProcessCreateAction">
             <result name="success" type="redirect">
-                <param name="location">/TimeSheet/TimeSheetsProcess</param>
+                <param name="location">/TimeSheet/TimeSheetsProcessList</param>
                 <param name="projectDetail.projectID">${projectTimeSheetProcessDetail.projectID}</param>
             </result>
             <result name="error">/index</result>
@@ -36,15 +36,11 @@
             <result name="error">/index</result>
         </action>
 
-        <action name="TimeSheets" class="com.company.timesheet.project.action.ProjectReadAction">
-            <result name="success" type="tiles">TimeSheets</result>
-            <result name="error">/index</result>
-        </action>
 
-        <action name="TimeSheetsAdministration" class="com.company.timesheet.project.action.ProjectReadAction">
+       <!--  <action name="TimeSheetsAdministration" class="com.company.timesheet.project.action.ProjectReadAction">
             <result name="success" type="tiles">TimeSheetsAdministration</result>
             <result name="error">/index</result>
-        </action>
+        </action> -->
 
         <action name="TimeSheetDeleteFromPerson" class="com.company.timesheet.timesheet.action.TimeSheetDeleteFromPersonAction">
             <result name="success" type="redirect">
@@ -64,15 +60,11 @@
             <result name="error">/index</result>
         </action>
 
-        <action name="ViewTimeSheetApprovalLevelList" class="com.company.timesheet.timesheet.action.TimeSheetAprovalLevelListAction">
-            <result name="success" type="tiles">ViewTimeSheetApprovalLevelList</result>
+        <action name="TimeSheetApprovalLevelRead" class="com.company.timesheet.timesheet.action.TimeSheetAprovalLevelListAction">
+            <result name="success" type="tiles">TimeSheetApprovalLevelRead</result>
             <result name="error">/index</result>
         </action>
 
-        <action name="TimeSheetRead" class="com.company.timesheet.timesheet.action.TimeSheetReadAction">
-            <result name="SENTTOUPDATE" type="tiles">TimeSheetUpdate</result>
-            <result name="error">/index</result>
-        </action>
 
         <action name="TimeSheetCreate" class="com.company.timesheet.timesheet.action.TimeSheetCreateAction">
             <result name="success" type="redirect">
@@ -93,13 +85,33 @@
             <result name="input">/index</result>
         </action>
         
+        
         <!-- TimeSheet LineItem -->
 
         <action name="TimeSheetLineItemReadFromPerson" class="com.company.timesheet.timesheet.action.TimeSheetReadAction">
             <result name="success" type="tiles">TimeSheetLineItemReadFromPerson</result>
             <result name="error">/index</result>
         </action>
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- check it -->
+        
+        
+        <action name="TimeSheetRead" class="com.company.timesheet.timesheet.action.TimeSheetReadAction">
+            <result name="SENTTOUPDATE" type="tiles">TimeSheetUpdate</result>
+            <result name="error">/index</result>
+        </action>
 
+        <action name="TimeSheets" class="com.company.timesheet.project.action.ProjectReadAction">
+            <result name="success" type="tiles">TimeSheets</result>
+            <result name="error">/index</result>
+        </action>
     </package>
 
 

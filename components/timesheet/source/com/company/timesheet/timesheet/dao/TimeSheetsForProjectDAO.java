@@ -18,7 +18,7 @@ import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
  * @author vaish
  *
  */
-public class TimeSheetsDAO {
+public class TimeSheetsForProjectDAO {
 
 	/**
 	 * 

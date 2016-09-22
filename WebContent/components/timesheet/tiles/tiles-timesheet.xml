@@ -21,19 +21,9 @@
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetForPerson.jsp" />
     </definition>
 
-    <definition name="TimeSheetsProcess" extends="userWorkspaceLayout">
+    <definition name="TimeSheetsProcessList" extends="userWorkspaceLayout">
         <put-attribute name="title" value="TimeSheets Process" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listProjectTimeSheetProcess.jsp" />
-    </definition>
-
-    <definition name="TimeSheets" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="Time Sheets" />
-        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_timeSheets.jsp" />
-    </definition>
-
-    <definition name="TimeSheetsAdministration" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="TimeSheets Administration" />
-        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_timeSheetsAdministration.jsp" />
     </definition>
 
     <definition name="TimeSheetsForProject" extends="userWorkspaceLayout">
@@ -43,13 +33,13 @@
 
     <definition name="TimeSheetUpdate" extends="userWorkspaceLayout">
         <put-attribute name="title" value="TimeSheet Update" />
-        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_updateTimeSheetLineItem.jsp" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_updateTimeSheetLineItemFromPerson.jsp" />
     </definition>
 
-    <definition name="ViewTimeSheetApprovalLevelList" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="View TimeSheet Approval Level List" />
+    <definition name="TimeSheetApprovalLevelRead" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="TimeSheetApprovalLevel Read" />
         <put-attribute name="projectDetail.projectID" value="${timeSheetAprovalLevelDetail.projectDetail.projectID}" />
-        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetAprovalLevelList.jsp" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetAprovalLevel.jsp" />
     </definition>
     
      <!-- TimeSheet LineItem -->

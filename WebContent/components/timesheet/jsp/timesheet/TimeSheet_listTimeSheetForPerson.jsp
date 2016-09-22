@@ -113,7 +113,7 @@
         
     </div>
 
-    <s:form action="/PersonTimeSheetList" namespace="/TimeSheet" method="post">
+  <%--   <s:form action="/PersonTimeSheetList" namespace="/TimeSheet" method="post"> --%>
 
         <br>
         <br>
@@ -214,7 +214,7 @@
 
         </table>
 
-    </s:form>
+    <%-- </s:form> --%>
 
 </body>
 </html>
