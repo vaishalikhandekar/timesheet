@@ -71,7 +71,7 @@
                     <div class="modal-header">
 
                         <button class="close" type="button" data-dismiss="modal">&times;</button>
-                        <h3 class="modal-title">Add New TimeSheet</h3>
+                        <h3 class="modal-title">New Time Sheet</h3>
 
                     </div>
 

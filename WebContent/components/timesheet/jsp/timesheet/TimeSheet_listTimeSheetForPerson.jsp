@@ -57,10 +57,8 @@
 
     <div class="pull-right" class="container">
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Add New TimeSheet</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">New Time Sheet</button>
         <br />
-        <br />
-
 
         <div class="modal fade" id="modal-1" data-keyboard="false" data-backdrop="static">
 
@@ -71,12 +69,10 @@
                     <div class="modal-header">
 
                         <button class="close" type="button" data-dismiss="modal">&times;</button>
-                        <h3 class="modal-title">New TimeSheet</h3>
+                        <h3 class="modal-title">New Time Sheet</h3>
                     </div>
 
                     <div class="modal-body">
-
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Search</button>
 
                         <s:form namespace="/TimeSheet" action="TimeSheetCreate" method="POST" class="form-inline" theme="bootstrap">
 
@@ -99,14 +95,19 @@
                                 <s:submit type="submit" id="submit" value="Next" class="btn btn-primary" />
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
+                            
                             <s:hidden name="timeSheetCreateDetails.personID" value="%{personDetail.personID}"></s:hidden>
 
-
                         </s:form>
+                        
                     </div>
+                    
                 </div>
+                
             </div>
+            
         </div>
+        
     </div>
 
     <s:form action="/PersonTimeSheetList" namespace="/TimeSheet" method="post">
