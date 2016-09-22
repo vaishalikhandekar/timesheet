@@ -6,56 +6,74 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title></title>
 
+<style type="text/css">
+tr.break td {
+	height: 10px;
+}
+</style>
 </head>
 <body>
 
+<br/>
     <div class="container" style="border: thin solid black">
         <s:form action="/Profile/UpdatePersonSubmit" method="POST">
-            <h3 class="well">Update Person</h3>
+            <h4 class="well well-sm">Update Person</h4>
 
-
-            <table>
-                <tr>
-                    <td>Title</td>
-                    <td>
-                        <s:textfield name="personDetail.title" />
-                    </td>
-                </tr>
+            <table style="width: 100%;">
+                <col width="20%" />
+                <col width="30%" />
+                <col width="20%" />
+                <col width="30%" />
 
                 <tr>
-                    <td>First Name</td>
+                    <th>Title :</th>
                     <td>
-                        <s:textfield name="personDetail.firstName" />
+                        <input name="personDetail.title" />
+                    </td>
+                    <th>First Name :</th>
+                    <td>
+                        <input name="personDetail.firstName" />
                     </td>
                 </tr>
+
+                <tr class="break">
+                    <td colspan="2"></td>
+                </tr>
+
                 <tr>
-                    <td>Middle Name</td>
+                    <th>Middle Name :</th>
                     <td>
-                        <s:textfield name="personDetail.middleName" />
+                        <input name="personDetail.middleName" />
+                    </td>
+                    <th>Last Name :</th>
+                    <td>
+                        <input name="personDetail.lastName" />
                     </td>
                 </tr>
+
+                <tr class="break">
+                    <td colspan="2"></td>
+                </tr>
+
                 <tr>
-                    <td>Last Name</td>
+                    <th>Gender :</th>
                     <td>
-                        <s:textfield name="personDetail.lastName" />
+                        <input name="personDetail.gender" />
+                    </td>
+                    <th>Date Of Birth :</th>
+                    <td>
+                        <input name="personDetail.dateOfBirth" />
                     </td>
                 </tr>
-                <tr>
-                    <td>Gender</td>
-                    <td>
-                        <s:textfield name="personDetail.gender" />
-                    </td>
+
+                <tr class="break">
+                    <td colspan="2"></td>
                 </tr>
+
                 <tr>
-                    <td>Date Of Birth</td>
+                    <th>Registration Date :</th>
                     <td>
-                        <s:textfield name="personDetail.dateOfBirth" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>Registration Date</td>
-                    <td>
-                        <s:textfield name="personDetail.registrationDate" />
+                        <input name="personDetail.registrationDate" />
                     </td>
                 </tr>
 
@@ -63,8 +81,8 @@
 
                 <s:hidden name="personDetail.personID"></s:hidden>
                 <s:hidden name="personDetail.versionNo"></s:hidden>
-
             </table>
+
             <br />
 
         </s:form>
