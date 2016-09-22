@@ -12,51 +12,51 @@
 
         <!-- Project -->
 
-        <action name="ProjectNav">
+        <!-- <action name="ProjectNav">
             <result type="tiles">ProjectNav</result>
         </action>
-
+ -->
         <action name="CreateProject">
-            <result type="tiles">CreateProject</result>
+            <result type="tiles">ProjectCreate</result>
         </action>
 
         <action name="ProjectSearch">
             <result type="tiles">ProjectSearch</result>
         </action>
 
-        <action name="SearchProjectSubmit" class="com.company.timesheet.project.action.ProjectSearchAction">
+        <action name="ProjectSearchSubmit" class="com.company.timesheet.project.action.ProjectSearchAction">
             <result name="success" type="tiles">ProjectSearch</result>
             <result name="error">/index</result>
         </action>
-        <action name="CreateProjectSubmit" class="com.company.timesheet.project.action.ProjectCreateAction">
+        <action name="ProjectCreateSubmit" class="com.company.timesheet.project.action.ProjectCreateAction">
             <result name="success" type="redirect">
-                <param name="location">/ListProject</param>
+                <param name="location">/ProjectList</param>
             </result>
             <result name="error">/index</result>
         </action>
 
-        <action name="ListProject" class="com.company.timesheet.project.action.ProjectListAction">
-            <result name="success" type="tiles">ListProject</result>
+        <action name="ProjectList" class="com.company.timesheet.project.action.ProjectListAction">
+            <result name="success" type="tiles">ProjectList</result>
             <result name="error">/index</result>
         </action>
 
-        <action name="DeleteProject" class="com.company.timesheet.project.action.ProjectDeleteAction">
+        <action name="ProjectDelete" class="com.company.timesheet.project.action.ProjectDeleteAction">
 
             <result name="success" type="redirect">
-                <param name="location">/ListProject</param>
+                <param name="location">/ProjectList</param>
             </result>
             <result name="error">/index</result>
         </action>
 
-        <action name="ReadProject" class="com.company.timesheet.project.action.ProjectReadAction">
-            <result name="SENTTOUPDATE" type="tiles">UpdateProject</result>
-            <result name="success" type="tiles">ReadProject</result>
+        <action name="ProjectRead" class="com.company.timesheet.project.action.ProjectReadAction">
+            <result name="SENTTOUPDATE" type="tiles">ProjectUpdate</result>
+            <result name="success" type="tiles">ProjectRead</result>
             <result name="error">/index</result>
         </action>
 
-        <action name="UpdateProjectSubmit" class="com.company.timesheet.project.action.ProjectUpdateAction">
+        <action name="ProjectUpdateSubmit" class="com.company.timesheet.project.action.ProjectUpdateAction">
             <result name="success" type="redirect">
-                <param name="location"> /ListProject </param>
+                <param name="location"> /ProjectList </param>
             </result>
             <result name="error">/index</result>
         </action>

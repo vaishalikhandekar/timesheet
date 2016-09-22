@@ -16,7 +16,7 @@ tr.break td {
 
 <br/>
     <div class="container" style="border: thin solid black">
-        <s:form action="/Profile/UpdatePersonSubmit" method="POST">
+        <s:form action="/Profile/PersonUpdateSubmit" method="POST">
             <h4 class="well well-sm">Update Person</h4>
 
             <table style="width: 100%;">

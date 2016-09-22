@@ -112,7 +112,7 @@ table {
                             <ul class="nav navbar-nav">
 
                                 <li class="active">
-                                    <s:url var="PersonHome" action="ReadPerson" namespace="/Profile">
+                                    <s:url var="PersonHome" action="PersonRead" namespace="/Profile">
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
                                     <a href="${PersonHome}">

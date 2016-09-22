@@ -20,8 +20,8 @@
     </definition>
 
 
-    <definition name="CreatePerson" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="Create Person" />
+    <definition name="PersonCreate" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Person Create" />
         <put-attribute name="body" value="/components/profile/jsp/person/Person_createPerson.jsp" />
     </definition>
 
@@ -30,13 +30,13 @@
         <put-attribute name="body" value="/components/profile/jsp/person/Person_homePerson.jsp" />
     </definition>
 
-    <definition name="SearchPerson" extends="userWorkspaceLayout">
+    <definition name="PersonSearch" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Search Person" />
         <put-attribute name="body" value="/components/profile/jsp/person/Person_searchPerson.jsp" />
     </definition>
 
-    <definition name="ListPerson" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="List Person" />
+    <definition name="PersonList" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Person List" />
         <put-attribute name="body" value="/components/profile/jsp/person/Person_listPerson.jsp" />
     </definition>
 
@@ -56,8 +56,8 @@
     </definition>
 
 
-    <definition name="ReadPerson" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="Read Person" />
+    <definition name="PersonRead" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Person Read" />
         <put-attribute name="body" value="/components/profile/jsp/person/Person_readPerson.jsp" />
     </definition>
     

@@ -22,7 +22,7 @@
 
                 <div class="container">
 
-                    <s:form action="/Profile/SearchPersonSubmit" method="POST" class="form-inline" theme="bootstrap">
+                    <s:form action="/Profile/PersonSearchSubmit" method="POST" class="form-inline" theme="bootstrap">
                         <h4 class="well well-sm">Search Criteria</h4>
 
                         <div class="form-group">

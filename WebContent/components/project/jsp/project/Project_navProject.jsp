@@ -56,7 +56,7 @@
 
                                 <li class="active">
 
-                                    <s:url var="ProjectHome" action="ReadProject" namespace="/Project">
+                                    <s:url var="ProjectHome" action="ProjectRead" namespace="/Project">
                                         <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
                                     </s:url>
                                     <a href="${ProjectHome}">

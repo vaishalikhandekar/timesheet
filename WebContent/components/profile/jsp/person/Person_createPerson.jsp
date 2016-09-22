@@ -43,7 +43,7 @@
 
 						<div class="modal-body"> -->
 
-        <s:form class="form-inline" name="Registration" namespace="/Profile" action="/CreatePersonSubmit" method="POST" role="form" theme="bootstrap">
+        <s:form class="form-inline" name="Registration" namespace="/Profile" action="/PersonCreateSubmit" method="POST" role="form" theme="bootstrap">
 
             <div class="form-group">
 

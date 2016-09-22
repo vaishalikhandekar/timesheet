@@ -32,7 +32,7 @@
 
                     <div class="modal-body">
 
-                        <s:form class="form-inline" name="DeletePerson" namespace="/Profile" action="DeletePerson" method="POST" role="form" theme="bootstrap">
+                        <s:form class="form-inline" name="DeletePerson" namespace="/Profile" action="PersonDelete" method="POST" role="form" theme="bootstrap">
 
                             <p>Are You Sure ?</p>
 
@@ -74,7 +74,7 @@
 
 
                     &nbsp; &nbsp; &nbsp;
-                    <s:url var="updatePersonURL" action="ReadPerson" escapeAmp="false">
+                    <s:url var="updatePersonURL" action="PersonRead" escapeAmp="false">
                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                         <s:param name="act" value="%{personDetail.updateAction}" />
                     </s:url>

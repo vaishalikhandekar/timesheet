@@ -16,28 +16,28 @@
 
      <!-- Project -->
 
-    <definition name="ProjectNav" extends="userWorkspaceLayout">
+   <!--  <definition name="ProjectNav" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Project Nav" />
         <put-attribute name="body" value="/components/project/jsp/project/Project_navProject.jsp" />
-    </definition>
+    </definition> -->
 
-    <definition name="CreateProject" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="Create Project" />
+    <definition name="ProjectCreate" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Project Create" />
         <put-attribute name="body" value="/components/project/jsp/project/Project_createProject.jsp" />
     </definition>
 
-    <definition name="ListProject" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="List Project" />
+    <definition name="ProjectList" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Project List" />
         <put-attribute name="body" value="/components/project/jsp/project/Project_listProject.jsp" />
     </definition>
 
-    <definition name="UpdateProject" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="Update Project" />
+    <definition name="ProjectUpdate" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Project Update" />
         <put-attribute name="body" value="/components/project/jsp/project/Project_updateProject.jsp" />
     </definition>
 
-    <definition name="ReadProject" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="Read Project" />
+    <definition name="ProjectRead" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Project Read" />
         <put-attribute name="body" value="/components/project/jsp/project/Project_readProject.jsp" />
     </definition>
 

@@ -25,15 +25,15 @@
     <div id="accordion">
         <h1>Person</h1>
         <div>
-            <a href="/TimeSheet/Profile/SearchPerson">Person Search</a>
+            <a href="/TimeSheet/Profile/PersonSearch">Person Search</a>
             <br />
             <br />
-            <a href="/TimeSheet/Profile/ListPerson">Persons</a>
+            <a href="/TimeSheet/Profile/PersonList">Persons</a>
         </div>
 
         <h1>Project</h1>
         <div>
-            <a href="/TimeSheet/Project/ListProject">Projects</a>
+            <a href="/TimeSheet/Project/ProjectList">Projects</a>
             <br />
             <br />
             <a href="/TimeSheet/Project/ProjectSearch" > Project Search</a>

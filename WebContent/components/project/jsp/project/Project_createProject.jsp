@@ -26,7 +26,7 @@
 
                     <div class="modal-body">
 
-                        <s:form class="form-inline" name="Create Project" action="/CreateProjectSubmit" namespace="/Project" method="POST" role="form"
+                        <s:form class="form-inline" name="Create Project" action="/ProjectCreateSubmit" namespace="/Project" method="POST" role="form"
                             theme="bootstrap">
 
                             <br>

@@ -60,7 +60,7 @@ tr.break td {
 
                     <div class="modal-body">
 
-                        <s:form class="form-inline" name="DeletePerson" namespace="/Profile" action="DeletePerson" method="POST" role="form" theme="bootstrap">
+                        <s:form class="form-inline" name="DeletePerson" namespace="/Profile" action="PersonDelete" method="POST" role="form" theme="bootstrap">
 
                             <p>Are You Sure ?</p>
 
@@ -98,7 +98,7 @@ tr.break td {
                     </div>
 
                     <div class="modal-body">
-                        <s:form class="form-inline" name="UpdatePerson" action="UpdatePersonSubmit" method="POST" namespace="/Profile" role="form"
+                        <s:form class="form-inline" name="UpdatePerson" action="PersonUpdateSubmit" method="POST" namespace="/Profile" role="form"
                             theme="bootstrap">
 
                             <table>
@@ -203,7 +203,7 @@ tr.break td {
 
                                 <div class="modal-body">
 
-                                    <s:form class="form-inline" name="CreatePerson" namespace="/Profile" action="CreatePersonSubmit" method="POST" role="form"
+                                    <s:form class="form-inline" name="PersonCreate" namespace="/Profile" action="PersonCreateSubmit" method="POST" role="form"
                                         theme="bootstrap">
 
 
@@ -335,7 +335,7 @@ tr.break td {
             </div>
             <br />
 
-            <s:form action="/Profile/ListPerson" method="post">
+            <s:form action="/Profile/PersonList" method="post">
 
                 <table class="table table-striped" border="1">
 
@@ -361,7 +361,7 @@ tr.break td {
 
                             <td align="center">
 
-                                <s:url var="readPersonURL" action="ReadPerson" escapeAmp="false">
+                                <s:url var="readPersonURL" action="PersonRead" escapeAmp="false">
                                     <s:param name="personDetail.personID" value="%{personID}" />
                                 </s:url>
                                 <s:a href="%{readPersonURL}">
@@ -370,7 +370,7 @@ tr.break td {
                                 </s:a>
                                 &nbsp;&nbsp;
 
-                                <s:url var="updatePersonURL" action="ReadPerson" escapeAmp="false">
+                                <s:url var="updatePersonURL" action="PersonRead" escapeAmp="false">
                                     <s:param name="personDetail.personID" value="%{personID}" />
                                     <s:param name="act" value="%{updateAction}" />
                                     <s:param name="returnFrom" value="%{returnPage}" />

@@ -11,7 +11,7 @@
     <div class="container" style="border: thin solid black">
         <br>
 
-        <s:form action="/SearchProjectSubmit" namespace="/Project" method="POST">
+        <s:form action="/ProjectSearchSubmit" namespace="/Project" method="POST">
             <table>
                 <h4 class="well">Person Search</h4>
                 <tr>

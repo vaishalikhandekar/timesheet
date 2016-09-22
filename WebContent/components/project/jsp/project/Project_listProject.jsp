@@ -86,7 +86,7 @@ tr.break td {
                     <div id="deleteProjectID-model" title="Delete Project">
 
 
-                        <s:form namespace="/Project" action="DeleteProject" method="post" id="deleteProject">
+                        <s:form namespace="/Project" action="ProjectDelete" method="post" id="deleteProject">
 
                             <p>Are You sure?</p>
 
@@ -178,7 +178,7 @@ tr.break td {
 
                                     <div class="modal-body">
 
-                                        <s:form name="CreateProject" namespace="/Project" action="CreateProjectSubmit" method="POST" role="form"
+                                        <s:form name="CreateProject" namespace="/Project" action="ProjectCreateSubmit" method="POST" role="form"
                                             theme="bootstrap">
 
                                             <table style="width: 100%;">
@@ -262,7 +262,7 @@ tr.break td {
 
                     <!-- *******************************code to display Project List******************************* -->
 
-                    <s:form name="ListForm" id="ListForm" namespace="/Project" method="post">
+                    <s:form name="ProjectList" id="ListForm" namespace="/Project" method="post">
 
                         <div class="container">
                             <table class="table table-striped" border="1">
@@ -282,7 +282,7 @@ tr.break td {
 
                                     <tr>
                                         <td align="center">
-                                            <s:url id="ViewProjectURL" action="ReadProject" namespace="/Project" escapeAmp="false">
+                                            <s:url id="ViewProjectURL" action="ProjectRead" namespace="/Project" escapeAmp="false">
                                                 <s:param name="projectDetail.projectID" value="%{projectID}" />
                                             </s:url>
                                             <s:a href="%{ViewProjectURL}">
@@ -291,7 +291,7 @@ tr.break td {
                                             </s:a>
                                             &nbsp;&nbsp;
 
-                                            <s:url var="updateProjectURL" action="ReadProject" namespace="/Project" escapeAmp="false">
+                                            <s:url var="updateProjectURL" action="ProjectRead" namespace="/Project" escapeAmp="false">
                                                 <s:param name="projectDetail.projectID" value="%{projectID}" />
                                                 <s:param name="act" value="%{updateAction}" />
                                             </s:url>
