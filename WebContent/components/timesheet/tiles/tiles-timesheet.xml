@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+    <definition name="userWorkspaceLayout" template="/components/core/jsp/layout/userworkspace/UserWorkspaceLayout.jsp">
+        <put-attribute name="title" value="TimeSheet Default" />
+        <put-attribute name="header" value="/components/core/jsp/layout/userworkspace/UserWorkspaceHeader.jsp" />
+        <put-attribute name="menu" value="/components/core/jsp/layout/userworkspace/UserWorkspaceMenu.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/components/core/jsp/layout/userworkspace/UserWorkspaceFooter.jsp" />
+    </definition>
+
+     <!-- TimeSheet -->
+
+    <definition name="TimeSheetsForPerson" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Time Sheets For Person" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetForPerson.jsp" />
+    </definition>
+
+    <definition name="TimeSheetsProcess" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="TimeSheets Process" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listProjectTimeSheetProcess.jsp" />
+    </definition>
+
+    <definition name="TimeSheets" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Time Sheets" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_timeSheets.jsp" />
+    </definition>
+
+    <definition name="TimeSheetsAdministration" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="TimeSheets Administration" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_timeSheetsAdministration.jsp" />
+    </definition>
+
+    <definition name="TimeSheetsForProject" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Project TimeSheet List" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetForProject.jsp" />
+    </definition>
+
+    <definition name="TimeSheetUpdate" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="TimeSheet Update" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_updateTimeSheetLineItem.jsp" />
+    </definition>
+
+    <definition name="ViewTimeSheetApprovalLevelList" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="View TimeSheet Approval Level List" />
+        <put-attribute name="projectDetail.projectID" value="${timeSheetAprovalLevelDetail.projectDetail.projectID}" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetAprovalLevelList.jsp" />
+    </definition>
+    
+     <!-- TimeSheet LineItem -->
+
+    <definition name="TimeSheetLineItemReadFromPerson" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="TimeSheetLineItem ReadFromPerson" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_readTimeSheetLineItemFromPerson.jsp" />
+    </definition>
+     
+    
+</tiles-definitions>

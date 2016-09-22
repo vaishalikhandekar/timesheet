@@ -21,7 +21,7 @@
 
     <context-param>
         <param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
-        <param-value>/WEB-INF/tiles.xml, /components/profile/tiles/tiles-profile.xml</param-value>
+        <param-value>/WEB-INF/tiles.xml, /components/profile/tiles/tiles-profile.xml, /components/project/tiles/tiles-project.xml, /components/timesheet/tiles/tiles-timesheet.xml</param-value>
     </context-param>
 
     <welcome-file-list>
