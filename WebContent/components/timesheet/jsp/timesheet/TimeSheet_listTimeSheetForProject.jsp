@@ -55,7 +55,7 @@
 
     </div>
 
-    <!-- *******************************Modal to Add Person in the Project ******************************* -->
+    <!-- *******************************Modal to Add new Timesheet  ******************************* -->
 
     <div class="pull-right" class="container">
 
@@ -77,43 +77,30 @@
 
                     <div class="modal-body">
 
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Search Person</button>
-
                         <s:form namespace="/TimeSheet" action="CreateTimeSheetSubmit" method="POST" class="form-inline" theme="bootstrap">
 
-                            <br />
-                            <div class="form-group">
-                                <label>TotalRegularHours:</label>
-                                <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.totalRegularHours" />
-                            </div>
-                            <br />
 
-                            <div class="form-group">
-                                <label>TotalNoOfHoursWorked:</label>
-                                <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.totalNoOfHoursWorked" />
-                            </div>
-                            <br />
+                            <table style="width: 100%;">
+                                <col width="20%" />
+                                <col width="30%" />
+                                <col width="20%" />
+                                <col width="30%" />
+                                <tr>
+                                    <th>Person:</th>
+                                    <td>
+                                        <input type="text" name="projectPersonLinkDetail.personID"  />
+                                    </td>
 
-                            <div class="form-group">
-                                <label>Comments:</label>
-                                <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.comments" />
-                            </div>
-                            <br />
-
-                            <div class="form-group">
-                                <label>Start Date:</label>
-                                <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectPersonLinkDetail.startDate" placeholder="mm/dd/yy" />
-                            </div>
-                            <br />
-
-                            <div class="form-group">
-                                <label>End Date:</label>
-                                <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectPersonLinkDetail.endDate" placeholder="mm/dd/yy" />
-                            </div>
-                            <br />
+                                    <th>Start Date:</th>
+                                    <td>
+                                        <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectPersonLinkDetail.startDate"
+                                            placeholder="mm/dd/yy" />
+                                    </td>
+                                </tr>
+                            </table>
 
                             <div class="modal-footer">
-                                <s:submit type="submit" id="submit" value="Submit" class="btn btn-primary" />
+                                <s:submit type="submit" id="submit" value="Next" class="btn btn-primary" />
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                             <s:hidden name="projectPersonLinkDetail.projectID" value="%{projectDetail.projectID}"></s:hidden>

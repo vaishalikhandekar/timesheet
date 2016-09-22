@@ -73,8 +73,7 @@
                 <td align="left">
 
 
-                <td align="center">
-
+                    &nbsp; &nbsp; &nbsp;
                     <s:url var="updatePersonURL" action="ReadPerson" escapeAmp="false">
                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                         <s:param name="act" value="%{personDetail.updateAction}" />
@@ -91,44 +90,51 @@
                     </a>
 
                 </td>
-            <th style="text-align: right">Title:</th>
-            <td align="left">
-                &nbsp; &nbsp; &nbsp; <s:property value="personDetail.title" />
-            </td>
+                <th style="text-align: right">Title:</th>
+                <td align="left">
+                    &nbsp; &nbsp; &nbsp;
+                    <s:property value="personDetail.title" />
+                </td>
             </tr>
             <tr>
-            <th style="text-align: right">First Name:</th>
-            <td align="left">
-                &nbsp; &nbsp; &nbsp; <s:property value="personDetail.firstName" />
-            </td>
-            <th style="text-align: right">Middle Name:</th>
+                <th style="text-align: right">First Name:</th>
                 <td align="left">
-                    &nbsp; &nbsp; &nbsp; <s:property value="personDetail.middleName" />
+                    &nbsp; &nbsp; &nbsp;
+                    <s:property value="personDetail.firstName" />
+                </td>
+                <th style="text-align: right">Middle Name:</th>
+                <td align="left">
+                    &nbsp; &nbsp; &nbsp;
+                    <s:property value="personDetail.middleName" />
                 </td>
             </tr>
             <tr>
 
-            <th style="text-align: right">Last Name:</th>
+                <th style="text-align: right">Last Name:</th>
                 <td align="left">
-                    &nbsp; &nbsp; &nbsp; <s:property value="personDetail.lastName" />
+                    &nbsp; &nbsp; &nbsp;
+                    <s:property value="personDetail.lastName" />
                 </td>
-            <th style="text-align: right">Gender:</th>
+                <th style="text-align: right">Gender:</th>
                 <td align="left">
-                    &nbsp; &nbsp; &nbsp; <s:property value="personDetail.gender" />
+                    &nbsp; &nbsp; &nbsp;
+                    <s:property value="personDetail.gender" />
                 </td>
             </tr>
             <tr>
-            <th style="text-align: right">Date Of Birth:</th>
+                <th style="text-align: right">Date Of Birth:</th>
                 <td align="left">
-                    &nbsp; &nbsp; &nbsp; <s:property value="personDetail.dateOfBirth" />
+                    &nbsp; &nbsp; &nbsp;
+                    <s:property value="personDetail.dateOfBirth" />
                 </td>
-            <th style="text-align: right">Registration Date:</th>
+                <th style="text-align: right">Registration Date:</th>
                 <td align="left">
-                    &nbsp; &nbsp; &nbsp; <s:property value="personDetail.registrationDate" />
+                    &nbsp; &nbsp; &nbsp;
+                    <s:property value="personDetail.registrationDate" />
                 </td>
             </tr>
 
-                <s:hidden name="personDetail.personID"></s:hidden>
+            <s:hidden name="personDetail.personID"></s:hidden>
         </table>
 
     </s:form>

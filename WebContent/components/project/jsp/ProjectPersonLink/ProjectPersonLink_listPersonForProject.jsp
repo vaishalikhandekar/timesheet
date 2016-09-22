@@ -5,6 +5,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+tr.break td {
+	height: 10px;
+}
+</style>
 <title></title>
 <body>
 
@@ -78,44 +83,43 @@
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Search Person</button>
 
                         <s:form namespace="/Project" action="CreateProjectPersonLinkSubmit" method="POST" class="form-inline" theme="bootstrap">
+<br/>
+                            <table style="width: 100%;">
+                                <col width="20%" />
+                                <col width="30%" />
+                                <col width="20%" />
+                                <col width="30%" />
 
-                            <br>
-                            <br>
-                            <div class="form-group">
-                                <label>Role:</label>
-                                <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.role" />
-                            </div>
-                            <br />
-                            <br />
+                                <tr>
+                                    <th>Role:</th>
+                                    <td>
+                                        <input type="text"  name="projectPersonLinkDetail.role" />
+                                    </td>
 
-                            <div class="form-group">
-                                <label>PersonID:</label>
-                                <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.personID" />
-                            </div>
-                            <br />
-                            <br />
+                                    <th>PersonID:</th>
+                                    <td>
+                                        <input type="text"  name="projectPersonLinkDetail.personID" />
+                                    </td>
+                                <tr>
+                                    <th>Comments:</th>
+                                    <td>
+                                        <input type="text"  name="projectPersonLinkDetail.comments" />
+                                    </td>
 
-                            <div class="form-group">
-                                <label>Comments:</label>
-                                <s:textfield type="text" class="form-control" name="projectPersonLinkDetail.comments" />
-                            </div>
-                            <br>
-                            <br>
-
-                            <div class="form-group">
-                                <label>Start Date:</label>
-                                <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectPersonLinkDetail.startDate" placeholder="mm/dd/yy" />
-                            </div>
-                            <br>
-                            <br>
-
-                            <div class="form-group">
-                                <label>End Date:</label>
-                                <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectPersonLinkDetail.endDate" placeholder="mm/dd/yy" />
-                            </div>
-                            <br>
-                            <br>
-
+                                    <th>Start Date:</th>
+                                    <td>
+                                        <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectPersonLinkDetail.startDate"
+                                            placeholder="mm/dd/yy" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>End Date:</th>
+                                    <td>
+                                        <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectPersonLinkDetail.endDate"
+                                            placeholder="mm/dd/yy" />
+                                    </td>
+                                </tr>
+                            </table>
                             <div class="modal-footer">
                                 <s:submit type="submit" id="submit" value="Submit" class="btn btn-primary" />
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

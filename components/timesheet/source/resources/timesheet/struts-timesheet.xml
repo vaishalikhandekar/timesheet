@@ -25,7 +25,7 @@
 
         <action name="CreateNewProcessSubmit" class="com.company.timesheet.timesheet.action.ProjectTimeSheetProcessCreateAction">
             <result name="success" type="redirect">
-                <param name="location">/TimeSheetsProcess</param>
+                <param name="location">/TimeSheet/TimeSheetsProcess</param>
                 <param name="projectDetail.projectID">${projectTimeSheetProcessDetail.projectID}</param>
             </result>
             <result name="error">/index</result>
@@ -48,7 +48,7 @@
 
         <action name="TimeSheetDeleteFromPerson" class="com.company.timesheet.timesheet.action.TimeSheetDeleteFromPersonAction">
             <result name="success" type="redirect">
-                <param name="location">/TimeSheetsForPerson</param>
+                <param name="location">/TimeSheet/TimeSheetsForPerson</param>
             </result>
             <result name="error">/index</result>
         </action>
@@ -76,7 +76,7 @@
 
         <action name="TimeSheetCreate" class="com.company.timesheet.timesheet.action.TimeSheetCreateAction">
             <result name="success" type="redirect">
-                <param name="location">/TimeSheetRead</param>
+                <param name="location">/TimeSheet/TimeSheetRead</param>
                 <param name="personDetail.personID">${timeSheetCreateDetails.personID}</param>
                 <param name="act">${timeSheetDetail.updateAction}</param>
                 <param name="timeSheetKey.timeSheetID">${timeSheetDetail.timeSheetID}</param>
@@ -86,7 +86,7 @@
 
         <action name="TimeSheetUpdate" class="com.company.timesheet.timesheet.action.TimeSheetUpdateFromPersonAction">
             <result name="success" type="redirect">
-                <param name="location">/TimeSheetsForPerson</param>
+                <param name="location">/TimeSheet/TimeSheetsForPerson</param>
                 <param name="personDetail.personID">${personDetail.personID}</param>
             </result>
             <result name="error">/index</result>

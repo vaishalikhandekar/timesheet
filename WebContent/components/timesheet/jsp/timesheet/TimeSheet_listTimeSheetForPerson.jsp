@@ -76,20 +76,23 @@
 
                         <s:form namespace="/TimeSheet" action="TimeSheetCreate" method="POST" class="form-inline" theme="bootstrap">
 
-                            <br />
-                            <div class="form-group">
-                                <label>Project:</label>
-                                <input type="text" name="timeSheetCreateDetails.projectID" class="form-control" />
-                            </div>
-                            <br />
-                            <br />
+                            <table style="width: 100%;">
+                                                <col width="20%" />
+                                                <col width="30%" />
+                                                <col width="20%" />
+                                                <col width="30%" />
+                                        <tr>        
+                                <th>Project:</th>
+                                <td>
+                                <input type="text" name="timeSheetCreateDetails.projectID"  />
+                                </td>
 
-                            <div class="form-group">
-                                <label>Start Date:</label>
+                                <th>Start Date:</th>
+                                <td>
                                 <input type="text" class="datepick" id="date_1" class="dateTxt" name="timeSheetCreateDetails.startDate" placeholder="mm/dd/yy" />
-                            </div>
-                            <br />
-                            <br />
+                                </td>
+                            </tr>
+                            </table>
 
                             <div class="modal-footer">
                                 <s:submit type="submit" id="submit" value="Next" class="btn btn-primary" />

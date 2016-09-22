@@ -33,59 +33,65 @@
 
                         <s:form namespace="/TimeSheet" action="CreateNewProcessSubmit" method="POST" class="form-inline" theme="bootstrap">
 
-                            <br>
-                            <br>
-                            <div class="form-group">
-                                <label>Frequency:</label>
-                                <s:textfield type="text" class="form-control" name="projectTimeSheetProcessDetail.frequency" />
-                            </div>
-                            <br />
-                            <br />
+                            <table style="width: 100%;">
+                                <col width="20%" />
+                                <col width="30%" />
+                                <col width="20%" />
+                                <col width="30%" />
 
-                            <div class="form-group">
-                                <label>StartDay:</label>
-                                <s:textfield type="text" class="form-control" name="projectTimeSheetProcessDetail.startDay" />
-                            </div>
-                            <br />
-                            <br />
+                                <tr>
 
-                            <div class="form-group">
-                                <label>Minimum Approval Level Type:</label>
-                                <s:textfield type="text" class="form-control" name="projectTimeSheetProcessDetail.minimumApprovalLevelType" />
-                            </div>
-                            <br>
-                            <br>
+                                    <th>Frequency:</th>
+                                    <td>
+                                        <input type="text"  name="projectTimeSheetProcessDetail.frequency" />
+                                    </td>
 
-                            <div class="form-group">
-                                <label>Regular Daily Hours:</label>
-                                <input type="text" class="form-control" name="projectTimeSheetProcessDetail.regularDailyHours" />
-                            </div>
-                            <br>
-                            <br>
+                                    <th>StartDay:</th>
+                                    <td>
+                                        <input type="text"  name="projectTimeSheetProcessDetail.startDay" />
+                                    </td>
+                                </tr>
+                                 <tr class="break">
+                                                    <td colspan="2"></td>
+                                                </tr>
+                                <tr>
 
-                            <div class="form-group">
-                                <label>StartDate:</label>
-                                <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectTimeSheetProcessDetail.startDate"
-                                    placeholder="mm/dd/yy" />
-                            </div>
-                            <br>
-                            <br>
+                                    <th>Minimum Approval Level Type:</th>
+                                    <td>
+                                        <input type="text"  name="projectTimeSheetProcessDetail.minimumApprovalLevelType" />
+                                    </td>
 
-                            <div class="form-group">
-                                <label>End Date:</label>
-                                <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectTimeSheetProcessDetail.endDate"
-                                    placeholder="mm/dd/yy" />
-                            </div>
-                            <br>
-                            <br>
+                                    <th>Regular Daily Hours:</th>
+                                    <td>
+                                        <input type="text"  name="projectTimeSheetProcessDetail.regularDailyHours" />
+                                    </td>
+                                </tr>
+                                 <tr class="break">
+                                                    <td colspan="2"></td>
+                                                </tr>
+                                <tr>
+                                    <th>StartDate:</th>
+                                    <td>
+                                        <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectTimeSheetProcessDetail.startDate"
+                                            placeholder="mm/dd/yy" />
+                                    </td>
 
-                            <div class="form-group">
-                                <label>Comments:</label>
-                                <input type="text" class="form-control" name="projectTimeSheetProcessDetail.comments" />
-                            </div>
-                            <br>
-                            <br>
-
+                                    <th>End Date:</th>
+                                    <td>
+                                        <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectTimeSheetProcessDetail.endDate"
+                                            placeholder="mm/dd/yy" />
+                                    </td>
+                                </tr>
+                                 <tr class="break">
+                                                    <td colspan="2"></td>
+                                                </tr>
+                                <tr>
+                                    <th>Comments:</th>
+                                    <td>
+                                        <input type="text"  name="projectTimeSheetProcessDetail.comments" />
+                                    </td>
+                                </tr>
+                            </table>
                             <div class="modal-footer">
                                 <s:submit type="submit" id="submit" value="Submit" class="btn btn-primary" />
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -187,6 +193,6 @@
         </table>
 
     </s:form>
-    
+
 </body>
 </html>

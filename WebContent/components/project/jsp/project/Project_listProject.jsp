@@ -181,19 +181,22 @@ tr.break td {
                                         <s:form name="CreateProject" namespace="/Project" action="CreateProjectSubmit" method="POST" role="form"
                                             theme="bootstrap">
 
-                                            <table>
-                                                <!--    <colgroup span="3"></colgroup> -->
+                                            <table style="width: 100%;">
+                                                <col width="20%" />
+                                                <col width="30%" />
+                                                <col width="20%" />
+                                                <col width="30%" />
+
                                                 <tr>
 
                                                     <th>Project Name</th>
                                                     <td>
-                                                        <input type="text" class="form-control" name="projectDetail.projectName" />
+                                                        <input type="text"  name="projectDetail.projectName" />
                                                     </td>
 
-                                                    <th></th>
                                                     <th>Acronym</th>
                                                     <td>
-                                                        <input type="text" class="form-control" name="projectDetail.acronym" />
+                                                        <input type="text"  name="projectDetail.acronym" />
                                                     </td>
                                                 </tr>
 
@@ -201,7 +204,6 @@ tr.break td {
                                                 <tr class="break">
                                                     <td colspan="2"></td>
                                                 </tr>
-                                                <!--  <colgroup span="3"></colgroup> -->
                                                 <tr>
 
                                                     <th>Start Date</th>
