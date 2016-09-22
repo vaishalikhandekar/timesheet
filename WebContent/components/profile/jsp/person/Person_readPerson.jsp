@@ -32,7 +32,7 @@
 
                     <div class="modal-body">
 
-                        <s:form class="form-inline" name="DeletePerson" namespace="/" action="DeletePerson" method="POST" role="form" theme="bootstrap">
+                        <s:form class="form-inline" name="DeletePerson" namespace="/Profile" action="DeletePerson" method="POST" role="form" theme="bootstrap">
 
                             <p>Are You Sure ?</p>
 
@@ -58,7 +58,7 @@
 
     <jsp:include page="Person_navPerson.jsp"></jsp:include>
 
-    <s:form action="/ReadPerson" method="post">
+    <s:form action="/Profile/ReadPerson" method="post">
 
         <table class="table table-striped">
             <thead>
@@ -79,7 +79,7 @@
 
 
                 <td align="center">
-                
+
                     <s:url var="updatePersonURL" action="ReadPerson" escapeAmp="false">
                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                         <s:param name="act" value="%{personDetail.updateAction}" />
@@ -94,7 +94,7 @@
                         <span class="glyphicon glyphicon-trash"></span>
                         <!-- Delete -->
                     </a>
-                    
+
                 </td>
                 <td align="center">
                     <s:property value="personDetail.title" />

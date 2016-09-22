@@ -28,7 +28,7 @@
         </ul> --%>
 
         <jsp:include page="Person_userTabs.jsp"></jsp:include>
-        
+
         <div class="tab-content">
 
             <div id="PersonName" class="tab-pane fade in active">
@@ -42,8 +42,9 @@
                     </div>
 
                     <div class="panel-body">
-                        <img src="/TimeSheet/components/profile/images/user.png" class="img-rounded" alt="Cinque Terre" width="100" height="100" />
-                        Full Name : &nbsp; <s:property value="personDetail.firstName" />
+                        <img src="/TimeSheet/components/profile/images/user.png" class="img-rounded" alt="Cinque Terre" width="100" height="100" /> Full Name :
+                        &nbsp;
+                        <s:property value="personDetail.firstName" />
                         &nbsp;
                         <s:property value="personDetail.lastName" />
                         <br />
@@ -77,23 +78,24 @@
                             <ul class="nav navbar-nav">
 
                                 <li class="active">
-                                    <s:url var="PersonHome" action="/ReadPerson">
+                                    <s:url var="PersonHome" action="/Profile/ReadPerson">
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
                                     <a href="${PersonHome}">
-                                        <span class="glyphicon glyphicon-home"></span> Home
+                                        <span class="glyphicon glyphicon-home"></span>
+                                        Home
                                     </a>
                                 </li>
 
                                 <li>
-                                    <s:url var="PersonProjectList" action="/PersonProjectList">
+                                    <s:url var="PersonProjectList" action="/Project/PersonProjectList">
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
                                     <a href="${PersonProjectList}">Projects</a>
                                 </li>
 
                                 <li>
-                                    <s:url var="TimeSheetsForPerson" action="/TimeSheetsForPerson">
+                                    <s:url var="TimeSheetsForPerson" action="/TimeSheet/TimeSheetsForPerson">
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
                                     <a href="${TimeSheetsForPerson}">Time Sheets</a>

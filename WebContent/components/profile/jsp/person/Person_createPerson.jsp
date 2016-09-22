@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
 
 <!DOCTYPE html>
@@ -25,11 +24,11 @@
 
 </head>
 <body>
-	<h3 class="well">Registration Form</h3>
-	<div class="container" style="border: thin solid black"> 
-		<br>
+    <h3 class="well">Registration Form</h3>
+    <div class="container" style="border: thin solid black">
+        <br>
 
-		<!-- <div class="modal fade" id="modal-1" data-keyboard="false"
+        <!-- <div class="modal fade" id="modal-1" data-keyboard="false"
 				data-backdrop="static">
 				
 					<div class="modal-dialog modal-lg">
@@ -44,110 +43,100 @@
 
 						<div class="modal-body"> -->
 
-		<s:form class="form-inline" name="Registration"
-			action="/CreatePersonSubmit" method="POST" role="form"
-			theme="bootstrap">
+        <s:form class="form-inline" name="Registration" namespace="/Profile" action="/CreatePersonSubmit" method="POST" role="form" theme="bootstrap">
 
-			<div class="form-group">
+            <div class="form-group">
 
-				<label>Name</label>
-				<s:select
-					list="#{'Mr.':'Mr.', 'Mrs.':'Mrs.','Miss.':'Miss.', 'Kumar':'Kumar'}"
-					name="personDetail.title" placeholder="Title"
-					class="form-control" >
+                <label>Name</label>
+                <s:select list="#{'Mr.':'Mr.', 'Mrs.':'Mrs.','Miss.':'Miss.', 'Kumar':'Kumar'}" name="personDetail.title" placeholder="Title"
+                    class="form-control">
                     <span class="glyphicon glyphicon-asterisk"></span>
-				</s:select>
-				<!-- <input type="email" class="form-control" id="email" placeholder="Enter email">-->
-			</div>
+                </s:select>
+                <!-- <input type="email" class="form-control" id="email" placeholder="Enter email">-->
+            </div>
 
-			<div class="form-group">
-				<s:textfield type="text" name="personDetail.firstName"
-					placeholder="FirstName" class="form-control" />
-			</div>
-
-
-			<div class="form-group">
-				<s:textfield type="text" name="personDetail.middleName"
-					placeholder="MiddleName" class="form-control" />
-			</div>
-
-			<div class="form-group">
-				<s:textfield type="text" name="personDetail.lastName"
-					placeholder="LastName" class="form-control" />
-			</div>
-			<br>
-			<br>
-            
-			<div class="form-group">
-				<label>DateOfBirth:</label> 
-               <input type="text" class="datepick" id="date_1" name="personDetail.dateOfBirth" class="form-control"  />
-           
-			</div>
-
-			<%--  <s:select label="Gender" list="genderMap" name="personDetail.gender" class="form-control" /> --%>
-			<s:radio list="{'Male','Female'}" name="personDetail.gender"></s:radio>
+            <div class="form-group">
+                <s:textfield type="text" name="personDetail.firstName" placeholder="FirstName" class="form-control" />
+            </div>
 
 
-			<br>
-			<br>
+            <div class="form-group">
+                <s:textfield type="text" name="personDetail.middleName" placeholder="MiddleName" class="form-control" />
+            </div>
 
-			<div class="form-group">
-				<label>UserName:</label>
-				<s:textfield type="text" name="personDetail.usersDetail.userName"
-					class="form-control" />
-                    
-                    
-			</div>
+            <div class="form-group">
+                <s:textfield type="text" name="personDetail.lastName" placeholder="LastName" class="form-control" />
+            </div>
+            <br>
+            <br>
 
-			<div class="form-group">
-				<label>Password:</label>
-				<s:textfield type="password" name="personDetail.usersDetail.password"
-					class="form-control" />
-			</div>
-			
-			
-			<div class="form-group">
-				<label>Start Date:</label>
-				 <input type="text" class="datepick" id="date_2" name="personDetail.startDate" class="form-control" />
-			</div>
-            
-			<div class="form-group">
-				<label>End Date:</label>
-				    <input type="text" class="datepick" id="date_3" name="personDetail.endDate" class="form-control"  />
-			</div>
-            
-			<div class="form-group">
-				<label>Email Address:</label>
-				    <input type="text" name="personDetail.emailAddress" class="form-control"  />
-			</div>
+            <div class="form-group">
+                <label>DateOfBirth:</label>
+                <input type="text" class="datepick" id="date_1" name="personDetail.dateOfBirth" class="form-control" />
 
-			<div class="form-group">
-				<label>Phone Number:</label>
-				    <input type="text" name="personDetail.phoneNumber" class="form-control"  />
-			</div>
-			
-			
+            </div>
 
-			<br>
-			<br>
-			<br>
-			<br>
-						
+            <%--  <s:select label="Gender" list="genderMap" name="personDetail.gender" class="form-control" /> --%>
+            <s:radio list="{'Male','Female'}" name="personDetail.gender"></s:radio>
 
-			
-			
-			<s:submit type="submit" id="submit" value="Register"
-				class="btn btn-primary" />
-			<div class="checkbox">
-				<label><input type="checkbox"> Remember me</label>
-			</div>
-		</s:form>
 
-		<!-- <s:form action="/TimeSheet/personLogOut" method="POST" class="form-inline">
+            <br>
+            <br>
+
+            <div class="form-group">
+                <label>UserName:</label>
+                <s:textfield type="text" name="personDetail.usersDetail.userName" class="form-control" />
+
+
+            </div>
+
+            <div class="form-group">
+                <label>Password:</label>
+                <s:textfield type="password" name="personDetail.usersDetail.password" class="form-control" />
+            </div>
+
+
+            <div class="form-group">
+                <label>Start Date:</label>
+                <input type="text" class="datepick" id="date_2" name="personDetail.startDate" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>End Date:</label>
+                <input type="text" class="datepick" id="date_3" name="personDetail.endDate" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Email Address:</label>
+                <input type="text" name="personDetail.emailAddress" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number:</label>
+                <input type="text" name="personDetail.phoneNumber" class="form-control" />
+            </div>
+
+
+
+            <br />
+            <br />
+            <br />
+            <br />
+
+
+
+
+            <s:submit type="submit" id="submit" value="Register" class="btn btn-primary" />
+            <div class="checkbox">
+                <label><input type="checkbox"> Remember me</label>
+            </div>
+        </s:form>
+
+        <!-- <s:form action="/TimeSheet/personLogOut" method="POST" class="form-inline">
 			<br>
 			 <s:submit type="submit" value="Cancel" class="btn btn-primary" /> 
 		</s:form> -->
-        <br/>
-	</div>
+        <br />
+    </div>
 </body>
 </html>

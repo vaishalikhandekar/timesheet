@@ -45,7 +45,7 @@
 
                     <div class="modal-body">
 
-                        <s:form class="form-inline" name="DeletePerson" namespace="/" action="DeletePerson" method="POST" role="form" theme="bootstrap">
+                        <s:form class="form-inline" name="DeletePerson" namespace="/Profile" action="DeletePerson" method="POST" role="form" theme="bootstrap">
 
                             <p>Are You Sure ?</p>
 
@@ -83,7 +83,8 @@
                     </div>
 
                     <div class="modal-body">
-                        <s:form class="form-inline" name="UpdatePerson" action="UpdatePersonSubmit" method="POST" namespace="/" role="form" theme="bootstrap">
+                        <s:form class="form-inline" name="UpdatePerson" action="UpdatePersonSubmit" method="POST" namespace="/Profile" role="form"
+                            theme="bootstrap">
 
                             <table>
                                 <tr>
@@ -187,7 +188,7 @@
 
                                 <div class="modal-body">
 
-                                    <s:form class="form-inline" name="CreatePerson" namespace="/" action="CreatePersonSubmit" method="POST" role="form"
+                                    <s:form class="form-inline" name="CreatePerson" namespace="/Profile" action="CreatePersonSubmit" method="POST" role="form"
                                         theme="bootstrap">
 
 
@@ -217,8 +218,8 @@
                                         <br>
 
                                         <div class="form-group">
-                                            <label>DateOfBirth:</label> <input type="text" class="datepick" id="date_1" name="personDetail.dateOfBirth"
-                                                class="form-control" />
+                                            <label>DateOfBirth:</label>
+                                            <input type="text" class="datepick" id="date_1" name="personDetail.dateOfBirth" class="form-control" />
 
                                         </div>
 
@@ -243,23 +244,25 @@
 
 
                                         <div class="form-group">
-                                            <label>Start Date:</label> <input type="text" class="datepick" id="date_2" name="personDetail.startDate"
-                                                class="form-control" />
+                                            <label>Start Date:</label>
+                                            <input type="text" class="datepick" id="date_2" name="personDetail.startDate" class="form-control" />
                                         </div>
                                         <br />
                                         <br />
 
                                         <div class="form-group">
-                                            <label>End Date:</label> <input type="text" class="datepick" id="date_3" name="personDetail.endDate"
-                                                class="form-control" />
+                                            <label>End Date:</label>
+                                            <input type="text" class="datepick" id="date_3" name="personDetail.endDate" class="form-control" />
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Email Address:</label> <input type="text" name="personDetail.emailAddress" class="form-control" />
+                                            <label>Email Address:</label>
+                                            <input type="text" name="personDetail.emailAddress" class="form-control" />
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Phone Number:</label> <input type="text" name="personDetail.phoneNumber" class="form-control" />
+                                            <label>Phone Number:</label>
+                                            <input type="text" name="personDetail.phoneNumber" class="form-control" />
                                         </div>
 
                                         <br />
@@ -287,14 +290,14 @@
             </div>
             <br />
 
-            <s:form action="/ListPerson" method="post">
+            <s:form action="/Profile/ListPerson" method="post">
 
                 <table class="table table-striped" border="1">
 
                     <thead>
 
-                       <tr bgcolor="#FFA500"> 
-                        <!-- <tr class="success"> -->
+                        <tr bgcolor="#FFA500">
+                            <!-- <tr class="success"> -->
                             <th style="text-align: center">Action</th>
                             <th style="text-align: center">Title</th>
                             <th style="text-align: center">First Name</th>

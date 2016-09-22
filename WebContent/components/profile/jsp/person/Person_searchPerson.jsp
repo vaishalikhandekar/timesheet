@@ -12,9 +12,9 @@
 <body>
 
     <jsp:include page="Person_userTabs.jsp"></jsp:include>
-    
+
     <div class="tabbable full-width-tabs">
-        
+
 
         <div class="tab-content">
 
@@ -22,7 +22,7 @@
 
                 <div class="container">
 
-                    <s:form action="/SearchPersonSubmit" method="POST" class="form-inline" theme="bootstrap">
+                    <s:form action="/Profile/SearchPersonSubmit" method="POST" class="form-inline" theme="bootstrap">
                         <h4 class="well well-sm">Search Criteria</h4>
 
                         <div class="form-group">
@@ -60,12 +60,24 @@
                             <s:iterator value="personSearchResult.personDetailList" status="stat">
 
                                 <tr>
-                                    <td align="center"><s:property value="title" /></td>
-                                    <td align="center"><s:property value="firstName" /></td>
-                                    <td align="center"><s:property value="middleName" /></td>
-                                    <td align="center"><s:property value="lastName" /></td>
-                                    <td align="center"><s:property value="gender" /></td>
-                                    <td align="center"><s:property value="dateOfBirth" /></td>
+                                    <td align="center">
+                                        <s:property value="title" />
+                                    </td>
+                                    <td align="center">
+                                        <s:property value="firstName" />
+                                    </td>
+                                    <td align="center">
+                                        <s:property value="middleName" />
+                                    </td>
+                                    <td align="center">
+                                        <s:property value="lastName" />
+                                    </td>
+                                    <td align="center">
+                                        <s:property value="gender" />
+                                    </td>
+                                    <td align="center">
+                                        <s:property value="dateOfBirth" />
+                                    </td>
                                 </tr>
 
                             </s:iterator>

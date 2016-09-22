@@ -84,7 +84,7 @@
             </li>
 
             <li>
-                <a data-toggle="tab" href="#PersonSearch" data-url="/TimeSheet/SearchPerson">Person Search</a>
+                <a data-toggle="tab" href="#PersonSearch" data-url="/TimeSheet/Profile/SearchPerson">Person Search</a>
                 <span>x</span>
             </li>
 
