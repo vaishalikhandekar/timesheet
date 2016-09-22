@@ -139,6 +139,7 @@
 
                             <s:url id="TimeSheetLineItemReadFromPersonURL" action="TimeSheetLineItemReadFromPerson" escapeAmp="false">
                                 <s:param name="timeSheetKey.timeSheetID" value="%{timeSheetID}" />
+                                <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                             </s:url>
                             <s:a href="%{TimeSheetLineItemReadFromPersonURL}">
                                 <span class="glyphicon glyphicon-eye-open"></span>
