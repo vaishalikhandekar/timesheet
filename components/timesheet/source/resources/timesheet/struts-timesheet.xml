@@ -18,10 +18,14 @@
             <result name="error">/index</result>
         </action>
 
-        <action name="TimeSheetsProcessList" class="com.company.timesheet.timesheet.action.ProjectTimeSheetProcessListAction">
+        
+        <!-- Start - ProjectTimeSheetsProcess Actions -->
+        
+        <action name="ProjectTimeSheetsProcessList" class="com.company.timesheet.timesheet.action.ProjectTimeSheetProcessListAction">
             <result name="success" type="tiles">TimeSheetsProcessList</result>
             <result name="error">/index</result>
         </action>
+        
 
         <action name="ProjectTimeSheetProcessCreateSubmit" class="com.company.timesheet.timesheet.action.ProjectTimeSheetProcessCreateAction">
             <result name="success" type="redirect">
@@ -31,16 +35,13 @@
             <result name="error">/index</result>
         </action>
 
+        <!-- End - ProjectTimeSheetsProcess Actions -->
+        
         <action name="TimeSheetsForProject" class="com.company.timesheet.timesheet.action.TimeSheetsForProjectAction">
             <result name="success" type="tiles">TimeSheetsForProject</result>
             <result name="error">/index</result>
         </action>
 
-
-       <!--  <action name="TimeSheetsAdministration" class="com.company.timesheet.project.action.ProjectReadAction">
-            <result name="success" type="tiles">TimeSheetsAdministration</result>
-            <result name="error">/index</result>
-        </action> -->
 
         <action name="TimeSheetDeleteFromPerson" class="com.company.timesheet.timesheet.action.TimeSheetDeleteFromPersonAction">
             <result name="success" type="redirect">
@@ -48,7 +49,6 @@
             </result>
             <result name="error">/index</result>
         </action>
-
 
 
 

@@ -15,10 +15,10 @@
     <h2>Time Sheet</h2>
     <BR />
     <BR />
-    <a href="/TimeSheet/Project/ListProject">Project List</a>
+    <a href="/TimeSheet/Project/ProjectList">Project List</a>
     <BR />
     <BR />
-    <a href="/TimeSheet/Profile/ListPerson">Person List</a>
+    <a href="/TimeSheet/Profile/PersonList">Person List</a>
 
 </body>
 
