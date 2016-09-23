@@ -112,7 +112,7 @@ tr.break td {
     </div>
 
 
-    <s:form action="/TimeSheetsProcessList" namespace="/TimeSheet" method="post">
+    <s:form action="TimeSheetsProcessList" namespace="/TimeSheet" method="post">
 
         <!--   <a href="CreateTimeSheet">New TimeSheet</a> -->
         <br>

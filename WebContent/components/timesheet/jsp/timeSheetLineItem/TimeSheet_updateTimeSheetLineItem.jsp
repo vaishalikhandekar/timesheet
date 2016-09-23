@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <s:form action="/UpdateTimeSheetLineItemSubmit" namespace="/TimeSheet" method="POST">
+    <s:form action="UpdateTimeSheetLineItemSubmit" namespace="/TimeSheet" method="POST">
 
 
         <table>

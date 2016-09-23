@@ -51,7 +51,7 @@
 
 
 
-        <s:form action="/TimeSheetLineItemReadFromPerson" namespace="/TimeSheet" method="post">
+        <s:form action="TimeSheetLineItemReadFromPerson" namespace="/TimeSheet" method="post">
             <br>
             <br>
             <table class="table table-striped">

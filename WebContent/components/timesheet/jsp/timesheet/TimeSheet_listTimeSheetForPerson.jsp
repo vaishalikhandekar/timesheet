@@ -113,10 +113,9 @@
         
     </div>
 
-  <%--   <s:form action="/PersonTimeSheetList" namespace="/TimeSheet" method="post"> --%>
 
-        <br>
-        <br>
+        <br />
+        <br />
         <table class="table table-striped">
             <thead>
 
@@ -213,8 +212,6 @@
             </s:iterator>
 
         </table>
-
-    <%-- </s:form> --%>
 
 </body>
 </html>
