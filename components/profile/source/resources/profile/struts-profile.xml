@@ -14,10 +14,6 @@
             <result type="tiles">PersonSearch</result>
         </action>
 
-        <action name="CreatePerson">
-            <result type="tiles">PersonCreate</result>
-        </action>
-
         <action name="PersonCreateSubmit" class="com.company.timesheet.profile.person.action.PersonCreateAction">
             <result name="success" type="redirect">
                 <param name="location">/Profile/PersonList</param>
