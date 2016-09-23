@@ -62,8 +62,14 @@ public class JavaUtildates {
      */
     public static java.sql.Date convertUtilToSql(java.util.Date uDate) {
 
-        //if (uDate.)
-        java.sql.Date sDate = new java.sql.Date(uDate.getTime());
+        java.sql.Date sDate = null;
+       
+        if (uDate != null){
+           
+             sDate = new java.sql.Date(uDate.getTime());
+        }else{
+            sDate = null;
+        }
 
         return sDate;
     }
