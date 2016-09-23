@@ -57,7 +57,7 @@
 
     <!-- ***************************************Code for Persons to Project***************************** -->
 
-    <s:form action="/ProjectRead" namespace="/Project" method="post">
+    <s:form action="ProjectRead" namespace="/Project" method="post">
         <br>
         <br>
 

@@ -82,12 +82,12 @@
                         <span class="glyphicon glyphicon-pencil"></span>
                         <!-- Update -->
                     </s:a>
-                    &nbsp;&nbsp;
+                   <%--  &nbsp;&nbsp;
 
                     <a href="#DeletePerson" data-toggle="modal">
                         <span class="glyphicon glyphicon-trash"></span>
                         <!-- Delete -->
-                    </a>
+                    </a> --%>
 
                 </td>
                 <th style="text-align: right">Title:</th>

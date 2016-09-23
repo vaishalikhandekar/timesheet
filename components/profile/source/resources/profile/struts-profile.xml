@@ -9,7 +9,7 @@
         <result-types>
             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
         </result-types>
-        
+
         <action name="PersonSearch">
             <result type="tiles">PersonSearch</result>
         </action>
@@ -20,16 +20,16 @@
 
         <action name="PersonCreateSubmit" class="com.company.timesheet.profile.person.action.PersonCreateAction">
             <result name="success" type="redirect">
-                <param name="location">/PersonList</param>
+                <param name="location">/Profile/PersonList</param>
             </result>
-            <result name="error" type="tiles">PersonCreate</result>
-            <result name="input" type="tiles">PersonCreate</result>
+            <result name="error" type="tiles">actionError</result>
+            <result name="input" type="tiles">inputError</result>
         </action>
 
 
         <action name="PersonLogin" class="com.company.timesheet.profile.person.action.PersonLoginAction">
             <result name="success" type="redirect">
-                <param name="location">/PersonRead</param>
+                <param name="location">/Profile/PersonRead</param>
                 <param name="personDetail.personID">${usersDetail.personID}</param>
             </result>
             <result name="error">/index</result>
@@ -51,7 +51,8 @@
 
         <action name="PersonUpdateSubmit" class="com.company.timesheet.profile.person.action.PersonUpdateAction">
             <result name="success" type="redirect">
-                <param name="location">/PersonRead</param>
+                <param name="personDetail.personID">${personDetail.personID}</param>
+                <param name="location">/Profile/PersonRead</param>
             </result>
             <result name="error">/index</result>
         </action>
@@ -59,7 +60,7 @@
 
         <action name="PersonDelete" class="com.company.timesheet.profile.person.action.PersonDeleteAction">
             <result name="success" type="redirect">
-                <param name="location">/PersonList</param>
+                <param name="location">/Profile/PersonList</param>
             </result>
             <result name="error">/index</result>
         </action>

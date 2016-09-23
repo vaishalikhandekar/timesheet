@@ -19,50 +19,50 @@
                 <tr>
                     <td>Title</td>
                     <td>
-                        <s:textfield name="projectPersonLinkDetail.personDetail.title" />
+                        <s:textfield name="projectPersonLinkDetail.personDetail.title" theme="simple"/>
                     </td>
                 </tr>
 
                 <tr>
                     <td>First Name</td>
                     <td>
-                        <s:textfield name="projectPersonLinkDetail.personDetail.firstName" />
+                        <s:textfield name="projectPersonLinkDetail.personDetail.firstName" theme="simple"/>
                     </td>
                 </tr>
                 <tr>
                     <td>Middle Name</td>
                     <td>
-                        <s:textfield name="projectPersonLinkDetail.personDetail.middleName" />
+                        <s:textfield name="projectPersonLinkDetail.personDetail.middleName" theme="simple"/>
                     </td>
                 </tr>
                 <tr>
                     <td>Last Name</td>
                     <td>
-                        <s:textfield name="projectPersonLinkDetail.personDetail.lastName" />
+                        <s:textfield name="projectPersonLinkDetail.personDetail.lastName" theme="simple"/>
                     </td>
                 </tr>
                 <tr>
                     <td>Gender</td>
                     <td>
-                        <s:textfield name="projectPersonLinkDetail.personDetail.gender" />
+                        <s:textfield name="projectPersonLinkDetail.personDetail.gender" theme="simple"/>
                     </td>
                 </tr>
                 <tr>
                     <td>Date Of Birth</td>
                     <td>
-                        <s:textfield name="projectPersonLinkDetail.personDetail.dateOfBirth" />
+                        <s:textfield name="projectPersonLinkDetail.personDetail.dateOfBirth" theme="simple"/>
                     </td>
                 </tr>
                 <tr>
                     <td>Registration Date</td>
                     <td>
-                        <s:textfield name="projectPersonLinkDetail.personDetail.registrationDate" />
+                        <s:textfield name="projectPersonLinkDetail.personDetail.registrationDate" theme="simple"/>
                     </td>
                 </tr>
                 <tr>
                     <td>Role</td>
                     <td>
-                        <s:textfield name="projectPersonLinkDetail.role" />
+                        <s:textfield name="projectPersonLinkDetail.role" theme="simple"/>
                     </td>
                 </tr>
 

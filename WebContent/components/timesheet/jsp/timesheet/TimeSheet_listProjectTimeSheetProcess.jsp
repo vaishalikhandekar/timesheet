@@ -5,6 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Time Sheet List</title>
+<style type="text/css">
+tr.break td {
+    height: 10px;
+}
+</style>
 </head>
 <body>
     <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>

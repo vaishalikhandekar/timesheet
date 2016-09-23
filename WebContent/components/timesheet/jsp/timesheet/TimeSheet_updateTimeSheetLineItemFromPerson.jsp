@@ -56,7 +56,7 @@
 
     <br />
 
-    <s:form action="/TimeSheetUpdate" namespace="/TimeSheet" method="POST">
+    <s:form action="TimeSheetUpdate" namespace="/TimeSheet" method="POST">
 
 
         <table class="table table-striped" border="1">

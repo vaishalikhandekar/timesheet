@@ -42,6 +42,16 @@
         <put-attribute name="title" value="HTTP 404" />
         <put-attribute name="body" value="/components/core/jsp/common/Error404.jsp" />
     </definition>
+    
+    <definition name="inputError" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Input Error" />
+        <put-attribute name="body" value="/components/core/jsp/common/InputError.jsp" />
+    </definition>
+    
+    <definition name="actionError" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="Action Error" />
+        <put-attribute name="body" value="/components/core/jsp/common/ActionError.jsp" />
+    </definition>
         
         
 </tiles-definitions>

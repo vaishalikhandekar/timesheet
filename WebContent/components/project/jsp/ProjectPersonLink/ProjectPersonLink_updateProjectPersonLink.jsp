@@ -23,11 +23,11 @@
                 <tr>
                     <th>Role :</th>
                     <td>
-                        <input name="projectPersonLinkDetail.role" />
+                        <s:textfield name="projectPersonLinkDetail.role" theme="simple"/>
                     </td>
                     <th>Comments :</th>
                     <td>
-                        <input name="projectPersonLinkDetail.comments" />
+                        <s:textfield name="projectPersonLinkDetail.comments" theme="simple"/>
                     </td>
                 </tr>
 
@@ -38,11 +38,11 @@
                 <tr>
                     <th>Start Date</th>
                     <td>
-                        <input name="projectPersonLinkDetail.startDate" />
+                        <s:textfield name="projectPersonLinkDetail.startDate" theme="simple"/>
                     </td>
                     <th>End Date</th>
                     <td>
-                        <input name="projectPersonLinkDetail.endDate" />
+                        <s:textfield name="projectPersonLinkDetail.endDate" theme="simple"/>
                     </td>
                 </tr>
 

@@ -29,11 +29,11 @@ tr.break td {
                 <tr>
                     <th>Project Name :</th>
                     <td>
-                        <input name="projectDetail.projectName" />
+                        <s:textfield name="projectDetail.projectName" theme="simple" />
                     </td>
                     <th>Description :</th>
                     <td>
-                        <input name="projectDetail.description" />
+                        <s:textfield name="projectDetail.description" theme="simple" />
                     </td>
                 </tr>
 
@@ -42,19 +42,13 @@ tr.break td {
                 </tr>
 
                 <tr>
-                    <th>Comments :</th>
-                    <td>
-                        <input name="projectDetail.comments" />
-                    </td>
                     <th>Start Date :</th>
                     <td>
-                        <input name="projectDetail.startDate" />
+                        <s:textfield name="projectDetail.startDate" theme="simple" />
                     </td>
-                </tr>
-                <tr>
                     <th>End Date :</th>
                     <td>
-                        <input name="projectDetail.endDate" />
+                        <s:textfield name="projectDetail.endDate" theme="simple" />
                     </td>
                 </tr>
 

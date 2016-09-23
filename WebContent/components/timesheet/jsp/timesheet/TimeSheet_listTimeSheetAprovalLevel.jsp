@@ -4,16 +4,32 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Time Sheet List</title>
+<style type="text/css">
+tr.break td {
+	height: 10px;
+}
+</style>
+<script>
+	$(function() {
+		$('.datepick').each(function() {
+			$(this).datepicker({
+
+				changeMonth : true,
+				changeYear : true,
+
+			});
+		});
+	});
+</script>
 </head>
 <body>
     <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
 
-    <!-- *******************************Modal to Add New Process ******************************* -->
+    <!-- *******************************Modal to Add New TimeSheet Approval Level ******************************* -->
 
-    <%--  <div class="pull-right" class="container">
+    <div class="pull-right" class="container">
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Add New Level</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Add New TimeSheet Approval Level</button>
         <br />
         <br />
 
@@ -27,60 +43,47 @@
                     <div class="modal-header">
 
                         <button class="close" type="button" data-dismiss="modal">&times;</button>
-                        <h3 class="modal-title">Add New Process</h3>
+                        <h3 class="modal-title">Add New TimeSheet Approval Level</h3>
                     </div>
 
                     <div class="modal-body">
-                    
-                        <s:form namespace="/" action="CreateNewProcessSubmit" method="POST" class="form-inline" theme="bootstrap">
 
-                               <br>
-                               <br>
-                            <div class="form-group">
-                                <label>Frequency:</label> <s:textfield type="text" class="form-control" name="projectTimeSheetProcessDetail.frequency" />
-                            </div>
-                            <br/>
-                            <br/>
-                            
-                            <div class="form-group">
-                                <label>StartDay:</label> <s:textfield type="text" class="form-control" name="projectTimeSheetProcessDetail.startDay" />
-                            </div>
-                            <br/>
-                            <br/>
+                        <s:form namespace="/" action="" method="POST" class="form-inline" theme="bootstrap">
 
-                            <div class="form-group">
-                                <label>Minimum Approval Level Type:</label> <s:textfield type="text" class="form-control" name="projectTimeSheetProcessDetail.minimumApprovalLevelType" />
-                            </div>
-                            <br>
-                            <br>
+                            <table style="width: 100%;">
+                                <col width="20%" />
+                                <col width="30%" />
+                                <col width="20%" />
+                                <col width="30%" />
 
-                            <div class="form-group">
-                                <label>Regular Daily Hours:</label> <input type="text" class="form-control"   name="projectTimeSheetProcessDetail.regularDailyHours"
-                                     />
-                            </div>
-                            <br>
-                            <br>
+                                <tr>
 
-                            <div class="form-group">
-                                <label>StartDate:</label> <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectTimeSheetProcessDetail.startDate"
-                                    placeholder="mm/dd/yy"  />
-                            </div>
-                            <br>
-                            <br>
-                            
-                            <div class="form-group">
-                                <label>End Date:</label> <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectTimeSheetProcessDetail.endDate"
-                                    placeholder="mm/dd/yy" />
-                            </div>
-                            <br>
-                            <br>
-                            
-                            <div class="form-group">
-                                <label>Comments:</label> <input type="text" class="form-control"  name="projectTimeSheetProcessDetail.comments"
-                                     />
-                            </div>
-                            <br>
-                            <br>
+                                    <th>ApprovalLevelType:</th>
+                                    <td>
+                                        <input type="text" name="timeSheetAprovalLevelDetail.approvalLevelType" />
+                                    </td>
+
+                                    <th>ApprovalCriteria:</th>
+                                    <td>
+                                        <input type="text" name="timeSheetAprovalLevelDetail.approvalCriteria" />
+                                    </td>
+                                </tr>
+                                <tr class="break">
+                                    <td colspan="2"></td>
+                                </tr>
+                                <tr>
+
+                                    <th>Start Date:</th>
+                                    <td>
+                                        <input type="text" name="timeSheetAprovalLevelDetail.startDate" class="datepick" id="date_1" class="dateTxt"/>
+                                    </td>
+
+                                    <th>EndDate:</th>
+                                    <td>
+                                        <input type="text" name="projectTimeSheetProcessDetail.endDate" class="datepick" id="date_2" class="dateTxt"/>
+                                    </td>
+                                </tr>
+                            </table>
 
                             <div class="modal-footer">
                                 <s:submit type="submit" id="submit" value="Submit" class="btn btn-primary" />
@@ -95,8 +98,8 @@
             </div>
         </div>
     </div>
-    
- --%>
+
+
     <%-- <s:form action="/ViewTimeSheetApprovalLevelList" method="post"> --%>
 
     <br>

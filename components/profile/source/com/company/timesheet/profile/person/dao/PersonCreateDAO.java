@@ -31,6 +31,7 @@ public class PersonCreateDAO {
 	public String registerPerson(PersonDetail personDetail) {
 
 		PreparedStatement preparedStatement = null;
+		PreparedStatement preparedStatement1 = null;
 		String returnMassegeStr = "";
 		boolean personExistInd = personExist(personDetail);
 		boolean userNameExistInd = checkUserNameExist(personDetail);
@@ -54,7 +55,7 @@ public class PersonCreateDAO {
 				personDetail.setPersonID(personID);
 				
 				
-				String personSQLStr = "INSERT INTO Person(personID, title, firstName, middleName, lastName, userName, gender, dateOfBirth, comments, emailAddress, phoneNumber, REGISTRATIONDATE, recordStatus, versionNo) "
+				String personSQLStr = "INSERT INTO Person(personID, title, firstName, middleName, lastName, userName, gender, dateOfBirth, comments, emailAddress, phoneNumber, REGISTRATIONDATE, startDate, endDate, recordStatus, versionNo) "
 						+ "VALUES (?, '"
 						+ personDetail.getTitle()
 						+ "', '"
@@ -68,9 +69,9 @@ public class PersonCreateDAO {
 						
 						+ personDetail.getGender()
 						
-						+ "' ,?,'"+personDetail.getComment()+"','"+personDetail.getEmailAddress()+"','"+personDetail.getPhoneNumber()+"',?, 'Active'," + " 1 )";
+						+ "' ,?,'"+personDetail.getComment()+"','"+personDetail.getEmailAddress()+"','"+personDetail.getPhoneNumber()+"',?,?,?, 'Active'," + " 1 )";
 
-				PreparedStatement preparedStatement1 = connection.prepareStatement(personSQLStr);
+				 preparedStatement1 = connection.prepareStatement(personSQLStr);
 
 				preparedStatement1.setLong(1, personDetail.getPersonID());
 				preparedStatement1.setDate(2, JavaUtildates.convertUtilToSql(personDetail.getDateOfBirth()));
@@ -80,8 +81,8 @@ public class PersonCreateDAO {
 				Timestamp timestamp = Timestamp.valueOf(crrentDateTime);
 				preparedStatement1.setTimestamp(3, timestamp);
 				
-				/*preparedStatement1.setDate(4, JavaUtildates.convertUtilToSql(personDetail.getStartDate()));
-				preparedStatement1.setDate(5, JavaUtildates.convertUtilToSql(personDetail.getEndDate()));*/
+				preparedStatement1.setDate(4, JavaUtildates.convertUtilToSql(personDetail.getStartDate()));
+				preparedStatement1.setDate(5, JavaUtildates.convertUtilToSql(personDetail.getEndDate()));
 
 
 				preparedStatement1.execute();

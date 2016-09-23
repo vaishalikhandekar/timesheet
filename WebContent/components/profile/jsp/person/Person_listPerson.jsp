@@ -11,7 +11,7 @@
 <title></title>
 <style type="text/css">
 tr.break td {
-    height: 10px;
+	height: 10px;
 }
 </style>
 
@@ -187,7 +187,7 @@ tr.break td {
 
                 <div class="pull-right" class="container">
 
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Create New Person</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">New Person</button>
 
                     <div class="modal fade" id="modal-1" data-keyboard="false" data-backdrop="static">
 
@@ -198,14 +198,13 @@ tr.break td {
                                 <div class="modal-header">
 
                                     <button class="close" type="button" data-dismiss="modal">&times;</button>
-                                    <h3 class="modal-title">Create New Project</h3>
+                                    <h3 class="modal-title">New Person</h3>
                                 </div>
 
                                 <div class="modal-body">
 
                                     <s:form class="form-inline" name="PersonCreate" namespace="/Profile" action="PersonCreateSubmit" method="POST" role="form"
                                         theme="bootstrap">
-
 
                                         <table style="width: 100%;">
                                             <col width="20%" />
@@ -217,97 +216,95 @@ tr.break td {
                                                 <th>Name</th>
                                                 <td>
                                                     <s:select list="#{'Mr.':'Mr.', 'Mrs.':'Mrs.','Miss.':'Miss.', 'Kumar':'Kumar'}" name="personDetail.title"
-                                                        placeholder="Title" >
+                                                        placeholder="Title">
 
                                                     </s:select>
                                                 </td>
                                                 <th>First Name</th>
                                                 <td>
-                                                    <input type="text" name="personDetail.firstName"   />
+                                                    <input type="text" name="personDetail.firstName" />
                                                 </td>
                                             </tr>
-                                             <tr class="break">
-                                                    <td colspan="2"></td>
-                                                </tr>
+                                            <tr class="break">
+                                                <td colspan="2"></td>
+                                            </tr>
 
                                             <tr>
                                                 <th>Middle Name</th>
                                                 <td>
-                                                    <input type="text" name="personDetail.middleName"   />
+                                                    <input type="text" name="personDetail.middleName" />
                                                 </td>
 
                                                 <th>Last Name</th>
                                                 <td>
-                                                    <input type="text" name="personDetail.lastName"   />
+                                                    <input type="text" name="personDetail.lastName" />
                                                 </td>
                                             </tr>
-                                             <tr class="break">
-                                                    <td colspan="2"></td>
-                                                </tr>
+                                            <tr class="break">
+                                                <td colspan="2"></td>
+                                            </tr>
 
                                             <tr>
                                                 <th>DateOfBirth:</th>
                                                 <td>
-                                                    <input type="text" class="datepick" id="date_1" name="personDetail.dateOfBirth"  />
+                                                    <input type="text" class="datepick" id="date_1" name="personDetail.dateOfBirth" />
                                                 </td>
 
 
                                                 <%--  <s:select label="Gender" list="genderMap" name="personDetail.gender"  /> --%>
                                                 <th>Sex</th>
                                                 <td>
-                                                <s:radio list="{'Male','Female'}" name="personDetail.gender"></s:radio>
+                                                    <s:radio list="{'Male','Female'}" name="personDetail.gender"></s:radio>
                                                 </td>
                                             </tr>
-                                             <tr class="break">
-                                                    <td colspan="2"></td>
-                                                </tr>
+                                            <tr class="break">
+                                                <td colspan="2"></td>
+                                            </tr>
 
-                                               <tr>
+                                            <tr>
                                                 <th>UserName:</th>
                                                 <td>
-                                                <input type="text" name="personDetail.usersDetail.userName"  />
-                                    </td>
+                                                    <input type="text" name="personDetail.usersDetail.userName" />
+                                                </td>
 
 
                                                 <th>Password:</th>
                                                 <td>
-                                                <input type="password" name="personDetail.usersDetail.password"  />
+                                                    <input type="password" name="personDetail.usersDetail.password" />
                                                 </td>
-                                             
-                                             </tr>
-                                              <tr class="break">
-                                                    <td colspan="2"></td>
-                                                </tr>
-                                             <tr>
 
-                                                <th>Start Date:</th> 
-                                                <td>
-                                                <input type="text" class="datepick" id="date_2" name="personDetail.startDate"
-                                                     />
-                                                    </td>
-
-                                                <th>End Date:</th> 
-                                                <td>
-                                                <input type="text" class="datepick" id="date_3" name="personDetail.endDate"
-                                                     />
-                                                    </td>
                                             </tr>
-                                             <tr class="break">
-                                                    <td colspan="2"></td>
-                                                </tr>
-                                            
-<tr>
-                                                <th>Email Address:</th> 
-                                                <td>
-                                                <input type="text" name="personDetail.emailAddress"  />
-                                            </td>
+                                            <tr class="break">
+                                                <td colspan="2"></td>
+                                            </tr>
+                                            <tr>
 
-                                                <th>Phone Number:</th> 
+                                                <th>Start Date:</th>
                                                 <td>
-                                                <input type="text" name="personDetail.phoneNumber"  />
-                                            </td>
-                                            
-                                          </tr>
+                                                    <input type="text" class="datepick" id="date_2" name="personDetail.startDate" />
+                                                </td>
+
+                                                <th>End Date:</th>
+                                                <td>
+                                                    <input type="text" class="datepick" id="date_3" name="personDetail.endDate" />
+                                                </td>
+                                            </tr>
+                                            <tr class="break">
+                                                <td colspan="2"></td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>Email Address:</th>
+                                                <td>
+                                                    <input type="text" name="personDetail.emailAddress" />
+                                                </td>
+
+                                                <th>Phone Number:</th>
+                                                <td>
+                                                    <input type="text" name="personDetail.phoneNumber" />
+                                                </td>
+
+                                            </tr>
                                         </table>
 
                                         <br />

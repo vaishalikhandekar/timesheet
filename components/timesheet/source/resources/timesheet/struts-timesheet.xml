@@ -54,7 +54,7 @@
 
         <action name="TimeSheetDeleteFromProject" class="com.company.timesheet.timesheet.action.TimeSheetDeleteFromProjectAction">
             <result name="success" type="redirect">
-                <param name="location">/TimeSheetsForProject</param>
+                <param name="location">/TimeSheet/TimeSheetsForProject</param>
                 <param name="projectDetail.projectID">${projectDetail.projectID}</param>
             </result>
             <result name="error">/index</result>

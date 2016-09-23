@@ -14,9 +14,9 @@ tr.break td {
 </head>
 <body>
 
-<br/>
+    <br />
     <div class="container" style="border: thin solid black">
-        <s:form action="/Profile/PersonUpdateSubmit" method="POST">
+        <s:form action="PersonUpdateSubmit" namespace="/Profile" method="POST">
             <h4 class="well well-sm">Update Person</h4>
 
             <table style="width: 100%;">
@@ -28,11 +28,11 @@ tr.break td {
                 <tr>
                     <th>Title :</th>
                     <td>
-                        <input name="personDetail.title" />
+                        <s:textfield name="personDetail.title" theme="simple" />
                     </td>
                     <th>First Name :</th>
                     <td>
-                        <input name="personDetail.firstName" />
+                        <s:textfield name="personDetail.firstName" theme="simple" />
                     </td>
                 </tr>
 
@@ -43,11 +43,11 @@ tr.break td {
                 <tr>
                     <th>Middle Name :</th>
                     <td>
-                        <input name="personDetail.middleName" />
+                        <s:textfield name="personDetail.middleName" theme="simple" />
                     </td>
                     <th>Last Name :</th>
                     <td>
-                        <input name="personDetail.lastName" />
+                        <s:textfield name="personDetail.lastName" theme="simple" />
                     </td>
                 </tr>
 
@@ -58,11 +58,11 @@ tr.break td {
                 <tr>
                     <th>Gender :</th>
                     <td>
-                        <input name="personDetail.gender" />
+                        <s:textfield name="personDetail.gender" theme="simple" />
                     </td>
                     <th>Date Of Birth :</th>
                     <td>
-                        <input name="personDetail.dateOfBirth" />
+                        <s:textfield name="personDetail.dateOfBirth" theme="simple" />
                     </td>
                 </tr>
 
@@ -73,11 +73,14 @@ tr.break td {
                 <tr>
                     <th>Registration Date :</th>
                     <td>
-                        <input name="personDetail.registrationDate" />
+                        <s:textfield name="personDetail.registrationDate" theme="simple" />
+                    </td>
+                    <th></th>
+                    <td>
+                        <s:submit type="submit" value="submit" class="btn btn-primary" theme="simple" />
                     </td>
                 </tr>
 
-                <s:submit type="submit" value="submit" class="btn btn-primary" />
 
                 <s:hidden name="personDetail.personID"></s:hidden>
                 <s:hidden name="personDetail.versionNo"></s:hidden>

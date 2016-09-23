@@ -60,6 +60,7 @@
                     <tr class="success">
                         <th style="text-align: center">Action</th>
                         <th style="text-align: center">Category</th>
+                        <th style="text-align: center">AttendenceDay</th>
                         <th style="text-align: center">AttendenceDate</th>
                         <th style="text-align: center">NoOfHoursWorked</th>
                         <th style="text-align: center">Comments</th>
@@ -85,6 +86,9 @@
 
                         <td align="center">
                             <s:property value="category" />
+                        </td>
+                        <td align="center">
+                            <s:property value="dayOfWeek" />
                         </td>
                         <td align="center">
                             <s:property value="attendenceDate" />
