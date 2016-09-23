@@ -16,13 +16,31 @@ tr.break td {
 </style>
 
 <script type="text/javascript">
-	$('#DeletePerson').on('show.bs.modal', function(e) {
+    $('#DeletePerson').on('show.bs.modal', function(e) {
 
-		//get data-id attribute of the clicked element
-		var personID = $(this).data('personID');
-		$(".modal-body #personID").val(personID);
+        //get data-id attribute of the clicked element
+        var personID = $(this).data('personID');
+        $(".modal-body #personID").val(personID);
 
+    });
+    </script>
+
+<script>
+	$(document).ready(function() {
+		$(".deletePer").click(function() { // Click to only happen on announce links
+			$("#personDetail.personID").val($(this).data('id'));
+			$('#DeletePerson').modal('show');
+		});
 	});
+	</script>
+
+<script>
+	$(document).ready(function() {
+	    $('#DeletePerson').on('show.bs.modal', function(event) {
+	        $("#personDetail.personID").val($(event.relatedTarget).data('id'));
+	    });
+	});
+	
 </script>
 
 <script>
@@ -381,6 +399,12 @@ tr.break td {
                                 <a href="#DeletePerson" data-toggle="modal">
                                     <span class="glyphicon glyphicon-trash"></span>
                                     <!-- Delete -->
+                                </a>
+
+                                &nbsp;&nbsp;
+
+                                <a class="btn btn-primary deletePer" data-toggle="modal" data-id="%{personID}">
+                                    <span class="glyphicon glyphicon-trash"> ND</span>
                                 </a>
 
                             </td>
