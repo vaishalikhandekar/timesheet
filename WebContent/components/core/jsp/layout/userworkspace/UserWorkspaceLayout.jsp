@@ -36,10 +36,7 @@
 </script>
 
 <style>
-table, th, td {
-	border: 1px solid gray;
-	border-collapse: collapse;
-}
+
 
 html {
 	height: 100%;
@@ -55,7 +52,7 @@ body {
 
 <body>
 
-    <table style="width: 100%; height: 100%; border: 1 solid gray; border-collapse: collapse; align: top">
+    <table style="width: 100%; height: 100%; border: 1 solid gray; border-collapse: collapse; align: top" border="1">
 
         <tr bgcolor="">
             <td height="10%" colspan="2">
