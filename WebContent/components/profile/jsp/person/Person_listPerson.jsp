@@ -16,14 +16,14 @@ tr.break td {
 </style>
 
 <script type="text/javascript">
-    $('#DeletePerson').on('show.bs.modal', function(e) {
+	$('#DeletePerson').on('show.bs.modal', function(e) {
 
-        //get data-id attribute of the clicked element
-        var personID = $(this).data('personID');
-        $(".modal-body #personID").val(personID);
+		//get data-id attribute of the clicked element
+		var personID = $(this).data('personID');
+		$(".modal-body #personID").val(personID);
 
-    });
-    </script>
+	});
+</script>
 
 <script>
 	$(document).ready(function() {
@@ -32,15 +32,14 @@ tr.break td {
 			$('#DeletePerson').modal('show');
 		});
 	});
-	</script>
+</script>
 
 <script>
 	$(document).ready(function() {
-	    $('#DeletePerson').on('show.bs.modal', function(event) {
-	        $("#personDetail.personID").val($(event.relatedTarget).data('id'));
-	    });
+		$('#DeletePerson').on('show.bs.modal', function(event) {
+			$("#personDetail.personID").val($(event.relatedTarget).data('id'));
+		});
 	});
-	
 </script>
 
 <script>
@@ -233,10 +232,12 @@ tr.break td {
                                             <tr>
                                                 <th>Name</th>
                                                 <td>
-                                                    <s:select list="#{'Mr.':'Mr.', 'Mrs.':'Mrs.','Miss.':'Miss.', 'Kumar':'Kumar'}" name="personDetail.title"
-                                                        placeholder="Title">
-
-                                                    </s:select>
+                                                    <select name="personDetail.title">
+                                                        <option value="Mr.">Mr.</option>
+                                                        <option value="Mrs.">Mrs.</option>
+                                                        <option value="Miss.">Miss.</option>
+                                                        <option value="Kumar">Kumar</option>
+                                                    </select>
                                                 </td>
                                                 <th>First Name</th>
                                                 <td>
@@ -269,10 +270,10 @@ tr.break td {
                                                 </td>
 
 
-                                                <%--  <s:select label="Gender" list="genderMap" name="personDetail.gender"  /> --%>
-                                                <th>Sex</th>
+                                                <th>Gender</th>
                                                 <td>
-                                                    <s:radio list="{'Male','Female'}" name="personDetail.gender"></s:radio>
+                                                    <input type="radio" name="personDetail.gender" value="male">Male <input type="radio"
+                                                        name="personDetail.gender" value="female">Female
                                                 </td>
                                             </tr>
                                             <tr class="break">

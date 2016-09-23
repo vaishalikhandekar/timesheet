@@ -60,7 +60,7 @@
 
     <s:form action="/Profile/ReadPerson" method="post">
 
-        <table style="width: 100%;">
+        <table class="table table-striped" style="width: 100%;">
 
             <col width="20%" />
             <col width="30%" />
