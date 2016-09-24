@@ -12,7 +12,7 @@
 <script type="text/javascript">
 	$(".nav-tabs").on("click", "a", function(e) {
 		e.preventDefault();
-		if (!$(this).hasClass('add-contact')) {
+		if (!$(this).hasClass('active')) {
 			$(this).tab('show');
 		}
 	}).on("click", "span", function() {
@@ -82,10 +82,10 @@
                 <span>X</span>
             </li>
 
-            <li>
-                <a data-toggle="tab" href="#PersonSearch" data-url="/TimeSheet/Profile/SearchPerson">Person Search</a>
+            <%-- <li>
+                <a data-toggle="tab" href="/TimeSheet/Profile/SearchPerson" data-url="/TimeSheet/Profile/SearchPerson">Person Search</a>
                 <span>X</span>
-            </li>
+            </li> --%>
 
         </ul>
 

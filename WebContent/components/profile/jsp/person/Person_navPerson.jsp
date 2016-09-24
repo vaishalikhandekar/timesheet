@@ -23,7 +23,7 @@ table {
 
 <body>
     <!-- code for tab -->
-        
+
 
     <div class="tabbable full-width-tabs">
 
@@ -34,35 +34,35 @@ table {
             <div id="PersonName" class="tab-pane fade in active">
 
                 <!-- add panel to the page -->
-                <div class="panel panel-info">
+                <div class="panel panel-default">
 
                     <div class="panel-body">
-                        <table>
-                            <col width="20%" />
-                            <col width="80%" />
+                        <table style="width : 60%; height :100%" >
+                            <col width="15%" />
+                            <col width="45%" />
                             <tr>
-                                <td width="45%">
+                                <td width="15%">
                                     <img src="/TimeSheet/components/profile/images/user.png" class="img-rounded" alt="Cinque Terre" width="100" height="100" />
                                 </td>
 
                                 <td width="45%">
-                                    <table>
+                                    <table style="width :100%; height :100%" >
                                         <tr>
-                                            <th>Full Name :</th>
-                                            <td>
+                                            <th width="15%">Full Name :</th>
+                                            <td width="30%">
                                                 <s:property value="personDetail.firstName" />
                                                 <s:property value="personDetail.lastName" />
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>Email Address :</th>
-                                            <td>
+                                            <th width="15%">Email Address :</th>
+                                            <td width="30%">
                                                 <s:property value="personDetail.emailAddress" />
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>Phone Number :</th>
-                                            <td>
+                                            <th width="15%">Phone Number :</th>
+                                            <td width="30%">
                                                 <s:property value="personDetail.phoneNumber" />
                                             </td>
                                         </tr>
@@ -116,14 +116,14 @@ table {
                                     </s:url>
                                     <a href="${TimeSheetsForPerson}">Time Sheets</a>
                                 </li>
-                                
+
                                 <li>
                                     <s:url var="ExpensesForPerson" action="ExpensesForPerson" namespace="/">
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
                                     <a href="${ExpensesForPerson}">Expenses</a>
                                 </li>
-                                
+
                                 <li>
                                     <s:url var="ImmigrationForPerson" action="ImmigrationForPerson" namespace="/TimeSheet">
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
