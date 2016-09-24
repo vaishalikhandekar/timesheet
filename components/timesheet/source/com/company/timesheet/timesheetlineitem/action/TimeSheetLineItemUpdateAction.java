@@ -5,8 +5,8 @@ package com.company.timesheet.timesheetlineitem.action;
 
 import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
-import com.company.timesheet.timesheet.pojo.TimeSheetLineItemDetail;
 import com.company.timesheet.timesheetlineitem.dao.TimeSheetLineItemUpdateDAO;
+import com.company.timesheet.timesheetlineitem.pojo.TimeSheetLineItemDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

@@ -1,15 +1,15 @@
 /**
  * 
  */
-package com.company.timesheet.timesheet.action;
+package com.company.timesheet.timesheetprocess.action;
 
 import java.util.List;
 
 import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.project.pojo.ProjectDetail;
-import com.company.timesheet.timesheet.dao.ProjectTimeSheetProcessCreateDAO;
-import com.company.timesheet.timesheet.dao.ProjectTimeSheetProcessListDAO;
-import com.company.timesheet.timesheet.pojo.ProjectTimeSheetProcessDetail;
+import com.company.timesheet.timesheetprocess.dao.ProjectTimeSheetProcessCreateDAO;
+import com.company.timesheet.timesheetprocess.dao.ProjectTimeSheetProcessListDAO;
+import com.company.timesheet.timesheetprocess.pojo.ProjectTimeSheetProcessDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

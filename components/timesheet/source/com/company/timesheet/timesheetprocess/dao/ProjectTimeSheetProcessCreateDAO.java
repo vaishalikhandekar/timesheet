@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.company.timesheet.timesheet.dao;
+package com.company.timesheet.timesheetprocess.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,7 +17,7 @@ import com.company.timesheet.core.util.type.UniqueID;
 import com.company.timesheet.project.pojo.ProjectDetail;
 import com.company.timesheet.project.pojo.ProjectSearchCriteria;
 import com.company.timesheet.project.pojo.ProjectSearchDetails;
-import com.company.timesheet.timesheet.pojo.ProjectTimeSheetProcessDetail;
+import com.company.timesheet.timesheetprocess.pojo.ProjectTimeSheetProcessDetail;
 
 /**
  * @author vaish

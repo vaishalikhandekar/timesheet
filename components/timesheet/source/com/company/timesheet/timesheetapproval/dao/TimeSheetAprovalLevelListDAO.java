@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.company.timesheet.timesheet.dao;
+package com.company.timesheet.timesheetapproval.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,8 +13,8 @@ import java.util.List;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
 import com.company.timesheet.project.pojo.ProjectDetail;
 import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
-import com.company.timesheet.timesheet.pojo.ProjectTimeSheetProcessDetail;
-import com.company.timesheet.timesheet.pojo.TimeSheetAprovalLevelDetail;
+import com.company.timesheet.timesheetapproval.pojo.TimeSheetAprovalLevelDetail;
+import com.company.timesheet.timesheetprocess.pojo.ProjectTimeSheetProcessDetail;
 
 /**
  * @author vaish

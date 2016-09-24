@@ -1,8 +1,10 @@
-package com.company.timesheet.timesheet.pojo;
+package com.company.timesheet.timesheetlineitem.pojo;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 
 public class TimeSheetLineItemDetail {
 		

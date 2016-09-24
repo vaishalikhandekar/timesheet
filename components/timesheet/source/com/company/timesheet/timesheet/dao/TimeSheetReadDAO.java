@@ -13,7 +13,8 @@ import com.company.timesheet.core.util.CRUDConstants;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
 import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 import com.company.timesheet.timesheet.pojo.TimeSheetKey;
-import com.company.timesheet.timesheet.pojo.TimeSheetLineItemDetail;
+import com.company.timesheet.timesheetlineitem.dao.TimeSheetLineItemReadFromPersonDAO;
+import com.company.timesheet.timesheetlineitem.pojo.TimeSheetLineItemDetail;
 
 /**
  * @author vaish

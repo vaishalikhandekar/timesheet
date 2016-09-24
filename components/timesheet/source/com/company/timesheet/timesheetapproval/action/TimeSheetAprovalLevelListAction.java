@@ -1,16 +1,14 @@
 /**
  * 
  */
-package com.company.timesheet.timesheet.action;
+package com.company.timesheet.timesheetapproval.action;
 
 import java.util.List;
 
-import com.company.timesheet.project.pojo.ProjectDetail;
 import com.company.timesheet.project.projectpersonlink.pojo.ProjectPersonLinkDetail;
-import com.company.timesheet.timesheet.dao.ProjectTimeSheetProcessListDAO;
-import com.company.timesheet.timesheet.dao.TimeSheetAprovalLevelListDAO;
-import com.company.timesheet.timesheet.pojo.ProjectTimeSheetProcessDetail;
-import com.company.timesheet.timesheet.pojo.TimeSheetAprovalLevelDetail;
+import com.company.timesheet.timesheetapproval.dao.TimeSheetAprovalLevelListDAO;
+import com.company.timesheet.timesheetapproval.pojo.TimeSheetAprovalLevelDetail;
+import com.company.timesheet.timesheetprocess.pojo.ProjectTimeSheetProcessDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**

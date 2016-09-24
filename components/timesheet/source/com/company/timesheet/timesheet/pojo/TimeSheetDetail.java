@@ -3,6 +3,8 @@ package com.company.timesheet.timesheet.pojo;
 import java.util.Date;
 import java.util.List;
 
+import com.company.timesheet.timesheetlineitem.pojo.TimeSheetLineItemDetail;
+
 public class TimeSheetDetail {
 
     private Long timeSheetID;

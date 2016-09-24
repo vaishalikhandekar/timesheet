@@ -16,8 +16,8 @@ import com.company.timesheet.core.util.JavaUtildates;
 import com.company.timesheet.core.util.dataaccess.DBConnection;
 import com.company.timesheet.project.pojo.ProjectDetail;
 import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
-import com.company.timesheet.timesheet.pojo.TimeSheetLineItemDetail;
 import com.company.timesheet.timesheetlineitem.dao.TimeSheetLineItemUpdateDAO;
+import com.company.timesheet.timesheetlineitem.pojo.TimeSheetLineItemDetail;
 
 /**
  * @author vaish

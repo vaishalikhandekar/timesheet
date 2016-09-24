@@ -1,15 +1,15 @@
 /**
  * 
  */
-package com.company.timesheet.timesheet.action;
+package com.company.timesheet.timesheetlineitem.action;
 
 import java.util.List;
 
 import com.company.timesheet.profile.person.pojo.PersonDetail;
-import com.company.timesheet.timesheet.dao.TimeSheetLineItemReadFromPersonDAO;
 import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 import com.company.timesheet.timesheet.pojo.TimeSheetKey;
-import com.company.timesheet.timesheet.pojo.TimeSheetLineItemDetail;
+import com.company.timesheet.timesheetlineitem.dao.TimeSheetLineItemReadFromPersonDAO;
+import com.company.timesheet.timesheetlineitem.pojo.TimeSheetLineItemDetail;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
