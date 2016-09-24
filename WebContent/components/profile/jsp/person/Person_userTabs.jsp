@@ -41,10 +41,10 @@
 
 <style type="text/css">
 .container {
-	margin-top: 5px;
+	margin-top: 0px;
 }
 
-.nav-tabs>li {
+.nav-tabs > li {
 	position: relative;
 }
 
@@ -77,15 +77,14 @@
             <li class="active">
                 <a data-toggle="tab" href="#PersonName">
                     <s:property value="personDetail.firstName" />
-                    &nbsp;
                     <s:property value="personDetail.lastName" />
                 </a>
-                <span>x</span>
+                <span>X</span>
             </li>
 
             <li>
                 <a data-toggle="tab" href="#PersonSearch" data-url="/TimeSheet/Profile/SearchPerson">Person Search</a>
-                <span>x</span>
+                <span>X</span>
             </li>
 
         </ul>

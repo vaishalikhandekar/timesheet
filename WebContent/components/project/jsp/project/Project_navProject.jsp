@@ -15,7 +15,7 @@
         <ul class="nav nav-tabs">
 
             <li class="active">
-                <a data-toggle="tab" href="#ProjectName">Project Name</a>
+                <a data-toggle="tab" href="#ProjectName"><s:property value="projectDetail.projectName" /></a>
             </li>
 
         </ul>
@@ -27,14 +27,12 @@
                 <!-- add pannel to the page -->
 
                 <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            <s:property value="projectDetail.projectName" />
-                        </h3>
-                    </div>
 
                     <div class="panel-body">
                         <br />
+                        <h3>
+                            <s:property value="projectDetail.projectName" />
+                        </h3>
                         <br />
                     </div>
                 </div>
@@ -42,7 +40,7 @@
 
                 <!-- Code for NavBar -->
                 <div class="bs-example">
-                    <nav role="navigation" class="navbar navbar-light" style="background-color: #e3f2fd">
+                    <nav role="navigation" class="navbar navbar-light navbar-xs" style="background-color: #e3f2fd">
                         <div class="navbar-header">
                             <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
                                 <span class="sr-only">Toggle navigation</span>

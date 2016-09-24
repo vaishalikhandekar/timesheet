@@ -351,7 +351,7 @@ tr.break td {
             </div>
             <br />
 
-            <s:form action="/Profile/PersonList" method="post">
+            <s:form action="PersonList" namespace="/Profile" method="post">
 
                 <table class="table table-striped" border="1">
 

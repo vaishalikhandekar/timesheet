@@ -37,7 +37,6 @@
 
 <style>
 
-
 html {
 	height: 100%;
 }
@@ -47,6 +46,8 @@ body {
 	height: 97%;
 }
 </style>
+
+<link rel="stylesheet" href="/TimeSheet/components/core/css/style.css" type="text/css"/>
 
 </head>
 

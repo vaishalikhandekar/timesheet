@@ -23,39 +23,23 @@ table {
 
 <body>
     <!-- code for tab -->
+        
 
     <div class="tabbable full-width-tabs">
 
-        <%-- <ul class="nav nav-tabs">
-
-            <li class="active">
-                <a data-toggle="tab" href="#PersonName">
-                    <s:property value="personDetail.firstName" />
-                    &nbsp;
-                    <s:property value="personDetail.lastName" />
-                </a>
-            </li>
-
-        </ul> --%>
-
-        <jsp:include page="Person_userTabs.jsp"></jsp:include>
+        <jsp:include page="Person_userTabs.jsp" />
 
         <div class="tab-content">
 
             <div id="PersonName" class="tab-pane fade in active">
 
-
-                <!-- add pannel to the page -->
+                <!-- add panel to the page -->
                 <div class="panel panel-info">
-
-                    <div class="panel-heading">
-                        <h3 class="panel-title"></h3>
-                    </div>
 
                     <div class="panel-body">
                         <table>
-                       <col width="20%" />
-                       <col width="80%" />
+                            <col width="20%" />
+                            <col width="80%" />
                             <tr>
                                 <td width="45%">
                                     <img src="/TimeSheet/components/profile/images/user.png" class="img-rounded" alt="Cinque Terre" width="100" height="100" />
@@ -66,9 +50,7 @@ table {
                                         <tr>
                                             <th>Full Name :</th>
                                             <td>
-
                                                 <s:property value="personDetail.firstName" />
-
                                                 <s:property value="personDetail.lastName" />
                                             </td>
                                         </tr>
@@ -79,7 +61,7 @@ table {
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>Phone Number:</th>
+                                            <th>Phone Number :</th>
                                             <td>
                                                 <s:property value="personDetail.phoneNumber" />
                                             </td>
@@ -96,7 +78,7 @@ table {
 
                 <div class="bs-example">
 
-                    <nav role="navigation" class="navbar navbar-light" style="background-color: #e3f2fd">
+                    <nav role="navigation" class="navbar navbar-light navbar-xs" style="background-color: #e3f2fd">
 
                         <%-- <div class="navbar-header">
                             <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
@@ -133,6 +115,20 @@ table {
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
                                     <a href="${TimeSheetsForPerson}">Time Sheets</a>
+                                </li>
+                                
+                                <li>
+                                    <s:url var="ExpensesForPerson" action="ExpensesForPerson" namespace="/">
+                                        <s:param name="personDetail.personID" value="%{personDetail.personID}" />
+                                    </s:url>
+                                    <a href="${ExpensesForPerson}">Expenses</a>
+                                </li>
+                                
+                                <li>
+                                    <s:url var="ImmigrationForPerson" action="ImmigrationForPerson" namespace="/TimeSheet">
+                                        <s:param name="personDetail.personID" value="%{personDetail.personID}" />
+                                    </s:url>
+                                    <a href="${ImmigrationForPerson}">Immigration</a>
                                 </li>
 
                             </ul>

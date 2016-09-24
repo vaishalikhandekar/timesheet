@@ -56,88 +56,87 @@
     </div>
 
 
-    <jsp:include page="Person_navPerson.jsp"></jsp:include>
-
-    <s:form action="/Profile/ReadPerson" method="post">
-
-        <table class="table table-striped" style="width: 100%;">
-
-            <col width="20%" />
-            <col width="30%" />
-            <col width="20%" />
-            <col width="30%" />
+    <jsp:include page="Person_navPerson.jsp" />
 
 
-            <tr>
-                <th style="text-align: right">Action:</th>
-                <td align="left">
+    <table class="table table-striped" style="width: 100%;">
+
+        <col width="20%" />
+        <col width="30%" />
+        <col width="20%" />
+        <col width="30%" />
 
 
-                    &nbsp; &nbsp; &nbsp;
-                    <s:url var="updatePersonURL" action="PersonRead" escapeAmp="false">
-                        <s:param name="personDetail.personID" value="%{personDetail.personID}" />
-                        <s:param name="act" value="%{personDetail.updateAction}" />
-                    </s:url>
-                    <s:a href="%{updatePersonURL}">
-                        <span class="glyphicon glyphicon-pencil"></span>
-                        <!-- Update -->
-                    </s:a>
-                   <%--  &nbsp;&nbsp;
+        <tr>
+            <th style="text-align: right">Action:</th>
+            <td align="left">
+
+
+                &nbsp; &nbsp; &nbsp;
+                <s:url var="updatePersonURL" action="PersonRead" escapeAmp="false">
+                    <s:param name="personDetail.personID" value="%{personDetail.personID}" />
+                    <s:param name="act" value="%{personDetail.updateAction}" />
+                </s:url>
+                <s:a href="%{updatePersonURL}">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <!-- Update -->
+                </s:a>
+                <%--  &nbsp;&nbsp;
 
                     <a href="#DeletePerson" data-toggle="modal">
                         <span class="glyphicon glyphicon-trash"></span>
                         <!-- Delete -->
                     </a> --%>
 
-                </td>
-                <th style="text-align: right">Title:</th>
-                <td align="left">
-                    &nbsp; &nbsp; &nbsp;
-                    <s:property value="personDetail.title" />
-                </td>
-            </tr>
-            <tr>
-                <th style="text-align: right">First Name:</th>
-                <td align="left">
-                    &nbsp; &nbsp; &nbsp;
-                    <s:property value="personDetail.firstName" />
-                </td>
-                <th style="text-align: right">Middle Name:</th>
-                <td align="left">
-                    &nbsp; &nbsp; &nbsp;
-                    <s:property value="personDetail.middleName" />
-                </td>
-            </tr>
-            <tr>
+            </td>
+            <th style="text-align: right">Title:</th>
+            <td align="left">
+                &nbsp; &nbsp; &nbsp;
+                <s:property value="personDetail.title" />
+            </td>
+        </tr>
+        <tr>
+            <th style="text-align: right">First Name:</th>
+            <td align="left">
+                &nbsp; &nbsp; &nbsp;
+                <s:property value="personDetail.firstName" />
+            </td>
+            <th style="text-align: right">Middle Name:</th>
+            <td align="left">
+                &nbsp; &nbsp; &nbsp;
+                <s:property value="personDetail.middleName" />
+            </td>
+        </tr>
+        <tr>
 
-                <th style="text-align: right">Last Name:</th>
-                <td align="left">
-                    &nbsp; &nbsp; &nbsp;
-                    <s:property value="personDetail.lastName" />
-                </td>
-                <th style="text-align: right">Gender:</th>
-                <td align="left">
-                    &nbsp; &nbsp; &nbsp;
-                    <s:property value="personDetail.gender" />
-                </td>
-            </tr>
-            <tr>
-                <th style="text-align: right">Date Of Birth:</th>
-                <td align="left">
-                    &nbsp; &nbsp; &nbsp;
-                    <s:property value="personDetail.dateOfBirth" />
-                </td>
-                <th style="text-align: right">Registration Date:</th>
-                <td align="left">
-                    &nbsp; &nbsp; &nbsp;
-                    <s:property value="personDetail.registrationDate" />
-                </td>
-            </tr>
+            <th style="text-align: right">Last Name:</th>
+            <td align="left">
+                &nbsp; &nbsp; &nbsp;
+                <s:property value="personDetail.lastName" />
+            </td>
+            <th style="text-align: right">Gender:</th>
+            <td align="left">
+                &nbsp; &nbsp; &nbsp;
+                <s:property value="personDetail.gender" />
+            </td>
+        </tr>
+        <tr>
+            <th style="text-align: right">Date Of Birth:</th>
+            <td align="left">
+                &nbsp; &nbsp; &nbsp;
+                <s:property value="personDetail.dateOfBirth" />
+            </td>
+            <th style="text-align: right">Registration Date:</th>
+            <td align="left">
+                &nbsp; &nbsp; &nbsp;
+                <s:property value="personDetail.registrationDate" />
+            </td>
+        </tr>
 
-            <s:hidden name="personDetail.personID"></s:hidden>
-        </table>
+        <s:hidden name="personDetail.personID"></s:hidden>
+        
+    </table>
 
-    </s:form>
 
 </body>
 </html>
