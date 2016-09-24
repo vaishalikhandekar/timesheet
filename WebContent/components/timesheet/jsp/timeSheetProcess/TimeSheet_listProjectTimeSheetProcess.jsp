@@ -7,7 +7,7 @@
 <title>Time Sheet List</title>
 <style type="text/css">
 tr.break td {
-    height: 10px;
+	height: 10px;
 }
 </style>
 </head>
@@ -48,32 +48,32 @@ tr.break td {
 
                                     <th>Frequency:</th>
                                     <td>
-                                        <input type="text"  name="projectTimeSheetProcessDetail.frequency" />
+                                        <input type="text" name="projectTimeSheetProcessDetail.frequency" />
                                     </td>
 
                                     <th>StartDay:</th>
                                     <td>
-                                        <input type="text"  name="projectTimeSheetProcessDetail.startDay" />
+                                        <input type="text" name="projectTimeSheetProcessDetail.startDay" />
                                     </td>
                                 </tr>
-                                 <tr class="break">
-                                                    <td colspan="2"></td>
-                                                </tr>
+                                <tr class="break">
+                                    <td colspan="2"></td>
+                                </tr>
                                 <tr>
 
                                     <th>Minimum Approval Level Type:</th>
                                     <td>
-                                        <input type="text"  name="projectTimeSheetProcessDetail.minimumApprovalLevelType" />
+                                        <input type="text" name="projectTimeSheetProcessDetail.minimumApprovalLevelType" />
                                     </td>
 
                                     <th>Regular Daily Hours:</th>
                                     <td>
-                                        <input type="text"  name="projectTimeSheetProcessDetail.regularDailyHours" />
+                                        <input type="text" name="projectTimeSheetProcessDetail.regularDailyHours" />
                                     </td>
                                 </tr>
-                                 <tr class="break">
-                                                    <td colspan="2"></td>
-                                                </tr>
+                                <tr class="break">
+                                    <td colspan="2"></td>
+                                </tr>
                                 <tr>
                                     <th>StartDate:</th>
                                     <td>
@@ -87,13 +87,13 @@ tr.break td {
                                             placeholder="mm/dd/yy" />
                                     </td>
                                 </tr>
-                                 <tr class="break">
-                                                    <td colspan="2"></td>
-                                                </tr>
+                                <tr class="break">
+                                    <td colspan="2"></td>
+                                </tr>
                                 <tr>
                                     <th>Comments:</th>
                                     <td>
-                                        <input type="text"  name="projectTimeSheetProcessDetail.comments" />
+                                        <input type="text" name="projectTimeSheetProcessDetail.comments" />
                                     </td>
                                 </tr>
                             </table>
@@ -138,13 +138,14 @@ tr.break td {
                     <tr>
 
                         <td align="center">
-                            <s:url id="ViewprojectTimeSheetProcessURL" action="TimeSheetApprovalLevelRead" namespace="/TimeSheet" escapeAmp="false">
-                                <s:param name="projectTimeSheetProcessDetail.projectTimeSheetProcessID" value="%{projectTimeSheetProcessID}" />
+                            <s:url id="ViewprojectTimeSheetProcessURL" action="ProjectTimeSheetProcessRead" namespace="/TimeSheet" escapeAmp="false">
+                                <s:param name="projectTimeSheetProcessKey.projectTimeSheetProcessID" value="%{projectTimeSheetProcessID}" />
                             </s:url>
                             <s:a href="%{ViewprojectTimeSheetProcessURL}">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <!-- View -->
                             </s:a>
+                            
                             &nbsp;&nbsp;
 
                             <s:url var="updateprojectTimeSheetProcessURL" action="TimeSheetApprovalLevelRead" namespace="/TimeSheet" escapeAmp="false">
@@ -156,6 +157,7 @@ tr.break td {
                                 <span class="glyphicon glyphicon-pencil"></span>
                                 <!-- Update -->
                             </s:a>
+                            
                             &nbsp;&nbsp;
 
                             <s:url var="deleteprojectTimeSheetProcessURL" action="" namespace="/TimeSheet" escapeAmp="false">

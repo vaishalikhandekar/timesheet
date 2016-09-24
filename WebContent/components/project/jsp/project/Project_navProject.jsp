@@ -93,10 +93,10 @@
                                 </li>
 
                                 <li>
-                                    <s:url var="ProjectTimeSheetsProcessList" action="ProjectTimeSheetsProcessList" namespace="/TimeSheet">
+                                    <s:url var="ProjectTimeSheetProcessList" action="ProjectTimeSheetProcessList" namespace="/TimeSheet">
                                         <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
                                     </s:url>
-                                    <a href="${ProjectTimeSheetsProcessList}">Time Sheet Process</a>
+                                    <a href="${ProjectTimeSheetProcessList}">Time Sheet Process</a>
                                 </li>
 
                             </ul>

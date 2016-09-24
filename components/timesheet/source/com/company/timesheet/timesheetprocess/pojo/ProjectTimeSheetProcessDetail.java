@@ -1,6 +1,9 @@
 package com.company.timesheet.timesheetprocess.pojo;
 
 import java.util.Date;
+import java.util.List;
+
+import com.company.timesheet.timesheetapproval.pojo.TimeSheetAprovalLevelDetail;
 
 public class ProjectTimeSheetProcessDetail {
 
@@ -25,6 +28,8 @@ public class ProjectTimeSheetProcessDetail {
 	private String recordStatus;
 
 	private int versionNo;
+	
+	private List<TimeSheetAprovalLevelDetail> timeSheetAprovalLevelDetailList;
 
 	public Long getProjectTimeSheetProcessID() {
 		return projectTimeSheetProcessID;
@@ -113,5 +118,23 @@ public class ProjectTimeSheetProcessDetail {
 	public void setVersionNo(int versionNo) {
 		this.versionNo = versionNo;
 	}
+
+    
+    /**
+     * @return the timeSheetAprovalLevelDetailList
+     */
+    public List<TimeSheetAprovalLevelDetail> getTimeSheetAprovalLevelDetailList() {
+    
+        return timeSheetAprovalLevelDetailList;
+    }
+
+    
+    /**
+     * @param timeSheetAprovalLevelDetailList the timeSheetAprovalLevelDetailList to set
+     */
+    public void setTimeSheetAprovalLevelDetailList(List<TimeSheetAprovalLevelDetail> timeSheetAprovalLevelDetailList) {
+    
+        this.timeSheetAprovalLevelDetailList = timeSheetAprovalLevelDetailList;
+    }
 
 }

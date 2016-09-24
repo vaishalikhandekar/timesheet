@@ -21,16 +21,21 @@
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetForPerson.jsp" />
     </definition>
 
-    <definition name="TimeSheetsProcessList" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="TimeSheets Process" />
-        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listProjectTimeSheetProcess.jsp" />
-    </definition>
-
     <definition name="TimeSheetsForProject" extends="userWorkspaceLayout">
         <put-attribute name="title" value="Project TimeSheet List" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetForProject.jsp" />
     </definition>
 
+    <definition name="ProjectTimeSheetProcessList" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="TimeSheet Process List" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timeSheetProcess/TimeSheet_listProjectTimeSheetProcess.jsp" />
+    </definition>
+    
+    <definition name="ProjectTimeSheetProcessRead" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="TimeSheets Process" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timeSheetProcess/TimeSheet_readProjectTimeSheetProcess.jsp" />
+    </definition>
+    
     <definition name="TimeSheetUpdate" extends="userWorkspaceLayout">
         <put-attribute name="title" value="TimeSheet Update" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_updateTimeSheetLineItemFromPerson.jsp" />

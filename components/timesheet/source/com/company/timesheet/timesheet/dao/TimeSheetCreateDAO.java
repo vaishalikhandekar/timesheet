@@ -26,6 +26,7 @@ import com.company.timesheet.timesheetlineitem.dao.TimeSheetLineItemCreateDAO;
 import com.company.timesheet.timesheetlineitem.pojo.TimeSheetLineItemDetail;
 import com.company.timesheet.timesheetprocess.dao.ProjectTimeSheetProcessReadDAO;
 import com.company.timesheet.timesheetprocess.pojo.ProjectTimeSheetProcessDetail;
+import com.company.timesheet.timesheetprocess.pojo.ProjectTimeSheetProcessKey;
 
 /**
  * @author vaish
@@ -58,9 +59,10 @@ public class TimeSheetCreateDAO {
             // Get ProjectTimeSheetProcess Details
             ProjectTimeSheetProcessReadDAO projectTimeSheetProcessReadDAO = new ProjectTimeSheetProcessReadDAO();
 
+            ProjectTimeSheetProcessKey projectTimeSheetProcessKey = new ProjectTimeSheetProcessKey();
             ProjectDetail projectDetail = new ProjectDetail();
-            projectDetail.setProjectID(timeSheetCreateDetails.getProjectID());
-            ProjectTimeSheetProcessDetail projectTimeSheetProcessDetail = projectTimeSheetProcessReadDAO.readProjectTimeSheetProcessDetails(projectDetail);
+            projectTimeSheetProcessKey.setProjectID(timeSheetCreateDetails.getProjectID());
+            ProjectTimeSheetProcessDetail projectTimeSheetProcessDetail = projectTimeSheetProcessReadDAO.readActiveProjectTimeSheetProcessDetails(projectTimeSheetProcessKey);
 
             connection = DBConnection.getDBConnection();
 
