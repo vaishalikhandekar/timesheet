@@ -36,6 +36,11 @@
         <put-attribute name="body" value="/components/timesheet/jsp/timeSheetProcess/TimeSheet_readProjectTimeSheetProcess.jsp" />
     </definition>
     
+    <definition name="TimeSheetRead" extends="userWorkspaceLayout">
+        <put-attribute name="title" value="TimeSheetLineItem ReadFromPerson" />
+        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_readTimeSheetFromPerson.jsp" />
+    </definition>
+     
     <definition name="TimeSheetUpdate" extends="userWorkspaceLayout">
         <put-attribute name="title" value="TimeSheet Update" />
         <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_updateTimeSheetLineItemFromPerson.jsp" />
@@ -49,10 +54,5 @@
     
      <!-- TimeSheet LineItem -->
 
-    <definition name="TimeSheetLineItemReadFromPerson" extends="userWorkspaceLayout">
-        <put-attribute name="title" value="TimeSheetLineItem ReadFromPerson" />
-        <put-attribute name="body" value="/components/timesheet/jsp/timesheet/TimeSheet_readTimeSheetLineItemFromPerson.jsp" />
-    </definition>
-     
     
 </tiles-definitions>

@@ -56,7 +56,7 @@
 
     <br />
 
-    <s:form action="TimeSheetUpdate" namespace="/TimeSheet" method="POST">
+    <s:form action="TimeSheetUpdateSubmit" namespace="/TimeSheet" method="POST">
 
 
         <table class="table table-striped" border="1">
@@ -68,6 +68,7 @@
                     <th style="text-align: center">Attendance Day</th>
                     <th style="text-align: center">Attendance Date</th>
                     <th style="text-align: center">Category</th>
+                    <th style="text-align: center">TotalRegularHours</th>
                     <th style="text-align: center">No Of Hours Worked</th>
                     <th style="text-align: center">Comments</th>
 
@@ -93,6 +94,10 @@
                     </td>
 
                     <td align="center">
+                        <s:property value="totalRegularHours" />
+                    </td>
+
+                    <td align="center">
                         <s:textfield theme="simple" name="timeSheetDetail.timeSheetLineItemDetailList[%{#stat.index}].noOfHoursWorked"
                             value="%{noOfHoursWorked}" />
                     </td>
@@ -113,8 +118,12 @@
             <s:hidden name="timeSheetDetail.timeSheetID"></s:hidden>
             <s:hidden name="timeSheetDetail.versionNo"></s:hidden>
 
-            <s:submit type="submit" value="Save" class="btn btn-primary" />
-
+            <tr align="center">
+                <td align="center" colspan="5">
+                    <s:submit type="submit" value="Save" class="btn btn-primary" />
+                    <s:submit type="cancel" class="btn btn-primary" data-dismiss="modal" value="Cancel" />
+                </td>
+            </tr>
         </table>
 
     </s:form>

@@ -140,11 +140,11 @@
                     <tr>
                         <td align="center">
 
-                            <s:url id="TimeSheetLineItemReadFromPersonURL" action="TimeSheetLineItemReadFromPerson" namespace="/TimeSheet" escapeAmp="false">
+                             <s:url var="ReadTimeSheetURL" action="TimeSheetRead" namespace="/TimeSheet" escapeAmp="false">
                                 <s:param name="timeSheetKey.timeSheetID" value="%{timeSheetID}" />
                                 <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                             </s:url>
-                            <s:a href="%{TimeSheetLineItemReadFromPersonURL}">
+                            <s:a href="%{ReadTimeSheetURL}">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <!-- View -->
                             </s:a>
@@ -153,6 +153,7 @@
 
                             <s:url var="updateTimeSheetURL" action="TimeSheetRead" namespace="/TimeSheet" escapeAmp="false">
                                 <s:param name="timeSheetKey.timeSheetID" value="%{timeSheetID}" />
+                                <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                 <s:param name="act" value="%{updateAction}" />
                             </s:url>
                             <s:a href="%{updateTimeSheetURL}">

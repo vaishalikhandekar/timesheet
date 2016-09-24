@@ -63,7 +63,12 @@ public class TimeSheetLineItemUpdateDAO {
                     preparedStatement.setString(2, timeSheetLineItemDetail.getComments());
                     preparedStatement.setInt(3, timeSheetLineItemDetail.getNoOfHoursWorked());
                     preparedStatement.setLong(4, timeSheetLineItemDetail.getTimeSheetLineItemID());
+                    
                     preparedStatement.executeUpdate();
+                    
+                    // update total number of worked
+                    
+                    timeSheetDetail.setTotalNoOfHoursWorked(timeSheetDetail.getTotalNoOfHoursWorked() + timeSheetLineItemDetail.getNoOfHoursWorked());
 
                     // inserting data into AuditTrail Table for Person Table
                     AuditTrailDetails auditTrailDetails = new AuditTrailDetails();

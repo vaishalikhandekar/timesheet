@@ -25,11 +25,12 @@ import com.company.timesheet.timesheetlineitem.pojo.TimeSheetLineItemDetail;
  */
 public class TimeSheetUpdateFromPersonDAO {
 	
-	PreparedStatement preparedStatement = null;
-	Connection connection = null;
-	ResultSet resultSet = null;
 		
 	public String updateTimeSheet(TimeSheetDetail timeSheetDetail){
+	    
+	    PreparedStatement preparedStatement = null;
+	    Connection connection = null;
+	    ResultSet resultSet = null;
 		
 		String returnMassegeStr = "";
 		
@@ -53,14 +54,13 @@ public class TimeSheetUpdateFromPersonDAO {
 
 			try {
 				connection = DBConnection.getDBConnection();
-				String timeSheetSQLStr = "UPDATE	TIMESHEET	SET totalRegularHours=?,	totalNoOfHoursWorked=?, versionNo ='"
+				String timeSheetSQLStr = "UPDATE	TIMESHEET	SET totalNoOfHoursWorked=?, versionNo ='"
 						+ versionNoFromDatabase + "' " + "	where	timeSheetID=?";
 
 				preparedStatement = connection.prepareStatement(timeSheetSQLStr);
 
-				preparedStatement.setInt(1, 56);
-				preparedStatement.setInt(2, timeSheetDetail.getTotalNoOfHoursWorked());
-				preparedStatement.setLong(3, timeSheetDetail.getTimeSheetID());
+				preparedStatement.setInt(1, timeSheetDetail.getTotalNoOfHoursWorked());
+				preparedStatement.setLong(2, timeSheetDetail.getTimeSheetID());
 				preparedStatement.executeUpdate();
 				//preparedStatement.setDate(2, JavaUtildates.convertUtilToSql(timeSheetDetail.getEndDate()));
 				
@@ -95,13 +95,17 @@ public class TimeSheetUpdateFromPersonDAO {
 	}
 
 	public int returnVersionNumber(TimeSheetDetail timeSheetDetail) {
+	    
+	    PreparedStatement preparedStatement = null;
+        Connection connection = null;
+        ResultSet resultSet = null;
 
 		int versionNumber = 0;
 		try {
-			Connection connection = DBConnection.getDBConnection();
+			 connection = DBConnection.getDBConnection();
 
 			String timeSheetSQLStr = "SELECT	versionNo	FROM	TIMESHEET	WHERE	 timeSheetID='" + timeSheetDetail.getTimeSheetID() + "'";
-			PreparedStatement preparedStatement = connection.prepareStatement(timeSheetSQLStr);
+			 preparedStatement = connection.prepareStatement(timeSheetSQLStr);
 
 			resultSet = preparedStatement.executeQuery();
 			if (resultSet.next()) {

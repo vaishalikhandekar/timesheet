@@ -74,11 +74,11 @@ public class TimeSheetCreateDAO {
             timeSheetSQLStrBuf.append(" TimeSheet (");
             timeSheetSQLStrBuf.append(" timeSheetID, projectTimeSheetProcessID, projectPersonLinkID, ");
             timeSheetSQLStrBuf.append(" startDate, endDate, createdDateTime, ");
-            timeSheetSQLStrBuf.append(" approvalLevelType, timeSheetStatus, recordStatus, versionNo ");
+            timeSheetSQLStrBuf.append(" approvalLevelType, timeSheetStatus, recordStatus, versionNo, totalRegularHours ");
             timeSheetSQLStrBuf.append(" ) VALUES ( ");
             timeSheetSQLStrBuf.append(" ?, ?, ?, ");
             timeSheetSQLStrBuf.append(" ?, ?, ?, ");
-            timeSheetSQLStrBuf.append(" ?, ?, ?, ? )");
+            timeSheetSQLStrBuf.append(" ?, ?, ?, ?, ? )");
 
             preparedStatement = connection.prepareStatement(timeSheetSQLStrBuf.toString());
 
@@ -94,6 +94,9 @@ public class TimeSheetCreateDAO {
 
             preparedStatement.setDate(4, startDate);
 
+            Long totalRegularHours = 0L;
+            
+            
             // Set End Date
 
             Date endDate = null;
@@ -101,6 +104,8 @@ public class TimeSheetCreateDAO {
             if (projectTimeSheetProcessDetail.getFrequency().equalsIgnoreCase("Weekly")) {
 
                 endDate = JavaUtildates.addDays(JavaUtildates.convertUtilToSql(timeSheetCreateDetails.getStartDate()), 6);
+                
+                totalRegularHours = totalRegularHours + projectTimeSheetProcessDetail.getRegularDailyHours()*5;
 
             } else if (projectTimeSheetProcessDetail.getFrequency().equalsIgnoreCase("Monthly")) {
 
@@ -119,6 +124,7 @@ public class TimeSheetCreateDAO {
             preparedStatement.setString(8, "Created");
             preparedStatement.setString(9, "Active");
             preparedStatement.setInt(10, 1);
+            preparedStatement.setLong(11, totalRegularHours);
 
             preparedStatement.execute();
 

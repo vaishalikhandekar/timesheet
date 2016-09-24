@@ -59,10 +59,11 @@
         
         <action name="TimeSheetRead" class="com.company.timesheet.timesheet.action.TimeSheetReadAction">
             <result name="SENTTOUPDATE" type="tiles">TimeSheetUpdate</result>
+            <result name="success" type="tiles">TimeSheetRead</result>
             <result name="error">/index</result>
         </action>
 
-        <action name="TimeSheetUpdate" class="com.company.timesheet.timesheet.action.TimeSheetUpdateFromPersonAction">
+        <action name="TimeSheetUpdateSubmit" class="com.company.timesheet.timesheet.action.TimeSheetUpdateFromPersonAction">
             <result name="success" type="redirect">
                 <param name="location">/TimeSheet/TimeSheetsForPerson</param>
                 <param name="personDetail.personID">${personDetail.personID}</param>
