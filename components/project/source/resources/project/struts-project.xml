@@ -57,8 +57,8 @@
             <result name="error">/index</result>
         </action>
 
-        <action name="ProjectPersonTeam" class="com.company.timesheet.project.action.ProjectReadAction">
-            <result name="success" type="tiles">ProjectPersonTeam</result>
+        <action name="ProjectTeams" class="com.company.timesheet.project.action.ProjectTeamsAction">
+            <result name="success" type="tiles">ProjectTeams</result>
             <result name="error">/index</result>
         </action>
 

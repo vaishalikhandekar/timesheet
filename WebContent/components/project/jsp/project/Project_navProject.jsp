@@ -79,10 +79,10 @@
                                 </li>
 
                                 <li>
-                                    <s:url var="Teams" action="ProjectPersonTeam" namespace="/Project">
+                                    <s:url var="ProjectTeams" action="ProjectTeams" namespace="/Project">
                                         <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
                                     </s:url>
-                                    <a href="${Teams}">Teams</a>
+                                    <a href="${ProjectTeams}">Teams</a>
                                 </li>
 
                                 <li>
