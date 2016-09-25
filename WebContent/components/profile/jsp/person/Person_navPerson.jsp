@@ -55,6 +55,13 @@ table {
                                             </td>
                                         </tr>
                                         <tr>
+                                            <th width="15%">Date of Birth :</th>
+                                            <td width="30%">
+                                                <s:date name="personDetail.dateOfBirth" /> (
+                                                <s:date name="personDetail.dateOfBirth" nice="true"/>)
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <th width="15%">Email Address :</th>
                                             <td width="30%">
                                                 <s:property value="personDetail.emailAddress" />
