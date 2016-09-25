@@ -9,53 +9,60 @@ import java.util.List;
 
 import com.company.timesheet.core.util.dataaccess.DBConnection;
 import com.company.timesheet.profile.person.pojo.PersonDetail;
-import com.company.timesheet.timesheet.pojo.TimeSheetDetail;
 
 public class PersonListDAO {
-	
-	public  List<PersonDetail> listPerson(){
-		
-		 List<PersonDetail> personDetailList = new ArrayList<PersonDetail>();
-		 
-		 Connection connection = null;
-			ResultSet resultSet;
-			try {
-				connection = DBConnection.getDBConnection();
 
-				String personSQLStr = "SELECT * FROM Person WHERE	RECORDSTATUS='Active'";
+    /**
+     * 
+     * @return
+     */
+    public List<PersonDetail> listPerson() {
 
-				// statement = connection.createStatement();
+        List<PersonDetail> personDetailList = new ArrayList<PersonDetail>();
 
-				PreparedStatement preparedStatement = connection.prepareStatement(personSQLStr);
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        
+        PersonDetail personDetail = null;
+        
+        try {
+            
+            connection = DBConnection.getDBConnection();
 
-				resultSet = preparedStatement.executeQuery();
+            String personSQLStr = "SELECT * FROM Person"; // WHERE	RECORDSTATUS='Active'";
 
-				while (resultSet.next()) {
-					
-					PersonDetail personDetail = new PersonDetail();
-					
-					personDetail.setTitle(resultSet.getString("title"));
-					personDetail.setPersonID(resultSet.getLong("personID"));
-					personDetail.setFirstName(resultSet.getString("firstName"));
-					personDetail.setMiddleName(resultSet.getString("middleName"));
-					personDetail.setLastName(resultSet.getString("lastName"));
-					personDetail.setGender(resultSet.getString("gender"));
-					personDetail.setDateOfBirth(resultSet.getDate("dateOfBirth"));
-					personDetail.setRegistrationDate(resultSet.getTimestamp("registrationDate"));
-					personDetail.setStartDate(resultSet.getDate("startDate"));
-					personDetail.setEndDate(resultSet.getDate("endDate"));
-					
-					personDetailList.add(personDetail);
-				}
-			
-			}catch (SQLException e) {
+            // statement = connection.createStatement();
 
-				e.printStackTrace();
-			}
-		
-		 
-		 
-		 return personDetailList;
-	}
+            preparedStatement = connection.prepareStatement(personSQLStr);
+
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+
+                personDetail = new PersonDetail();
+
+                personDetail.setTitle(resultSet.getString("title"));
+                personDetail.setPersonID(resultSet.getLong("personID"));
+                personDetail.setFirstName(resultSet.getString("firstName"));
+                personDetail.setMiddleName(resultSet.getString("middleName"));
+                personDetail.setLastName(resultSet.getString("lastName"));
+                personDetail.setGender(resultSet.getString("gender"));
+                personDetail.setDateOfBirth(resultSet.getDate("dateOfBirth"));
+                personDetail.setRegistrationDate(resultSet.getTimestamp("registrationDate"));
+                personDetail.setStartDate(resultSet.getDate("startDate"));
+                personDetail.setEndDate(resultSet.getDate("endDate"));
+                personDetail.setRecordStatus(resultSet.getString("recordStatus"));
+
+                personDetailList.add(personDetail);
+            }
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+        return personDetailList;
+    }
 
 }

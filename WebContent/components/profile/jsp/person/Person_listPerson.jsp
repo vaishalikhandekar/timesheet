@@ -2,7 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
 
-
 <!DOCTYPE html>
 
 <html>
@@ -16,29 +15,11 @@ tr.break td {
 </style>
 
 <script type="text/javascript">
-	$('#DeletePerson').on('show.bs.modal', function(e) {
-
+	$(document).on("click", ".deletePer", function() {
 		//get data-id attribute of the clicked element
-		var personID = $(this).data('personID');
-		$(".modal-body #personID").val(personID);
+		var personID = $(this).data('id');
+		$(".modal-body #PersonDelete_personDetail_personID").val(personID);
 
-	});
-</script>
-
-<script>
-	$(document).ready(function() {
-		$(".deletePer").click(function() { // Click to only happen on announce links
-			$("#personDetail.personID").val($(this).data('id'));
-			$('#DeletePerson').modal('show');
-		});
-	});
-</script>
-
-<script>
-	$(document).ready(function() {
-		$('#DeletePerson').on('show.bs.modal', function(event) {
-			$("#personDetail.personID").val($(event.relatedTarget).data('id'));
-		});
 	});
 </script>
 
@@ -64,33 +45,35 @@ tr.break td {
 
     <div class="pull-right" class="container">
 
-        <div class="modal fade" id="DeletePerson" data-keyboard="false" data-backdrop="static">
+        <div class="modal fade" id="DeletePerson" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
 
             <div class="modal-dialog modal-lg">
 
                 <div class="modal-content">
 
                     <div class="modal-header">
+
                         <button class="close" type="button" data-dismiss="modal">&times;</button>
-                        <h3 class="modal-title">Delete Project</h3>
-                    </div>
-
-                    <div class="modal-body">
-
-                        <s:form class="form-inline" name="DeletePerson" namespace="/Profile" action="PersonDelete" method="POST" role="form" theme="bootstrap">
-
-                            <p>Are You Sure ?</p>
-
-                            <div class="modal-footer">
-                                <s:submit type="submit" id="submit" value="Delete" class="btn btn-primary" />
-                                <s:hidden name="personDetail.personID"></s:hidden>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-
-                        </s:form>
+                        <h3 class="modal-title">Delete Person</h3>
 
                     </div>
 
+                    <s:form class="form-inline" name="DeletePerson" namespace="/Profile" action="PersonDelete" method="POST" role="form" theme="bootstrap">
+
+                        <div class="modal-body">
+
+                            <p>Are You Sure?</p>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <s:submit type="submit" id="submit" value="Delete" class="btn btn-primary" />
+                            <s:hidden name="personDetail.personID"></s:hidden>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </s:form>
                 </div>
 
             </div>
@@ -189,11 +172,13 @@ tr.break td {
     <!-- *************************Code for Tabs************************************ -->
 
     <div class="tabbable full-width-tabs">
+
         <ul class="nav nav-tabs">
 
             <li class="active">
                 <a data-toggle="tab" href="#PersonList">Person List</a>
             </li>
+
         </ul>
 
         <div class="tab-content">
@@ -204,9 +189,9 @@ tr.break td {
 
                 <div class="pull-right" class="container">
 
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">New Person</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#PersonCreate">New Person</button>
 
-                    <div class="modal fade" id="modal-1" data-keyboard="false" data-backdrop="static">
+                    <div class="modal fade" id="PersonCreate" data-keyboard="false" data-backdrop="static">
 
                         <div class="modal-dialog modal-lg">
 
@@ -272,8 +257,10 @@ tr.break td {
 
                                                 <th>Gender</th>
                                                 <td>
-                                                    <input type="radio" name="personDetail.gender" value="male">Male <input type="radio"
-                                                        name="personDetail.gender" value="female">Female
+                                                    <input type="radio" name="personDetail.gender" value="male">
+                                                    Male
+                                                    <input type="radio" name="personDetail.gender" value="female">
+                                                    Female
                                                 </td>
                                             </tr>
                                             <tr class="break">
@@ -349,6 +336,7 @@ tr.break td {
                 </div>
 
             </div>
+
             <br />
 
             <s:form action="PersonList" namespace="/Profile" method="post">
@@ -367,6 +355,7 @@ tr.break td {
                             <th style="text-align: center">Gender</th>
                             <th style="text-align: center">Date Of Birth</th>
                             <th style="text-align: center">Registration Date</th>
+                            <th style="text-align: center">Record Status</th>
                         </tr>
 
                     </thead>
@@ -397,14 +386,14 @@ tr.break td {
                                 </s:a>
                                 &nbsp;&nbsp;
 
-                                <a href="#DeletePerson" data-toggle="modal">
+                                <a href="#DeletePerson" data-toggle="modal" data-id="%{personID}">
                                     <span class="glyphicon glyphicon-trash"></span>
                                     <!-- Delete -->
                                 </a>
 
                                 &nbsp;&nbsp;
 
-                                <a class="btn btn-primary deletePer" data-toggle="modal" data-id="%{personID}">
+                                <a class="btn btn-primary deletePer" href="#DeletePerson" data-toggle="modal" data-id="%{personID}">
                                     <span class="glyphicon glyphicon-trash"> ND</span>
                                 </a>
 
@@ -431,11 +420,15 @@ tr.break td {
                             </td>
 
                             <td align="center">
-                                <s:date name="dateOfBirth" format="MMM - dd - yyyy"/>
+                                <s:date name="dateOfBirth" format="MMM - dd - yyyy" />
                             </td>
 
                             <td align="center">
-                                <s:property value="registrationDate" />
+                                <s:date name="registrationDate" />
+                            </td>
+
+                            <td align="center">
+                                <s:property value="recordStatus" />
                             </td>
 
                         </tr>

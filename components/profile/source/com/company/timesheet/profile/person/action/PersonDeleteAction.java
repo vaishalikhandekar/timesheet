@@ -13,41 +13,55 @@ import com.opensymphony.xwork2.ActionSupport;
  *
  */
 public class PersonDeleteAction extends ActionSupport {
-	
-	private PersonDetail personDetail;
-	
-	public PersonDetail getPersonDetail() {
-		return personDetail;
-	}
 
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
 
+    private PersonDetail personDetail;
 
-	public void setPersonDetail(PersonDetail personDetail) {
-		this.personDetail = personDetail;
-	}
+    /**
+     * 
+     * @return
+     */
+    public PersonDetail getPersonDetail() {
 
+        return personDetail;
+    }
 
+    /**
+     * 
+     * @param personDetail
+     */
+    public void setPersonDetail(PersonDetail personDetail) {
 
-	@Override
-	public String execute() throws Exception {
-		
-		String pageForwardStr = "";
-		
-		PersonDeleteDAO deletePersonDAO = new PersonDeleteDAO();
-		String returnMassegeStr = deletePersonDAO.deletePerson(personDetail);
+        this.personDetail = personDetail;
+    }
 
-		if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
+    /**
+     * 
+     */
+    @Override
+    public String execute() throws Exception {
 
-			pageForwardStr = SUCCESS;
+        String pageForwardStr = "";
 
-		} else {
+        PersonDeleteDAO deletePersonDAO = new PersonDeleteDAO();
+        String returnMassegeStr = deletePersonDAO.deletePerson(personDetail);
 
-			pageForwardStr = ERROR;
+        if (returnMassegeStr == CRUDConstants.RETURN_MESSAGE_SUCCESS) {
 
-		}
+            pageForwardStr = SUCCESS;
 
-		return pageForwardStr;
-	
-	}
+        } else {
+
+            pageForwardStr = ERROR;
+
+        }
+
+        return pageForwardStr;
+
+    }
 
 }
