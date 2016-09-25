@@ -431,7 +431,7 @@ tr.break td {
                             </td>
 
                             <td align="center">
-                                <s:date name="dateOfBirth" />
+                                <s:date name="dateOfBirth" format="MMM - dd - yyyy"/>
                             </td>
 
                             <td align="center">
