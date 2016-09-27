@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.company.timesheet.core.util.dataaccess.DBConnection;
-import com.company.timesheet.profile.person.pojo.PersonDetail;
 import com.company.timesheet.project.pojo.ProjectDetail;
 import com.company.timesheet.project.pojo.ProjectSearchCriteria;
 import com.company.timesheet.project.pojo.ProjectSearchDetails;
@@ -52,6 +51,7 @@ public class ProjectSearchDAO {
 					ProjectDetail projectDetail = new ProjectDetail();
 					projectDetail.setProjectID(resultSet.getLong("projectID"));
 					projectDetail.setProjectName(resultSet.getString("projectName"));
+					projectDetail.setAcronym(resultSet.getString("acronym"));
 					projectDetail.setDescription(resultSet.getString("description"));
 					projectDetail.setComments(resultSet.getString("comments"));
 					projectDetail.setStartDate(resultSet.getDate("startDate"));

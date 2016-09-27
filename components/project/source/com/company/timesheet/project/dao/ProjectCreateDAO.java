@@ -24,115 +24,111 @@ import com.company.timesheet.project.pojo.ProjectSearchDetails;
  */
 public class ProjectCreateDAO {
 
-	public String createProject(ProjectDetail projectDetail) {
-		String returnMassegeStr = "";
+    /**
+     * 
+     * @param projectDetail
+     * @return
+     */
+    public String createProject(ProjectDetail projectDetail) {
 
-		PreparedStatement preparedStatement = null;
-		boolean projectExistInd = projectExist(projectDetail);
+        String returnMassegeStr = "";
 
-		if (!projectExistInd) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
 
-			Connection connection = null;
-			try {
-				connection = DBConnection.getDBConnection();
+        boolean projectExistInd = projectExist(projectDetail);
 
-				String projectSQLStr = "INSERT INTO PROJECT(projectID, projectName, acronym, description, comments, startDate, endDate, recordStatus, versionNo) "
-						+ "VALUES (?, '"
-						+ projectDetail.getProjectName()
-						+ "','"
-						+ projectDetail.getAcronym()
-						+ "', '"
-						+ projectDetail.getDescription()
-						+ "','"
-						+ projectDetail.getComments()
-						+ "',?,?, 'Active',"
-						+ " 1 )";
+        if (!projectExistInd) {
 
-				PreparedStatement preparedStatement1 = connection
-						.prepareStatement(projectSQLStr);
+            try {
+                connection = DBConnection.getDBConnection();
 
-				long projectID = UniqueID.nextUniqueID();
-				preparedStatement1.setLong(1, projectID);
+                String projectSQLStr = "INSERT INTO PROJECT(projectID, projectName, acronym, description, comments, startDate, endDate, recordStatus, versionNo) "
+                        + "VALUES (?, '"
+                        + projectDetail.getProjectName()
+                        + "','"
+                        + projectDetail.getAcronym()
+                        + "', '"
+                        + projectDetail.getDescription()
+                        + "','" + projectDetail.getComments() + "',?,?, 'Active'," + " 1 )";
 
-				projectDetail.setProjectID(projectID);
+                preparedStatement = connection.prepareStatement(projectSQLStr);
 
-				preparedStatement1.setDate(2, JavaUtildates
-						.convertUtilToSql(projectDetail.getStartDate()));
-				preparedStatement1.setDate(3, JavaUtildates
-						.convertUtilToSql(projectDetail.getEndDate()));
+                long projectID = UniqueID.nextUniqueID();
+                preparedStatement.setLong(1, projectID);
 
-				preparedStatement1.execute();
+                preparedStatement.setDate(2, JavaUtildates.convertUtilToSql(projectDetail.getStartDate()));
+                preparedStatement.setDate(3, JavaUtildates.convertUtilToSql(projectDetail.getEndDate()));
 
-				// inserting data into AuditTrail Table for Project Table
-				AuditTrailDetails auditTrailDetails = new AuditTrailDetails();
+                preparedStatement.execute();
 
-				auditTrailDetails.setTableName("Project");
-				auditTrailDetails.setOperationType("Create");
-				auditTrailDetails.setRelatedID(projectDetail.getProjectID());
-				auditTrailDetails.setTransactionType("Online");
+                // Set newly created projectID
+                projectDetail.setProjectID(projectID);
 
-				CreateAuditTrailDAO createAuditTrailDAO = new CreateAuditTrailDAO();
-				createAuditTrailDAO.createAuditTrail(auditTrailDetails);
+                // inserting data into AuditTrail Table for Project Table
+                AuditTrailDetails auditTrailDetails = new AuditTrailDetails();
 
-				returnMassegeStr = CRUDConstants.RETURN_MESSAGE_SUCCESS;
+                auditTrailDetails.setTableName("Project");
+                auditTrailDetails.setOperationType("Create");
+                auditTrailDetails.setRelatedID(projectDetail.getProjectID());
+                auditTrailDetails.setTransactionType("Online");
 
-			} catch (SQLException e) {
+                CreateAuditTrailDAO createAuditTrailDAO = new CreateAuditTrailDAO();
+                createAuditTrailDAO.createAuditTrail(auditTrailDetails);
 
-				e.printStackTrace();
-				returnMassegeStr = CRUDConstants.RETURN_MESSAGE_FAILURE;
-			}
-		}
-		return returnMassegeStr;
+                returnMassegeStr = CRUDConstants.RETURN_MESSAGE_SUCCESS;
 
-	}
+            } catch (SQLException e) {
 
-	/**
-	 * 
-	 * @param projectDetail
-	 */
-	public boolean projectExist(ProjectDetail projectDetail) {
+                e.printStackTrace();
+                returnMassegeStr = CRUDConstants.RETURN_MESSAGE_FAILURE;
+            }
+        }
 
-		boolean projectExistInd = false;
+        return returnMassegeStr;
+    }
 
-		try {
+    /**
+     * 
+     * @param projectDetail
+     */
+    public boolean projectExist(ProjectDetail projectDetail) {
 
-			ProjectSearchCriteria projectSearchCriteria = new ProjectSearchCriteria();
+        boolean projectExistInd = false;
 
-			projectSearchCriteria
-					.setProjectName(projectDetail.getProjectName() == null ? ""
-							: projectDetail.getProjectName());
+        try {
 
-			/*
-			 * projectSearchCriteria.setStartDate(projectDetail.getStartDate()
-			 * == null ? "" : projectDetail.getStartDate());
-			 * projectSearchCriteria.setEndDate(projectDetail.getEndDate() ==
-			 * null ? "" : projectDetail.getEndDate());
-			 */
-			ProjectSearchDetails projectSearchDetails = new ProjectSearchDetails();
-			projectSearchDetails
-					.setProjectSearchCriteria(projectSearchCriteria);
+            ProjectSearchCriteria projectSearchCriteria = new ProjectSearchCriteria();
 
-			//
-			ProjectSearchDAO searchProjectDAO = new ProjectSearchDAO();
+            projectSearchCriteria.setProjectName(projectDetail.getProjectName() == null ? "" : projectDetail.getProjectName());
 
-			//
-			List<ProjectDetail> projectDetailList = searchProjectDAO
-					.searchProjectInfo(projectSearchDetails);
+            /*
+             projectSearchCriteria.setStartDate(projectDetail.getStartDate() == null ? "" : projectDetail.getStartDate());
+             projectSearchCriteria.setEndDate(projectDetail.getEndDate() == null ? "" : projectDetail.getEndDate());
+             */
+            ProjectSearchDetails projectSearchDetails = new ProjectSearchDetails();
+            projectSearchDetails.setProjectSearchCriteria(projectSearchCriteria);
 
-			if (projectDetailList.size() > 0) {
+            //
+            ProjectSearchDAO searchProjectDAO = new ProjectSearchDAO();
 
-				projectDetail.getErrorMessageList().add("Person already exist");
+            //
+            List<ProjectDetail> projectDetailList = searchProjectDAO.searchProjectInfo(projectSearchDetails);
 
-				projectExistInd = true;
-			}
+            if (projectDetailList.size() > 0) {
 
-		} catch (Exception e) {
+                projectDetail.getErrorMessageList().add("Project already exist");
 
-			e.printStackTrace();
-		}
+                projectExistInd = true;
+            }
 
-		return projectExistInd;
+        } catch (Exception e) {
 
-	}
+            e.printStackTrace();
+        }
+
+        return projectExistInd;
+
+    }
 
 }
