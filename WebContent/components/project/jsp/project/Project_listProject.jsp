@@ -8,21 +8,10 @@
 <title></title>
 <style type="text/css">
 tr.break td {
-	height: 10px;
+	height: 25px;
 }
 </style>
-<script>
-	$(function() {
-		$('.datepick').each(function() {
-			$(this).datepicker({
 
-				changeMonth : true,
-				changeYear : true,
-
-			});
-		});
-	});
-</script>
 
 <script type="text/javascript">
 	$.fx.speeds._default = 1000;
@@ -191,12 +180,12 @@ tr.break td {
 
                                                     <th>Project Name</th>
                                                     <td>
-                                                        <input type="text"  name="projectDetail.projectName" />
+                                                        <input type="text" name="projectDetail.projectName" />
                                                     </td>
 
                                                     <th>Acronym</th>
                                                     <td>
-                                                        <input type="text"  name="projectDetail.acronym" />
+                                                        <input type="text" name="projectDetail.acronym" />
                                                     </td>
                                                 </tr>
 
@@ -220,13 +209,11 @@ tr.break td {
 
                                                 </tr>
 
-
                                                 <tr class="break">
                                                     <td colspan="2"></td>
                                                 </tr>
 
                                                 <tr>
-
 
                                                     <th>Description</th>
                                                     <td>
@@ -235,9 +222,6 @@ tr.break td {
                                                     </td>
                                                 </tr>
 
-
-
-                                                <div class="container">
                                             </table>
                                             <br />
 
@@ -271,10 +255,11 @@ tr.break td {
                                     <tr class="success">
                                         <th style="text-align: center">Action</th>
                                         <th style="text-align: center">Project Name</th>
+                                        <th style="text-align: center">Acronym</th>
                                         <th style="text-align: center">Description</th>
-                                        <th style="text-align: center">Record Status</th>
                                         <th style="text-align: center">Start Date</th>
                                         <th style="text-align: center">End Date</th>
+                                        <th style="text-align: center">Record Status</th>
                                     </tr>
                                 </thead>
 
@@ -325,10 +310,10 @@ tr.break td {
                                             <s:property value="projectName" />
                                         </td>
                                         <td align="center">
-                                            <s:property value="description" />
+                                            <s:property value="acronym" />
                                         </td>
                                         <td align="center">
-                                            <s:property value="recordStatus" />
+                                            <s:property value="description" />
                                         </td>
                                         <td align="center">
                                             <s:property value="startDate" />
@@ -336,10 +321,14 @@ tr.break td {
                                         <td align="center">
                                             <s:property value="endDate" />
                                         </td>
+                                        <td align="center">
+                                            <s:property value="recordStatus" />
+                                        </td>
 
                                         <!-- Script for delete -->
 
                                     </tr>
+                                    
                                 </s:iterator>
 
                             </table>

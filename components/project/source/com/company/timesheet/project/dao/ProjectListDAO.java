@@ -18,44 +18,54 @@ import com.company.timesheet.project.pojo.ProjectDetail;
  *
  */
 public class ProjectListDAO {
-		
-	public List<ProjectDetail> listProject(){
-		List<ProjectDetail> projectDetailList = new ArrayList<ProjectDetail>();
-		
-		Connection connection = null;
-		ResultSet resultSet;
-		try {
-			connection = DBConnection.getDBConnection();
 
-			String projectSQLStr = "SELECT * FROM PROJECT WHERE	RECORDSTATUS='Active'";
+    /**
+     * 
+     * @return
+     */
+    public List<ProjectDetail> listProject() {
 
-			// statement = connection.createStatement();
+        List<ProjectDetail> projectDetailList = new ArrayList<ProjectDetail>();
 
-			PreparedStatement preparedStatement = connection.prepareStatement(projectSQLStr);
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
 
-			resultSet = preparedStatement.executeQuery();
+        ProjectDetail projectDetail = null;
 
-			while (resultSet.next()) {
-				
-				ProjectDetail projectDetail = new ProjectDetail();
-				
-				projectDetail.setProjectID(resultSet.getLong("projectID"));
-				projectDetail.setProjectName(resultSet.getString("projectName"));
-				projectDetail.setDescription(resultSet.getString("description"));
-				projectDetail.setRecordStatus(resultSet.getString("recordStatus"));
-				projectDetail.setStartDate(resultSet.getDate("startDate"));
-				projectDetail.setEndDate(resultSet.getDate("endDate"));
-				
-				projectDetailList.add(projectDetail);
-			}
-		
-		}catch (SQLException e) {
+        try {
+            connection = DBConnection.getDBConnection();
 
-			e.printStackTrace();
-		}
-	
+            String projectSQLStr = "SELECT * FROM Project"; // WHERE
+                                                            // RECORDSTATUS='Active'";
 
-		
-		return projectDetailList;
-	}
+            // statement = connection.createStatement();
+
+            preparedStatement = connection.prepareStatement(projectSQLStr);
+
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+
+                projectDetail = new ProjectDetail();
+
+                projectDetail.setProjectID(resultSet.getLong("projectID"));
+                projectDetail.setProjectName(resultSet.getString("projectName"));
+                projectDetail.setAcronym(resultSet.getString("acronym"));
+                projectDetail.setDescription(resultSet.getString("description"));
+                projectDetail.setRecordStatus(resultSet.getString("recordStatus"));
+                projectDetail.setStartDate(resultSet.getDate("startDate"));
+                projectDetail.setEndDate(resultSet.getDate("endDate"));
+
+                projectDetailList.add(projectDetail);
+            }
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+        return projectDetailList;
+    }
+
 }
