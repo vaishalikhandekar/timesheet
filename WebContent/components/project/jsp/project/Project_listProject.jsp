@@ -162,7 +162,7 @@ tr.break td {
                                     <div class="modal-header">
 
                                         <button class="close" type="button" data-dismiss="modal">&times;</button>
-                                        <h3 class="modal-title">Create New Project</h3>
+                                        <h3 class="modal-title">New Project</h3>
                                     </div>
 
                                     <div class="modal-body">
@@ -216,9 +216,9 @@ tr.break td {
                                                 <tr>
 
                                                     <th>Description</th>
-                                                    <td>
+                                                    <td colspan="3">
                                                         <!-- <input type="text" class="form-control" name="projectDetail.description" /> -->
-                                                        <textarea name="projectDetail.description" cols="45" rows="3"></textarea>
+                                                        <textarea name="projectDetail.description" cols="95" rows="3"></textarea>
                                                     </td>
                                                 </tr>
 
