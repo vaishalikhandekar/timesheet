@@ -15,6 +15,19 @@
             <result type="tiles">index</result>
         </action>
 
+	<action name="checkLogin"
+		class="com.company.timesheet.profile.person.action.LoginLogoutController"
+		method="checkLogin">
+		<result name="success">/components/profile/jsp/person/Person_home.jsp</result>
+	</action>
+	
+	 <action name="PersonList" class="com.company.timesheet.profile.person.action.PersonListAction">
+            <result name="success">/components/profile/jsp/person/Person_list.jsp</result>
+            <result name="error">/index</result>
+            <!--  <result name="success" type="tiles">PersonList</result> -->
+     </action>
+	
+	
     </package>
     
     <constant name="struts.custom.i18n.resources" value="global" />

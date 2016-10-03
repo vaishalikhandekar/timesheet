@@ -5,6 +5,9 @@
 <struts>
 
     <package name="Profile" namespace="/Profile" extends="struts-default">
+    
+    
+     
 
         <result-types>
             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
@@ -31,13 +34,14 @@
             <result name="error">/index</result>
         </action>
 
-
-        <action name="PersonList" class="com.company.timesheet.profile.person.action.PersonListAction">
-            <result name="success" type="tiles">PersonList</result>
+        
+      <!--   <action name="PersonList" class="com.company.timesheet.profile.person.action.PersonListAction">
+            <result name="success">/components/profile/jsp/person/personList.jsp</result>
             <result name="error">/index</result>
-        </action>
-
-
+             <result name="success" type="tiles">PersonList</result>
+       </action>
+         -->
+        
         <action name="PersonRead" class="com.company.timesheet.profile.person.action.PersonReadAction">
             <result name="SENTTOUPDATE" type="tiles">PersonUpdate</result>
             <result name="SENTTOUPDATELIST" type="tiles">PersonUpdateFromList </result>

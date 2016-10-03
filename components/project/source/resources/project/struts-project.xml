@@ -53,7 +53,8 @@
         </action>
 
         <action name="ProjectList" class="com.company.timesheet.project.action.ProjectListAction">
-            <result name="success" type="tiles">ProjectList</result>
+           <!--  <result name="success" type="tiles">ProjectList</result> -->
+            <result name="success">/components/project/jsp/project/projectListHome.jsp</result>
             <result name="error">/index</result>
         </action>
 
