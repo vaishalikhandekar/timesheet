@@ -7,103 +7,155 @@
 <title>Time Sheet List</title>
 </head>
 <body>
-    <jsp:include page="/components/profile/jsp/person/Person_navPerson.jsp"></jsp:include>
 
-    <br />
+    <!-- HEADER SECTION -->
+    <div id="top">
 
-    <table style="width: 100%;">
-
-        <col width="20%" />
-        <col width="30%" />
-        <col width="20%" />
-        <col width="30%" />
-
-        <tr>
-            <th style="text-align: right">Project Name</th>
-            <td align="left">
-                &nbsp; &nbsp; &nbsp;
-                <s:property value="timeSheetDetail.projectName" />
-            </td>
-
-            <th style="text-align: right">Time Sheet Status</th>
-            <td align="left">
-                &nbsp; &nbsp; &nbsp;
-                <s:property value="timeSheetDetail.timeSheetStatus" />
-            </td>
-
-        </tr>
-
-        <tr>
-
-            <th style="text-align: right">Start Date</th>
-            <td align="left">
-                &nbsp; &nbsp; &nbsp;
-                <s:property value="timeSheetDetail.startDate" />
-            </td>
-
-            <th style="text-align: right">End Date</th>
-            <td align="left">
-                &nbsp; &nbsp; &nbsp;
-                <s:property value="timeSheetDetail.endDate" />
-            </td>
-
-        </tr>
+        <%@ include file="/components/core/jsp/header.jsp"%>
+    </div>
+    <!-- END HEADER SECTION -->
 
 
 
-        <s:form action="TimeSheetLineItemReadFromPerson" namespace="/TimeSheet" method="post">
-            <br>
-            <br>
-            <table class="table table-striped">
-                <thead>
+    <!-- MENU SECTION -->
+    <div id="left">
+        <%@ include file="/components/core/jsp/menu.jsp"%>
 
-                    <tr class="success">
-                        <th style="text-align: center">Action</th>
-                        <th style="text-align: center">Category</th>
-                        <th style="text-align: center">AttendenceDay</th>
-                        <th style="text-align: center">AttendenceDate</th>
-                        <th style="text-align: center">NoOfHoursWorked</th>
-                        <th style="text-align: center">Comments</th>
-                    </tr>
-                </thead>
-                <s:iterator value="timeSheetDetail.timeSheetLineItemDetailList" status="stat">
-                    <tr>
+    </div>
+    <!--END MENU SECTION -->
 
-                        <td align="center">
+    <!--PAGE CONTENT -->
+    <div id="content">
 
-                            <s:url var="updateprojectTimeSheetProcessURL" action="" namespace="/TimeSheet" escapeAmp="false">
-                                <s:param name="projectDetail.projectID" value="%{projectID}" />
-                                <s:param name="act" value="%{updateAction}" />
-                            </s:url>
+        <div class="inner">
+            <div class="row">
+                <div class="col-lg-12"></div>
+            </div>
 
-                            <s:a href="%{updateprojectTimeSheetProcessURL}">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <!-- Update -->
-                            </s:a>
-                            &nbsp;&nbsp;
+            <div class="row">
+                <div class="col-lg-12">
 
-                        </td>
+                    <jsp:include page="/components/profile/jsp/person/Person_navPerson.jsp"></jsp:include>
 
-                        <td align="center">
-                            <s:property value="category" />
-                        </td>
-                        <td align="center">
-                            <s:property value="dayOfWeek" />
-                        </td>
-                        <td align="center">
-                            <s:property value="attendenceDate" />
-                        </td>
+                    <table style="width: 100%;" class="table table-striped">
 
-                        <td align="center">
-                            <s:property value="noOfHoursWorked" />
-                        </td>
-                        <td align="center">
-                            <s:property value="comments" />
-                        </td>
-                    </tr>
-                </s:iterator>
-            </table>
+                        <col width="20%" />
+                        <col width="30%" />
+                        <col width="20%" />
+                        <col width="30%" />
 
-        </s:form>
+                        <tr>
+                            <th style="text-align: right">Project Name</th>
+                            <td align="left">
+                                &nbsp; &nbsp; &nbsp;
+                                <s:property value="timeSheetDetail.projectName" />
+                            </td>
+
+                            <th style="text-align: right">Time Sheet Status</th>
+                            <td align="left">
+                                &nbsp; &nbsp; &nbsp;
+                                <s:property value="timeSheetDetail.timeSheetStatus" />
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th style="text-align: right">Start Date</th>
+                            <td align="left">
+                                &nbsp; &nbsp; &nbsp;
+                                <s:property value="timeSheetDetail.startDate" />
+                            </td>
+
+                            <th style="text-align: right">End Date</th>
+                            <td align="left">
+                                &nbsp; &nbsp; &nbsp;
+                                <s:property value="timeSheetDetail.endDate" />
+                            </td>
+
+                        </tr>
+                        <tr>
+
+                            <th style="text-align: right">TotalRegularHours</th>
+                            <td align="left">
+                                &nbsp; &nbsp; &nbsp;
+                                <s:property value="timeSheetDetail.totalRegularHours" />
+                            </td>
+
+                            <th style="text-align: right">TotalNoOfHoursWorked</th>
+                            <td align="left">
+                                &nbsp; &nbsp; &nbsp;
+                                <s:property value="timeSheetDetail.totalNoOfHoursWorked" />
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                    <s:form action="TimeSheetLineItemReadFromPerson" namespace="/TimeSheet" method="post">
+                        <br>
+                        <br>
+                        <table class="table table-striped" border="1">
+                            <thead>
+
+                                <tr class="success">
+                                    <th style="text-align: center">Action</th>
+                                    <th style="text-align: center">AttendenceDay</th>
+                                    <th style="text-align: center">AttendenceDate</th>
+                                    <th style="text-align: center">Category</th>
+                                    <th style="text-align: center">NoOfHoursWorked</th>
+                                    <th style="text-align: center">Comments</th>
+                                </tr>
+                            </thead>
+                            <s:iterator value="timeSheetDetail.timeSheetLineItemDetailList" status="stat">
+                                <tr>
+
+                                    <td align="center">
+
+                                        <s:url var="updateprojectTimeSheetProcessURL" action="TimeSheetLineItemRead" namespace="" escapeAmp="false">
+                                            <s:param name="projectDetail.projectID" value="%{projectID}" />
+                                            <s:param name="act" value="%{updateAction}" />
+                                        </s:url>
+
+                                        <s:a href="%{updateprojectTimeSheetProcessURL}">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                            <!-- Update -->
+                                        </s:a>
+                                        &nbsp;&nbsp;
+
+                                    </td>
+
+                                    <td align="center">
+                                        <s:property value="dayOfWeek" />
+                                    </td>
+                                    <td align="center">
+                                        <s:property value="attendenceDate" />
+                                    </td>
+                                    <td align="center">
+                                        <s:property value="category" />
+                                    </td>
+
+                                    <td align="center">
+                                        <s:property value="noOfHoursWorked" />
+                                    </td>
+                                    <td align="center">
+                                        <s:property value="comments" />
+                                    </td>
+                                </tr>
+                            </s:iterator>
+                        </table>
+
+                    </s:form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <div id="footer">
+        <%@ include file="/components/core/jsp/footer.jsp"%>
+    </div>
+    <!--END FOOTER -->
 </body>
 </html>

@@ -13,18 +13,18 @@
             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
         </result-types>
 
-        <action name="PersonSearch">
+       <!--  <action name="PersonSearch">
             <result type="tiles">PersonSearch</result>
-        </action>
+        </action> -->
 
-        <action name="PersonCreateSubmit" class="com.company.timesheet.profile.person.action.PersonCreateAction">
+       <!--  <action name="PersonCreateSubmit" class="com.company.timesheet.profile.person.action.PersonCreateAction">
             <result name="success" type="redirect">
                 <param name="location">/Profile/PersonList</param>
             </result>
             <result name="error" type="tiles">actionError</result>
             <result name="input" type="tiles">inputError</result>
         </action>
-
+ -->
 
         <action name="PersonLogin" class="com.company.timesheet.profile.person.action.PersonLoginAction">
             <result name="success" type="redirect">
@@ -42,23 +42,23 @@
        </action>
          -->
         
-        <action name="PersonRead" class="com.company.timesheet.profile.person.action.PersonReadAction">
+       <!--  <action name="PersonRead" class="com.company.timesheet.profile.person.action.PersonReadAction">
             <result name="SENTTOUPDATE" type="tiles">PersonUpdate</result>
             <result name="SENTTOUPDATELIST" type="tiles">PersonUpdateFromList </result>
             <result name="success" type="tiles">PersonRead</result>
             <result name="error">/index</result>
-        </action>
+        </action> -->
 
-        <action name="PersonUpdateSubmit" class="com.company.timesheet.profile.person.action.PersonUpdateAction">
+        <!-- <action name="PersonUpdateSubmit" class="com.company.timesheet.profile.person.action.PersonUpdateAction">
             <result name="success" type="redirect">
                 <param name="personDetail.personID">${personDetail.personID}</param>
                 <param name="location">/Profile/PersonRead</param>
             </result>
             <result name="error">/index</result>
-        </action>
+        </action> -->
 
 
-        <action name="PersonDelete" class="com.company.timesheet.profile.person.action.PersonDeleteAction">
+       <!--  <action name="PersonDelete" class="com.company.timesheet.profile.person.action.PersonDeleteAction">
             <result name="success" type="redirect">
                 <param name="location">/Profile/PersonList</param>
             </result>
@@ -69,7 +69,7 @@
             <result name="success" type="tiles">PersonSearch</result>
             <result name="error">/index</result>
         </action>
-
+ -->
 
 
 

@@ -101,7 +101,7 @@ table {
                             <ul class="nav navbar-nav">
 
                                 <li class="active">
-                                    <s:url var="PersonHome" action="PersonRead" namespace="/Profile">
+                                    <s:url var="PersonHome" action="PersonRead" namespace="">
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
                                     <a href="${PersonHome}">
@@ -111,14 +111,14 @@ table {
                                 </li>
 
                                 <li>
-                                    <s:url var="PersonProjectList" action="PersonProjectList" namespace="/Project">
+                                    <s:url var="PersonProjectList" action="PersonProjectList" namespace="">
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
                                     <a href="${PersonProjectList}">Projects</a>
                                 </li>
 
                                 <li>
-                                    <s:url var="TimeSheetsForPerson" action="TimeSheetsForPerson" namespace="/TimeSheet">
+                                    <s:url var="TimeSheetsForPerson" action="TimeSheetsForPerson" namespace="">
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
                                     <a href="${TimeSheetsForPerson}">Time Sheets</a>
@@ -132,7 +132,7 @@ table {
                                 </li>
 
                                 <li>
-                                    <s:url var="ImmigrationForPerson" action="ImmigrationForPerson" namespace="/TimeSheet">
+                                    <s:url var="ImmigrationForPerson" action="ImmigrationForPerson" namespace="">
                                         <s:param name="personDetail.personID" value="%{personDetail.personID}" />
                                     </s:url>
                                     <a href="${ImmigrationForPerson}">Immigration</a>

@@ -47,7 +47,7 @@
             <result name="error">/index</result>
         </action>
 
-        <action name="TimeSheetCreate" class="com.company.timesheet.timesheet.action.TimeSheetCreateAction">
+        <!-- <action name="TimeSheetCreate" class="com.company.timesheet.timesheet.action.TimeSheetCreateAction">
             <result name="success" type="redirect">
                 <param name="location">/TimeSheet/TimeSheetRead</param>
                 <param name="personDetail.personID">${timeSheetCreateDetails.personID}</param>
@@ -55,22 +55,22 @@
                 <param name="timeSheetKey.timeSheetID">${timeSheetDetail.timeSheetID}</param>
             </result>
             <result name="error">/index</result>
-        </action>
+        </action> -->
         
-        <action name="TimeSheetRead" class="com.company.timesheet.timesheet.action.TimeSheetReadAction">
+        <!-- <action name="TimeSheetRead" class="com.company.timesheet.timesheet.action.TimeSheetReadAction">
             <result name="SENTTOUPDATE" type="tiles">TimeSheetUpdate</result>
             <result name="success" type="tiles">TimeSheetRead</result>
             <result name="error">/index</result>
-        </action>
+        </action> -->
 
-        <action name="TimeSheetUpdateSubmit" class="com.company.timesheet.timesheet.action.TimeSheetUpdateFromPersonAction">
+        <!-- <action name="TimeSheetUpdateSubmit" class="com.company.timesheet.timesheet.action.TimeSheetUpdateFromPersonAction">
             <result name="success" type="redirect">
                 <param name="location">/TimeSheet/TimeSheetsForPerson</param>
                 <param name="personDetail.personID">${personDetail.personID}</param>
             </result>
             <result name="error">/index</result>
             <result name="input">/index</result>
-        </action>
+        </action> -->
 
         <action name="TimeSheetDeleteFromPerson" class="com.company.timesheet.timesheet.action.TimeSheetDeleteFromPersonAction">
             <result name="success" type="redirect">

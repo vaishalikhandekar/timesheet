@@ -20,14 +20,218 @@
 		method="checkLogin">
 		<result name="success">/components/profile/jsp/person/Person_home.jsp</result>
 	</action>
+    
+    <!-- Person -->
 	
 	 <action name="PersonList" class="com.company.timesheet.profile.person.action.PersonListAction">
             <result name="success">/components/profile/jsp/person/Person_list.jsp</result>
             <result name="error">/index</result>
             <!--  <result name="success" type="tiles">PersonList</result> -->
      </action>
+     
+      <action name="PersonSearch">
+            <result >/components/profile/jsp/person/Person_searchPerson.jsp</result>
+        </action> 
+        
+
+     <action name="PersonCreateSubmit" class="com.company.timesheet.profile.person.action.PersonCreateAction">
+            <result name="success" >/components/profile/jsp/person/Person_list.jsp</result>
+            <result name="error" type="tiles">actionError</result>
+            <result name="input" type="tiles">inputError</result>
+        </action>
+        
+        <action name="PersonRead" class="com.company.timesheet.profile.person.action.PersonReadAction">
+            <result name="SENTTOUPDATE" >/components/profile/jsp/person/Person_updatePerson.jsp</result>
+            <result name="SENTTOUPDATELIST" >PersonUpdateFromList </result>
+            <result name="success" >/components/profile/jsp/person/Person_readPerson.jsp</result>
+            <result name="error">/index</result>
+        </action> 
+        
+        <action name="PersonUpdateSubmit" class="com.company.timesheet.profile.person.action.PersonUpdateAction">
+            <result name="success" type="redirect">
+                <param name="personDetail.personID">${personDetail.personID}</param>
+                <param name="location">/PersonRead</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+        
+        <action name="PersonDelete" class="com.company.timesheet.profile.person.action.PersonDeleteAction">
+            <result name="success" type="redirect">
+                <param name="location">/components/profile/jsp/person/Person_list.jsp</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="PersonSearchSubmit" class="com.company.timesheet.profile.person.action.PersonSearchAction">
+            <result name="success" >/components/profile/jsp/person/Person_searchPerson.jsp</result>
+            <result name="error">/index</result>
+        </action>
+        
+         <!-- END Person -->
+         
+          <!-- Project -->
+          
+          <action name="CreateProject">
+            <result>ProjectCreate</result>
+        </action>
+        
+        <action name="ProjectCreateSubmit" class="com.company.timesheet.project.action.ProjectCreateAction">
+            <result name="success">/components/project/jsp/project/Project_listProject.jsp </result>
+            <result name="error">/index</result>
+        </action>
+          
+          <action name="Projects" class="com.company.timesheet.project.action.ProjectListAction">
+            <result name="success">/components/project/jsp/project/Project_listProject.jsp</result>
+            <result name="error">/index</result>
+        </action>
+        
+        <action name="ProjectSearch">
+            <result>/components/project/jsp/project/Project_searchProject.jsp</result>
+        </action>
+        
+        <action name="ProjectSearchSubmit" class="com.company.timesheet.project.action.ProjectSearchAction">
+            <result name="success">/components/project/jsp/project/Project_searchProject.jsp</result>
+            <result name="error">/index</result>
+        </action>
+        
+        <action name="ProjectRead" class="com.company.timesheet.project.action.ProjectReadAction">
+            <result name="SENTTOUPDATE" >/components/project/jsp/project/Project_updateProject.jsp</result>
+            <result name="success" >/components/project/jsp/project/Project_readProject.jsp</result>
+            <result name="error">/index</result>
+        </action>
+        
+        <action name="ProjectUpdateSubmit" class="com.company.timesheet.project.action.ProjectUpdateAction">
+            <result name="success">/components/project/jsp/project/Project_listProject.jsp</result>
+            <result name="error">/index</result>
+        </action>
+        
+        <action name="ProjectDelete" class="com.company.timesheet.project.action.ProjectDeleteAction">
+            <result name="success">/components/project/jsp/project/Project_listProject.jsp</result>
+            <result name="error">/index</result>
+        </action>
+        
+        <action name="ProjectTeams" class="com.company.timesheet.project.action.ProjectTeamsAction">
+            <result name="success">/components/project/jsp/project/Project_personTeam.jsp</result>
+            <result name="error">/index</result>
+        </action>
 	
-	
+         <!-- END Project -->
+         
+          <!-- ProjectPersonLink -->
+
+        <action name="DeletePersonFromProject" class="com.company.timesheet.project.projectpersonlink.action.DeletePersonFromProjectAction">
+            <result name="success">/components/profile/jsp/person/Person_listPerson.jsp
+                <param name="projectDetail.projectID">${projectDetail.projectID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="ReadPersonFromProject" class="com.company.timesheet.project.projectpersonlink.action.ReadPersonFromProjectAction">
+            <result name="SENTTOUPDATE">/components/project/jsp/ProjectPersonLink/ProjectPersonLink_updatePersonFromProject.jsp </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="UpdatePersonFromProjectSubmit" class="com.company.timesheet.project.projectpersonlink.action.UpdatePersonFromProjectAction">
+            <result name="success" type="redirect">
+                <param name="location">/ProjectPersonList</param>
+                <param name="personDetail.personID">${personDetail.personID}</param>
+            </result>
+            <result name="error">/index</result>
+            <result name="input">/index</result>
+        </action>
+
+        <action name="ReadProjectPersonLink" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkReadAction">
+            <result name="SENTTOUPDATE">/components/project/jsp/ProjectPersonLink/ProjectPersonLink_updateProjectPersonLink.jsp</result>
+            <result name="success">ReadProjectPersonLink</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="UpdateProjectPersonLinkSubmit" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkUpdateAction">
+            <result name="success" type="redirect">
+                <param name="location">/PersonProjectList</param>
+                <param name="personDetail.personID">${projectPersonLinkDetail.personID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="RemoveProjectFromPerson" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkDeleteAction">
+            <result name="success" type="redirect">
+                <param name="location">/PersonProjectList</param>
+                <param name="personDetail.personID">${personDetail.personID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="PersonProjectList" class="com.company.timesheet.project.projectpersonlink.action.ProjectListForPersonAction">
+            <result name="success">/components/project/jsp/ProjectPersonLink/ProjectPersonList_listProjectsForPerson.jsp</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="ProjectPersonList" class="com.company.timesheet.project.projectpersonlink.action.PersonListForProjectAction">
+            <result name="success">/components/project/jsp/ProjectPersonLink/ProjectPersonLink_listPersonForProject.jsp</result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="AddPersonToProject">
+            <result name="success" type="tiles">/components/project/jsp/ProjectPersonLink/ProjectPersonLink_addPersonToProject.jsp</result>
+            <result name="error">/index</result>
+        </action>
+       
+
+        <!-- <action name="AddPersonToProject"> <result name="success" type="tiles">
+            <param name="location"> AddPersonToProject</param> <param name="projectPersonLinkDetail.projectDetail.projectID">${projectPersonLinkDetail.projectDetail.projectID}</param>
+            </result> </action> -->
+
+        <action name="CreateProjectPersonLinkSubmit" class="com.company.timesheet.project.projectpersonlink.action.ProjectPersonLinkAddPersonToProjectAction">
+            <result name="success" type="redirect">
+                <param name="location">/ProjectPersonList</param>
+                <param name="projectDetail.projectID">${projectPersonLinkDetail.projectID}</param>
+                -->
+            </result>
+            <result name="error">/index</result>
+        </action>
+         
+          <!-- End ProjectPersonLink -->
+         
+         <!--  TimeSheet -->
+         
+         <action name="TimeSheetCreate" class="com.company.timesheet.timesheet.action.TimeSheetCreateAction">
+            <result name="success" type="redirect">
+                <param name="location">/TimeSheetRead</param>
+                <param name="personDetail.personID">${timeSheetCreateDetails.personID}</param>
+                <param name="act">${timeSheetDetail.updateAction}</param>
+                <param name="timeSheetKey.timeSheetID">${timeSheetDetail.timeSheetID}</param>
+            </result>
+            <result name="error">/index</result>
+        </action>
+
+        <action name="TimeSheetsForPerson" class="com.company.timesheet.timesheet.action.TimeSheetsForPersonAction">
+            <result name="success">/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetForPerson.jsp</result>
+            <result name="error">/index</result>
+        </action>
+        
+        <action name="TimeSheetRead" class="com.company.timesheet.timesheet.action.TimeSheetReadAction">
+            <result name="SENTTOUPDATE">/components/timesheet/jsp/timesheet/TimeSheet_updateTimeSheetFromPerson.jsp</result>
+            <result name="success">/components/timesheet/jsp/timesheet/TimeSheet_readTimeSheetFromPerson.jsp</result>
+            <result name="error">/index</result>
+        </action>
+        
+        <action name="TimeSheetUpdateSubmit" class="com.company.timesheet.timesheet.action.TimeSheetUpdateFromPersonAction">
+            <result name="success" type="redirect">
+                <param name="location">/TimeSheetsForPerson</param>
+                <param name="personDetail.personID">${personDetail.personID}</param>
+            </result>
+            <result name="error">/index</result>
+            <result name="input">/index</result>
+        </action>
+        
+        <action name="TimeSheetLineItemRead">
+            <result>/components/timesheet/jsp/timesheet/TimeSheet_updateTimeSheetLineItemFromPerson.jsp</result>
+            <result name="error">/index</result>
+        </action>
+         
+         <!-- End TimeSheet -->
+   
     </package>
     
     <constant name="struts.custom.i18n.resources" value="global" />

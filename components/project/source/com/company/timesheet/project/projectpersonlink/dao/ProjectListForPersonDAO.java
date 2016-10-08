@@ -52,8 +52,8 @@ public class ProjectListForPersonDAO {
 
 				projectPersonLinkDetail.setProjectDetail(projectDetail);
 
+				projectPersonLinkDetailList.add(projectPersonLinkDetail);
 			}
-			projectPersonLinkDetailList.add(projectPersonLinkDetail);
 
 		} catch (SQLException e) {
 

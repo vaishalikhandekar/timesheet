@@ -38,7 +38,7 @@
                     </a>
                     <ul class="collapse" id="component-nav">
                        
-                        <li class=""><a href="button.html"><i class="icon-angle-right"></i> Search Person </a></li>
+                        <li class=""><a href="/TimeSheet/PersonSearch"><i class="icon-angle-right"></i> Search Person </a></li>
                          <li class=""><a href="/TimeSheet/PersonList"><i class="icon-angle-right"></i> Person </a></li>
                         <li class=""><a href="/TimeSheet/PersonList"><i class="icon-angle-right"></i> Person List </a></li>
                        
@@ -54,6 +54,8 @@
                           &nbsp; <span class="label label-success">5</span>&nbsp;
                     </a>
                     <ul class="collapse" id="form-nav">
+                        <li class=""><a href="/TimeSheet/Projects"><i class="icon-angle-right"></i> Projects </a></li>
+                        <li class=""><a href="/TimeSheet/ProjectSearch"><i class="icon-angle-right"></i> Project Search </a></li>
                         <li class=""><a href="forms_general.html"><i class="icon-angle-right"></i> General </a></li>
                         <li class=""><a href="forms_advance.html"><i class="icon-angle-right"></i> Advance </a></li>
                         <li class=""><a href="forms_validation.html"><i class="icon-angle-right"></i> Validation </a></li>

@@ -7,7 +7,23 @@
 <title>Time Sheet List</title>
 </head>
 <body>
-    <jsp:include page="/components/profile/jsp/person/Person_navPerson.jsp"></jsp:include>
+
+    <!-- HEADER SECTION -->
+    <div id="top">
+
+        <%@ include file="/components/core/jsp/header.jsp"%>
+    </div>
+    <!-- END HEADER SECTION -->
+
+
+
+    <!-- MENU SECTION -->
+    <div id="left">
+        <%@ include file="/components/core/jsp/menu.jsp"%>
+
+    </div>
+    <!--END MENU SECTION -->
+
 
 
     <!-- ***************************************Code for delete modal***************************** -->
@@ -53,7 +69,20 @@
     </div>
 
 
-    <!-- *******************************Modal to New TimeSheet in the Project ******************************* -->
+       <!--PAGE CONTENT -->
+    <div id="content">
+
+        <div class="inner">
+            <div class="row">
+                <div class="col-lg-12"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <jsp:include page="/components/profile/jsp/person/Person_navPerson.jsp"></jsp:include>
+                    <br/>
+                    
+                     <!-- *******************************Modal to New TimeSheet in the Project ******************************* -->
 
     <div class="pull-right" class="container">
 
@@ -74,145 +103,151 @@
 
                     <div class="modal-body">
 
-                        <s:form namespace="/TimeSheet" action="TimeSheetCreate" method="POST" class="form-inline" theme="bootstrap">
+                        <s:form namespace=""  action="TimeSheetCreate" method="POST" class="form-inline" theme="bootstrap">
 
                             <table style="width: 100%;">
-                                                <col width="20%" />
-                                                <col width="30%" />
-                                                <col width="20%" />
-                                                <col width="30%" />
-                                        <tr>        
-                                <th>Project:</th>
-                                <td>
-                                <input type="text" name="timeSheetCreateDetails.projectID"  />
-                                </td>
+                                <col width="20%" />
+                                <col width="30%" />
+                                <col width="20%" />
+                                <col width="30%" />
+                                <tr>
+                                    <th>Project:</th>
+                                    <td>
+                                        <input type="text" name="timeSheetCreateDetails.projectID" />
+                                    </td>
 
-                                <th>Start Date:</th>
-                                <td>
-                                <input type="text" class="datepick" id="date_1" class="dateTxt" name="timeSheetCreateDetails.startDate" placeholder="mm/dd/yy" />
-                                </td>
-                            </tr>
+                                    <th>Start Date:</th>
+                                    <td>
+                                        <input type="text" class="datepick" id="date_1" class="dateTxt" name="timeSheetCreateDetails.startDate"
+                                            placeholder="mm/dd/yy" />
+                                    </td>
+                                </tr>
                             </table>
 
                             <div class="modal-footer">
                                 <s:submit type="submit" id="submit" value="Next" class="btn btn-primary" />
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
-                            
+
                             <s:hidden name="timeSheetCreateDetails.personID" value="%{personDetail.personID}"></s:hidden>
 
                         </s:form>
-                        
+
                     </div>
-                    
+
                 </div>
-                
+
             </div>
-            
+
         </div>
-        
+
     </div>
 
 
-        <br />
-        <br />
-        <table class="table table-striped">
-            <thead>
+                    
 
-                <tr class="success">
-                    <th style="text-align: center">Action</th>
-                    <th style="text-align: center">Project Name</th>
-                    <th style="text-align: center">Start Date</th>
-                    <th style="text-align: center">End Date</th>
-                    <th style="text-align: center">Time Sheet Status</th>
-                    <th style="text-align: center">Total Regular Hours</th>
-                    <th style="text-align: center">Total No Of Hours Worked</th>
-                    <th style="text-align: center">Created Date Time</th>
-                    <th style="text-align: center">Submitted Date Time</th>
-                    <th style="text-align: center">Approval Level</th>
-                </tr>
-            </thead>
+                    <table class="table table-striped">
+                        <thead>
 
-            <s:iterator value="timeSheetDetailList" status="stat">
+                            <tr class="success">
+                                <th style="text-align: center">Action</th>
+                                <th style="text-align: center">Project Name</th>
+                                <th style="text-align: center">Start Date</th>
+                                <th style="text-align: center">End Date</th>
+                                <th style="text-align: center">Time Sheet Status</th>
+                                <th style="text-align: center">Total Regular Hours</th>
+                                <th style="text-align: center">Total No Of Hours Worked</th>
+                                <th style="text-align: center">Created Date Time</th>
+                                <th style="text-align: center">Submitted Date Time</th>
+                                <th style="text-align: center">Approval Level</th>
+                            </tr>
+                        </thead>
 
-                <tbody>
+                        <s:iterator value="timeSheetDetailList" status="stat">
 
-                    <tr>
-                        <td align="center">
+                            <tbody>
 
-                             <s:url var="ReadTimeSheetURL" action="TimeSheetRead" namespace="/TimeSheet" escapeAmp="false">
-                                <s:param name="timeSheetKey.timeSheetID" value="%{timeSheetID}" />
-                                <s:param name="personDetail.personID" value="%{personDetail.personID}" />
-                            </s:url>
-                            <s:a href="%{ReadTimeSheetURL}">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <!-- View -->
-                            </s:a>
+                                <tr>
+                                    <td align="center">
 
-                            &nbsp;&nbsp;&nbsp;
+                                        <s:url var="ReadTimeSheetURL" action="TimeSheetRead" namespace="" escapeAmp="false">
+                                            <s:param name="timeSheetKey.timeSheetID" value="%{timeSheetID}" />
+                                            <s:param name="personDetail.personID" value="%{personDetail.personID}" />
+                                        </s:url>
+                                        <s:a href="%{ReadTimeSheetURL}">
+                                            <span class="glyphicon glyphicon-eye-open"></span>
+                                            <!-- View -->
+                                        </s:a>
 
-                            <s:url var="updateTimeSheetURL" action="TimeSheetRead" namespace="/TimeSheet" escapeAmp="false">
-                                <s:param name="timeSheetKey.timeSheetID" value="%{timeSheetID}" />
-                                <s:param name="personDetail.personID" value="%{personDetail.personID}" />
-                                <s:param name="act" value="%{updateAction}" />
-                            </s:url>
-                            <s:a href="%{updateTimeSheetURL}">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <!-- Update -->
-                            </s:a>
+                                        &nbsp;&nbsp;&nbsp;
 
-                            &nbsp;&nbsp;&nbsp;
+                                        <s:url var="updateTimeSheetURL" action="TimeSheetRead" namespace="" escapeAmp="false">
+                                            <s:param name="timeSheetKey.timeSheetID" value="%{timeSheetID}" />
+                                            <s:param name="personDetail.personID" value="%{personDetail.personID}" />
+                                            <s:param name="act" value="%{updateAction}" />
+                                        </s:url>
+                                        <s:a href="%{updateTimeSheetURL}">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                            <!-- Update -->
+                                        </s:a>
 
-                            <a href="#DeleteTimeSheet" data-toggle="modal">
-                                <span class="glyphicon glyphicon-trash"></span>
-                                <!-- Delete -->
-                            </a>
+                                        &nbsp;&nbsp;&nbsp;
 
-                        </td>
+                                        <a href="#DeleteTimeSheet" data-toggle="modal">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                            <!-- Delete -->
+                                        </a>
 
-                        <td align="center">
-                            <s:property value="projectName" />
-                        </td>
+                                    </td>
 
-                        <td align="center">
-                            <s:property value="startDate" />
-                        </td>
+                                    <td align="center">
+                                        <s:property value="projectName" />
+                                    </td>
 
-                        <td align="center">
-                            <s:property value="endDate" />
-                        </td>
+                                    <td align="center">
+                                        <s:property value="startDate" />
+                                    </td>
 
-                        <td align="center">
-                            <s:property value="timeSheetStatus" />
-                        </td>
+                                    <td align="center">
+                                        <s:property value="endDate" />
+                                    </td>
 
-                        <td align="center">
-                            <s:property value="totalRegularHours" />
-                        </td>
+                                    <td align="center">
+                                        <s:property value="timeSheetStatus" />
+                                    </td>
 
-                        <td align="center">
-                            <s:property value="totalNoOfHoursWorked" />
-                        </td>
+                                    <td align="center">
+                                        <s:property value="totalRegularHours" />
+                                    </td>
 
-                        <td align="center">
-                            <s:property value="createdDateTime" />
-                        </td>
+                                    <td align="center">
+                                        <s:property value="totalNoOfHoursWorked" />
+                                    </td>
 
-                        <td align="center">
-                            <s:property value="submittedDateTime" />
-                        </td>
+                                    <td align="center">
+                                        <s:property value="createdDateTime" />
+                                    </td>
 
-                        <td align="center">
-                            <s:property value="approvalLevelType" />
-                        </td>
+                                    <td align="center">
+                                        <s:property value="submittedDateTime" />
+                                    </td>
 
-                    </tr>
+                                    <td align="center">
+                                        <s:property value="approvalLevelType" />
+                                    </td>
 
-                </tbody>
+                                </tr>
 
-            </s:iterator>
+                            </tbody>
 
-        </table>
+                        </s:iterator>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 </html>
