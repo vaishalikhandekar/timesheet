@@ -70,83 +70,7 @@ tr.break td {
 
 
 
-    <!-- *******************************Modal to Add Person in the Project ******************************* -->
-
-    <div class="pull-right" class="container">
-
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Add Person</button>
-        <br />
-        <br />
-
-
-        <div class="modal fade" id="modal-1" data-keyboard="false" data-backdrop="static">
-
-            <div class="modal-dialog modal-lg">
-
-                <div class="modal-content">
-
-                    <div class="modal-header">
-
-                        <button class="close" type="button" data-dismiss="modal">&times;</button>
-                        <h3 class="modal-title">Add Person to Project</h3>
-                    </div>
-
-                    <div class="modal-body">
-
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Search Person</button>
-
-                        <s:form namespace="/Project" action="CreateProjectPersonLinkSubmit" method="POST" class="form-inline" theme="bootstrap">
-                            <br />
-                            <table style="width: 100%;">
-                                <col width="20%" />
-                                <col width="30%" />
-                                <col width="20%" />
-                                <col width="30%" />
-
-                                <tr>
-                                    <th>Role:</th>
-                                    <td>
-                                        <input type="text" name="projectPersonLinkDetail.role" />
-                                    </td>
-
-                                    <th>PersonID:</th>
-                                    <td>
-                                        <input type="text" name="projectPersonLinkDetail.personID" />
-                                    </td>
-                                <tr>
-                                    <th>Comments:</th>
-                                    <td>
-                                        <input type="text" name="projectPersonLinkDetail.comments" />
-                                    </td>
-
-                                    <th>Start Date:</th>
-                                    <td>
-                                        <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectPersonLinkDetail.startDate"
-                                            placeholder="mm/dd/yy" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>End Date:</th>
-                                    <td>
-                                        <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectPersonLinkDetail.endDate"
-                                            placeholder="mm/dd/yy" />
-                                    </td>
-                                </tr>
-                            </table>
-                            <div class="modal-footer">
-                                <s:submit type="submit" id="submit" value="Submit" class="btn btn-primary" />
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                            <s:hidden name="projectPersonLinkDetail.projectID" value="%{projectDetail.projectID}"></s:hidden>
-
-
-                        </s:form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+   
     <!-- *******************************code for Person Search******************************* -->
 
 
@@ -254,6 +178,83 @@ tr.break td {
                 <div class="col-lg-12">
 
                     <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
+                    <br />
+
+                    <!-- *******************************Modal to Add Person in the Project ******************************* -->
+
+    <div class="pull-right" class="container">
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Add Person</button>
+        <br />
+
+
+        <div class="modal fade" id="modal-1" data-keyboard="false" data-backdrop="static">
+
+            <div class="modal-dialog modal-lg">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <button class="close" type="button" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Add Person to Project</h3>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Search Person</button>
+
+                        <s:form namespace="/Project" action="CreateProjectPersonLinkSubmit" method="POST" class="form-inline" theme="bootstrap">
+                            <br />
+                            <table style="width: 100%;">
+                                <col width="20%" />
+                                <col width="30%" />
+                                <col width="20%" />
+                                <col width="30%" />
+
+                                <tr>
+                                    <th>Role:</th>
+                                    <td>
+                                        <input type="text" name="projectPersonLinkDetail.role" />
+                                    </td>
+
+                                    <th>PersonID:</th>
+                                    <td>
+                                        <input type="text" name="projectPersonLinkDetail.personID" />
+                                    </td>
+                                <tr>
+                                    <th>Comments:</th>
+                                    <td>
+                                        <input type="text" name="projectPersonLinkDetail.comments" />
+                                    </td>
+
+                                    <th>Start Date:</th>
+                                    <td>
+                                        <input type="text" class="datepick" id="date_1" class="dateTxt" name="projectPersonLinkDetail.startDate"
+                                            placeholder="mm/dd/yy" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>End Date:</th>
+                                    <td>
+                                        <input type="text" class="datepick" id="date_2" class="dateTxt" name="projectPersonLinkDetail.endDate"
+                                            placeholder="mm/dd/yy" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="modal-footer">
+                                <s:submit type="submit" id="submit" value="Submit" class="btn btn-primary" />
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                            <s:hidden name="projectPersonLinkDetail.projectID" value="%{projectDetail.projectID}"></s:hidden>
+
+
+                        </s:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
                     <s:form name="ListForm" id="ListForm" method="post">
