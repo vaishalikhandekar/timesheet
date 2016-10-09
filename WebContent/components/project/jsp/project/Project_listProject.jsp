@@ -300,7 +300,7 @@ tr.break td {
 
                                             <tr>
                                                 <td align="center">
-                                                    <s:url id="ViewProjectURL" action="ProjectRead" namespace="/Project" escapeAmp="false">
+                                                    <s:url id="ViewProjectURL" action="ProjectRead"  escapeAmp="false">
                                                         <s:param name="projectDetail.projectID" value="%{projectID}" />
                                                     </s:url>
                                                     <s:a href="%{ViewProjectURL}">
@@ -309,7 +309,7 @@ tr.break td {
                                                     </s:a>
                                                     &nbsp;&nbsp;
 
-                                                    <s:url var="updateProjectURL" action="ProjectRead" namespace="/Project" escapeAmp="false">
+                                                    <s:url var="updateProjectURL" action="ProjectRead"  escapeAmp="false">
                                                         <s:param name="projectDetail.projectID" value="%{projectID}" />
                                                         <s:param name="act" value="%{updateAction}" />
                                                     </s:url>

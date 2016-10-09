@@ -27,6 +27,7 @@
     <link href="assets/css/layout2.css" rel="stylesheet" />
        <link href="components/core/assets/plugins/flot/examples/examples.css" rel="stylesheet" />
        <link rel="stylesheet" href="components/core/assets/plugins/timeline/timeline.css" />
+        <link rel="stylesheet" href="assets/plugins/validationengine/css/validationEngine.jquery.css" />
     <!-- END PAGE LEVEL  STYLES -->
      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

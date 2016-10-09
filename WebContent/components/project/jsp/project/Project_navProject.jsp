@@ -54,7 +54,7 @@
 
                                 <li class="active">
 
-                                    <s:url var="ProjectHome" action="ProjectRead" namespace="/Project">
+                                    <s:url var="ProjectHome" action="ProjectRead" namespace="">
                                         <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
                                     </s:url>
                                     <a href="${ProjectHome}">
@@ -66,7 +66,7 @@
 
                                 <li>
 
-                                    <s:url var="ProjectPersonList" action="ProjectPersonList" namespace="/Project">
+                                    <s:url var="ProjectPersonList" action="ProjectPersonList" namespace="">
                                         <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
                                     </s:url>
                                     <a href="${ProjectPersonList}">
@@ -77,35 +77,35 @@
                                 </li>
 
                                 <li>
-                                    <s:url var="TimeSheetsForProject" action="TimeSheetsForProject" namespace="/TimeSheet">
+                                    <s:url var="TimeSheetsForProject" action="TimeSheetsForProject" namespace="">
                                         <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
                                     </s:url>
                                     <a href="${TimeSheetsForProject}">Time Sheets</a>
                                 </li>
 
                                 <li>
-                                    <s:url var="ProjectTimeSheetProcessList" action="ProjectTimeSheetProcessList" namespace="/TimeSheet">
+                                    <s:url var="ProjectTimeSheetProcessList" action="ProjectTimeSheetProcessList" namespace="">
                                         <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
                                     </s:url>
                                     <a href="${ProjectTimeSheetProcessList}">Time Sheet Process</a>
                                 </li>
                                 
                                 <li>
-                                    <s:url var="ProjectTeams" action="ProjectTeams" namespace="/Project">
+                                    <s:url var="ProjectTeams" action="ProjectTeams" namespace="">
                                         <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
                                     </s:url>
                                     <a href="${ProjectTeams}">Invoices Incoming </a>
                                 </li>
                                 
                                 <li>
-                                    <s:url var="ProjectTeams" action="ProjectTeams" namespace="/Project">
+                                    <s:url var="ProjectTeams" action="ProjectTeams" namespace="">
                                         <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
                                     </s:url>
                                     <a href="${ProjectTeams}">Invoices Outgoing</a>
                                 </li>
                                 
                                 <li>
-                                    <s:url var="ProjectTeams" action="ProjectTeams" namespace="/Project">
+                                    <s:url var="ProjectTeams" action="ProjectTeams" namespace="">
                                         <s:param name="projectDetail.projectID" value="%{projectDetail.projectID}" />
                                     </s:url>
                                     <a href="${ProjectTeams}">Teams</a>

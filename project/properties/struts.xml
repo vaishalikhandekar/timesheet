@@ -35,7 +35,7 @@
         
 
      <action name="PersonCreateSubmit" class="com.company.timesheet.profile.person.action.PersonCreateAction">
-            <result name="success" >/components/profile/jsp/person/Person_list.jsp</result>
+            <result name="success" >/PersonList</result>
             <result name="error" type="tiles">actionError</result>
             <result name="input" type="tiles">inputError</result>
         </action>
@@ -101,7 +101,9 @@
         </action>
         
         <action name="ProjectUpdateSubmit" class="com.company.timesheet.project.action.ProjectUpdateAction">
-            <result name="success">/components/project/jsp/project/Project_listProject.jsp</result>
+            <result name="success" type="redirect">
+             <param name="location">/Projects</param>
+            </result>
             <result name="error">/index</result>
         </action>
         
@@ -134,7 +136,7 @@
         <action name="UpdatePersonFromProjectSubmit" class="com.company.timesheet.project.projectpersonlink.action.UpdatePersonFromProjectAction">
             <result name="success" type="redirect">
                 <param name="location">/ProjectPersonList</param>
-                <param name="personDetail.personID">${personDetail.personID}</param>
+                <param name="projectDetail.projectID">${projectPersonLinkDetail.projectDetail.projectID}</param>
             </result>
             <result name="error">/index</result>
             <result name="input">/index</result>
@@ -229,6 +231,17 @@
             <result>/components/timesheet/jsp/timesheet/TimeSheet_updateTimeSheetLineItemFromPerson.jsp</result>
             <result name="error">/index</result>
         </action>
+        
+        <action name="TimeSheetsForProject" class="com.company.timesheet.timesheet.action.TimeSheetsForProjectAction">
+            <result name="success">/components/timesheet/jsp/timesheet/TimeSheet_listTimeSheetForProject.jsp</result>
+            <result name="error">/index</result>
+        </action>
+        
+         <action name="ProjectTimeSheetProcessList" class="com.company.timesheet.timesheetprocess.action.ProjectTimeSheetProcessListAction">
+            <result name="success">/components/timesheet/jsp/timeSheetProcess/TimeSheet_listProjectTimeSheetProcess.jsp</result>
+            <result name="error">/index</result>
+        </action>
+        
          
          <!-- End TimeSheet -->
    

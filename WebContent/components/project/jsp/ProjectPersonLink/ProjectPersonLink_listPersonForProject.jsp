@@ -12,8 +12,21 @@ tr.break td {
 </style>
 <title></title>
 <body>
+    <!-- HEADER SECTION -->
+    <div id="top">
 
-    <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
+        <%@ include file="/components/core/jsp/header.jsp"%>
+    </div>
+    <!-- END HEADER SECTION -->
+
+
+
+    <!-- MENU SECTION -->
+    <div id="left">
+        <%@ include file="/components/core/jsp/menu.jsp"%>
+
+    </div>
+    <!--END MENU SECTION -->
 
     <!-- ***************************************Code for delete modal***************************** -->
 
@@ -83,7 +96,7 @@ tr.break td {
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Search Person</button>
 
                         <s:form namespace="/Project" action="CreateProjectPersonLinkSubmit" method="POST" class="form-inline" theme="bootstrap">
-<br/>
+                            <br />
                             <table style="width: 100%;">
                                 <col width="20%" />
                                 <col width="30%" />
@@ -93,17 +106,17 @@ tr.break td {
                                 <tr>
                                     <th>Role:</th>
                                     <td>
-                                        <input type="text"  name="projectPersonLinkDetail.role" />
+                                        <input type="text" name="projectPersonLinkDetail.role" />
                                     </td>
 
                                     <th>PersonID:</th>
                                     <td>
-                                        <input type="text"  name="projectPersonLinkDetail.personID" />
+                                        <input type="text" name="projectPersonLinkDetail.personID" />
                                     </td>
                                 <tr>
                                     <th>Comments:</th>
                                     <td>
-                                        <input type="text"  name="projectPersonLinkDetail.comments" />
+                                        <input type="text" name="projectPersonLinkDetail.comments" />
                                     </td>
 
                                     <th>Start Date:</th>
@@ -229,81 +242,109 @@ tr.break td {
 
 
     <!-- *******************************code to display Person List******************************* -->
+    <!--PAGE CONTENT -->
+    <div id="content">
 
-    <s:form name="ListForm" id="ListForm" method="post">
+        <div class="inner">
+            <div class="row">
+                <div class="col-lg-12"></div>
+            </div>
 
-        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
 
-            <table class="table table-striped" style="width: 100%; height: 100%; border: 1;">
-                <thead>
+                    <jsp:include page="/components/project/jsp/project/Project_navProject.jsp"></jsp:include>
 
-                    <tr class="success">
-                        <th style="text-align: center">Action</th>
-                        <th style="text-align: center">Role</th>
-                        <th style="text-align: center">Title</th>
-                        <th style="text-align: center">First Name</th>
-                        <th style="text-align: center">Middle Name</th>
-                        <th style="text-align: center">Last Name</th>
-                        <th style="text-align: center">Gender</th>
-                        <th style="text-align: center">Date Of Birth</th>
-                        <th style="text-align: center">Registration Date</th>
-                    </tr>
 
-                </thead>
+                    <s:form name="ListForm" id="ListForm" method="post">
 
-                <s:iterator value="projectPersonLinkDetailList" status="stat">
+                        <div class="container">
 
-                    <tr>
-                        <td align="center">
+                            <table class="table table-striped" style="width: 100%; height: 100%; border: 1;">
+                                <thead>
 
-                            <s:url var="updatePersonURL" action="ReadPersonFromProject" escapeAmp="false">
-                                <s:param name="projectPersonLinkDetail.projectPersonLinkID" value="%{projectPersonLinkID}" />
-                                <s:param name="act" value="%{updateAction}" />
-                            </s:url>
-                            <s:a href="%{updatePersonURL}">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <!-- Update -->
-                            </s:a>
-                            &nbsp;&nbsp;
+                                    <tr class="success">
+                                        <th style="text-align: center">Action</th>
+                                        <th style="text-align: center">Role</th>
+                                        <th style="text-align: center">Title</th>
+                                        <th style="text-align: center">First Name</th>
+                                        <th style="text-align: center">Middle Name</th>
+                                        <th style="text-align: center">Last Name</th>
+                                        <th style="text-align: center">Gender</th>
+                                        <th style="text-align: center">Date Of Birth</th>
+                                        <th style="text-align: center">Registration Date</th>
+                                    </tr>
 
-                            <a href="#DeletePersonFromProject" data-toggle="modal">
-                                <span class="glyphicon glyphicon-trash"></span>
-                                <!-- Delete -->
-                            </a>
+                                </thead>
 
-                        </td>
-                        <td align="center">
-                            <s:property value="role" />
-                        </td>
-                        <td align="center">
-                            <s:property value="personDetail.title" />
-                        </td>
-                        <td align="center">
-                            <s:property value="personDetail.firstName" />
-                        </td>
-                        <td align="center">
-                            <s:property value="personDetail.middleName" />
-                        </td>
-                        <td align="center">
-                            <s:property value="personDetail.lastName" />
-                        </td>
-                        <td align="center">
-                            <s:property value="personDetail.gender" />
-                        </td>
-                        <td align="center">
-                            <s:property value="personDetail.dateOfBirth" />
-                        </td>
-                        <td align="center">
-                            <s:property value="personDetail.registrationDate" />
-                        </td>
+                                <s:iterator value="projectPersonLinkDetailList" status="stat">
 
-                    </tr>
-                </s:iterator>
+                                    <tr>
+                                        <td align="center">
 
-            </table>
+                                            <s:url var="updatePersonURL" action="ReadPersonFromProject" escapeAmp="false">
+                                                <s:param name="projectPersonLinkDetail.projectPersonLinkID" value="%{projectPersonLinkID}" />
+                                                <s:param name="projectPersonLinkDetail.projectID" value="%{projectDetail.projectID}" />
+                                                <s:param name="act" value="%{updateAction}" />
+                                            </s:url>
+                                            <s:a href="%{updatePersonURL}">
+                                                <span class="glyphicon glyphicon-pencil"></span>
+                                                <!-- Update -->
+                                            </s:a>
+                                            &nbsp;&nbsp;
 
+                                            <a href="#DeletePersonFromProject" data-toggle="modal">
+                                                <span class="glyphicon glyphicon-trash"></span>
+                                                <!-- Delete -->
+                                            </a>
+
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="role" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="personDetail.title" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="personDetail.firstName" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="personDetail.middleName" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="personDetail.lastName" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="personDetail.gender" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="personDetail.dateOfBirth" />
+                                        </td>
+                                        <td align="center">
+                                            <s:property value="personDetail.registrationDate" />
+                                        </td>
+
+                                    </tr>
+                                </s:iterator>
+
+                            </table>
+
+                        </div>
+
+                    </s:form>
+                </div>
+            </div>
         </div>
+    </div>
 
-    </s:form>
+
+    <!--END PAGE CONTENT -->
+
+    <!-- FOOTER -->
+    <div id="footer">
+        <%@ include file="/components/core/jsp/footer.jsp"%>
+    </div>
+    <!--END FOOTER -->
+
 </body>
 </html>
